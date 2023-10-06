@@ -1,0 +1,11 @@
+# PostAtsCandidates503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                                      | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                                                    | [Optional[operations.PostAtsCandidates503ApplicationJSONError]](undefined/models/operations/postatscandidates503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |
+| `status`                                                                                                                                   | [Optional[operations.PostAtsCandidates503ApplicationJSONStatus]](undefined/models/operations/postatscandidates503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |

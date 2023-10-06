@@ -1,0 +1,11 @@
+# GetAtsUsers404ApplicationJSON
+
+Returned when a requested resource is not found.
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                                        | [Optional[operations.GetAtsUsers404ApplicationJSONError]](undefined/models/operations/getatsusers404applicationjsonerror.md)   | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |
+| `status`                                                                                                                       | [Optional[operations.GetAtsUsers404ApplicationJSONStatus]](undefined/models/operations/getatsusers404applicationjsonstatus.md) | :heavy_check_mark:                                                                                                             | N/A                                                                                                                            |

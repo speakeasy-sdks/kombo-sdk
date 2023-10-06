@@ -1,0 +1,9 @@
+# GetAtsTagsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                    | [Optional[shared.GetAtsTagsErrorResponseError]](undefined/models/shared/getatstagserrorresponseerror.md)   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `status`                                                                                                   | [Optional[shared.GetAtsTagsErrorResponseStatus]](undefined/models/shared/getatstagserrorresponsestatus.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

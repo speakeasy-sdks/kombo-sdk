@@ -1,0 +1,9 @@
+# GetAtsJobsSuccessfulResponse
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `data`                                                                                                               | [Optional[shared.GetAtsJobsSuccessfulResponseData]](undefined/models/shared/getatsjobssuccessfulresponsedata.md)     | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `status`                                                                                                             | [Optional[shared.GetAtsJobsSuccessfulResponseStatus]](undefined/models/shared/getatsjobssuccessfulresponsestatus.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |

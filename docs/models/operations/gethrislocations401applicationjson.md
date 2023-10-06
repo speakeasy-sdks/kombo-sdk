@@ -1,0 +1,11 @@
+# GetHrisLocations401ApplicationJSON
+
+Returned when the authentication header was invalid or missing.
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.GetHrisLocations401ApplicationJSONError]](undefined/models/operations/gethrislocations401applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.GetHrisLocations401ApplicationJSONStatus]](undefined/models/operations/gethrislocations401applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

@@ -1,0 +1,9 @@
+# GetAtsTagsSuccessfulResponse
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `data`                                                                                                               | [Optional[shared.GetAtsTagsSuccessfulResponseData]](undefined/models/shared/getatstagssuccessfulresponsedata.md)     | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `status`                                                                                                             | [Optional[shared.GetAtsTagsSuccessfulResponseStatus]](undefined/models/shared/getatstagssuccessfulresponsestatus.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |

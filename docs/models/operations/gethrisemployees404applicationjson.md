@@ -1,0 +1,11 @@
+# GetHrisEmployees404ApplicationJSON
+
+Returned when a requested resource is not found.
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.GetHrisEmployees404ApplicationJSONError]](undefined/models/operations/gethrisemployees404applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.GetHrisEmployees404ApplicationJSONStatus]](undefined/models/operations/gethrisemployees404applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

@@ -1,0 +1,10 @@
+# PostIntegrationsIntegrationIDRelinkRequestBody
+
+POST /integrations/:integration_id/relink request body
+
+
+## Fields
+
+| Field                                                                                                                                                                | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `language`                                                                                                                                                           | [Optional[operations.PostIntegrationsIntegrationIDRelinkRequestBodyLanguage]](undefined/models/operations/postintegrationsintegrationidrelinkrequestbodylanguage.md) | :heavy_minus_sign:                                                                                                                                                   | Language of the connection flow UI.                                                                                                                                  |

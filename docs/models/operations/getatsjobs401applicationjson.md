@@ -1,0 +1,11 @@
+# GetAtsJobs401ApplicationJSON
+
+Returned when the authentication header was invalid or missing.
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                      | [Optional[operations.GetAtsJobs401ApplicationJSONError]](undefined/models/operations/getatsjobs401applicationjsonerror.md)   | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |
+| `status`                                                                                                                     | [Optional[operations.GetAtsJobs401ApplicationJSONStatus]](undefined/models/operations/getatsjobs401applicationjsonstatus.md) | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |

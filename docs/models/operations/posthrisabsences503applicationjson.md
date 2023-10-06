@@ -1,0 +1,11 @@
+# PostHrisAbsences503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.PostHrisAbsences503ApplicationJSONError]](undefined/models/operations/posthrisabsences503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.PostHrisAbsences503ApplicationJSONStatus]](undefined/models/operations/posthrisabsences503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

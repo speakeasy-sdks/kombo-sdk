@@ -1,0 +1,11 @@
+# GetAtsCandidates503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.GetAtsCandidates503ApplicationJSONError]](undefined/models/operations/getatscandidates503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.GetAtsCandidates503ApplicationJSONStatus]](undefined/models/operations/getatscandidates503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

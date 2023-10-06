@@ -1,0 +1,11 @@
+# GetHrisGroups403ApplicationJSON
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                                              | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                            | [Optional[operations.GetHrisGroups403ApplicationJSONError]](undefined/models/operations/gethrisgroups403applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
+| `status`                                                                                                                           | [Optional[operations.GetHrisGroups403ApplicationJSONStatus]](undefined/models/operations/gethrisgroups403applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
