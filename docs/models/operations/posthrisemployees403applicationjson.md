@@ -1,0 +1,11 @@
+# PostHrisEmployees403ApplicationJSON
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                                                      | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                                                    | [Optional[operations.PostHrisEmployees403ApplicationJSONError]](undefined/models/operations/posthrisemployees403applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |
+| `status`                                                                                                                                   | [Optional[operations.PostHrisEmployees403ApplicationJSONStatus]](undefined/models/operations/posthrisemployees403applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                         | N/A                                                                                                                                        |

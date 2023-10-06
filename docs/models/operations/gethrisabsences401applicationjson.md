@@ -1,0 +1,11 @@
+# GetHrisAbsences401ApplicationJSON
+
+Returned when the authentication header was invalid or missing.
+
+
+## Fields
+
+| Field                                                                                                                                  | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                | [Optional[operations.GetHrisAbsences401ApplicationJSONError]](undefined/models/operations/gethrisabsences401applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
+| `status`                                                                                                                               | [Optional[operations.GetHrisAbsences401ApplicationJSONStatus]](undefined/models/operations/gethrisabsences401applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |

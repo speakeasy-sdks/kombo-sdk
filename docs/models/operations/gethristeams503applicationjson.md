@@ -1,0 +1,11 @@
+# GetHrisTeams503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                          | [Optional[operations.GetHrisTeams503ApplicationJSONError]](undefined/models/operations/gethristeams503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |
+| `status`                                                                                                                         | [Optional[operations.GetHrisTeams503ApplicationJSONStatus]](undefined/models/operations/gethristeams503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |

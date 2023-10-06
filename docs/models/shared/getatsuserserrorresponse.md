@@ -1,0 +1,9 @@
+# GetAtsUsersErrorResponse
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                      | [Optional[shared.GetAtsUsersErrorResponseError]](undefined/models/shared/getatsuserserrorresponseerror.md)   | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `status`                                                                                                     | [Optional[shared.GetAtsUsersErrorResponseStatus]](undefined/models/shared/getatsuserserrorresponsestatus.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

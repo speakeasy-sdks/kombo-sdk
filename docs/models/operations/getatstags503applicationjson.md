@@ -1,0 +1,11 @@
+# GetAtsTags503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                      | [Optional[operations.GetAtsTags503ApplicationJSONError]](undefined/models/operations/getatstags503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |
+| `status`                                                                                                                     | [Optional[operations.GetAtsTags503ApplicationJSONStatus]](undefined/models/operations/getatstags503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |

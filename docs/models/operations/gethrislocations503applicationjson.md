@@ -1,0 +1,11 @@
+# GetHrisLocations503ApplicationJSON
+
+Returned when no sync has finished successfully yet
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.GetHrisLocations503ApplicationJSONError]](undefined/models/operations/gethrislocations503applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.GetHrisLocations503ApplicationJSONStatus]](undefined/models/operations/gethrislocations503applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

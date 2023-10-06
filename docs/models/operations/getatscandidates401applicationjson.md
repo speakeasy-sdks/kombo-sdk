@@ -1,0 +1,11 @@
+# GetAtsCandidates401ApplicationJSON
+
+Returned when the authentication header was invalid or missing.
+
+
+## Fields
+
+| Field                                                                                                                                    | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                  | [Optional[operations.GetAtsCandidates401ApplicationJSONError]](undefined/models/operations/getatscandidates401applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |
+| `status`                                                                                                                                 | [Optional[operations.GetAtsCandidates401ApplicationJSONStatus]](undefined/models/operations/getatscandidates401applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                       | N/A                                                                                                                                      |

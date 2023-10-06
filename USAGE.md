@@ -12,9 +12,9 @@ s = speakeasybar.Speakeasybar(
 )
 
 
-res = s.drinks.list_drinks(drink_type=shared.DrinkType.WINE)
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
 
-if res.drinks is not None:
+if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
 ```
 <!-- End SDK Example Usage -->

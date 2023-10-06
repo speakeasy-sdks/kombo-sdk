@@ -1,0 +1,9 @@
+# GetHrisGroupsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                          | [Optional[shared.GetHrisGroupsErrorResponseError]](undefined/models/shared/gethrisgroupserrorresponseerror.md)   | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `status`                                                                                                         | [Optional[shared.GetHrisGroupsErrorResponseStatus]](undefined/models/shared/gethrisgroupserrorresponsestatus.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

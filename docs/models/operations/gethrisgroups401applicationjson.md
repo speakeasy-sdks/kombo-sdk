@@ -1,0 +1,11 @@
+# GetHrisGroups401ApplicationJSON
+
+Returned when the authentication header was invalid or missing.
+
+
+## Fields
+
+| Field                                                                                                                              | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                            | [Optional[operations.GetHrisGroups401ApplicationJSONError]](undefined/models/operations/gethrisgroups401applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |
+| `status`                                                                                                                           | [Optional[operations.GetHrisGroups401ApplicationJSONStatus]](undefined/models/operations/gethrisgroups401applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                 | N/A                                                                                                                                |

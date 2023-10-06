@@ -1,0 +1,11 @@
+# GetHrisAbsences403ApplicationJSON
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                                                  | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                                | [Optional[operations.GetHrisAbsences403ApplicationJSONError]](undefined/models/operations/gethrisabsences403applicationjsonerror.md)   | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
+| `status`                                                                                                                               | [Optional[operations.GetHrisAbsences403ApplicationJSONStatus]](undefined/models/operations/gethrisabsences403applicationjsonstatus.md) | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |

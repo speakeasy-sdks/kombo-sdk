@@ -59,13 +59,12 @@ Once you're finished iterating and happy with the output push only the latest ve
 ## SDK Installation
 
 ```bash
-pip install git+https://github.com/speakeasy-sdks/template-sdk.git
+pip install git+https://github.com/speakeasy-sdks/kombo-sdk.git
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
 ```python
 import speakeasybar
 from speakeasybar.models import operations, shared
@@ -76,9 +75,10 @@ s = speakeasybar.Speakeasybar(
     ),
 )
 
-res = s.drinks.list_drinks(drink_type=shared.DrinkType.WINE)
 
-if res.drinks is not None:
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
+
+if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
 ```
 <!-- End SDK Example Usage -->
@@ -87,27 +87,99 @@ if res.drinks is not None:
 ## Available Resources and Operations
 
 
-### [authentication](docs/sdks/authentication/README.md)
+### [custom_endpoints](docs/sdks/customendpoints/README.md)
 
-* [authenticate](docs/sdks/authentication/README.md#authenticate) - Authenticate with the API by providing a username and password.
+* [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
+* [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
+* [post_custom_datev_push_data_general](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_general) - Push general data to DATEV
+* [post_custom_datev_push_data_payroll](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_payroll) - Push payroll data to DATEV
+* [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
+* [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
 
-### [config](docs/sdks/config/README.md)
+### [general](docs/sdks/general/README.md)
 
-* [subscribe_to_webhooks](docs/sdks/config/README.md#subscribe_to_webhooks) - Subscribe to webhooks.
+* [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
+* [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
+* [get_integrations_integration_id](docs/sdks/general/README.md#get_integrations_integration_id) - Get integration details
+* [get_tools_category](docs/sdks/general/README.md#get_tools_category) - Get tools
+* [post_force_sync](docs/sdks/general/README.md#post_force_sync) - Trigger sync
+* [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
+* [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
 
-### [drinks](docs/sdks/drinks/README.md)
+### [kombo_connect](docs/sdks/komboconnect/README.md)
 
-* [get_drink](docs/sdks/drinks/README.md#get_drink) - Get a drink.
-* [list_drinks](docs/sdks/drinks/README.md#list_drinks) - Get a list of drinks.
+* [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
+* [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
 
-### [ingredients](docs/sdks/ingredients/README.md)
+### [unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
 
-* [list_ingredients](docs/sdks/ingredients/README.md#list_ingredients) - Get a list of ingredients.
+* [get_assessment_orders_open](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_orders_open) - Get open orders
+* [get_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_packages) - Get packages
+* [put_assessment_orders_assessment_order_id_result](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_orders_assessment_order_id_result) - Update order result
+* [put_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_packages) - Set packages
 
-### [orders](docs/sdks/orders/README.md)
+### [unified_ats_api](docs/sdks/unifiedatsapi/README.md)
 
-* [create_order](docs/sdks/orders/README.md#create_order) - Create an order.
+* [delete_ats_candidates_candidate_id_tags](docs/sdks/unifiedatsapi/README.md#delete_ats_candidates_candidate_id_tags) - Remove tag from candidate
+* [get_ats_application_stages](docs/sdks/unifiedatsapi/README.md#get_ats_application_stages) - Get application stages
+* [get_ats_applications](docs/sdks/unifiedatsapi/README.md#get_ats_applications) - Get applications
+* [get_ats_candidates](docs/sdks/unifiedatsapi/README.md#get_ats_candidates) - Get candidates
+* [get_ats_jobs](docs/sdks/unifiedatsapi/README.md#get_ats_jobs) - Get jobs
+* [get_ats_tags](docs/sdks/unifiedatsapi/README.md#get_ats_tags) - Get tags
+* [get_ats_users](docs/sdks/unifiedatsapi/README.md#get_ats_users) - Get users
+* [patch_ats_candidates_candidate_id](docs/sdks/unifiedatsapi/README.md#patch_ats_candidates_candidate_id) - Update candidate 🦄
+* [post_ats_applications_application_id_notes](docs/sdks/unifiedatsapi/README.md#post_ats_applications_application_id_notes) - Add note to application
+* [post_ats_applications_application_id_result_links](docs/sdks/unifiedatsapi/README.md#post_ats_applications_application_id_result_links) - Add result link to application
+* [post_ats_candidates](docs/sdks/unifiedatsapi/README.md#post_ats_candidates) - Create candidate
+* [post_ats_candidates_candidate_id_attachments](docs/sdks/unifiedatsapi/README.md#post_ats_candidates_candidate_id_attachments) - Add attachment to candidate
+* [post_ats_candidates_candidate_id_result_links](docs/sdks/unifiedatsapi/README.md#post_ats_candidates_candidate_id_result_links) - Add result link to candidate
+* [post_ats_candidates_candidate_id_tags](docs/sdks/unifiedatsapi/README.md#post_ats_candidates_candidate_id_tags) - Add tag to candidate
+* [post_ats_jobs_job_id_applications](docs/sdks/unifiedatsapi/README.md#post_ats_jobs_job_id_applications) - Create application
+* [put_ats_applications_application_id_stage](docs/sdks/unifiedatsapi/README.md#put_ats_applications_application_id_stage) - Move application to stage
+
+### [unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
+
+* [delete_hris_absences_absence_id](docs/sdks/unifiedhrisapi/README.md#delete_hris_absences_absence_id) - Delete absence
+* [get_hris_absence_types](docs/sdks/unifiedhrisapi/README.md#get_hris_absence_types) - Get absence types
+* [get_hris_absences](docs/sdks/unifiedhrisapi/README.md#get_hris_absences) - Get absences
+* [get_hris_employees](docs/sdks/unifiedhrisapi/README.md#get_hris_employees) - Get employees
+* [get_hris_employments](docs/sdks/unifiedhrisapi/README.md#get_hris_employments) - Get employments
+* [get_hris_groups](docs/sdks/unifiedhrisapi/README.md#get_hris_groups) - Get groups
+* [get_hris_legal_entities](docs/sdks/unifiedhrisapi/README.md#get_hris_legal_entities) - Get legal entities
+* [get_hris_locations](docs/sdks/unifiedhrisapi/README.md#get_hris_locations) - Get locations
+* [get_hris_teams](docs/sdks/unifiedhrisapi/README.md#get_hris_teams) - Get teams (deprecated)
+* [get_hris_time_off_balances](docs/sdks/unifiedhrisapi/README.md#get_hris_time_off_balances) - Get time off balances
+* [patch_hris_employees_employee_id](docs/sdks/unifiedhrisapi/README.md#patch_hris_employees_employee_id) - Update employee
+* [post_hris_absences](docs/sdks/unifiedhrisapi/README.md#post_hris_absences) - Create absence
+* [post_hris_employees](docs/sdks/unifiedhrisapi/README.md#post_hris_employees) - Create employee
+* [post_hris_employees_employee_id_attachments](docs/sdks/unifiedhrisapi/README.md#post_hris_employees_employee_id_attachments) - Add attachment to employees 🦄
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
