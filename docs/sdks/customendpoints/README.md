@@ -17,10 +17,10 @@ Returns all "DATEV Data Pushes" of the last 2 months. You can use this endpoint 
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -52,11 +52,11 @@ This action allows to send an arbitrary ASCII file directly to DATEV LODAS or Lo
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -95,10 +95,10 @@ Uploads the currently relevant general data (employees, compensations, and time 
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -131,11 +131,11 @@ Uploads the currently relevant payroll data (supplements) to DATEV. This will cr
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -212,11 +212,11 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -309,11 +309,11 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),

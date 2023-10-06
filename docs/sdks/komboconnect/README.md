@@ -27,10 +27,10 @@ Activate an integration that was just created via Kombo Connect.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -82,10 +82,10 @@ Generate a unique link that allows your user to enter the embedded Kombo Connect
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),

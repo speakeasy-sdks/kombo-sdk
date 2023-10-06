@@ -105,10 +105,10 @@ This will also succeed if the tag does not exist on the candidate.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -307,11 +307,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -508,11 +508,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -704,11 +704,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -921,11 +921,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1059,11 +1059,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1200,11 +1200,11 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1246,10 +1246,10 @@ Currently in closed beta.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1332,10 +1332,10 @@ Add extra information to an application. This can be any extra text information 
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1405,10 +1405,10 @@ This can, for example, be used to link a candidate back to a test result/assessm
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1687,11 +1687,11 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -1904,10 +1904,10 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -2077,10 +2077,10 @@ This action is deprecated because result links usually concern applications and 
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -2215,10 +2215,10 @@ Kombo takes care of creating the tag if required, finding out the right ID, and 
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -2477,11 +2477,11 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -2662,10 +2662,10 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),

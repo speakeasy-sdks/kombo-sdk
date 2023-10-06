@@ -15,10 +15,10 @@ Get all open assessment orders of an integration.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -54,10 +54,10 @@ This is mainly intended for debugging. As you always need to submit the full lis
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -140,11 +140,11 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import speakeasybar
+import kombo
 import dateutil.parser
-from speakeasybar.models import operations, shared
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -192,10 +192,10 @@ Packages that have been previously submitted through this endpoint but aren't in
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),

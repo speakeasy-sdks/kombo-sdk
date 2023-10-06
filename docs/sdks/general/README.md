@@ -19,10 +19,10 @@ Delete the specified integration.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -55,10 +55,10 @@ Check whether your API key is working properly.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import shared
+import kombo
+from kombo.models import shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -84,10 +84,10 @@ Get the specified integration with everything you need to display it to your cus
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -120,10 +120,10 @@ Get a list of the tools (i.e., integrations) enabled in your environment.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -157,10 +157,10 @@ Trigger a sync for a specific integration.
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -203,10 +203,10 @@ Embed this the same way you would [embed the connect link](/connect/embedded-flo
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
@@ -263,10 +263,10 @@ To get started, please pick the relevant API (some tools provide multiple to due
 ### Example Usage
 
 ```python
-import speakeasybar
-from speakeasybar.models import operations, shared
+import kombo
+from kombo.models import operations, shared
 
-s = speakeasybar.Speakeasybar(
+s = kombo.Kombo(
     security=shared.Security(
         api_key="",
     ),
