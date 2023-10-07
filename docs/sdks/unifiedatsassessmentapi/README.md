@@ -159,10 +159,8 @@ res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_res
         ),
     ],
     completed_at=dateutil.parser.isoparse('2023-11-13T01:43:34.363Z'),
-    max_score=5666.31,
-    result_url='http://murky-pegboard.biz',
-    score=8596.55,
-    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.CANCELLED,
+    result_url='https://capital-media.name',
+    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.COMPLETED,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:

@@ -228,11 +228,10 @@ res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_
         operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations(
             amount=9554.11,
             currency=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency.EUR,
-            lohnart=496976,
-            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.MONTH,
+            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.HOUR,
         ),
     ],
-    effective_date=dateutil.parser.isoparse('2021-11-01T07:55:47.162Z'),
+    effective_date=dateutil.parser.isoparse('2022-09-23T20:02:32.324Z'),
 ))
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:

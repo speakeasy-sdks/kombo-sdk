@@ -94,12 +94,6 @@ s = kombo.Kombo(
 req = operations.PostConnectCreateLinkRequestBody(
     end_user_email='Barney59@yahoo.com',
     end_user_organization_name='Peso Cotton',
-    end_user_origin_id='Roentgenium Honda reinvent',
-    integration_category=operations.PostConnectCreateLinkRequestBodyIntegrationCategory.ATS,
-    integration_tool=operations.PostConnectCreateLinkRequestBodyIntegrationTool.GREENHOUSE,
-    language=operations.PostConnectCreateLinkRequestBodyLanguage.EN,
-    remote_environment='platforms male',
-    scope_config_id='Cis Northeast Chrysler',
 )
 
 res = s.kombo_connect.post_connect_create_link(req)
