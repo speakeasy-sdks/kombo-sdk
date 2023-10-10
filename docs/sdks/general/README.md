@@ -213,9 +213,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_integrations_integration_id_relink(integration_id='below', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody(
-    language=operations.PostIntegrationsIntegrationIDRelinkRequestBodyLanguage.FR,
-))
+res = s.general.post_integrations_integration_id_relink(integration_id='below', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody())
 
 if res.post_integrations_integration_id_relink_successful_response is not None:
     # handle response
@@ -275,17 +273,16 @@ s = kombo.Kombo(
 
 res = s.general.post_passthrough_tool_api(api='Carolina', tool='reboot', request_body=operations.PostPassthroughToolAPIRequestBody(
     api_options={
-        "occaecati": 'Avon',
+        "Metal": 'Chico',
     },
-    data='purple',
     headers={
-        "id": 'mint',
+        "Dakota": 'Music',
     },
     method=operations.PostPassthroughToolAPIRequestBodyMethod.DELETE,
     params={
-        "alias": 'Madagascar',
+        "North": 'firewall',
     },
-    path='/rescue',
+    path='/opt/share',
 ))
 
 if res.post_passthrough_tool_api_successful_response is not None:

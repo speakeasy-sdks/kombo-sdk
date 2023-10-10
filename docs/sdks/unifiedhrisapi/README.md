@@ -228,12 +228,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisAbsenceTypesRequest(
     x_integration_id='generate',
-    cursor='lest hm',
-    ids='Van',
-    include_deleted=shared.GetHrisAbsenceTypesParameterIncludeDeleted.TRUE,
-    page_size=30773,
-    remote_ids='lumen Engineer',
-    updated_after=dateutil.parser.isoparse('2023-04-01T01:41:47.003Z'),
 )
 
 res = s.unified_hris_api.get_hris_absence_types(req)
@@ -365,17 +359,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisAbsencesRequest(
     x_integration_id='invoice Universal moratorium',
-    cursor='Managed',
-    date_from=dateutil.parser.isoparse('2021-12-17T14:47:51.540Z'),
-    date_until=dateutil.parser.isoparse('2022-01-10T20:00:25.489Z'),
-    employee_id='Division',
-    ids='Card Hills sint',
-    include_deleted=shared.GetHrisAbsencesParameterIncludeDeleted.FALSE,
-    page_size=915477,
-    remote_ids='Loan South tesla',
-    time_from=dateutil.parser.isoparse('2022-11-11T20:52:41.794Z'),
-    time_until=dateutil.parser.isoparse('2023-09-26T15:38:09.602Z'),
-    updated_after=dateutil.parser.isoparse('2021-05-31T16:34:26.638Z'),
 )
 
 res = s.unified_hris_api.get_hris_absences(req)
@@ -565,19 +548,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisEmployeesRequest(
     x_integration_id='backing Paradigm Manager',
-    cursor='Maserati Account',
-    employment_status=shared.GetHrisEmployeesParameterEmploymentStatus.INACTIVE,
-    employment_statuses='quantify HTTP',
-    group_ids='amidst primary Sedan',
-    ids='Van Road',
-    include_deleted=shared.GetHrisEmployeesParameterIncludeDeleted.FALSE,
-    legal_entity_ids='female',
-    page_size=593444,
-    personal_emails='person gleefully',
-    remote_ids='Architect HDD Producer',
-    updated_after=dateutil.parser.isoparse('2023-08-31T15:42:30.093Z'),
-    work_emails='Portugal Comoro Cheese',
-    work_location_ids='Progressive utilize violet',
 )
 
 res = s.unified_hris_api.get_hris_employees(req)
@@ -733,12 +703,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisEmploymentsRequest(
     x_integration_id='technologies',
-    cursor='Volvo veniam Sedan',
-    ids='North',
-    include_deleted=shared.GetHrisEmploymentsParameterIncludeDeleted.TRUE,
-    page_size=358107,
-    remote_ids='Forward bypassing Practical',
-    updated_after=dateutil.parser.isoparse('2021-06-28T15:13:08.997Z'),
 )
 
 res = s.unified_hris_api.get_hris_employments(req)
@@ -918,12 +882,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisGroupsRequest(
     x_integration_id='Senior Automated',
-    cursor='Southeast',
-    ids='compelling',
-    include_deleted=shared.GetHrisGroupsParameterIncludeDeleted.TRUE,
-    page_size=346950,
-    remote_ids='plum Borders',
-    updated_after=dateutil.parser.isoparse('2022-02-27T15:40:24.654Z'),
 )
 
 res = s.unified_hris_api.get_hris_groups(req)
@@ -1015,12 +973,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisLegalEntitiesRequest(
     x_integration_id='drive Northwest Plastic',
-    cursor='Senior Assimilated',
-    ids='Classical',
-    include_deleted=shared.GetHrisLegalEntitiesParameterIncludeDeleted.FALSE,
-    page_size=111417,
-    remote_ids='Electric South hertz',
-    updated_after=dateutil.parser.isoparse('2021-02-27T19:13:09.988Z'),
 )
 
 res = s.unified_hris_api.get_hris_legal_entities(req)
@@ -1164,12 +1116,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisLocationsRequest(
     x_integration_id='Trial Handcrafted',
-    cursor='and Silver',
-    ids='non bypassing',
-    include_deleted=shared.GetHrisLocationsParameterIncludeDeleted.FALSE,
-    page_size=733594,
-    remote_ids='driver synthesize Clothing',
-    updated_after=dateutil.parser.isoparse('2023-12-18T01:12:23.056Z'),
 )
 
 res = s.unified_hris_api.get_hris_locations(req)
@@ -1351,12 +1297,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisTeamsRequest(
     x_integration_id='Riyal Principal',
-    cursor='Assistant Southwest',
-    ids='Pants Diesel Funk',
-    include_deleted=shared.GetHrisTeamsParameterIncludeDeleted.TRUE,
-    page_size=810921,
-    remote_ids='Bicycle Northeast',
-    updated_after=dateutil.parser.isoparse('2022-12-10T09:06:01.220Z'),
 )
 
 res = s.unified_hris_api.get_hris_teams(req)
@@ -1456,13 +1396,6 @@ s = kombo.Kombo(
 
 req = operations.GetHrisTimeOffBalancesRequest(
     x_integration_id='hm',
-    cursor='Avon Strategist proximal',
-    employee_id='visualize',
-    ids='Southeast Northeast Soft',
-    include_deleted=shared.GetHrisTimeOffBalancesParameterIncludeDeleted.TRUE,
-    page_size=82889,
-    remote_ids='strategic softball Gorgeous',
-    updated_after=dateutil.parser.isoparse('2022-06-28T20:18:42.618Z'),
 )
 
 res = s.unified_hris_api.get_hris_time_off_balances(req)
@@ -1551,34 +1484,17 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='provided', employee_id='Chips', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
-    date_of_birth=dateutil.parser.isoparse('2021-11-27T09:36:38.406Z'),
-    first_name='Cecil',
-    gender=shared.PatchHrisEmployeesEmployeeIDRequestBodyGender.NOT_SPECIFIED,
-    home_address=shared.PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress(
-        city='Hoffman Estates',
-        country='Tunisia',
-        state='Hampshire Bayonne',
-        street_1='Avon indexing',
-        street_2='Account Turnpike',
-        zip_code='68315-1341',
-    ),
-    job_title='Internal Communications Technician',
-    last_name='Emmerich',
-    marital_status=shared.PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus.SINGLE,
-    mobile_phone_number='lest',
-    nationality='Recumbent Corporate',
+    first_name='Elisha',
+    home_address=shared.PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress(),
+    last_name='Dach',
     remote_fields=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields(
         humaans=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans(
             employee={
-                "nulla": 'Rock',
+                "whether": 'Loan',
             },
         ),
     ),
-    ssn='kilogram impactful',
-    start_date=dateutil.parser.isoparse('2022-11-13T12:27:41.052Z'),
-    tax_id='underneath Account',
-    termination_date=dateutil.parser.isoparse('2022-01-03T14:46:28.307Z'),
-    work_email='Stan96@gmail.com',
+    work_email='Kolby6@gmail.com',
 ))
 
 if res.patch_hris_employees_employee_id_successful_response is not None:
@@ -1691,17 +1607,8 @@ s = kombo.Kombo(
 
 res = s.unified_hris_api.post_hris_absences(x_integration_id='Plastic', request_body=operations.PostHrisAbsencesRequestBody(
     absence_type_id='Denar',
-    amount=7894.91,
-    employee_id='shocking',
-    employee_note='Beauty Lead quantify',
-    end_date=dateutil.parser.isoparse('2022-01-30T21:59:00.874Z'),
-    end_half_day=False,
-    end_time='Central conglomeration',
-    start_date=dateutil.parser.isoparse('2023-12-30T22:39:00.825Z'),
-    start_half_day=False,
-    start_time='Cis East society',
-    status=operations.PostHrisAbsencesRequestBodyStatus.APPROVED,
-    unit=operations.PostHrisAbsencesRequestBodyUnit.DAYS,
+    employee_id='transition lux Beauty',
+    employee_note='Martinique corporis',
 ))
 
 if res.post_hris_absences_successful_response is not None:
@@ -1819,30 +1726,17 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.post_hris_employees(x_integration_id='parse', request_body=operations.PostHrisEmployeesRequestBody(
-    date_of_birth=dateutil.parser.isoparse('2021-05-20T05:49:34.914Z'),
-    first_name='Jennings',
-    gender=operations.PostHrisEmployeesRequestBodyGender.MALE,
-    home_address=operations.PostHrisEmployeesRequestBodyHomeAddress(
-        city='Lake Madelynn',
-        country='Somalia',
-        state='Hyundai',
-        street_1='Home meh navigating',
-        street_2='Manat neutral Ohio',
-        zip_code='60126-4299',
-    ),
-    job_title='Customer Usability Liaison',
-    last_name='Stanton',
-    mobile_phone_number='Loan Folding Rap',
-    nationality='Pound badge',
+    first_name='Brandy',
+    home_address=operations.PostHrisEmployeesRequestBodyHomeAddress(),
+    last_name='Kulas',
     remote_fields=operations.PostHrisEmployeesRequestBodyRemoteFields(
         humaans=operations.PostHrisEmployeesRequestBodyRemoteFieldsHumaans(
             employee={
-                "fugit": 'Creative',
+                "Pants": 'Platinum',
             },
         ),
     ),
-    start_date=dateutil.parser.isoparse('2021-06-12T01:54:41.608Z'),
-    work_email='Aubree_Ledner@gmail.com',
+    work_email='Albert_Kunde@hotmail.com',
 ))
 
 if res.post_hris_employees_successful_response is not None:
