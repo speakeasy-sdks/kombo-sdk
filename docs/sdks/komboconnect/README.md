@@ -44,6 +44,7 @@ res = s.kombo_connect.post_connect_activate_integration(req)
 
 if res.post_connect_activate_integration_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -100,6 +101,7 @@ res = s.kombo_connect.post_connect_create_link(req)
 
 if res.post_connect_create_link_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

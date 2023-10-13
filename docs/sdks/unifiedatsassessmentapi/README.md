@@ -29,6 +29,7 @@ res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -68,6 +69,7 @@ res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='Con
 
 if res.get_assessment_packages_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -165,6 +167,7 @@ res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_res
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -213,6 +216,7 @@ res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='Aut
 
 if res.put_assessment_packages_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

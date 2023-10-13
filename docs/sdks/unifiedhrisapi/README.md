@@ -97,6 +97,7 @@ res = s.unified_hris_api.delete_hris_absences_absence_id(x_integration_id='Movie
 
 if res.delete_hris_absences_absence_id_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -234,6 +235,7 @@ res = s.unified_hris_api.get_hris_absence_types(req)
 
 if res.get_hris_absence_types_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -365,6 +367,7 @@ res = s.unified_hris_api.get_hris_absences(req)
 
 if res.get_hris_absences_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -554,6 +557,7 @@ res = s.unified_hris_api.get_hris_employees(req)
 
 if res.get_hris_employees_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -709,6 +713,7 @@ res = s.unified_hris_api.get_hris_employments(req)
 
 if res.get_hris_employments_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -888,6 +893,7 @@ res = s.unified_hris_api.get_hris_groups(req)
 
 if res.get_hris_groups_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -979,6 +985,7 @@ res = s.unified_hris_api.get_hris_legal_entities(req)
 
 if res.get_hris_legal_entities_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1122,6 +1129,7 @@ res = s.unified_hris_api.get_hris_locations(req)
 
 if res.get_hris_locations_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1303,6 +1311,7 @@ res = s.unified_hris_api.get_hris_teams(req)
 
 if res.get_hris_teams_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1402,6 +1411,7 @@ res = s.unified_hris_api.get_hris_time_off_balances(req)
 
 if res.get_hris_time_off_balances_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1499,6 +1509,7 @@ res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='prov
 
 if res.patch_hris_employees_employee_id_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1613,6 +1624,7 @@ res = s.unified_hris_api.post_hris_absences(x_integration_id='Plastic', request_
 
 if res.post_hris_absences_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1741,6 +1753,7 @@ res = s.unified_hris_api.post_hris_employees(x_integration_id='parse', request_b
 
 if res.post_hris_employees_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1778,6 +1791,7 @@ res = s.unified_hris_api.post_hris_employees_employee_id_attachments(x_integrati
 
 if res.post_hris_employees_employee_id_attachments_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

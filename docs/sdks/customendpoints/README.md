@@ -31,6 +31,7 @@ res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta'
 
 if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='generat
 
 if res.post_custom_datev_passthrough_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -109,6 +111,7 @@ res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='f
 
 if res.post_custom_datev_push_data_general_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -148,6 +151,7 @@ res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='S
 
 if res.post_custom_datev_push_data_payroll_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -236,6 +240,7 @@ res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -339,6 +344,7 @@ res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(
 
 if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
