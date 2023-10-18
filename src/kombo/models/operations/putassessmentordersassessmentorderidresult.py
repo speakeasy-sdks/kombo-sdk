@@ -10,11 +10,10 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes:
     field: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field') }})
@@ -30,7 +29,6 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResultRequestBody:
     r"""PUT /assessment/orders/:assessment_order_id/result request body"""
@@ -41,11 +39,10 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequestBody:
     result_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('result_url') }})
     status: PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""Status of the assessment. Must be one of `COMPLETE` or `CANCELLED`."""
-    attributes: Optional[list[PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
+    attributes: Optional[List[PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     max_score: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_score'), 'exclude': lambda f: f is None }})
     score: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -62,7 +59,6 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -74,7 +70,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONStatus(str, En
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -85,7 +80,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -97,7 +91,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONStatus(str, En
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -108,7 +101,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -120,7 +112,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONStatus(str, En
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -131,7 +122,6 @@ class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -143,14 +133,12 @@ class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONStatus(str, En
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

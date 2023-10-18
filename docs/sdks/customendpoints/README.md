@@ -66,9 +66,9 @@ s = kombo.Kombo(
 
 res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='generating', request_body=operations.PostCustomDatevPassthroughRequestBody(
     accounting_month=dateutil.parser.isoparse('2023-04-24T14:34:59.751Z'),
-    file_content='AI',
-    file_name='interface.wav',
-    file_type=operations.PostCustomDatevPassthroughRequestBodyFileType.BEWEGUNGSDATEN,
+    file_content='East',
+    file_name='relationships.png',
+    file_type=operations.PostCustomDatevPassthroughRequestBodyFileType.STAMMDATEN,
     target_system=operations.PostCustomDatevPassthroughRequestBodyTargetSystem.LODAS,
 ))
 

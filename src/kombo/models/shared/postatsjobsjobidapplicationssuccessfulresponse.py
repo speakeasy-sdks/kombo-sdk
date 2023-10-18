@@ -7,11 +7,10 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateEmailAddresses:
     type: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -22,7 +21,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateEmailAddresses:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateLocation:
     r"""Location of the candidate."""
@@ -39,7 +37,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateLocation:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidatePhoneNumbers:
     phone_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
@@ -50,7 +47,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidatePhoneNumbers:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateSocialMedia:
     link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link') }})
@@ -61,7 +57,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateSocialMedia:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateTags:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -72,7 +67,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateTags:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -83,7 +77,7 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate:
     r"""The current company of the candidate."""
     confidential: Optional[bool] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confidential') }})
     r"""Whether the candidate's profile is confidential in the ATS."""
-    email_addresses: Optional[list[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateEmailAddresses]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_addresses') }})
+    email_addresses: Optional[List[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateEmailAddresses]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_addresses') }})
     r"""A list of email addresses of the candidate with an optional type. If an email address is invalid, it will be filtered out."""
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     r"""First name of the candidate."""
@@ -92,13 +86,13 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate:
     r"""Last name of the candidate."""
     location: Optional[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateLocation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location') }})
     r"""Location of the candidate."""
-    phone_numbers: Optional[list[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidatePhoneNumbers]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_numbers') }})
+    phone_numbers: Optional[List[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidatePhoneNumbers]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_numbers') }})
     r"""A list of phone numbers of the candidate."""
     remote_created_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -108,10 +102,10 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate:
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    social_media: Optional[list[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateSocialMedia]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_media') }})
+    social_media: Optional[List[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateSocialMedia]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_media') }})
     r"""List of social media accounts of the candidate."""
     source: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
-    tags: list[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateTags] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
+    tags: List[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidateTags] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
     title: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
     r"""The current job title of the candidate."""
     
@@ -119,7 +113,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCurrentStage:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -130,7 +123,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataCurrentStage:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseDataJob:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -152,7 +144,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseDataOutcome(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseData:
     candidate: Optional[PostAtsJobsJobIDApplicationsSuccessfulResponseDataCandidate] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
@@ -177,7 +168,7 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseData:
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -195,7 +186,6 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponseWarnings:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -204,11 +194,10 @@ class PostAtsJobsJobIDApplicationsSuccessfulResponseWarnings:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsSuccessfulResponse:
     data: PostAtsJobsJobIDApplicationsSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
     status: PostAtsJobsJobIDApplicationsSuccessfulResponseStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    warnings: list[PostAtsJobsJobIDApplicationsSuccessfulResponseWarnings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('warnings') }})
+    warnings: List[PostAtsJobsJobIDApplicationsSuccessfulResponseWarnings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('warnings') }})
     
 

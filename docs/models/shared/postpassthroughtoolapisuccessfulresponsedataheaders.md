@@ -12,6 +12,6 @@ postPassthroughToolAPISuccessfulResponseDataHeaders: str = /* values here */
 ### 
 
 ```python
-postPassthroughToolAPISuccessfulResponseDataHeaders: list[str] = /* values here */
+postPassthroughToolAPISuccessfulResponseDataHeaders: List[str] = /* values here */
 ```
 

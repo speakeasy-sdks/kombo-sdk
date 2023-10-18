@@ -13,7 +13,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAtsTagsRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -35,7 +34,6 @@ class GetAtsTagsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -47,7 +45,6 @@ class GetAtsTags503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -58,7 +55,6 @@ class GetAtsTags503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -70,7 +66,6 @@ class GetAtsTags404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -81,7 +76,6 @@ class GetAtsTags404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -93,7 +87,6 @@ class GetAtsTags403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -104,7 +97,6 @@ class GetAtsTags403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -116,14 +108,12 @@ class GetAtsTags401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsTags401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: GetAtsTags401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: GetAtsTags401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

@@ -156,13 +156,13 @@ s = kombo.Kombo(
 res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='male', assessment_order_id='until', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
     attributes=[
         operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes(
-            field='ampere',
-            value='Lesotho Pataca Gasoline',
+            field='unleash',
+            value='Southeast',
         ),
     ],
-    completed_at=dateutil.parser.isoparse('2023-11-13T01:43:34.363Z'),
-    result_url='https://capital-media.name',
-    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.COMPLETED,
+    completed_at=dateutil.parser.isoparse('2021-02-14T11:57:30.916Z'),
+    result_url='http://impractical-mallet.net',
+    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.CANCELLED,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:
@@ -208,8 +208,8 @@ res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='Aut
         operations.PutAssessmentPackagesRequestBodyPackages(
             description='Implemented 3rd generation groupware',
             id='<ID>',
-            name='Savings National',
-            type=operations.PutAssessmentPackagesRequestBodyPackagesType.BACKGROUND_CHECK,
+            name='commodi',
+            type=operations.PutAssessmentPackagesRequestBodyPackagesType.BEHAVIORAL,
         ),
     ],
 ))

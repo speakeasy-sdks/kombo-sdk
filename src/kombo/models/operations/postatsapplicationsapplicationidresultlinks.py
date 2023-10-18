@@ -8,11 +8,10 @@ from ..shared import postatsapplicationsapplicationidresultlinkssuccessfulrespon
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes:
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
@@ -24,14 +23,13 @@ class PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails:
     r"""Additional details with attributes that will be added to the result. This can be percentages, scores, or any text.
 
     We generally recommend using short attribute keys and a short custom_field_name_prefix to avoid overflowing the ATS UI.
     """
-    attributes: list[PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
+    attributes: List[PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
     custom_field_name_prefix: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_name_prefix') }})
     r"""That will be added to the attribute labels if they are used for custom fields. If you specify `Acme:` as the prefix, the custom field will be named `Acme: Score`. Putting in the name of your company/product is a good idea."""
     
@@ -39,7 +37,6 @@ class PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinksRequestBody:
     r"""POST /ats/applications/:application_id/result-links request body"""
@@ -56,7 +53,6 @@ class PostAtsApplicationsApplicationIDResultLinksRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinksRequest:
     application_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'application_id', 'style': 'simple', 'explode': False }})
@@ -70,7 +66,6 @@ class PostAtsApplicationsApplicationIDResultLinksRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -82,7 +77,6 @@ class PostAtsApplicationsApplicationIDResultLinks503ApplicationJSONStatus(str, E
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -93,7 +87,6 @@ class PostAtsApplicationsApplicationIDResultLinks503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -105,7 +98,6 @@ class PostAtsApplicationsApplicationIDResultLinks404ApplicationJSONStatus(str, E
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -116,7 +108,6 @@ class PostAtsApplicationsApplicationIDResultLinks404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -128,7 +119,6 @@ class PostAtsApplicationsApplicationIDResultLinks403ApplicationJSONStatus(str, E
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -139,7 +129,6 @@ class PostAtsApplicationsApplicationIDResultLinks403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -151,14 +140,12 @@ class PostAtsApplicationsApplicationIDResultLinks401ApplicationJSONStatus(str, E
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDResultLinks401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostAtsApplicationsApplicationIDResultLinks401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostAtsApplicationsApplicationIDResultLinks401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

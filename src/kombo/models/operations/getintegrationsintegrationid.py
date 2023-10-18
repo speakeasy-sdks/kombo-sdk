@@ -11,7 +11,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDRequest:
     integration_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'integration_id', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class GetIntegrationsIntegrationIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationID401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -33,14 +31,12 @@ class GetIntegrationsIntegrationID401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationID401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: GetIntegrationsIntegrationID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: GetIntegrationsIntegrationID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

@@ -16,7 +16,6 @@ class PostAtsApplicationsApplicationIDNotesRequestBodyContentType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor:
     r"""Teamtailor specific remote fields for the note."""
@@ -27,7 +26,6 @@ class PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields:
     r"""Tool specific remote fields for the note."""
@@ -38,7 +36,6 @@ class PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotesRequestBody:
     r"""POST /ats/applications/:application_id/notes request body"""
@@ -49,7 +46,6 @@ class PostAtsApplicationsApplicationIDNotesRequestBody:
     remote_fields: Optional[PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Tool specific remote fields for the note."""
     
-
 
 
 
@@ -66,7 +62,6 @@ class PostAtsApplicationsApplicationIDNotesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -78,7 +73,6 @@ class PostAtsApplicationsApplicationIDNotes503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -89,7 +83,6 @@ class PostAtsApplicationsApplicationIDNotes503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -101,7 +94,6 @@ class PostAtsApplicationsApplicationIDNotes404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -112,7 +104,6 @@ class PostAtsApplicationsApplicationIDNotes404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -124,7 +115,6 @@ class PostAtsApplicationsApplicationIDNotes403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -135,7 +125,6 @@ class PostAtsApplicationsApplicationIDNotes403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -147,14 +136,12 @@ class PostAtsApplicationsApplicationIDNotes401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsApplicationsApplicationIDNotes401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostAtsApplicationsApplicationIDNotes401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostAtsApplicationsApplicationIDNotes401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

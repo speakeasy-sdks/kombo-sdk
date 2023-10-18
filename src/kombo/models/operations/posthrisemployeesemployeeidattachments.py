@@ -9,7 +9,6 @@ from ..shared import posthrisemployeesemployeeidattachmentssuccessfulresponse as
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PostHrisEmployeesEmployeeIDAttachmentsRequest:
     employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
@@ -19,7 +18,6 @@ class PostHrisEmployeesEmployeeIDAttachmentsRequest:
     post_hris_employees_employee_id_attachments_request_body: Optional[shared_posthrisemployeesemployeeidattachmentsrequestbody.PostHrisEmployeesEmployeeIDAttachmentsRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""POST /hris/employees/:employee_id/attachments request body"""
     
-
 
 
 

@@ -7,7 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 class GetHrisAbsenceTypesSuccessfulResponseDataResultsUnit(str, Enum):
     HOURS = 'HOURS'
@@ -15,7 +15,6 @@ class GetHrisAbsenceTypesSuccessfulResponseDataResultsUnit(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisAbsenceTypesSuccessfulResponseDataResults:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -28,7 +27,7 @@ class GetHrisAbsenceTypesSuccessfulResponseDataResults:
     r"""Whether the integration supports half-day absences (represented through `start_half_day` and `end_half_day`) for this absence type."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -40,12 +39,11 @@ class GetHrisAbsenceTypesSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisAbsenceTypesSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: list[GetHrisAbsenceTypesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisAbsenceTypesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -54,7 +52,6 @@ class GetHrisAbsenceTypesSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisAbsenceTypesSuccessfulResponse:
     data: GetHrisAbsenceTypesSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

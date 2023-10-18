@@ -12,7 +12,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneralRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -24,7 +23,6 @@ class PostCustomDatevPushDataGeneralRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -36,7 +34,6 @@ class PostCustomDatevPushDataGeneral503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -47,7 +44,6 @@ class PostCustomDatevPushDataGeneral503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -59,7 +55,6 @@ class PostCustomDatevPushDataGeneral404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -70,7 +65,6 @@ class PostCustomDatevPushDataGeneral404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -82,7 +76,6 @@ class PostCustomDatevPushDataGeneral403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -93,7 +86,6 @@ class PostCustomDatevPushDataGeneral403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -105,14 +97,12 @@ class PostCustomDatevPushDataGeneral401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneral401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostCustomDatevPushDataGeneral401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostCustomDatevPushDataGeneral401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

@@ -228,7 +228,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisAbsenceTypesRequest(
-    x_integration_id='generate',
+    x_integration_id='Oval',
 )
 
 res = s.unified_hris_api.get_hris_absence_types(req)
@@ -360,7 +360,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisAbsencesRequest(
-    x_integration_id='invoice Universal moratorium',
+    x_integration_id='infect',
 )
 
 res = s.unified_hris_api.get_hris_absences(req)
@@ -550,7 +550,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisEmployeesRequest(
-    x_integration_id='backing Paradigm Manager',
+    x_integration_id='inside',
 )
 
 res = s.unified_hris_api.get_hris_employees(req)
@@ -706,7 +706,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisEmploymentsRequest(
-    x_integration_id='technologies',
+    x_integration_id='Elegant',
 )
 
 res = s.unified_hris_api.get_hris_employments(req)
@@ -886,7 +886,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisGroupsRequest(
-    x_integration_id='Senior Automated',
+    x_integration_id='Zloty',
 )
 
 res = s.unified_hris_api.get_hris_groups(req)
@@ -978,7 +978,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisLegalEntitiesRequest(
-    x_integration_id='drive Northwest Plastic',
+    x_integration_id='into',
 )
 
 res = s.unified_hris_api.get_hris_legal_entities(req)
@@ -1122,7 +1122,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisLocationsRequest(
-    x_integration_id='Trial Handcrafted',
+    x_integration_id='input',
 )
 
 res = s.unified_hris_api.get_hris_locations(req)
@@ -1304,7 +1304,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisTeamsRequest(
-    x_integration_id='Riyal Principal',
+    x_integration_id='Consultant',
 )
 
 res = s.unified_hris_api.get_hris_teams(req)
@@ -1404,7 +1404,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisTimeOffBalancesRequest(
-    x_integration_id='hm',
+    x_integration_id='Southwest',
 )
 
 res = s.unified_hris_api.get_hris_time_off_balances(req)
@@ -1617,9 +1617,9 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.post_hris_absences(x_integration_id='Plastic', request_body=operations.PostHrisAbsencesRequestBody(
-    absence_type_id='Denar',
-    employee_id='transition lux Beauty',
-    employee_note='Martinique corporis',
+    absence_type_id='East',
+    employee_id='application',
+    employee_note='transition',
 ))
 
 if res.post_hris_absences_successful_response is not None:

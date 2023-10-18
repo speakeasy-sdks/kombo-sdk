@@ -12,7 +12,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequest:
     employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
@@ -26,7 +25,6 @@ class PatchHrisEmployeesEmployeeIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -38,7 +36,6 @@ class PatchHrisEmployeesEmployeeID503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -49,7 +46,6 @@ class PatchHrisEmployeesEmployeeID503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -61,7 +57,6 @@ class PatchHrisEmployeesEmployeeID404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -72,7 +67,6 @@ class PatchHrisEmployeesEmployeeID404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -84,7 +78,6 @@ class PatchHrisEmployeesEmployeeID403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -95,7 +88,6 @@ class PatchHrisEmployeesEmployeeID403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -107,14 +99,12 @@ class PatchHrisEmployeesEmployeeID401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeID401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PatchHrisEmployeesEmployeeID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PatchHrisEmployeesEmployeeID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

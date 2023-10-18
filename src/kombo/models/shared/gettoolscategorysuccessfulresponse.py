@@ -5,10 +5,10 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataToolsAssets:
     icon_black_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon_black_url') }})
@@ -19,7 +19,6 @@ class GetToolsCategorySuccessfulResponseDataToolsAssets:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -29,7 +28,6 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels:
     r"""List of models we can read for this tool."""
@@ -40,7 +38,6 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions:
     r"""List of supported write actions for this tool."""
@@ -51,19 +48,17 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataToolsCoverage:
     r"""This describes the supported models and actions of this tool."""
-    features: list[GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
-    read_models: list[GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('read_models') }})
-    write_actions: list[GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('write_actions') }})
+    features: List[GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
+    read_models: List[GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('read_models') }})
+    write_actions: List[GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('write_actions') }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseDataTools:
     assets: GetToolsCategorySuccessfulResponseDataToolsAssets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
@@ -76,10 +71,9 @@ class GetToolsCategorySuccessfulResponseDataTools:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseData:
-    tools: list[GetToolsCategorySuccessfulResponseDataTools] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tools') }})
+    tools: List[GetToolsCategorySuccessfulResponseDataTools] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tools') }})
     
 
 
@@ -88,7 +82,6 @@ class GetToolsCategorySuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponse:
     data: GetToolsCategorySuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

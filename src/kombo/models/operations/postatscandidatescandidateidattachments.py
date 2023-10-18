@@ -17,7 +17,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType(str, Enum
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -34,7 +33,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
@@ -45,7 +43,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePo
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse:
     r"""Fields specific to Greenhouse."""
@@ -56,7 +53,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
@@ -67,7 +63,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBody:
     r"""POST /ats/candidates/:candidate_id/attachments request body"""
@@ -75,7 +70,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBody:
     remote_fields: Optional[PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
-
 
 
 
@@ -92,7 +86,6 @@ class PostAtsCandidatesCandidateIDAttachmentsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -104,7 +97,6 @@ class PostAtsCandidatesCandidateIDAttachments503ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -115,7 +107,6 @@ class PostAtsCandidatesCandidateIDAttachments503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -127,7 +118,6 @@ class PostAtsCandidatesCandidateIDAttachments404ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -138,7 +128,6 @@ class PostAtsCandidatesCandidateIDAttachments404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -150,7 +139,6 @@ class PostAtsCandidatesCandidateIDAttachments403ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -161,7 +149,6 @@ class PostAtsCandidatesCandidateIDAttachments403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -173,14 +160,12 @@ class PostAtsCandidatesCandidateIDAttachments401ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachments401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostAtsCandidatesCandidateIDAttachments401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostAtsCandidatesCandidateIDAttachments401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

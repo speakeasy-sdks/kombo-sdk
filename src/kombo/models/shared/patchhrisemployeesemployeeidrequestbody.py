@@ -7,7 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class PatchHrisEmployeesEmployeeIDRequestBodyGender(str, Enum):
     r"""The gender of the employee."""
@@ -18,7 +18,6 @@ class PatchHrisEmployeesEmployeeIDRequestBodyGender(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress:
     r"""The employee's home address."""
@@ -44,18 +43,16 @@ class PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans:
     r"""Fields specific to Humaans."""
-    employee: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
+    employee: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Humaans `Employee` object."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific HRIS systems."""
@@ -66,7 +63,6 @@ class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequestBody:
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})

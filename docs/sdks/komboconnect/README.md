@@ -37,7 +37,7 @@ s = kombo.Kombo(
 )
 
 req = operations.PostConnectActivateIntegrationRequestBody(
-    token='application',
+    token='Sleek',
 )
 
 res = s.kombo_connect.post_connect_activate_integration(req)
@@ -94,7 +94,7 @@ s = kombo.Kombo(
 
 req = operations.PostConnectCreateLinkRequestBody(
     end_user_email='Barney59@yahoo.com',
-    end_user_organization_name='Peso Cotton',
+    end_user_organization_name='Investment',
 )
 
 res = s.kombo_connect.post_connect_create_link(req)

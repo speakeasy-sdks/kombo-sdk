@@ -18,14 +18,12 @@ class PostIntegrationsIntegrationIDRelinkRequestBodyLanguage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelinkRequestBody:
     r"""POST /integrations/:integration_id/relink request body"""
     language: Optional[PostIntegrationsIntegrationIDRelinkRequestBodyLanguage] = dataclasses.field(default=PostIntegrationsIntegrationIDRelinkRequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language of the connection flow UI."""
     
-
 
 
 
@@ -40,7 +38,6 @@ class PostIntegrationsIntegrationIDRelinkRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelink401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -52,14 +49,12 @@ class PostIntegrationsIntegrationIDRelink401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelink401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostIntegrationsIntegrationIDRelink401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostIntegrationsIntegrationIDRelink401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

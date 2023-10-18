@@ -11,7 +11,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class GetCustomDatevDataPushesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -33,7 +31,6 @@ class GetCustomDatevDataPushes503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -44,7 +41,6 @@ class GetCustomDatevDataPushes503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -56,7 +52,6 @@ class GetCustomDatevDataPushes404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -67,7 +62,6 @@ class GetCustomDatevDataPushes404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -79,7 +73,6 @@ class GetCustomDatevDataPushes403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -90,7 +83,6 @@ class GetCustomDatevDataPushes403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -102,14 +94,12 @@ class GetCustomDatevDataPushes401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushes401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: GetCustomDatevDataPushes401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: GetCustomDatevDataPushes401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

@@ -24,7 +24,6 @@ class PostHrisAbsencesRequestBodyUnit(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsencesRequestBody:
     r"""POST /hris/absences request body"""
@@ -60,7 +59,6 @@ class PostHrisAbsencesRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostHrisAbsencesRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -72,7 +70,6 @@ class PostHrisAbsencesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -84,7 +81,6 @@ class PostHrisAbsences503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -95,7 +91,6 @@ class PostHrisAbsences503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -107,7 +102,6 @@ class PostHrisAbsences404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -118,7 +112,6 @@ class PostHrisAbsences404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -130,7 +123,6 @@ class PostHrisAbsences403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -141,7 +133,6 @@ class PostHrisAbsences403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -153,14 +144,12 @@ class PostHrisAbsences401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsences401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostHrisAbsences401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostHrisAbsences401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

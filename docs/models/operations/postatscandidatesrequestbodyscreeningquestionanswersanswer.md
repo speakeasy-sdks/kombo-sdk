@@ -24,7 +24,7 @@ postAtsCandidatesRequestBodyScreeningQuestionAnswersAnswer: float = /* values he
 ### 
 
 ```python
-postAtsCandidatesRequestBodyScreeningQuestionAnswersAnswer: list[str] = /* values here */
+postAtsCandidatesRequestBodyScreeningQuestionAnswersAnswer: List[str] = /* values here */
 ```
 
 ### 
