@@ -115,14 +115,14 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='Practical', candidate_id='Account', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
     remote_fields=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
         greenhouse=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
             post_headers=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
     tag=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='Manat',
+        name='string',
     ),
 ))
 
@@ -317,7 +317,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationStagesRequest(
-    x_integration_id='holistic',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_application_stages(req)
@@ -513,7 +513,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationsRequest(
-    x_integration_id='Internal',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_applications(req)
@@ -701,7 +701,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsCandidatesRequest(
-    x_integration_id='black',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_candidates(req)
@@ -913,7 +913,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsJobsRequest(
-    x_integration_id='national',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_jobs(req)
@@ -1041,7 +1041,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsTagsRequest(
-    x_integration_id='orchestrate',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_tags(req)
@@ -1177,7 +1177,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsUsersRequest(
-    x_integration_id='bus',
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_users(req)
@@ -1217,7 +1217,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='Supervisor', candidate_id='East', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
+res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='string', candidate_id='string', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
 
 if res.patch_ats_candidates_candidate_id_successful_response is not None:
     # handle response
@@ -1304,8 +1304,8 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='IB', application_id='South', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
-    content='FTM',
+res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
+    content='string',
     content_type=operations.PostAtsApplicationsApplicationIDNotesRequestBodyContentType.PLAIN_TEXT,
     remote_fields=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields(
         teamtailor=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor(),
@@ -1376,18 +1376,18 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='Electric', application_id='Computer', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
     details=operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails(
         attributes=[
             operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes(
                 key='<key>',
-                value='Account',
+                value='string',
             ),
         ],
-        custom_field_name_prefix='Gasoline',
+        custom_field_name_prefix='string',
     ),
-    label='magenta',
-    url='https://verifiable-buggy.com',
+    label='string',
+    url='https://flippant-consulting.com',
 ))
 
 if res.post_ats_applications_application_id_result_links_successful_response is not None:
@@ -1660,30 +1660,30 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates(x_integration_id='Principal', request_body=operations.PostAtsCandidatesRequestBody(
+res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_body=operations.PostAtsCandidatesRequestBody(
     application=operations.PostAtsCandidatesRequestBodyApplication(
-        job_id='Glens',
+        job_id='string',
     ),
     attachments=[
         operations.PostAtsCandidatesRequestBodyAttachments(
-            name='accidentally',
-            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.CV,
+            name='string',
+            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.OTHER,
         ),
     ],
     candidate=operations.PostAtsCandidatesRequestBodyCandidate(
-        email_address='Eva.Grant@yahoo.com',
-        first_name='Gust',
-        last_name='Wiegand',
+        email_address='Claudine15@hotmail.com',
+        first_name='Nona',
+        last_name='Reilly',
         location=operations.PostAtsCandidatesRequestBodyCandidateLocation(
-            country='Colombia',
+            country='Gibraltar',
         ),
         salary_expectations=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectations(
-            amount=922.33,
+            amount=6767.86,
             period=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
         ),
         social_links=[
             operations.PostAtsCandidatesRequestBodyCandidateSocialLinks(
-                url='http://respectful-inventor.biz',
+                url='http://caring-outlook.info',
             ),
         ],
     ),
@@ -1694,32 +1694,32 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='Principal', reques
         ),
         lever=operations.PostAtsCandidatesRequestBodyRemoteFieldsLever(
             candidate={
-                "Personal": 'Funk',
+                "key": 'string',
             },
         ),
         successfactors=operations.PostAtsCandidatesRequestBodyRemoteFieldsSuccessfactors(
             candidate={
-                "Electronic": 'deliver',
+                "key": 'string',
             },
             job_application={
-                "Progressive": 'Industrial',
+                "key": 'string',
             },
         ),
         teamtailor=operations.PostAtsCandidatesRequestBodyRemoteFieldsTeamtailor(
             candidate={
-                "drive": 'ASCII',
+                "key": 'string',
             },
         ),
         workable=operations.PostAtsCandidatesRequestBodyRemoteFieldsWorkable(
             candidate={
-                "Southeast": 'Northeast',
+                "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
         operations.PostAtsCandidatesRequestBodyScreeningQuestionAnswers(
-        dateutil.parser.isoparse('2022-10-16T05:46:39.439Z'),
-            question_id='Sedan',
+        False,
+            question_id='string',
         ),
     ],
     source=operations.PostAtsCandidatesRequestBodySource(),
@@ -1860,10 +1860,10 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='Assistant', candidate_id='dimly', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
     attachment=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment(
-        name='deport',
-        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.CV,
+        name='string',
+        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.OTHER,
     ),
     remote_fields=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse(
@@ -2029,23 +2029,23 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='Chicken', candidate_id='Antioch', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
     details=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails(
         attributes=[
             operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes(
                 key='<key>',
-                value='mint',
+                value='string',
             ),
         ],
-        custom_field_name_prefix='collaboration',
+        custom_field_name_prefix='string',
     ),
-    label='Cambridgeshire',
+    label='string',
     remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse(
             post_headers=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
-    url='https://insidious-gator.biz',
+    url='http://round-anorak.com',
 ))
 
 if res.post_ats_candidates_candidate_id_result_links_successful_response is not None:
@@ -2166,14 +2166,14 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='Specialist', candidate_id='Gorgeous', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
     remote_fields=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
             post_headers=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
     tag=operations.PostAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='Points',
+        name='string',
     ),
 ))
 
@@ -2428,27 +2428,27 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='Web', job_id='magenta', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
+res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='string', job_id='string', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
     attachments=[
         operations.PostAtsJobsJobIDApplicationsRequestBodyAttachments(
-            name='PCI',
-            type=operations.PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType.CV,
+            name='string',
+            type=operations.PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType.COVER_LETTER,
         ),
     ],
     candidate=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidate(
-        email_address='Michelle_Breitenberg92@gmail.com',
-        first_name='Marianne',
-        last_name='Crona',
+        email_address='Pierre_Pfeffer@yahoo.com',
+        first_name='Clarissa',
+        last_name='Davis',
         location=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation(
-            country='Sweden',
+            country='Portugal',
         ),
         salary_expectations=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations(
-            amount=4106.44,
+            amount=1065.03,
             period=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
         ),
         social_links=[
             operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks(
-                url='http://standard-naturalisation.info',
+                url='https://vain-pomelo.com',
             ),
         ],
     ),
@@ -2459,32 +2459,32 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='Web'
         ),
         lever=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever(
             candidate={
-                "Sausages": 'invoice',
+                "key": 'string',
             },
         ),
         successfactors=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors(
             candidate={
-                "Rubber": 'El',
+                "key": 'string',
             },
             job_application={
-                "toolset": 'interfaces',
+                "key": 'string',
             },
         ),
         teamtailor=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor(
             candidate={
-                "Samarium": 'Minivan',
+                "key": 'string',
             },
         ),
         workable=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable(
             candidate={
-                "THX": 'AI',
+                "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
         operations.PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers(
-        4392.57,
-            question_id='knowledgeably',
+        dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
+            question_id='string',
         ),
     ],
     source=operations.PostAtsJobsJobIDApplicationsRequestBodySource(),
@@ -2596,13 +2596,13 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='Francium', application_id='Cotton', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
+res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='string', application_id='string', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
     remote_fields=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields(
         greenhouse=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse(
             post_headers=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
-    stage_id='Garden',
+    stage_id='string',
 ))
 
 if res.put_ats_applications_application_id_stage_successful_response is not None:

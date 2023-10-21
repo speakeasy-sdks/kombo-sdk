@@ -29,7 +29,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.delete_integrations_integration_id(integration_id='Virginia', delete_integrations_integration_id_request_body=shared.DeleteIntegrationsIntegrationIDRequestBody())
+res = s.general.delete_integrations_integration_id(integration_id='string', delete_integrations_integration_id_request_body=shared.DeleteIntegrationsIntegrationIDRequestBody())
 
 if res.delete_integrations_integration_id_successful_response is not None:
     # handle response
@@ -96,7 +96,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.get_integrations_integration_id(integration_id='which')
+res = s.general.get_integrations_integration_id(integration_id='string')
 
 if res.get_integrations_integration_id_successful_response is not None:
     # handle response
@@ -171,7 +171,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_force_sync(x_integration_id='Electric', post_force_sync_request_body=shared.PostForceSyncRequestBody())
+res = s.general.post_force_sync(x_integration_id='string', post_force_sync_request_body=shared.PostForceSyncRequestBody())
 
 if res.post_force_sync_successful_response is not None:
     # handle response
@@ -218,7 +218,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_integrations_integration_id_relink(integration_id='below', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody())
+res = s.general.post_integrations_integration_id_relink(integration_id='string', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody())
 
 if res.post_integrations_integration_id_relink_successful_response is not None:
     # handle response
@@ -277,18 +277,18 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_passthrough_tool_api(api='Carolina', tool='reboot', request_body=operations.PostPassthroughToolAPIRequestBody(
+res = s.general.post_passthrough_tool_api(api='string', tool='string', request_body=operations.PostPassthroughToolAPIRequestBody(
     api_options={
-        "Metal": 'Chico',
+        "key": 'string',
     },
     headers={
-        "Dakota": 'Music',
+        "key": 'string',
     },
-    method=operations.PostPassthroughToolAPIRequestBodyMethod.DELETE,
+    method=operations.PostPassthroughToolAPIRequestBodyMethod.GET,
     params={
-        "North": 'firewall',
+        "key": 'string',
     },
-    path='/opt/share',
+    path='/usr/libexec',
 ))
 
 if res.post_passthrough_tool_api_successful_response is not None:

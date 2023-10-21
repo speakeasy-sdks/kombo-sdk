@@ -27,7 +27,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
 
 if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
@@ -64,10 +64,10 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='generating', request_body=operations.PostCustomDatevPassthroughRequestBody(
-    accounting_month=dateutil.parser.isoparse('2023-04-24T14:34:59.751Z'),
-    file_content='East',
-    file_name='relationships.png',
+res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='string', request_body=operations.PostCustomDatevPassthroughRequestBody(
+    accounting_month=dateutil.parser.isoparse('2022-07-06T23:12:46.749Z'),
+    file_content='string',
+    file_name='road_bedfordshire.jpg',
     file_type=operations.PostCustomDatevPassthroughRequestBodyFileType.STAMMDATEN,
     target_system=operations.PostCustomDatevPassthroughRequestBodyTargetSystem.LODAS,
 ))
@@ -107,7 +107,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='fulfil', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
+res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='string', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
 
 if res.post_custom_datev_push_data_general_successful_response is not None:
     # handle response
@@ -145,8 +145,8 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='Scandium', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
-    payroll_month=dateutil.parser.isoparse('2021-02-25T13:39:42.284Z'),
+res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='string', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
+    payroll_month=dateutil.parser.isoparse('2023-03-20T01:32:39.016Z'),
 ))
 
 if res.post_custom_datev_push_data_payroll_successful_response is not None:
@@ -227,15 +227,15 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='Cambridgeshire', employee_id='sensor', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
     compensations=[
         operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations(
-            amount=9554.11,
+            amount=675.48,
             currency=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency.EUR,
-            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.HOUR,
+            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.MONTH,
         ),
     ],
-    effective_date=dateutil.parser.isoparse('2022-09-23T20:02:32.324Z'),
+    effective_date=dateutil.parser.isoparse('2022-08-08T10:06:50.116Z'),
 ))
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:
@@ -324,21 +324,21 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='ampere', employee_id='bandwidth', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
     fixed_payments=[
         operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments(
-            amount=6262.65,
-            lohnart=3093.97,
+            amount=7452.45,
+            lohnart=1065.12,
         ),
     ],
     hourly_payments=[
         operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments(
-            hours=2503.18,
-            lohnart=2435.37,
+            hours=3274.06,
+            lohnart=6493.07,
         ),
     ],
     payroll_run=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun(
-        date_=dateutil.parser.isoparse('2022-12-07T19:19:50.329Z'),
+        date_=dateutil.parser.isoparse('2022-11-17T18:13:49.919Z'),
     ),
 ))
 

@@ -25,7 +25,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='neural', cursor='transmitter', page_size=674164)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
@@ -65,7 +65,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='Concrete')
+res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='string')
 
 if res.get_assessment_packages_successful_response is not None:
     # handle response
@@ -153,16 +153,16 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='male', assessment_order_id='until', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='string', assessment_order_id='string', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
     attributes=[
         operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes(
-            field='unleash',
-            value='Southeast',
+            field='string',
+            value='string',
         ),
     ],
-    completed_at=dateutil.parser.isoparse('2021-02-14T11:57:30.916Z'),
-    result_url='http://impractical-mallet.net',
-    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.CANCELLED,
+    completed_at=dateutil.parser.isoparse('2023-02-12T07:45:50.009Z'),
+    result_url='https://white-theism.biz',
+    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.OPEN,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:
@@ -203,12 +203,12 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='Automated', request_body=operations.PutAssessmentPackagesRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='string', request_body=operations.PutAssessmentPackagesRequestBody(
     packages=[
         operations.PutAssessmentPackagesRequestBodyPackages(
-            description='Implemented 3rd generation groupware',
+            description='Future-proofed 5th generation framework',
             id='<ID>',
-            name='commodi',
+            name='string',
             type=operations.PutAssessmentPackagesRequestBodyPackagesType.BEHAVIORAL,
         ),
     ],

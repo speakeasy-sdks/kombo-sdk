@@ -214,7 +214,7 @@ class PostAtsCandidatesRequestBodyScreeningQuestionAnswersAnswer:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostAtsCandidatesRequestBodyScreeningQuestionAnswers:
-    answer: Union[str, bool, float, List[str], datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('answer') }})
+    answer: Union[str, bool, float, List[str], datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('answer'), 'encoder': utils.union_encoder({datetime: utils.datetimeisoformat(True)}), 'decoder': utils.union_decoder([dateutil.parser.isoparse]) }})
     r"""Answer to a question. This will be validated based on the question format and throw an error if the answer is invalid."""
     question_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('question_id') }})
     r"""ID of the question returned by the Kombo API. We'll report a warning in the logs if the question can't be found on the job."""
