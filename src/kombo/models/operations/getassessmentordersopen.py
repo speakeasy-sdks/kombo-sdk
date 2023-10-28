@@ -8,7 +8,6 @@ from ..shared import getassessmentordersopensuccessfulresponse as shared_getasse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -18,7 +17,6 @@ class GetAssessmentOrdersOpenRequest:
     page_size: Optional[int] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'page_size', 'style': 'form', 'explode': True }})
     r"""The number of results to return per page."""
     
-
 
 
 

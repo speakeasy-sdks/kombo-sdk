@@ -10,7 +10,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class PostHrisEmployeesRequestBodyGender(str, Enum):
     r"""The gender of the employee."""
@@ -21,7 +21,6 @@ class PostHrisEmployeesRequestBodyGender(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployeesRequestBodyHomeAddress:
     r"""The employee's home address."""
@@ -37,18 +36,16 @@ class PostHrisEmployeesRequestBodyHomeAddress:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployeesRequestBodyRemoteFieldsHumaans:
     r"""Fields specific to Humaans."""
-    employee: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
+    employee: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Humaans `Employee` object."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployeesRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific HRIS systems."""
@@ -59,7 +56,6 @@ class PostHrisEmployeesRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployeesRequestBody:
     r"""POST /hris/employees request body"""
@@ -89,7 +85,6 @@ class PostHrisEmployeesRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostHrisEmployeesRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -101,7 +96,6 @@ class PostHrisEmployeesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -113,7 +107,6 @@ class PostHrisEmployees503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -124,7 +117,6 @@ class PostHrisEmployees503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -136,7 +128,6 @@ class PostHrisEmployees404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -147,7 +138,6 @@ class PostHrisEmployees404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -159,7 +149,6 @@ class PostHrisEmployees403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -170,7 +159,6 @@ class PostHrisEmployees403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -182,14 +170,12 @@ class PostHrisEmployees401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisEmployees401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostHrisEmployees401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostHrisEmployees401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

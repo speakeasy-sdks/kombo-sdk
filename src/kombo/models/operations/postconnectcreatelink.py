@@ -95,7 +95,6 @@ class PostConnectCreateLinkRequestBodyLanguage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostConnectCreateLinkRequestBody:
     r"""POST /connect/create-link request body"""
@@ -116,7 +115,6 @@ class PostConnectCreateLinkRequestBody:
     scope_config_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scope_config_id') }})
     r"""Specify a scope config that should be used for this integration. This is an advanced feature, only use it if you know what you're doing!"""
     
-
 
 
 

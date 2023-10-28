@@ -8,13 +8,11 @@ from ..shared import getassessmentpackagessuccessfulresponse as shared_getassess
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAssessmentPackagesRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
     
-
 
 
 

@@ -21,7 +21,6 @@ class PostCustomDatevPassthroughRequestBodyTargetSystem(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthroughRequestBody:
     r"""POST /custom/datev/passthrough request body"""
@@ -37,7 +36,6 @@ class PostCustomDatevPassthroughRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostCustomDatevPassthroughRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -49,7 +47,6 @@ class PostCustomDatevPassthroughRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -61,7 +58,6 @@ class PostCustomDatevPassthrough503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -72,7 +68,6 @@ class PostCustomDatevPassthrough503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -84,7 +79,6 @@ class PostCustomDatevPassthrough404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -95,7 +89,6 @@ class PostCustomDatevPassthrough404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -107,7 +100,6 @@ class PostCustomDatevPassthrough403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -118,7 +110,6 @@ class PostCustomDatevPassthrough403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -130,14 +121,12 @@ class PostCustomDatevPassthrough401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthrough401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostCustomDatevPassthrough401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostCustomDatevPassthrough401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
@@ -23,7 +22,6 @@ class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostH
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse:
     r"""Fields specific to Greenhouse."""
@@ -34,7 +32,6 @@ class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
@@ -45,7 +42,6 @@ class PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStageRequestBody:
     r"""PUT /ats/applications/:application_id/stage request body"""
@@ -54,7 +50,6 @@ class PutAtsApplicationsApplicationIDStageRequestBody:
     remote_fields: Optional[PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
-
 
 
 
@@ -71,7 +66,6 @@ class PutAtsApplicationsApplicationIDStageRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -83,7 +77,6 @@ class PutAtsApplicationsApplicationIDStage503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -94,7 +87,6 @@ class PutAtsApplicationsApplicationIDStage503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -106,7 +98,6 @@ class PutAtsApplicationsApplicationIDStage404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -117,7 +108,6 @@ class PutAtsApplicationsApplicationIDStage404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -129,7 +119,6 @@ class PutAtsApplicationsApplicationIDStage403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -140,7 +129,6 @@ class PutAtsApplicationsApplicationIDStage403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -152,14 +140,12 @@ class PutAtsApplicationsApplicationIDStage401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStage401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PutAtsApplicationsApplicationIDStage401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PutAtsApplicationsApplicationIDStage401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

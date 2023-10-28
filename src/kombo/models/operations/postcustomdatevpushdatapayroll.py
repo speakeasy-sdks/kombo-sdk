@@ -14,7 +14,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayrollRequestBody:
     r"""POST /custom/datev/push-data/payroll request body"""
@@ -23,7 +22,6 @@ class PostCustomDatevPushDataPayrollRequestBody:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     
-
 
 
 
@@ -38,7 +36,6 @@ class PostCustomDatevPushDataPayrollRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -50,7 +47,6 @@ class PostCustomDatevPushDataPayroll503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -61,7 +57,6 @@ class PostCustomDatevPushDataPayroll503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -73,7 +68,6 @@ class PostCustomDatevPushDataPayroll404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -84,7 +78,6 @@ class PostCustomDatevPushDataPayroll404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -96,7 +89,6 @@ class PostCustomDatevPushDataPayroll403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -107,7 +99,6 @@ class PostCustomDatevPushDataPayroll403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -119,14 +110,12 @@ class PostCustomDatevPushDataPayroll401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayroll401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostCustomDatevPushDataPayroll401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostCustomDatevPushDataPayroll401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

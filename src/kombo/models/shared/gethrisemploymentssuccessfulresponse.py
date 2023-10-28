@@ -7,7 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 class GetHrisEmploymentsSuccessfulResponseDataResultsEmploymentType1(str, Enum):
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
@@ -19,7 +19,6 @@ class GetHrisEmploymentsSuccessfulResponseDataResultsEmploymentType1(str, Enum):
     WORKING_STUDENT = 'WORKING_STUDENT'
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
-
 
 
 @dataclasses.dataclass
@@ -37,7 +36,6 @@ class GetHrisEmploymentsSuccessfulResponseDataResultsPayFrequency1(str, Enum):
     SEMIANNUALLY = 'SEMIANNUALLY'
     ANNUALLY = 'ANNUALLY'
     PRO_RATA = 'PRO_RATA'
-
 
 
 @dataclasses.dataclass
@@ -58,14 +56,12 @@ class GetHrisEmploymentsSuccessfulResponseDataResultsPayPeriod1(str, Enum):
     YEAR = 'YEAR'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmploymentsSuccessfulResponseDataResultsPayPeriod:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmploymentsSuccessfulResponseDataResults:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -89,7 +85,7 @@ class GetHrisEmploymentsSuccessfulResponseDataResults:
     pay_period: Optional[Union[GetHrisEmploymentsSuccessfulResponseDataResultsPayPeriod1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period') }})
     r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     pay_rate: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_rate') }})
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -100,12 +96,11 @@ class GetHrisEmploymentsSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmploymentsSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: list[GetHrisEmploymentsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisEmploymentsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -114,7 +109,6 @@ class GetHrisEmploymentsSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmploymentsSuccessfulResponse:
     data: GetHrisEmploymentsSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

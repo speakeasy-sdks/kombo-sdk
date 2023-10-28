@@ -7,6 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
+from typing import List
 
 class GetCustomDatevDataPushesSuccessfulResponseDataDataPushesType(str, Enum):
     r"""Type of the executed data push."""
@@ -24,7 +25,6 @@ class GetCustomDatevDataPushesSuccessfulResponseDataDataPushesUploadJobsState(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesSuccessfulResponseDataDataPushesUploadJobs:
     file: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file') }})
@@ -38,7 +38,6 @@ class GetCustomDatevDataPushesSuccessfulResponseDataDataPushesUploadJobs:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesSuccessfulResponseDataDataPushes:
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -48,17 +47,16 @@ class GetCustomDatevDataPushesSuccessfulResponseDataDataPushes:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     type: GetCustomDatevDataPushesSuccessfulResponseDataDataPushesType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the executed data push."""
-    upload_jobs: list[GetCustomDatevDataPushesSuccessfulResponseDataDataPushesUploadJobs] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_jobs') }})
+    upload_jobs: List[GetCustomDatevDataPushesSuccessfulResponseDataDataPushesUploadJobs] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_jobs') }})
     r"""List of all the submitted files. This can include multiple files if data was edited for multiple months."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesSuccessfulResponseData:
-    data_pushes: list[GetCustomDatevDataPushesSuccessfulResponseDataDataPushes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data_pushes') }})
+    data_pushes: List[GetCustomDatevDataPushesSuccessfulResponseDataDataPushes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data_pushes') }})
     
 
 
@@ -67,7 +65,6 @@ class GetCustomDatevDataPushesSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesSuccessfulResponse:
     data: GetCustomDatevDataPushesSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

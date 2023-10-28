@@ -11,13 +11,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostConnectActivateIntegrationRequestBody:
     r"""POST /connect/activate-integration request body"""
     token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token') }})
     
-
 
 
 

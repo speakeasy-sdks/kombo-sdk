@@ -7,7 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 class GetAssessmentPackagesSuccessfulResponseDataPackagesType(str, Enum):
     BEHAVIORAL = 'BEHAVIORAL'
@@ -18,7 +18,6 @@ class GetAssessmentPackagesSuccessfulResponseDataPackagesType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentPackagesSuccessfulResponseDataPackages:
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -34,10 +33,9 @@ class GetAssessmentPackagesSuccessfulResponseDataPackages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentPackagesSuccessfulResponseData:
-    packages: list[GetAssessmentPackagesSuccessfulResponseDataPackages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages') }})
+    packages: List[GetAssessmentPackagesSuccessfulResponseDataPackages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages') }})
     
 
 
@@ -46,7 +44,6 @@ class GetAssessmentPackagesSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentPackagesSuccessfulResponse:
     data: GetAssessmentPackagesSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

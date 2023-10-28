@@ -12,9 +12,10 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
 
 if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

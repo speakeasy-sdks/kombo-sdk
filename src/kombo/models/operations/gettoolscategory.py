@@ -9,13 +9,11 @@ from ..shared import gettoolscategorysuccessfulresponse as shared_gettoolscatego
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetToolsCategoryRequest:
     category: shared_gettoolscategoryparametercategory.GetToolsCategoryParameterCategory = dataclasses.field(metadata={'path_param': { 'field_name': 'category', 'style': 'simple', 'explode': False }})
     r"""GET /tools/:category parameter"""
     
-
 
 
 

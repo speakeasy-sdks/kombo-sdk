@@ -10,7 +10,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency(str, Enum):
     r"""The currency in which the employee gets paid. Currently, only euro is supported as integrated systems only work with Euro."""
@@ -23,7 +23,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeri
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations:
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
@@ -39,17 +38,15 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody:
     r"""PUT /custom/datev/employees/:employee_id/compensations request body"""
-    compensations: list[PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compensations') }})
+    compensations: List[PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compensations') }})
     effective_date: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effective_date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Date from which the submitted compensations should be valid. Please note that it might not be possible to set compensations for the past if the payroll was already run.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     
-
 
 
 
@@ -66,7 +63,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -78,7 +74,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONStatus(str
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -89,7 +84,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -101,7 +95,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONStatus(str
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -112,7 +105,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -124,7 +116,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONStatus(str
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -135,7 +126,6 @@ class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -147,14 +137,12 @@ class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONStatus(str
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

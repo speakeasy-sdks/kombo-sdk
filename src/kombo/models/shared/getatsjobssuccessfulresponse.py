@@ -7,7 +7,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 class GetAtsJobsSuccessfulResponseDataResultsEmploymentType1(str, Enum):
     r"""The type of employment contract."""
@@ -16,7 +16,6 @@ class GetAtsJobsSuccessfulResponseDataResultsEmploymentType1(str, Enum):
     CONTRACT = 'CONTRACT'
     SEASONAL = 'SEASONAL'
     INTERNSHIP = 'INTERNSHIP'
-
 
 
 @dataclasses.dataclass
@@ -29,14 +28,13 @@ class GetAtsJobsSuccessfulResponseDataResultsHiringTeamHiringTeamRoles(str, Enum
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsHiringTeam:
     email: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""Email of the user."""
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     r"""First name of the user."""
-    hiring_team_roles: list[GetAtsJobsSuccessfulResponseDataResultsHiringTeamHiringTeamRoles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team_roles') }})
+    hiring_team_roles: List[GetAtsJobsSuccessfulResponseDataResultsHiringTeamHiringTeamRoles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team_roles') }})
     r"""Array of the roles of the user for this specific job. Currently only `RECRUITER` and `HIRING_MANAGER` are mapped into our unified schema."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     last_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name') }})
@@ -57,7 +55,6 @@ class GetAtsJobsSuccessfulResponseDataResultsJobPostingsVisibility(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsJobPostings:
     description_html: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description_html') }})
@@ -70,7 +67,6 @@ class GetAtsJobsSuccessfulResponseDataResultsJobPostings:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsLocation:
     r"""The location of the listed job."""
@@ -93,7 +89,6 @@ class GetAtsJobsSuccessfulResponseDataResultsRemoteWorkStatus1(str, Enum):
     ON_SITE = 'ON_SITE'
 
 
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsRemoteWorkStatus:
     pass
@@ -108,7 +103,6 @@ class GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod1(str, Enum):
     HOUR = 'HOUR'
 
 
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod:
     pass
@@ -119,7 +113,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -135,7 +128,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -145,7 +137,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Options:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -162,10 +153,9 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7:
-    options: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    options: List[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
@@ -175,7 +165,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -187,7 +176,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -200,7 +188,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4DisplayTyp
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Options:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -217,10 +204,9 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4:
-    options: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    options: List[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     display_type: Optional[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
     
@@ -231,7 +217,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -247,7 +232,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -267,7 +251,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1Type(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1:
     type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -278,14 +261,12 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1:
 
 
 
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions:
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -300,7 +281,6 @@ class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsStages:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -316,7 +296,6 @@ class GetAtsJobsSuccessfulResponseDataResultsStatus1(str, Enum):
     CLOSED = 'CLOSED'
     DRAFT = 'DRAFT'
     ARCHIVED = 'ARCHIVED'
-
 
 
 @dataclasses.dataclass
@@ -339,14 +318,12 @@ class GetAtsJobsSuccessfulResponseDataResultsVisibility1(str, Enum):
     CONFIDENTIAL = 'CONFIDENTIAL'
 
 
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResultsVisibility:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseDataResults:
     r"""The hiring team allows you to sync users into your system who can access the job and its applications."""
@@ -370,12 +347,12 @@ class GetAtsJobsSuccessfulResponseDataResults:
     employment_type: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsEmploymentType1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
     r"""The type of employment contract."""
     experience_level: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('experience_level') }})
-    hiring_team: list[GetAtsJobsSuccessfulResponseDataResultsHiringTeam] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team') }})
+    hiring_team: List[GetAtsJobsSuccessfulResponseDataResultsHiringTeam] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The globally unique ID of this object generated by Kombo. We recommend using this as a stable primary key for syncing."""
     job_code: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_code') }})
     r"""The human readable job code. Some systems expose this as the Requisition Code/ID."""
-    job_postings: list[GetAtsJobsSuccessfulResponseDataResultsJobPostings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_postings') }})
+    job_postings: List[GetAtsJobsSuccessfulResponseDataResultsJobPostings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_postings') }})
     location: Optional[GetAtsJobsSuccessfulResponseDataResultsLocation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location') }})
     r"""The location of the listed job."""
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -390,7 +367,7 @@ class GetAtsJobsSuccessfulResponseDataResults:
     r"""The date and time the object was created in the remote system.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The date and time the object was deleted in the remote system. Objects are automatically marked as deleted when Kombo can't retrieve them from the remote system anymore. Kombo will also anonymize entries 14 days after they disappear.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -413,8 +390,8 @@ class GetAtsJobsSuccessfulResponseDataResults:
     r"""Salary currency usually returned in [ISO 4217 currency codes](https://www.iso.org/iso-4217-currency-codes.html)."""
     salary_period: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_period') }})
     r"""The period of the salary amount (not equal to the pay frequency)."""
-    screening_questions: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_questions') }})
-    stages: list[GetAtsJobsSuccessfulResponseDataResultsStages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stages') }})
+    screening_questions: List[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_questions') }})
+    stages: List[GetAtsJobsSuccessfulResponseDataResultsStages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stages') }})
     status: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""One of 4 standardized values (`OPEN`, `CLOSED`, `DRAFT`, or `ARCHIVED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     visibility: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsVisibility1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibility') }})
@@ -433,12 +410,11 @@ class GetAtsJobsSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: list[GetAtsJobsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetAtsJobsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -447,7 +423,6 @@ class GetAtsJobsSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponse:
     data: GetAtsJobsSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

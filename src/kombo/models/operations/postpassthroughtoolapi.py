@@ -8,7 +8,7 @@ from ..shared import postpassthroughtoolapisuccessfulresponse as shared_postpass
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class PostPassthroughToolAPIRequestBodyMethod(str, Enum):
     r"""The HTTP method (e.g., `GET`) of the request."""
@@ -20,7 +20,6 @@ class PostPassthroughToolAPIRequestBodyMethod(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPIRequestBody:
     r"""POST /passthrough/:tool/:api request body"""
@@ -28,16 +27,15 @@ class PostPassthroughToolAPIRequestBody:
     r"""The HTTP method (e.g., `GET`) of the request."""
     path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path') }})
     r"""The path of the endpoint you want to call. We automatically prepend the base URL of the API (all base URLs are documented in the endpoint description)."""
-    api_options: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('api_options'), 'exclude': lambda f: f is None }})
+    api_options: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('api_options'), 'exclude': lambda f: f is None }})
     r"""Custom options interpreted by the passthrough API adapter you've selected. These options are not documented right now as they're only for very advanced use cases."""
     data: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The data to submit as part of the request body. This can either be an array or object (in which case we will forward it as JSON) or a string (in which case we will forward it raw)."""
-    headers: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
+    headers: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
     r"""The headers to send with the request. Note that we automatically supply any authentication-related headers."""
-    params: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('params'), 'exclude': lambda f: f is None }})
+    params: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('params'), 'exclude': lambda f: f is None }})
     r"""The query parameters to send in addition to the ones in the `path`."""
     
-
 
 
 
@@ -54,7 +52,6 @@ class PostPassthroughToolAPIRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -66,7 +63,6 @@ class PostPassthroughToolAPI503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -77,7 +73,6 @@ class PostPassthroughToolAPI503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -89,7 +84,6 @@ class PostPassthroughToolAPI404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -100,7 +94,6 @@ class PostPassthroughToolAPI404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -112,7 +105,6 @@ class PostPassthroughToolAPI403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -123,7 +115,6 @@ class PostPassthroughToolAPI403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -135,14 +126,12 @@ class PostPassthroughToolAPI401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPI401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostPassthroughToolAPI401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostPassthroughToolAPI401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

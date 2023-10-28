@@ -5,14 +5,18 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional, Union
+
+
+@dataclasses.dataclass
+class PostPassthroughToolAPISuccessfulResponseDataHeaders:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPISuccessfulResponseData:
-    headers: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers') }})
+    headers: Dict[str, Union[str, List[str]]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers') }})
     r"""The HTTP headers returned from the remote system."""
     status: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""The HTTP status code returned from the remote system."""
@@ -28,7 +32,6 @@ class PostPassthroughToolAPISuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostPassthroughToolAPISuccessfulResponse:
     data: PostPassthroughToolAPISuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
