@@ -12,7 +12,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
@@ -23,7 +22,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHea
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse:
     r"""Fields specific to Greenhouse."""
@@ -34,7 +32,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
@@ -45,7 +42,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBodyTag:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -55,7 +51,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyTag:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBody:
     r"""DELETE /ats/candidates/:candidate_id/tags request body"""
@@ -63,7 +58,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBody:
     remote_fields: Optional[DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
-
 
 
 
@@ -80,7 +74,6 @@ class DeleteAtsCandidatesCandidateIDTagsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -92,7 +85,6 @@ class DeleteAtsCandidatesCandidateIDTags503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -103,7 +95,6 @@ class DeleteAtsCandidatesCandidateIDTags503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -115,7 +106,6 @@ class DeleteAtsCandidatesCandidateIDTags404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -126,7 +116,6 @@ class DeleteAtsCandidatesCandidateIDTags404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -138,7 +127,6 @@ class DeleteAtsCandidatesCandidateIDTags403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -149,7 +137,6 @@ class DeleteAtsCandidatesCandidateIDTags403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -161,14 +148,12 @@ class DeleteAtsCandidatesCandidateIDTags401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTags401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: DeleteAtsCandidatesCandidateIDTags401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: DeleteAtsCandidatesCandidateIDTags401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

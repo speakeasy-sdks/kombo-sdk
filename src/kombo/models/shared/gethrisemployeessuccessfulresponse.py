@@ -7,11 +7,10 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsBankAccounts:
     account_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})
@@ -43,7 +42,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentStatus1(str, Enum):
     LEAVE = 'LEAVE'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentStatus:
     pass
@@ -58,7 +56,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentType1(str, Enum):
     WORKING_STUDENT = 'WORKING_STUDENT'
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
-
 
 
 @dataclasses.dataclass
@@ -77,7 +74,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsEmploymentType1(st
     TRAINING = 'TRAINING'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsEmploymentType:
     pass
@@ -93,7 +89,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsPayFrequency1(str,
     SEMIANNUALLY = 'SEMIANNUALLY'
     ANNUALLY = 'ANNUALLY'
     PRO_RATA = 'PRO_RATA'
-
 
 
 @dataclasses.dataclass
@@ -114,14 +109,12 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsPayPeriod1(str, En
     YEAR = 'YEAR'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsPayPeriod:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsEmployments:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -145,7 +138,7 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEmployments:
     pay_period: Optional[Union[GetHrisEmployeesSuccessfulResponseDataResultsEmploymentsPayPeriod1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_period') }})
     r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     pay_rate: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pay_rate') }})
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -166,7 +159,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsEthnicity1(str, Enum):
     DECLINE_TO_SPECIFY = 'DECLINE_TO_SPECIFY'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsEthnicity:
     pass
@@ -177,7 +169,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsGender1(str, Enum):
     FEMALE = 'FEMALE'
     NON_BINARY = 'NON_BINARY'
     NOT_SPECIFIED = 'NOT_SPECIFIED'
-
 
 
 @dataclasses.dataclass
@@ -192,7 +183,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsGroupsType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsGroups:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -205,7 +195,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsGroups:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsHomeAddress:
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
@@ -221,7 +210,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsHomeAddress:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsLegalEntityAddress:
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
@@ -237,7 +225,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsLegalEntityAddress:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsLegalEntity:
     address: Optional[GetHrisEmployeesSuccessfulResponseDataResultsLegalEntityAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
@@ -251,7 +238,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsLegalEntity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsManager:
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
@@ -278,7 +264,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsMaritalStatus1(str, Enum):
     NOT_MARRIED = 'NOT_MARRIED'
 
 
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsMaritalStatus:
     pass
@@ -291,7 +276,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsTeamsType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsTeams:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -312,7 +296,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalancesUsedUnit(str, 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalances:
     balance: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
@@ -324,7 +307,7 @@ class GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalances:
     """
     employee_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee_id') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -338,7 +321,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalances:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsWorkLocationAddress:
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
@@ -354,7 +336,6 @@ class GetHrisEmployeesSuccessfulResponseDataResultsWorkLocationAddress:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResultsWorkLocation:
     address: Optional[GetHrisEmployeesSuccessfulResponseDataResultsWorkLocationAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
@@ -364,7 +345,7 @@ class GetHrisEmployeesSuccessfulResponseDataResultsWorkLocation:
     """
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -376,17 +357,16 @@ class GetHrisEmployeesSuccessfulResponseDataResultsWorkLocation:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseDataResults:
     avatar: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('avatar') }})
     r"""URL to the employee’s avatar. This is either the raw URL from the HR system (in cases where it can be requested without short-lived authentication) _or_ a URL to a temporarily cached version of the file hosted by Kombo. Kombo will delete the cached file after its deletion in the source system."""
-    bank_accounts: Optional[list[GetHrisEmployeesSuccessfulResponseDataResultsBankAccounts]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_accounts') }})
+    bank_accounts: Optional[List[GetHrisEmployeesSuccessfulResponseDataResultsBankAccounts]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_accounts') }})
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The timestamp when this object was last changed. This value is tracked by Kombo based on changes in the data.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    custom_fields: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_fields') }})
+    custom_fields: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_fields') }})
     date_of_birth: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date_of_birth'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -407,14 +387,14 @@ class GetHrisEmployeesSuccessfulResponseDataResults:
     """
     employment_type: Optional[Union[GetHrisEmployeesSuccessfulResponseDataResultsEmploymentType1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    employments: list[GetHrisEmployeesSuccessfulResponseDataResultsEmployments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employments') }})
+    employments: List[GetHrisEmployeesSuccessfulResponseDataResultsEmployments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employments') }})
     ethnicity: Optional[Union[GetHrisEmployeesSuccessfulResponseDataResultsEthnicity1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ethnicity') }})
     r"""One of 8 standardized values (`WHITE`, `ASIAN`, `HISPANIC_LATINO`, `HAWAIIAN`, `NATIVE_AMERICAN`, `BLACK_AFRICAN_AMERICAN`, `MULTIPLE_ETHNICITIES`, or `DECLINE_TO_SPECIFY`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     r"""The employee’s first name."""
     gender: Optional[Union[GetHrisEmployeesSuccessfulResponseDataResultsGender1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender') }})
     r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    groups: list[GetHrisEmployeesSuccessfulResponseDataResultsGroups] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups') }})
+    groups: List[GetHrisEmployeesSuccessfulResponseDataResultsGroups] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups') }})
     home_address: Optional[GetHrisEmployeesSuccessfulResponseDataResultsHomeAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The globally unique ID of this object generated by Kombo. We recommend using this as a stable primary key for syncing."""
@@ -438,7 +418,7 @@ class GetHrisEmployeesSuccessfulResponseDataResults:
     r"""The date and time the object was created in the remote system.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The date and time the object was deleted in the remote system. Objects are automatically marked as deleted when Kombo can't retrieve them from the remote system anymore. Kombo will also anonymize entries 14 days after they disappear.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -452,13 +432,13 @@ class GetHrisEmployeesSuccessfulResponseDataResults:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     tax_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_id') }})
-    teams: list[GetHrisEmployeesSuccessfulResponseDataResultsTeams] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teams') }})
+    teams: List[GetHrisEmployeesSuccessfulResponseDataResultsTeams] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teams') }})
     r"""**(⚠️ Deprecated)** Please use the `groups` field. It includes the same data and the naming is less confusing."""
     termination_date: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The where the employment ends. Can be in the past or future.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    time_off_balances: list[GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalances] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('time_off_balances') }})
+    time_off_balances: List[GetHrisEmployeesSuccessfulResponseDataResultsTimeOffBalances] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('time_off_balances') }})
     work_email: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('work_email') }})
     r"""The employee’s work email address. If the email address is invalid, we will set this to `null`."""
     work_location: Optional[GetHrisEmployeesSuccessfulResponseDataResultsWorkLocation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('work_location') }})
@@ -469,12 +449,11 @@ class GetHrisEmployeesSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: list[GetHrisEmployeesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisEmployeesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -483,7 +462,6 @@ class GetHrisEmployeesSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetHrisEmployeesSuccessfulResponse:
     data: GetHrisEmployeesSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

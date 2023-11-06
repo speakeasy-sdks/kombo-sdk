@@ -8,7 +8,6 @@ from kombo import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostForceSyncSuccessfulResponseData:
     already_queued: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('already_queued') }})
@@ -20,7 +19,6 @@ class PostForceSyncSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostForceSyncSuccessfulResponse:
     data: PostForceSyncSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

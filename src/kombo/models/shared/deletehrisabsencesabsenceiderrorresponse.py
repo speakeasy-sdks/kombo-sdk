@@ -8,7 +8,6 @@ from kombo import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceIDErrorResponseError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -20,7 +19,6 @@ class DeleteHrisAbsencesAbsenceIDErrorResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceIDErrorResponse:
     error: DeleteHrisAbsencesAbsenceIDErrorResponseError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})

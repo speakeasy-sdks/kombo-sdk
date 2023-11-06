@@ -8,7 +8,6 @@ from kombo import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponseError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -20,7 +19,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponseStatus(str, En
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse:
     error: PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponseError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})

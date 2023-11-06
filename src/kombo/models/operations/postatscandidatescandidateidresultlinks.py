@@ -8,11 +8,10 @@ from ..shared import postatscandidatescandidateidresultlinkssuccessfulresponse a
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes:
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
@@ -24,14 +23,13 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails:
     r"""Additional details with attributes that will be added to the result. This can be percentages, scores, or any text.
 
     We generally recommend using short attribute keys and a short custom_field_name_prefix to avoid overflowing the ATS UI.
     """
-    attributes: list[PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
+    attributes: List[PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
     custom_field_name_prefix: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_name_prefix') }})
     r"""That will be added to the attribute labels if they are used for custom fields. If you specify `Acme:` as the prefix, the custom field will be named `Acme: Score`. Putting in the name of your company/product is a good idea."""
     
@@ -39,7 +37,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
@@ -50,7 +47,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePo
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse:
     r"""Fields specific to Greenhouse."""
@@ -61,7 +57,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
@@ -72,7 +67,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequestBody:
     r"""POST /ats/candidates/:candidate_id/result-links request body"""
@@ -91,7 +85,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequest:
     candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
@@ -105,7 +98,6 @@ class PostAtsCandidatesCandidateIDResultLinksRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -117,7 +109,6 @@ class PostAtsCandidatesCandidateIDResultLinks503ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -128,7 +119,6 @@ class PostAtsCandidatesCandidateIDResultLinks503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -140,7 +130,6 @@ class PostAtsCandidatesCandidateIDResultLinks404ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -151,7 +140,6 @@ class PostAtsCandidatesCandidateIDResultLinks404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -163,7 +151,6 @@ class PostAtsCandidatesCandidateIDResultLinks403ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -174,7 +161,6 @@ class PostAtsCandidatesCandidateIDResultLinks403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -186,14 +172,12 @@ class PostAtsCandidatesCandidateIDResultLinks401ApplicationJSONStatus(str, Enum)
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinks401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostAtsCandidatesCandidateIDResultLinks401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostAtsCandidatesCandidateIDResultLinks401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

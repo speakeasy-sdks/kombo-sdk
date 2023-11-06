@@ -115,21 +115,20 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='Practical', candidate_id='Account', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
     remote_fields=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
         greenhouse=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='salmon Shoes',
-            ),
+            post_headers=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
     tag=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='matrix overriding Handmade',
+        name='string',
     ),
 ))
 
 if res.delete_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -318,19 +317,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationStagesRequest(
-    x_integration_id='bamboozle',
-    cursor='core East SAS',
-    ids='bombard',
-    include_deleted=shared.GetAtsApplicationStagesParameterIncludeDeleted.TRUE,
-    page_size=777909,
-    remote_ids='Account National',
-    updated_after=dateutil.parser.isoparse('2022-04-09T01:25:02.164Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_application_stages(req)
 
 if res.get_ats_application_stages_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -519,22 +513,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationsRequest(
-    x_integration_id='Gasoline bypass',
-    cursor='flexibility',
-    ids='Gasoline',
-    include_deleted=shared.GetAtsApplicationsParameterIncludeDeleted.TRUE,
-    outcome=shared.GetAtsApplicationsParameterOutcome.DECLINED,
-    outcomes='badly',
-    page_size=918792,
-    remote_created_after=dateutil.parser.isoparse('2021-05-30T08:12:30.327Z'),
-    remote_ids='extensible',
-    updated_after=dateutil.parser.isoparse('2022-08-03T06:59:25.595Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_applications(req)
 
 if res.get_ats_applications_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -715,19 +701,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsCandidatesRequest(
-    x_integration_id='Handmade Movies even',
-    cursor='charset International',
-    ids='female',
-    include_deleted=shared.GetAtsCandidatesParameterIncludeDeleted.FALSE,
-    page_size=332950,
-    remote_ids='Berkshire Data',
-    updated_after=dateutil.parser.isoparse('2023-08-20T22:30:10.141Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_candidates(req)
 
 if res.get_ats_candidates_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -932,24 +913,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsJobsRequest(
-    x_integration_id='Maine',
-    cursor='Camden Platinum utterly',
-    ids='Towels global East',
-    include_deleted=shared.GetAtsJobsParameterIncludeDeleted.FALSE,
-    job_codes='World than',
-    name_contains='deliver Sheboygan',
-    page_size=619175,
-    post_url='Developer',
-    remote_ids='Porsche Table cyan',
-    status=shared.GetAtsJobsParameterStatus.CLOSED,
-    statuses='carpeting Sausages female',
-    updated_after=dateutil.parser.isoparse('2023-07-05T15:21:37.316Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_jobs(req)
 
 if res.get_ats_jobs_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1070,19 +1041,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsTagsRequest(
-    x_integration_id='Lakes',
-    cursor='capacity synthesize',
-    ids='Porsche cyan Auto',
-    include_deleted=shared.GetAtsTagsParameterIncludeDeleted.TRUE,
-    page_size=681587,
-    remote_ids='Honolulu Boulder Cambridgeshire',
-    updated_after=dateutil.parser.isoparse('2022-12-09T17:54:24.185Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_tags(req)
 
 if res.get_ats_tags_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1211,19 +1177,14 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsUsersRequest(
-    x_integration_id='imaginary Praseodymium',
-    cursor='approach Fresh',
-    ids='Touring',
-    include_deleted=shared.GetAtsUsersParameterIncludeDeleted.FALSE,
-    page_size=497581,
-    remote_ids='Avon Bespoke bandwidth',
-    updated_after=dateutil.parser.isoparse('2022-09-14T16:45:22.931Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_ats_api.get_ats_users(req)
 
 if res.get_ats_users_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1256,10 +1217,11 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='Supervisor', candidate_id='East', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
+res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='string', candidate_id='string', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
 
 if res.patch_ats_candidates_candidate_id_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1342,18 +1304,17 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='IB', application_id='South', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
-    content='Facilitator teal',
+res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
+    content='string',
     content_type=operations.PostAtsApplicationsApplicationIDNotesRequestBodyContentType.PLAIN_TEXT,
     remote_fields=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields(
-        teamtailor=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor(
-            user_id='Lev',
-        ),
+        teamtailor=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor(),
     ),
 ))
 
 if res.post_ats_applications_application_id_notes_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1415,22 +1376,23 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='Electric', application_id='Computer', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
     details=operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails(
         attributes=[
             operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes(
                 key='<key>',
-                value='Gasoline magenta',
+                value='string',
             ),
         ],
-        custom_field_name_prefix='whoa Bedfordshire',
+        custom_field_name_prefix='string',
     ),
-    label='cultivate Bronze how',
-    url='http://closed-terrapin.info',
+    label='string',
+    url='https://flippant-consulting.com',
 ))
 
 if res.post_ats_applications_application_id_result_links_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1698,90 +1660,74 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates(x_integration_id='Principal', request_body=operations.PostAtsCandidatesRequestBody(
+res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_body=operations.PostAtsCandidatesRequestBody(
     application=operations.PostAtsCandidatesRequestBodyApplication(
-        job_id='Tandem',
-        stage_id='accidentally Southeast to',
+        job_id='string',
     ),
     attachments=[
         operations.PostAtsCandidatesRequestBodyAttachments(
-            content_type='Personal',
-            data='Pop',
-            data_url='https://known-company.info',
-            name='Southeast RSS Home',
-            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.COVER_LETTER,
+            name='string',
+            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.OTHER,
         ),
     ],
     candidate=operations.PostAtsCandidatesRequestBodyCandidate(
-        availability_date=dateutil.parser.isoparse('2022-01-26T15:21:04.678Z'),
-        company='Deckow, Yost and Leuschke',
-        email_address='Rosella9@yahoo.com',
-        first_name='Princess',
-        gender=operations.PostAtsCandidatesRequestBodyCandidateGender.MALE,
-        last_name='Casper',
+        email_address='Claudine15@hotmail.com',
+        first_name='Nona',
+        last_name='Reilly',
         location=operations.PostAtsCandidatesRequestBodyCandidateLocation(
-            city='New Bedford',
-            country='Svalbard & Jan Mayen Islands',
+            country='Gibraltar',
         ),
-        phone_number='Southwest lux primary',
         salary_expectations=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectations(
-            amount=2701.41,
-            period=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectationsPeriod.MONTH,
+            amount=6767.86,
+            period=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
         ),
         social_links=[
             operations.PostAtsCandidatesRequestBodyCandidateSocialLinks(
-                url='https://squeaky-tract.biz',
+                url='http://caring-outlook.info',
             ),
         ],
-        title='challenge',
     ),
-    gdpr_consent=operations.PostAtsCandidatesRequestBodyGdprConsent(
-        expires_at=dateutil.parser.isoparse('2023-07-16T16:09:03.636Z'),
-        given=False,
-    ),
+    gdpr_consent=operations.PostAtsCandidatesRequestBodyGdprConsent(),
     remote_fields=operations.PostAtsCandidatesRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='frame Oriental',
-            ),
+            post_headers=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
         lever=operations.PostAtsCandidatesRequestBodyRemoteFieldsLever(
             candidate={
-                "dolore": 'bluetooth',
+                "key": 'string',
             },
         ),
         successfactors=operations.PostAtsCandidatesRequestBodyRemoteFieldsSuccessfactors(
             candidate={
-                "dolorem": 'male',
+                "key": 'string',
             },
             job_application={
-                "debitis": 'quantifying',
+                "key": 'string',
             },
         ),
         teamtailor=operations.PostAtsCandidatesRequestBodyRemoteFieldsTeamtailor(
             candidate={
-                "reprehenderit": 'Manager',
+                "key": 'string',
             },
         ),
         workable=operations.PostAtsCandidatesRequestBodyRemoteFieldsWorkable(
             candidate={
-                "odit": 'female',
+                "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
         operations.PostAtsCandidatesRequestBodyScreeningQuestionAnswers(
-            answer=[],
-            question_id='API Polonium Libby',
+        False,
+            question_id='string',
         ),
     ],
-    source=operations.PostAtsCandidatesRequestBodySource(
-        name='frenetically East',
-    ),
+    source=operations.PostAtsCandidatesRequestBodySource(),
 ))
 
 if res.post_ats_candidates_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1914,25 +1860,21 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='Assistant', candidate_id='dimly', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
     attachment=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment(
-        content_type='Small soon South',
-        data='recontextualize',
-        data_url='http://qualified-trigger.org',
-        name='Integration Planner',
-        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.COVER_LETTER,
+        name='string',
+        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.OTHER,
     ),
     remote_fields=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Iowa',
-            ),
+            post_headers=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
 ))
 
 if res.post_ats_candidates_candidate_id_attachments_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2087,29 +2029,28 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='Chicken', candidate_id='Antioch', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
     details=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails(
         attributes=[
             operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes(
                 key='<key>',
-                value='Garden',
+                value='string',
             ),
         ],
-        custom_field_name_prefix='Movies whether',
+        custom_field_name_prefix='string',
     ),
-    label='East Plastic',
+    label='string',
     remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Refined Tennessee',
-            ),
+            post_headers=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
-    url='http://infinite-pilaf.biz',
+    url='http://round-anorak.com',
 ))
 
 if res.post_ats_candidates_candidate_id_result_links_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2225,21 +2166,20 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='Specialist', candidate_id='Gorgeous', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
     remote_fields=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Demiflux',
-            ),
+            post_headers=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
     tag=operations.PostAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='Interactions bypass female',
+        name='string',
     ),
 ))
 
 if res.post_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2488,87 +2428,71 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='Web', job_id='magenta', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
+res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='string', job_id='string', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
     attachments=[
         operations.PostAtsJobsJobIDApplicationsRequestBodyAttachments(
-            content_type='overriding Clothing',
-            data='salmon',
-            data_url='https://rapid-chit-chat.org',
-            name='Electric plum',
+            name='string',
             type=operations.PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType.COVER_LETTER,
         ),
     ],
     candidate=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidate(
-        availability_date=dateutil.parser.isoparse('2021-10-14T06:06:14.425Z'),
-        company='Nitzsche - Wehner',
-        email_address='Irving62@hotmail.com',
-        first_name='Herbert',
-        gender=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateGender.OTHER,
-        last_name='Carroll',
+        email_address='Pierre_Pfeffer@yahoo.com',
+        first_name='Clarissa',
+        last_name='Davis',
         location=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation(
-            city='Fort Esperanza',
-            country='Mayotte',
+            country='Portugal',
         ),
-        phone_number='bus Applications Electric',
         salary_expectations=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations(
-            amount=709.38,
-            period=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod.MONTH,
+            amount=1065.03,
+            period=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
         ),
         social_links=[
             operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks(
-                url='http://unrealistic-helium.net',
+                url='https://vain-pomelo.com',
             ),
         ],
-        title='fossick Sports South',
     ),
-    gdpr_consent=operations.PostAtsJobsJobIDApplicationsRequestBodyGdprConsent(
-        expires_at=dateutil.parser.isoparse('2023-02-16T12:49:17.127Z'),
-        given=False,
-    ),
+    gdpr_consent=operations.PostAtsJobsJobIDApplicationsRequestBodyGdprConsent(),
     remote_fields=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFields(
         greenhouse=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Assurance state USB',
-            ),
+            post_headers=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
         lever=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever(
             candidate={
-                "aspernatur": 'nihil',
+                "key": 'string',
             },
         ),
         successfactors=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors(
             candidate={
-                "itaque": 'Hybrid',
+                "key": 'string',
             },
             job_application={
-                "asperiores": 'SUV',
+                "key": 'string',
             },
         ),
         teamtailor=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor(
             candidate={
-                "vitae": 'Convertible',
+                "key": 'string',
             },
         ),
         workable=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable(
             candidate={
-                "illum": 'Washington',
+                "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
         operations.PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers(
-            answer=[],
-            question_id='Diesel Operations',
+        dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
+            question_id='string',
         ),
     ],
-    source=operations.PostAtsJobsJobIDApplicationsRequestBodySource(
-        name='Salad magenta gold',
-    ),
-    stage_id='Assistant Cotton gold',
+    source=operations.PostAtsJobsJobIDApplicationsRequestBodySource(),
 ))
 
 if res.post_ats_jobs_job_id_applications_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2672,19 +2596,18 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='Francium', application_id='Cotton', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
+res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='string', application_id='string', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
     remote_fields=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields(
         greenhouse=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Arsenic',
-            ),
+            post_headers=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders(),
         ),
     ),
-    stage_id='Diesel',
+    stage_id='string',
 ))
 
 if res.put_ats_applications_application_id_stage_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

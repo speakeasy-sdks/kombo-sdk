@@ -10,11 +10,10 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments:
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
@@ -25,7 +24,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments:
     hours: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})
@@ -37,7 +35,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun:
     date_: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
@@ -49,17 +46,15 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody:
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll request body"""
-    fixed_payments: list[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixed_payments') }})
+    fixed_payments: List[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixed_payments') }})
     r"""Add entries for all the fixed supplements here. For example you can write \\"Bonuses\\" (in Euros here). Unfortunately, DATEV doens't allow showing a lable for the entries."""
-    hourly_payments: list[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hourly_payments') }})
+    hourly_payments: List[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hourly_payments') }})
     r"""Add entries for all the hourly calculated supplements here. For example you can write \\"Overtime\\" or \\"Work on Holidays\\" (in hours here). Unfortunately, DATEV doens't allow showing a lable for the entries."""
     payroll_run: PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_run') }})
     
-
 
 
 
@@ -76,7 +71,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -88,7 +82,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONStatus(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -99,7 +92,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -111,7 +103,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONStatus(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -122,7 +113,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -134,7 +124,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONStatus(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -145,7 +134,6 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -157,14 +145,12 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONStatus(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

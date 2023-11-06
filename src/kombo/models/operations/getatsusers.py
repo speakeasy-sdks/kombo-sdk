@@ -13,7 +13,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAtsUsersRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -35,7 +34,6 @@ class GetAtsUsersRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -47,7 +45,6 @@ class GetAtsUsers503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -58,7 +55,6 @@ class GetAtsUsers503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -70,7 +66,6 @@ class GetAtsUsers404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -81,7 +76,6 @@ class GetAtsUsers404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -93,7 +87,6 @@ class GetAtsUsers403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -104,7 +97,6 @@ class GetAtsUsers403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -116,14 +108,12 @@ class GetAtsUsers401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsUsers401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: GetAtsUsers401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: GetAtsUsers401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

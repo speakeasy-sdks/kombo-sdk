@@ -12,7 +12,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PostForceSyncRequest:
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
@@ -24,7 +23,6 @@ class PostForceSyncRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostForceSync401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -36,14 +34,12 @@ class PostForceSync401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostForceSync401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: PostForceSync401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: PostForceSync401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

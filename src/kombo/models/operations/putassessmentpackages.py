@@ -8,7 +8,7 @@ from ..shared import putassessmentpackagessuccessfulresponse as shared_putassess
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 class PutAssessmentPackagesRequestBodyPackagesType(str, Enum):
     BEHAVIORAL = 'BEHAVIORAL'
@@ -19,7 +19,6 @@ class PutAssessmentPackagesRequestBodyPackagesType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentPackagesRequestBodyPackages:
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -34,13 +33,11 @@ class PutAssessmentPackagesRequestBodyPackages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentPackagesRequestBody:
     r"""PUT /assessment/packages request body"""
-    packages: list[PutAssessmentPackagesRequestBodyPackages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages') }})
+    packages: List[PutAssessmentPackagesRequestBodyPackages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages') }})
     
-
 
 
 
@@ -51,7 +48,6 @@ class PutAssessmentPackagesRequest:
     request_body: Optional[PutAssessmentPackagesRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PUT /assessment/packages request body"""
     
-
 
 
 

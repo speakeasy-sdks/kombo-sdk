@@ -9,7 +9,6 @@ from ..shared import patchatscandidatescandidateidsuccessfulresponse as shared_p
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PatchAtsCandidatesCandidateIDRequest:
     candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
@@ -19,7 +18,6 @@ class PatchAtsCandidatesCandidateIDRequest:
     patch_ats_candidates_candidate_id_request_body: Optional[shared_patchatscandidatescandidateidrequestbody.PatchAtsCandidatesCandidateIDRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PATCH /ats/candidates/:candidate_id request body"""
     
-
 
 
 

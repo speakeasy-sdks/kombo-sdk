@@ -12,7 +12,6 @@ from kombo import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceIDRequest:
     absence_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'absence_id', 'style': 'simple', 'explode': False }})
@@ -26,7 +25,6 @@ class DeleteHrisAbsencesAbsenceIDRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID503ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -38,7 +36,6 @@ class DeleteHrisAbsencesAbsenceID503ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID503ApplicationJSON:
     r"""Returned when no sync has finished successfully yet"""
@@ -49,7 +46,6 @@ class DeleteHrisAbsencesAbsenceID503ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID404ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -61,7 +57,6 @@ class DeleteHrisAbsencesAbsenceID404ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID404ApplicationJSON:
     r"""Returned when a requested resource is not found."""
@@ -72,7 +67,6 @@ class DeleteHrisAbsencesAbsenceID404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID403ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -84,7 +78,6 @@ class DeleteHrisAbsencesAbsenceID403ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID403ApplicationJSON:
     r"""Returned when the passed integration is inactive."""
@@ -95,7 +88,6 @@ class DeleteHrisAbsencesAbsenceID403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID401ApplicationJSONError:
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -107,14 +99,12 @@ class DeleteHrisAbsencesAbsenceID401ApplicationJSONStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceID401ApplicationJSON:
     r"""Returned when the authentication header was invalid or missing."""
     error: DeleteHrisAbsencesAbsenceID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     status: DeleteHrisAbsencesAbsenceID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
-
 
 
 

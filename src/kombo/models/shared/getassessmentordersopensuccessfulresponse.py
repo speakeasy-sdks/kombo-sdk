@@ -5,11 +5,10 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate:
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
@@ -22,7 +21,6 @@ class GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponseDataResults:
     candidate: GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
@@ -33,11 +31,10 @@ class GetAssessmentOrdersOpenSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
-    results: list[GetAssessmentOrdersOpenSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetAssessmentOrdersOpenSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -46,7 +43,6 @@ class GetAssessmentOrdersOpenSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponse:
     data: GetAssessmentOrdersOpenSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

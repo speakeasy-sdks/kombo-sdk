@@ -8,7 +8,6 @@ from ..shared import getcheckapikeysuccessfulresponse as shared_getcheckapikeysu
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCheckAPIKeyResponse:
     content_type: str = dataclasses.field()

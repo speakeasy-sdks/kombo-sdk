@@ -16,7 +16,6 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataCategory(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponseDataEndUser:
     creator_email: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creator_email') }})
@@ -28,7 +27,6 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataEndUser:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponseDataScopeConfig:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -43,7 +41,6 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponseDataTool:
     icon_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon_url') }})
@@ -58,7 +55,6 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataTool:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponseData:
     category: GetIntegrationsIntegrationIDSuccessfulResponseDataCategory = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
@@ -79,7 +75,6 @@ class GetIntegrationsIntegrationIDSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponse:
     data: GetIntegrationsIntegrationIDSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
