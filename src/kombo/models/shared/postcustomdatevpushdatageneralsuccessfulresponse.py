@@ -10,7 +10,7 @@ from typing import List
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostCustomDatevPushDataGeneralSuccessfulResponseDataFiles:
+class Files:
     content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     
@@ -20,7 +20,7 @@ class PostCustomDatevPushDataGeneralSuccessfulResponseDataFiles:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostCustomDatevPushDataGeneralSuccessfulResponseData:
-    files: List[PostCustomDatevPushDataGeneralSuccessfulResponseDataFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
+    files: List[Files] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
     
 
 

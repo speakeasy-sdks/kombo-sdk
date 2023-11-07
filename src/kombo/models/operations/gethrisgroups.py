@@ -3,13 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gethrisgroupserrorresponse as shared_gethrisgroupserrorresponse
-from ..shared import gethrisgroupsparameterincludedeleted as shared_gethrisgroupsparameterincludedeleted
-from ..shared import gethrisgroupssuccessfulresponse as shared_gethrisgroupssuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import gethrisgroupsparameterincludedeleted as shared_gethrisgroupsparameterincludedeleted
+from ...models.shared import gethrisgroupssuccessfulresponse as shared_gethrisgroupssuccessfulresponse
 from datetime import datetime
-from enum import Enum
-from kombo import utils
 from typing import Optional
 
 
@@ -33,106 +29,12 @@ class GetHrisGroupsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisGroups503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetHrisGroups503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisGroups503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisGroups404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetHrisGroups404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisGroups404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisGroups403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetHrisGroups403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisGroups403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisGroups401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisGroups401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetHrisGroups401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisGroups401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class GetHrisGroupsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_hris_groups_401_application_json_object: Optional[GetHrisGroups401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_hris_groups_403_application_json_object: Optional[GetHrisGroups403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_hris_groups_404_application_json_object: Optional[GetHrisGroups404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_hris_groups_503_application_json_object: Optional[GetHrisGroups503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_hris_groups_error_response: Optional[shared_gethrisgroupserrorresponse.GetHrisGroupsErrorResponse] = dataclasses.field(default=None)
-    r"""GET /hris/groups Error response"""
     get_hris_groups_successful_response: Optional[shared_gethrisgroupssuccessfulresponse.GetHrisGroupsSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/groups Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

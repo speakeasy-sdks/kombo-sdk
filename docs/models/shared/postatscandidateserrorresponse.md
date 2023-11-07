@@ -1,9 +1,0 @@
-# PostAtsCandidatesErrorResponse
-
-
-## Fields
-
-| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `error`                                                                                             | [PostAtsCandidatesErrorResponseError](../../models/shared/postatscandidateserrorresponseerror.md)   | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
-| `status`                                                                                            | [PostAtsCandidatesErrorResponseStatus](../../models/shared/postatscandidateserrorresponsestatus.md) | :heavy_check_mark:                                                                                  | N/A                                                                                                 |

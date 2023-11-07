@@ -1,5 +1,5 @@
 # General
-(*general*)
+(*.general*)
 
 ### Available Operations
 
@@ -284,7 +284,7 @@ res = s.general.post_passthrough_tool_api(api='string', tool='string', request_b
     headers={
         "key": 'string',
     },
-    method=operations.PostPassthroughToolAPIRequestBodyMethod.GET,
+    method=operations.Method.GET,
     params={
         "key": 'string',
     },

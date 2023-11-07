@@ -1,9 +1,0 @@
-# PostPassthroughToolAPIErrorResponse
-
-
-## Fields
-
-| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                       | [PostPassthroughToolAPIErrorResponseError](../../models/shared/postpassthroughtoolapierrorresponseerror.md)   | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
-| `status`                                                                                                      | [PostPassthroughToolAPIErrorResponseStatus](../../models/shared/postpassthroughtoolapierrorresponsestatus.md) | :heavy_check_mark:                                                                                            | N/A                                                                                                           |

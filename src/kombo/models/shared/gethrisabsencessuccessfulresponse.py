@@ -9,7 +9,7 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, List, Optional, Union
 
-class GetHrisAbsencesSuccessfulResponseDataResultsStatus1(str, Enum):
+class GetHrisAbsencesSuccessfulResponse1(str, Enum):
     r"""One of 5 standardized values (`REQUESTED`, `APPROVED`, `DECLINED`, `CANCELLED`, or `DELETED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     REQUESTED = 'REQUESTED'
     APPROVED = 'APPROVED'
@@ -19,17 +19,17 @@ class GetHrisAbsencesSuccessfulResponseDataResultsStatus1(str, Enum):
 
 
 @dataclasses.dataclass
-class GetHrisAbsencesSuccessfulResponseDataResultsStatus:
+class GetHrisAbsencesSuccessfulResponseSchemasStatus:
     pass
 
-class GetHrisAbsencesSuccessfulResponseDataResultsTypeUnit(str, Enum):
+class GetHrisAbsencesSuccessfulResponseSchemasUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisAbsencesSuccessfulResponseDataResultsType:
+class GetHrisAbsencesSuccessfulResponseType:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -46,11 +46,11 @@ class GetHrisAbsencesSuccessfulResponseDataResultsType:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     remote_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    unit: Optional[GetHrisAbsencesSuccessfulResponseDataResultsTypeUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+    unit: Optional[GetHrisAbsencesSuccessfulResponseSchemasUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     
 
 
-class GetHrisAbsencesSuccessfulResponseDataResultsUnit(str, Enum):
+class GetHrisAbsencesSuccessfulResponseUnit(str, Enum):
     r"""The unit of time for this absence. Can be `HOURS` or `DAYS`."""
     HOURS = 'HOURS'
     DAYS = 'DAYS'
@@ -58,7 +58,7 @@ class GetHrisAbsencesSuccessfulResponseDataResultsUnit(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisAbsencesSuccessfulResponseDataResults:
+class GetHrisAbsencesSuccessfulResponseResults:
     amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of time this absence takes."""
     approver_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approver_id') }})
@@ -91,12 +91,12 @@ class GetHrisAbsencesSuccessfulResponseDataResults:
     r"""`true` if the absence starts in the middle of the day, `false` if not, and `null` if the system doesn't support half-day absences."""
     start_time: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_time') }})
     r"""The time at which this absence starts. Follows the format `HH:mm:ss` (e.g., `14:45:15`)."""
-    status: Optional[Union[GetHrisAbsencesSuccessfulResponseDataResultsStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[Union[GetHrisAbsencesSuccessfulResponse1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""One of 5 standardized values (`REQUESTED`, `APPROVED`, `DECLINED`, `CANCELLED`, or `DELETED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    type: Optional[GetHrisAbsencesSuccessfulResponseDataResultsType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: Optional[GetHrisAbsencesSuccessfulResponseType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     type_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type_id') }})
     r"""The Kombo absence type ID of this absence."""
-    unit: Optional[GetHrisAbsencesSuccessfulResponseDataResultsUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+    unit: Optional[GetHrisAbsencesSuccessfulResponseUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     r"""The unit of time for this absence. Can be `HOURS` or `DAYS`."""
     
 
@@ -107,7 +107,7 @@ class GetHrisAbsencesSuccessfulResponseDataResults:
 class GetHrisAbsencesSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: List[GetHrisAbsencesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisAbsencesSuccessfulResponseResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 

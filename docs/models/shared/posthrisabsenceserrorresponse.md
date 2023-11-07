@@ -1,9 +1,0 @@
-# PostHrisAbsencesErrorResponse
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `error`                                                                                           | [PostHrisAbsencesErrorResponseError](../../models/shared/posthrisabsenceserrorresponseerror.md)   | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `status`                                                                                          | [PostHrisAbsencesErrorResponseStatus](../../models/shared/posthrisabsenceserrorresponsestatus.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

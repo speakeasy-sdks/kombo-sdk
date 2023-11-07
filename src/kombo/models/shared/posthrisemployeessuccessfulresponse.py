@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataBankAccounts:
+class PostHrisEmployeesSuccessfulResponseBankAccounts:
     account_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})
     r"""The bank-specific account number. Some companies use the account number field to put the IBAN here."""
     bank_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_name') }})
@@ -26,7 +26,7 @@ class PostHrisEmployeesSuccessfulResponseDataBankAccounts:
     
 
 
-class PostHrisEmployeesSuccessfulResponseDataEmploymentStatus1(str, Enum):
+class PostHrisEmployeesSuccessfulResponse1(str, Enum):
     r"""The current employment status of the employee:
 
     - `ACTIVE`: the employee is **actively employed**
@@ -43,10 +43,10 @@ class PostHrisEmployeesSuccessfulResponseDataEmploymentStatus1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataEmploymentStatus:
+class PostHrisEmployeesSuccessfulResponseEmploymentStatus:
     pass
 
-class PostHrisEmployeesSuccessfulResponseDataEmploymentType1(str, Enum):
+class PostHrisEmployeesSuccessfulResponseSchemas1(str, Enum):
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
@@ -59,10 +59,10 @@ class PostHrisEmployeesSuccessfulResponseDataEmploymentType1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataEmploymentType:
+class PostHrisEmployeesSuccessfulResponseEmploymentType:
     pass
 
-class PostHrisEmployeesSuccessfulResponseDataEthnicity1(str, Enum):
+class PostHrisEmployeesSuccessfulResponseSchemasData1(str, Enum):
     r"""One of 8 standardized values (`WHITE`, `ASIAN`, `HISPANIC_LATINO`, `HAWAIIAN`, `NATIVE_AMERICAN`, `BLACK_AFRICAN_AMERICAN`, `MULTIPLE_ETHNICITIES`, or `DECLINE_TO_SPECIFY`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     WHITE = 'WHITE'
     ASIAN = 'ASIAN'
@@ -75,10 +75,10 @@ class PostHrisEmployeesSuccessfulResponseDataEthnicity1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataEthnicity:
+class PostHrisEmployeesSuccessfulResponseEthnicity:
     pass
 
-class PostHrisEmployeesSuccessfulResponseDataGender1(str, Enum):
+class PostHrisEmployeesSuccessfulResponseSchemasDataGender1(str, Enum):
     r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
@@ -87,13 +87,13 @@ class PostHrisEmployeesSuccessfulResponseDataGender1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataGender:
+class PostHrisEmployeesSuccessfulResponseGender:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataHomeAddress:
+class PostHrisEmployeesSuccessfulResponseHomeAddress:
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
     country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
     r"""Contains the ISO2 country code if possible. If not, it contains the original value."""
@@ -105,7 +105,7 @@ class PostHrisEmployeesSuccessfulResponseDataHomeAddress:
     
 
 
-class PostHrisEmployeesSuccessfulResponseDataMaritalStatus1(str, Enum):
+class PostHrisEmployeesSuccessfulResponseSchemasDataMaritalStatus1(str, Enum):
     r"""One of 7 standardized values (`SINGLE`, `MARRIED`, `DOMESTIC_PARTNERSHIP`, `WIDOWED`, `DIVORCED`, `SEPARATED`, or `NOT_MARRIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     SINGLE = 'SINGLE'
     MARRIED = 'MARRIED'
@@ -117,7 +117,7 @@ class PostHrisEmployeesSuccessfulResponseDataMaritalStatus1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisEmployeesSuccessfulResponseDataMaritalStatus:
+class PostHrisEmployeesSuccessfulResponseMaritalStatus:
     pass
 
 
@@ -126,7 +126,7 @@ class PostHrisEmployeesSuccessfulResponseDataMaritalStatus:
 class PostHrisEmployeesSuccessfulResponseData:
     avatar: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('avatar') }})
     r"""URL to the employee’s avatar. This is either the raw URL from the HR system (in cases where it can be requested without short-lived authentication) _or_ a URL to a temporarily cached version of the file hosted by Kombo. Kombo will delete the cached file after its deletion in the source system."""
-    bank_accounts: Optional[List[PostHrisEmployeesSuccessfulResponseDataBankAccounts]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_accounts') }})
+    bank_accounts: Optional[List[PostHrisEmployeesSuccessfulResponseBankAccounts]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_accounts') }})
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The timestamp when this object was last changed. This value is tracked by Kombo based on changes in the data.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -140,7 +140,7 @@ class PostHrisEmployeesSuccessfulResponseData:
     r"""The employee’s full name, including middle names. Not all HR systems provide an explicit display name, so we recommend falling back to `first_name` and `last_name`."""
     employee_number: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee_number') }})
     r"""An optional, organization-internal employee number."""
-    employment_status: Optional[Union[PostHrisEmployeesSuccessfulResponseDataEmploymentStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_status') }})
+    employment_status: Optional[Union[PostHrisEmployeesSuccessfulResponse1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_status') }})
     r"""The current employment status of the employee:
 
     - `ACTIVE`: the employee is **actively employed**
@@ -150,15 +150,15 @@ class PostHrisEmployeesSuccessfulResponseData:
 
     Please note that in rare cases, where we can't find a clear mapping, the original string is passed through.
     """
-    employment_type: Optional[Union[PostHrisEmployeesSuccessfulResponseDataEmploymentType1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
+    employment_type: Optional[Union[PostHrisEmployeesSuccessfulResponseSchemas1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    ethnicity: Optional[Union[PostHrisEmployeesSuccessfulResponseDataEthnicity1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ethnicity') }})
+    ethnicity: Optional[Union[PostHrisEmployeesSuccessfulResponseSchemasData1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ethnicity') }})
     r"""One of 8 standardized values (`WHITE`, `ASIAN`, `HISPANIC_LATINO`, `HAWAIIAN`, `NATIVE_AMERICAN`, `BLACK_AFRICAN_AMERICAN`, `MULTIPLE_ETHNICITIES`, or `DECLINE_TO_SPECIFY`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     r"""The employee’s first name."""
-    gender: Optional[Union[PostHrisEmployeesSuccessfulResponseDataGender1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender') }})
+    gender: Optional[Union[PostHrisEmployeesSuccessfulResponseSchemasDataGender1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender') }})
     r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    home_address: Optional[PostHrisEmployeesSuccessfulResponseDataHomeAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address') }})
+    home_address: Optional[PostHrisEmployeesSuccessfulResponseHomeAddress] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The globally unique ID of this object generated by Kombo. We recommend using this as a stable primary key for syncing."""
     job_title: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_title') }})
@@ -168,7 +168,7 @@ class PostHrisEmployeesSuccessfulResponseData:
     legal_entity_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_entity_id') }})
     r"""The ID of the employee’s legal entity."""
     manager_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manager_id') }})
-    marital_status: Optional[Union[PostHrisEmployeesSuccessfulResponseDataMaritalStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status') }})
+    marital_status: Optional[Union[PostHrisEmployeesSuccessfulResponseSchemasDataMaritalStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status') }})
     r"""One of 7 standardized values (`SINGLE`, `MARRIED`, `DOMESTIC_PARTNERSHIP`, `WIDOWED`, `DIVORCED`, `SEPARATED`, or `NOT_MARRIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     mobile_phone_number: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mobile_phone_number') }})
     nationality: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nationality') }})

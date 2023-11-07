@@ -102,32 +102,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteHrisAbsencesAbsenceIDErrorResponse])
-                res.delete_hris_absences_absence_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteHrisAbsencesAbsenceIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteHrisAbsencesAbsenceID401ApplicationJSON])
-                res.delete_hris_absences_absence_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteHrisAbsencesAbsenceIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteHrisAbsencesAbsenceID403ApplicationJSON])
-                res.delete_hris_absences_absence_id_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteHrisAbsencesAbsenceID404ApplicationJSON])
-                res.delete_hris_absences_absence_id_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteHrisAbsencesAbsenceID503ApplicationJSON])
-                res.delete_hris_absences_absence_id_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -257,32 +264,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisAbsenceTypesErrorResponse])
-                res.get_hris_absence_types_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisAbsenceTypesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsenceTypes401ApplicationJSON])
-                res.get_hris_absence_types_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisAbsenceTypesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsenceTypes403ApplicationJSON])
-                res.get_hris_absence_types_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsenceTypes404ApplicationJSON])
-                res.get_hris_absence_types_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsenceTypes503ApplicationJSON])
-                res.get_hris_absence_types_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsenceTypesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -408,32 +422,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisAbsencesErrorResponse])
-                res.get_hris_absences_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisAbsencesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsences401ApplicationJSON])
-                res.get_hris_absences_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisAbsencesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsences403ApplicationJSON])
-                res.get_hris_absences_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsencesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsences404ApplicationJSON])
-                res.get_hris_absences_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsencesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisAbsences503ApplicationJSON])
-                res.get_hris_absences_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISAbsencesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -617,32 +638,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisEmployeesErrorResponse])
-                res.get_hris_employees_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisEmployeesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployees401ApplicationJSON])
-                res.get_hris_employees_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisEmployeesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployees403ApplicationJSON])
-                res.get_hris_employees_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmployeesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployees404ApplicationJSON])
-                res.get_hris_employees_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmployeesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployees503ApplicationJSON])
-                res.get_hris_employees_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmployeesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -792,32 +820,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisEmploymentsErrorResponse])
-                res.get_hris_employments_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisEmploymentsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployments401ApplicationJSON])
-                res.get_hris_employments_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisEmploymentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployments403ApplicationJSON])
-                res.get_hris_employments_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmploymentsUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployments404ApplicationJSON])
-                res.get_hris_employments_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmploymentsUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisEmployments503ApplicationJSON])
-                res.get_hris_employments_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISEmploymentsUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -991,32 +1026,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisGroupsErrorResponse])
-                res.get_hris_groups_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisGroupsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisGroups401ApplicationJSON])
-                res.get_hris_groups_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisGroupsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisGroups403ApplicationJSON])
-                res.get_hris_groups_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISGroupsUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisGroups404ApplicationJSON])
-                res.get_hris_groups_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISGroupsUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisGroups503ApplicationJSON])
-                res.get_hris_groups_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISGroupsUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1102,32 +1144,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisLegalEntitiesErrorResponse])
-                res.get_hris_legal_entities_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisLegalEntitiesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLegalEntities401ApplicationJSON])
-                res.get_hris_legal_entities_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisLegalEntitiesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLegalEntities403ApplicationJSON])
-                res.get_hris_legal_entities_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLegalEntities404ApplicationJSON])
-                res.get_hris_legal_entities_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLegalEntities503ApplicationJSON])
-                res.get_hris_legal_entities_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLegalEntitiesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1265,32 +1314,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisLocationsErrorResponse])
-                res.get_hris_locations_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisLocationsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLocations401ApplicationJSON])
-                res.get_hris_locations_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisLocationsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLocations403ApplicationJSON])
-                res.get_hris_locations_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLocationsUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLocations404ApplicationJSON])
-                res.get_hris_locations_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLocationsUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisLocations503ApplicationJSON])
-                res.get_hris_locations_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISLocationsUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1466,32 +1522,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisTeamsErrorResponse])
-                res.get_hris_teams_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisTeamsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTeams401ApplicationJSON])
-                res.get_hris_teams_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisTeamsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTeams403ApplicationJSON])
-                res.get_hris_teams_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTeamsUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTeams404ApplicationJSON])
-                res.get_hris_teams_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTeamsUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTeams503ApplicationJSON])
-                res.get_hris_teams_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTeamsUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1585,32 +1648,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetHrisTimeOffBalancesErrorResponse])
-                res.get_hris_time_off_balances_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisTimeOffBalancesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTimeOffBalances401ApplicationJSON])
-                res.get_hris_time_off_balances_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHrisTimeOffBalancesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTimeOffBalances403ApplicationJSON])
-                res.get_hris_time_off_balances_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTimeOffBalances404ApplicationJSON])
-                res.get_hris_time_off_balances_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetHrisTimeOffBalances503ApplicationJSON])
-                res.get_hris_time_off_balances_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1701,32 +1771,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PatchHrisEmployeesEmployeeIDErrorResponse])
-                res.patch_hris_employees_employee_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchHrisEmployeesEmployeeIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchHrisEmployeesEmployeeID401ApplicationJSON])
-                res.patch_hris_employees_employee_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchHrisEmployeesEmployeeIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchHrisEmployeesEmployeeID403ApplicationJSON])
-                res.patch_hris_employees_employee_id_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchHrisEmployeesEmployeeID404ApplicationJSON])
-                res.patch_hris_employees_employee_id_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PatchHrisEmployeesEmployeeID503ApplicationJSON])
-                res.patch_hris_employees_employee_id_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1839,32 +1916,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostHrisAbsencesErrorResponse])
-                res.post_hris_absences_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHrisAbsencesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisAbsences401ApplicationJSON])
-                res.post_hris_absences_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHrisAbsencesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisAbsences403ApplicationJSON])
-                res.post_hris_absences_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISAbsencesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisAbsences404ApplicationJSON])
-                res.post_hris_absences_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISAbsencesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisAbsences503ApplicationJSON])
-                res.post_hris_absences_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISAbsencesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1984,32 +2068,39 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostHrisEmployeesErrorResponse])
-                res.post_hris_employees_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHrisEmployeesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisEmployees401ApplicationJSON])
-                res.post_hris_employees_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHrisEmployeesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisEmployees403ApplicationJSON])
-                res.post_hris_employees_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISEmployeesUnifiedHRISAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisEmployees404ApplicationJSON])
-                res.post_hris_employees_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISEmployeesUnifiedHRISAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostHrisEmployees503ApplicationJSON])
-                res.post_hris_employees_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHRISEmployeesUnifiedHRISAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2052,10 +2143,13 @@ class UnifiedHRISAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse])
-                res.post_hris_employees_employee_id_attachments_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

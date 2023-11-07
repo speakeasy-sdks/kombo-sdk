@@ -1,9 +1,0 @@
-# PostConnectCreateLinkErrorResponse
-
-
-## Fields
-
-| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                     | [PostConnectCreateLinkErrorResponseError](../../models/shared/postconnectcreatelinkerrorresponseerror.md)   | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `status`                                                                                                    | [PostConnectCreateLinkErrorResponseStatus](../../models/shared/postconnectcreatelinkerrorresponsestatus.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

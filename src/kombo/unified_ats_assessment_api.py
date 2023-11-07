@@ -45,10 +45,13 @@ class UnifiedATSAssessmentAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAssessmentOrdersOpenErrorResponse])
-                res.get_assessment_orders_open_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAssessmentOrdersOpenErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -85,10 +88,13 @@ class UnifiedATSAssessmentAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAssessmentPackagesErrorResponse])
-                res.get_assessment_packages_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAssessmentPackagesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -179,32 +185,39 @@ class UnifiedATSAssessmentAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PutAssessmentOrdersAssessmentOrderIDResultErrorResponse])
-                res.put_assessment_orders_assessment_order_id_result_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentOrdersAssessmentOrderIDResultErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSON])
-                res.put_assessment_orders_assessment_order_id_result_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentOrdersAssessmentOrderIDResultResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSON])
-                res.put_assessment_orders_assessment_order_id_result_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSON])
-                res.put_assessment_orders_assessment_order_id_result_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSON])
-                res.put_assessment_orders_assessment_order_id_result_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -247,10 +260,13 @@ class UnifiedATSAssessmentAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PutAssessmentPackagesErrorResponse])
-                res.put_assessment_packages_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAssessmentPackagesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

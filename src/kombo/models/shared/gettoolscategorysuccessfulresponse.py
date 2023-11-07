@@ -10,7 +10,7 @@ from typing import List
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataToolsAssets:
+class Assets:
     icon_black_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon_black_url') }})
     icon_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon_url') }})
     logo_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logo_url') }})
@@ -20,7 +20,7 @@ class GetToolsCategorySuccessfulResponseDataToolsAssets:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures:
+class Features:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     
@@ -29,7 +29,7 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels:
+class ReadModels:
     r"""List of models we can read for this tool."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
@@ -39,7 +39,7 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions:
+class WriteActions:
     r"""List of supported write actions for this tool."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
@@ -49,20 +49,20 @@ class GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataToolsCoverage:
+class Coverage:
     r"""This describes the supported models and actions of this tool."""
-    features: List[GetToolsCategorySuccessfulResponseDataToolsCoverageFeatures] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
-    read_models: List[GetToolsCategorySuccessfulResponseDataToolsCoverageReadModels] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('read_models') }})
-    write_actions: List[GetToolsCategorySuccessfulResponseDataToolsCoverageWriteActions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('write_actions') }})
+    features: List[Features] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
+    read_models: List[ReadModels] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('read_models') }})
+    write_actions: List[WriteActions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('write_actions') }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToolsCategorySuccessfulResponseDataTools:
-    assets: GetToolsCategorySuccessfulResponseDataToolsAssets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
-    coverage: GetToolsCategorySuccessfulResponseDataToolsCoverage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coverage') }})
+class Tools:
+    assets: Assets = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assets') }})
+    coverage: Coverage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coverage') }})
     r"""This describes the supported models and actions of this tool."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
@@ -73,7 +73,7 @@ class GetToolsCategorySuccessfulResponseDataTools:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetToolsCategorySuccessfulResponseData:
-    tools: List[GetToolsCategorySuccessfulResponseDataTools] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tools') }})
+    tools: List[Tools] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tools') }})
     
 
 

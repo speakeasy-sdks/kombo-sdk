@@ -1,9 +1,0 @@
-# GetAssessmentOrdersOpenErrorResponse
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                         | [GetAssessmentOrdersOpenErrorResponseError](../../models/shared/getassessmentordersopenerrorresponseerror.md)   | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
-| `status`                                                                                                        | [GetAssessmentOrdersOpenErrorResponseStatus](../../models/shared/getassessmentordersopenerrorresponsestatus.md) | :heavy_check_mark:                                                                                              | N/A                                                                                                             |

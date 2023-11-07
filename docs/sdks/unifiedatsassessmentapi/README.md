@@ -1,5 +1,5 @@
 # UnifiedATSAssessmentAPI
-(*unified_ats_assessment_api*)
+(*.unified_ats_assessment_api*)
 
 ### Available Operations
 
@@ -142,8 +142,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -155,14 +155,14 @@ s = kombo.Kombo(
 
 res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='string', assessment_order_id='string', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
     attributes=[
-        operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes(
+        operations.Attributes(
             field='string',
             value='string',
         ),
     ],
     completed_at=dateutil.parser.isoparse('2023-02-12T07:45:50.009Z'),
     result_url='https://white-theism.biz',
-    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.OPEN,
+    status=operations.Status.OPEN,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:
@@ -205,11 +205,11 @@ s = kombo.Kombo(
 
 res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='string', request_body=operations.PutAssessmentPackagesRequestBody(
     packages=[
-        operations.PutAssessmentPackagesRequestBodyPackages(
+        operations.Packages(
             description='Future-proofed 5th generation framework',
             id='<ID>',
             name='string',
-            type=operations.PutAssessmentPackagesRequestBodyPackagesType.BEHAVIORAL,
+            type=operations.Type.BEHAVIORAL,
         ),
     ],
 ))

@@ -13,13 +13,13 @@ from kombo.models import shared
 from typing import Dict
 
 class Kombo:
-    custom_endpoints: CustomEndpoints
-    general: General
-    kombo_connect: KomboConnect
-    r"""Endpoints for Kombo Connect, our end-user-facing flow for setting up new integrations."""
     unified_ats_assessment_api: UnifiedATSAssessmentAPI
     unified_ats_api: UnifiedATSAPI
     r"""Unified endpoints to access all the ATS concepts you might need."""
+    general: General
+    kombo_connect: KomboConnect
+    r"""Endpoints for Kombo Connect, our end-user-facing flow for setting up new integrations."""
+    custom_endpoints: CustomEndpoints
     unified_hris_api: UnifiedHRISAPI
     r"""Unified endpoints to access all the HR concepts you might need."""
 
@@ -64,10 +64,10 @@ class Kombo:
         self._init_sdks()
     
     def _init_sdks(self):
-        self.custom_endpoints = CustomEndpoints(self.sdk_configuration)
-        self.general = General(self.sdk_configuration)
-        self.kombo_connect = KomboConnect(self.sdk_configuration)
         self.unified_ats_assessment_api = UnifiedATSAssessmentAPI(self.sdk_configuration)
         self.unified_ats_api = UnifiedATSAPI(self.sdk_configuration)
+        self.general = General(self.sdk_configuration)
+        self.kombo_connect = KomboConnect(self.sdk_configuration)
+        self.custom_endpoints = CustomEndpoints(self.sdk_configuration)
         self.unified_hris_api = UnifiedHRISAPI(self.sdk_configuration)
     

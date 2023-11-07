@@ -9,7 +9,7 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, List, Optional
 
-class GetHrisTeamsSuccessfulResponseDataResultsType(str, Enum):
+class GetHrisTeamsSuccessfulResponseType(str, Enum):
     r"""Type of the group. Can be any of `DEPARTMENT`, `TEAM`, and `COST_CENTER`"""
     DEPARTMENT = 'DEPARTMENT'
     TEAM = 'TEAM'
@@ -18,7 +18,7 @@ class GetHrisTeamsSuccessfulResponseDataResultsType(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisTeamsSuccessfulResponseDataResults:
+class GetHrisTeamsSuccessfulResponseResults:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -31,7 +31,7 @@ class GetHrisTeamsSuccessfulResponseDataResults:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     remote_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    type: Optional[GetHrisTeamsSuccessfulResponseDataResultsType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: Optional[GetHrisTeamsSuccessfulResponseType] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the group. Can be any of `DEPARTMENT`, `TEAM`, and `COST_CENTER`"""
     
 
@@ -42,7 +42,7 @@ class GetHrisTeamsSuccessfulResponseDataResults:
 class GetHrisTeamsSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: List[GetHrisTeamsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisTeamsSuccessfulResponseResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 

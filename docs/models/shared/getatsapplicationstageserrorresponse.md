@@ -1,9 +1,0 @@
-# GetAtsApplicationStagesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                         | [GetAtsApplicationStagesErrorResponseError](../../models/shared/getatsapplicationstageserrorresponseerror.md)   | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
-| `status`                                                                                                        | [GetAtsApplicationStagesErrorResponseStatus](../../models/shared/getatsapplicationstageserrorresponsestatus.md) | :heavy_check_mark:                                                                                              | N/A                                                                                                             |

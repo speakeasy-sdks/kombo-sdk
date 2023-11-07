@@ -3,14 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import postintegrationsintegrationidrelinkerrorresponse as shared_postintegrationsintegrationidrelinkerrorresponse
-from ..shared import postintegrationsintegrationidrelinksuccessfulresponse as shared_postintegrationsintegrationidrelinksuccessfulresponse
+from ...models.shared import postintegrationsintegrationidrelinksuccessfulresponse as shared_postintegrationsintegrationidrelinksuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
 from typing import Optional
 
-class PostIntegrationsIntegrationIDRelinkRequestBodyLanguage(str, Enum):
+class Language(str, Enum):
     r"""Language of the connection flow UI."""
     EN = 'en'
     DE = 'de'
@@ -21,7 +20,7 @@ class PostIntegrationsIntegrationIDRelinkRequestBodyLanguage(str, Enum):
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelinkRequestBody:
     r"""POST /integrations/:integration_id/relink request body"""
-    language: Optional[PostIntegrationsIntegrationIDRelinkRequestBodyLanguage] = dataclasses.field(default=PostIntegrationsIntegrationIDRelinkRequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[Language] = dataclasses.field(default=Language.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language of the connection flow UI."""
     
 
@@ -37,37 +36,12 @@ class PostIntegrationsIntegrationIDRelinkRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostIntegrationsIntegrationIDRelink401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostIntegrationsIntegrationIDRelink401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostIntegrationsIntegrationIDRelink401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostIntegrationsIntegrationIDRelink401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostIntegrationsIntegrationIDRelink401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelinkResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_integrations_integration_id_relink_401_application_json_object: Optional[PostIntegrationsIntegrationIDRelink401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_integrations_integration_id_relink_error_response: Optional[shared_postintegrationsintegrationidrelinkerrorresponse.PostIntegrationsIntegrationIDRelinkErrorResponse] = dataclasses.field(default=None)
-    r"""POST /integrations/:integration_id/relink Error response"""
     post_integrations_integration_id_relink_successful_response: Optional[shared_postintegrationsintegrationidrelinksuccessfulresponse.PostIntegrationsIntegrationIDRelinkSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /integrations/:integration_id/relink Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

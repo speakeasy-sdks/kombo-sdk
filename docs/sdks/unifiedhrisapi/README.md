@@ -1,5 +1,5 @@
 # UnifiedHRISAPI
-(*unified_hris_api*)
+(*.unified_hris_api*)
 
 ## Overview
 
@@ -217,8 +217,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -349,8 +349,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -539,8 +539,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -695,8 +695,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -875,8 +875,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -967,8 +967,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1111,8 +1111,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1293,8 +1293,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1393,8 +1393,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1482,8 +1482,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1495,10 +1495,10 @@ s = kombo.Kombo(
 
 res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='string', employee_id='string', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
     first_name='Tamara',
-    home_address=shared.PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress(),
+    home_address=shared.HomeAddress(),
     last_name='Lesch',
-    remote_fields=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields(
-        humaans=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans(
+    remote_fields=shared.RemoteFields(
+        humaans=shared.Humaans(
             employee={
                 "key": 'string',
             },
@@ -1605,8 +1605,8 @@ Check [this page](/hris/features/creating-absences) for a detailed guide.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1726,8 +1726,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1739,10 +1739,10 @@ s = kombo.Kombo(
 
 res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_body=operations.PostHrisEmployeesRequestBody(
     first_name='Kara',
-    home_address=operations.PostHrisEmployeesRequestBodyHomeAddress(),
+    home_address=operations.HomeAddress(),
     last_name='Williamson',
-    remote_fields=operations.PostHrisEmployeesRequestBodyRemoteFields(
-        humaans=operations.PostHrisEmployeesRequestBodyRemoteFieldsHumaans(
+    remote_fields=operations.PostHrisEmployeesRemoteFields(
+        humaans=operations.Humaans(
             employee={
                 "key": 'string',
             },

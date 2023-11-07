@@ -1,9 +1,0 @@
-# GetToolsCategoryErrorResponse
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `error`                                                                                           | [GetToolsCategoryErrorResponseError](../../models/shared/gettoolscategoryerrorresponseerror.md)   | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `status`                                                                                          | [GetToolsCategoryErrorResponseStatus](../../models/shared/gettoolscategoryerrorresponsestatus.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

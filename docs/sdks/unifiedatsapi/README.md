@@ -1,5 +1,5 @@
 # UnifiedATSAPI
-(*unified_ats_api*)
+(*.unified_ats_api*)
 
 ## Overview
 
@@ -116,12 +116,12 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
-    remote_fields=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
-        greenhouse=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    remote_fields=operations.RemoteFields(
+        greenhouse=operations.Greenhouse(
+            post_headers=operations.PostHeaders(),
         ),
     ),
-    tag=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyTag(
+    tag=operations.Tag(
         name='string',
     ),
 ))
@@ -306,8 +306,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -502,8 +502,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -690,8 +690,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -902,8 +902,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1030,8 +1030,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1166,8 +1166,8 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1306,9 +1306,9 @@ s = kombo.Kombo(
 
 res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
     content='string',
-    content_type=operations.PostAtsApplicationsApplicationIDNotesRequestBodyContentType.PLAIN_TEXT,
-    remote_fields=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields(
-        teamtailor=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor(),
+    content_type=operations.ContentType.PLAIN_TEXT,
+    remote_fields=operations.PostAtsApplicationsApplicationIDNotesRemoteFields(
+        teamtailor=operations.Teamtailor(),
     ),
 ))
 
@@ -1377,9 +1377,9 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
-    details=operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails(
+    details=operations.Details(
         attributes=[
-            operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes(
+            operations.PostAtsApplicationsApplicationIDResultLinksAttributes(
                 key='<key>',
                 value='string',
             ),
@@ -1649,8 +1649,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -1661,43 +1661,43 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_body=operations.PostAtsCandidatesRequestBody(
-    application=operations.PostAtsCandidatesRequestBodyApplication(
+    application=operations.Application(
         job_id='string',
     ),
     attachments=[
-        operations.PostAtsCandidatesRequestBodyAttachments(
+        operations.Attachments(
             name='string',
-            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.OTHER,
+            type=operations.PostAtsCandidatesType.OTHER,
         ),
     ],
-    candidate=operations.PostAtsCandidatesRequestBodyCandidate(
+    candidate=operations.Candidate(
         email_address='Claudine15@hotmail.com',
         first_name='Nona',
         last_name='Reilly',
-        location=operations.PostAtsCandidatesRequestBodyCandidateLocation(
+        location=operations.Location(
             country='Gibraltar',
         ),
-        salary_expectations=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectations(
+        salary_expectations=operations.SalaryExpectations(
             amount=6767.86,
-            period=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
+            period=operations.PostAtsCandidatesPeriod.YEAR,
         ),
         social_links=[
-            operations.PostAtsCandidatesRequestBodyCandidateSocialLinks(
+            operations.SocialLinks(
                 url='http://caring-outlook.info',
             ),
         ],
     ),
-    gdpr_consent=operations.PostAtsCandidatesRequestBodyGdprConsent(),
-    remote_fields=operations.PostAtsCandidatesRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    gdpr_consent=operations.GdprConsent(),
+    remote_fields=operations.PostAtsCandidatesRemoteFields(
+        greenhouse=operations.PostAtsCandidatesGreenhouse(
+            post_headers=operations.PostAtsCandidatesPostHeaders(),
         ),
-        lever=operations.PostAtsCandidatesRequestBodyRemoteFieldsLever(
+        lever=operations.Lever(
             candidate={
                 "key": 'string',
             },
         ),
-        successfactors=operations.PostAtsCandidatesRequestBodyRemoteFieldsSuccessfactors(
+        successfactors=operations.Successfactors(
             candidate={
                 "key": 'string',
             },
@@ -1705,24 +1705,24 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_b
                 "key": 'string',
             },
         ),
-        teamtailor=operations.PostAtsCandidatesRequestBodyRemoteFieldsTeamtailor(
+        teamtailor=operations.PostAtsCandidatesTeamtailor(
             candidate={
                 "key": 'string',
             },
         ),
-        workable=operations.PostAtsCandidatesRequestBodyRemoteFieldsWorkable(
+        workable=operations.Workable(
             candidate={
                 "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
-        operations.PostAtsCandidatesRequestBodyScreeningQuestionAnswers(
+        operations.ScreeningQuestionAnswers(
         False,
             question_id='string',
         ),
     ],
-    source=operations.PostAtsCandidatesRequestBodySource(),
+    source=operations.Source(),
 ))
 
 if res.post_ats_candidates_successful_response is not None:
@@ -1861,13 +1861,13 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
-    attachment=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment(
+    attachment=operations.Attachment(
         name='string',
-        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.OTHER,
+        type=operations.PostAtsCandidatesCandidateIDAttachmentsType.OTHER,
     ),
-    remote_fields=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    remote_fields=operations.PostAtsCandidatesCandidateIDAttachmentsRemoteFields(
+        greenhouse=operations.PostAtsCandidatesCandidateIDAttachmentsGreenhouse(
+            post_headers=operations.PostAtsCandidatesCandidateIDAttachmentsPostHeaders(),
         ),
     ),
 ))
@@ -2030,9 +2030,9 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
-    details=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails(
+    details=operations.PostAtsCandidatesCandidateIDResultLinksDetails(
         attributes=[
-            operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes(
+            operations.PostAtsCandidatesCandidateIDResultLinksAttributes(
                 key='<key>',
                 value='string',
             ),
@@ -2040,9 +2040,9 @@ res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integrat
         custom_field_name_prefix='string',
     ),
     label='string',
-    remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRemoteFields(
+        greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksGreenhouse(
+            post_headers=operations.PostAtsCandidatesCandidateIDResultLinksPostHeaders(),
         ),
     ),
     url='http://round-anorak.com',
@@ -2167,12 +2167,12 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
-    remote_fields=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    remote_fields=operations.PostAtsCandidatesCandidateIDTagsRemoteFields(
+        greenhouse=operations.PostAtsCandidatesCandidateIDTagsGreenhouse(
+            post_headers=operations.PostAtsCandidatesCandidateIDTagsPostHeaders(),
         ),
     ),
-    tag=operations.PostAtsCandidatesCandidateIDTagsRequestBodyTag(
+    tag=operations.PostAtsCandidatesCandidateIDTagsTag(
         name='string',
     ),
 ))
@@ -2417,8 +2417,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -2430,39 +2430,39 @@ s = kombo.Kombo(
 
 res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='string', job_id='string', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
     attachments=[
-        operations.PostAtsJobsJobIDApplicationsRequestBodyAttachments(
+        operations.PostAtsJobsJobIDApplicationsAttachments(
             name='string',
-            type=operations.PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType.COVER_LETTER,
+            type=operations.PostAtsJobsJobIDApplicationsType.COVER_LETTER,
         ),
     ],
-    candidate=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidate(
+    candidate=operations.PostAtsJobsJobIDApplicationsCandidate(
         email_address='Pierre_Pfeffer@yahoo.com',
         first_name='Clarissa',
         last_name='Davis',
-        location=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation(
+        location=operations.PostAtsJobsJobIDApplicationsLocation(
             country='Portugal',
         ),
-        salary_expectations=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations(
+        salary_expectations=operations.PostAtsJobsJobIDApplicationsSalaryExpectations(
             amount=1065.03,
-            period=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod.YEAR,
+            period=operations.PostAtsJobsJobIDApplicationsPeriod.YEAR,
         ),
         social_links=[
-            operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks(
+            operations.PostAtsJobsJobIDApplicationsSocialLinks(
                 url='https://vain-pomelo.com',
             ),
         ],
     ),
-    gdpr_consent=operations.PostAtsJobsJobIDApplicationsRequestBodyGdprConsent(),
-    remote_fields=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    gdpr_consent=operations.PostAtsJobsJobIDApplicationsGdprConsent(),
+    remote_fields=operations.PostAtsJobsJobIDApplicationsRemoteFields(
+        greenhouse=operations.PostAtsJobsJobIDApplicationsGreenhouse(
+            post_headers=operations.PostAtsJobsJobIDApplicationsPostHeaders(),
         ),
-        lever=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever(
+        lever=operations.PostAtsJobsJobIDApplicationsLever(
             candidate={
                 "key": 'string',
             },
         ),
-        successfactors=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors(
+        successfactors=operations.PostAtsJobsJobIDApplicationsSuccessfactors(
             candidate={
                 "key": 'string',
             },
@@ -2470,24 +2470,24 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
                 "key": 'string',
             },
         ),
-        teamtailor=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor(
+        teamtailor=operations.PostAtsJobsJobIDApplicationsTeamtailor(
             candidate={
                 "key": 'string',
             },
         ),
-        workable=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable(
+        workable=operations.PostAtsJobsJobIDApplicationsWorkable(
             candidate={
                 "key": 'string',
             },
         ),
     ),
     screening_question_answers=[
-        operations.PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers(
+        operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
         dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
             question_id='string',
         ),
     ],
-    source=operations.PostAtsJobsJobIDApplicationsRequestBodySource(),
+    source=operations.PostAtsJobsJobIDApplicationsSource(),
 ))
 
 if res.post_ats_jobs_job_id_applications_successful_response is not None:
@@ -2597,9 +2597,9 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='string', application_id='string', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
-    remote_fields=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields(
-        greenhouse=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders(),
+    remote_fields=operations.PutAtsApplicationsApplicationIDStageRemoteFields(
+        greenhouse=operations.PutAtsApplicationsApplicationIDStageGreenhouse(
+            post_headers=operations.PutAtsApplicationsApplicationIDStagePostHeaders(),
         ),
     ),
     stage_id='string',

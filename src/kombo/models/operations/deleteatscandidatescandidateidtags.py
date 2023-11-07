@@ -3,17 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deleteatscandidatescandidateidtagserrorresponse as shared_deleteatscandidatescandidateidtagserrorresponse
-from ..shared import deleteatscandidatescandidateidtagssuccessfulresponse as shared_deleteatscandidatescandidateidtagssuccessfulresponse
+from ...models.shared import deleteatscandidatescandidateidtagssuccessfulresponse as shared_deleteatscandidatescandidateidtagssuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from kombo import utils
 from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders:
+class PostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of') }})
     r"""ID of the the user that will show up as having performed the action in Greenhouse. We already pass a value by default, but you can use this to override it."""
@@ -23,9 +21,9 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHea
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse:
+class Greenhouse:
     r"""Fields specific to Greenhouse."""
-    post_headers: Optional[DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
+    post_headers: Optional[PostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     
 
@@ -33,9 +31,9 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields:
+class RemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
-    greenhouse: Optional[DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
+    greenhouse: Optional[Greenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Greenhouse."""
     
 
@@ -43,7 +41,7 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTagsRequestBodyTag:
+class Tag:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the tag you would like to remove."""
     
@@ -54,8 +52,8 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBodyTag:
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequestBody:
     r"""DELETE /ats/candidates/:candidate_id/tags request body"""
-    tag: DeleteAtsCandidatesCandidateIDTagsRequestBodyTag = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
-    remote_fields: Optional[DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
+    tag: Tag = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
+    remote_fields: Optional[RemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
 
@@ -73,106 +71,12 @@ class DeleteAtsCandidatesCandidateIDTagsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteAtsCandidatesCandidateIDTags503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: DeleteAtsCandidatesCandidateIDTags503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteAtsCandidatesCandidateIDTags503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteAtsCandidatesCandidateIDTags404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: DeleteAtsCandidatesCandidateIDTags404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteAtsCandidatesCandidateIDTags404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteAtsCandidatesCandidateIDTags403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: DeleteAtsCandidatesCandidateIDTags403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteAtsCandidatesCandidateIDTags403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteAtsCandidatesCandidateIDTags401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTags401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: DeleteAtsCandidatesCandidateIDTags401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteAtsCandidatesCandidateIDTags401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_ats_candidates_candidate_id_tags_401_application_json_object: Optional[DeleteAtsCandidatesCandidateIDTags401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    delete_ats_candidates_candidate_id_tags_403_application_json_object: Optional[DeleteAtsCandidatesCandidateIDTags403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    delete_ats_candidates_candidate_id_tags_404_application_json_object: Optional[DeleteAtsCandidatesCandidateIDTags404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    delete_ats_candidates_candidate_id_tags_503_application_json_object: Optional[DeleteAtsCandidatesCandidateIDTags503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    delete_ats_candidates_candidate_id_tags_error_response: Optional[shared_deleteatscandidatescandidateidtagserrorresponse.DeleteAtsCandidatesCandidateIDTagsErrorResponse] = dataclasses.field(default=None)
-    r"""DELETE /ats/candidates/:candidate_id/tags Error response"""
     delete_ats_candidates_candidate_id_tags_successful_response: Optional[shared_deleteatscandidatescandidateidtagssuccessfulresponse.DeleteAtsCandidatesCandidateIDTagsSuccessfulResponse] = dataclasses.field(default=None)
     r"""DELETE /ats/candidates/:candidate_id/tags Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

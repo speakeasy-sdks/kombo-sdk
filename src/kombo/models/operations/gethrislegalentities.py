@@ -3,13 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gethrislegalentitieserrorresponse as shared_gethrislegalentitieserrorresponse
-from ..shared import gethrislegalentitiesparameterincludedeleted as shared_gethrislegalentitiesparameterincludedeleted
-from ..shared import gethrislegalentitiessuccessfulresponse as shared_gethrislegalentitiessuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import gethrislegalentitiesparameterincludedeleted as shared_gethrislegalentitiesparameterincludedeleted
+from ...models.shared import gethrislegalentitiessuccessfulresponse as shared_gethrislegalentitiessuccessfulresponse
 from datetime import datetime
-from enum import Enum
-from kombo import utils
 from typing import Optional
 
 
@@ -33,106 +29,12 @@ class GetHrisLegalEntitiesRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLegalEntities503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetHrisLegalEntities503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLegalEntities503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLegalEntities404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetHrisLegalEntities404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLegalEntities404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLegalEntities403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetHrisLegalEntities403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLegalEntities403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLegalEntities401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLegalEntities401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetHrisLegalEntities401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLegalEntities401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class GetHrisLegalEntitiesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_hris_legal_entities_401_application_json_object: Optional[GetHrisLegalEntities401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_hris_legal_entities_403_application_json_object: Optional[GetHrisLegalEntities403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_hris_legal_entities_404_application_json_object: Optional[GetHrisLegalEntities404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_hris_legal_entities_503_application_json_object: Optional[GetHrisLegalEntities503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_hris_legal_entities_error_response: Optional[shared_gethrislegalentitieserrorresponse.GetHrisLegalEntitiesErrorResponse] = dataclasses.field(default=None)
-    r"""GET /hris/legal-entities Error response"""
     get_hris_legal_entities_successful_response: Optional[shared_gethrislegalentitiessuccessfulresponse.GetHrisLegalEntitiesSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/legal-entities Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

@@ -1,9 +1,0 @@
-# GetCustomDatevDataPushesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                           | [GetCustomDatevDataPushesErrorResponseError](../../models/shared/getcustomdatevdatapusheserrorresponseerror.md)   | :heavy_check_mark:                                                                                                | N/A                                                                                                               |
-| `status`                                                                                                          | [GetCustomDatevDataPushesErrorResponseStatus](../../models/shared/getcustomdatevdatapusheserrorresponsestatus.md) | :heavy_check_mark:                                                                                                | N/A                                                                                                               |

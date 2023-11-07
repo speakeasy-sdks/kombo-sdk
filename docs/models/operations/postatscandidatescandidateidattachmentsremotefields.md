@@ -1,0 +1,10 @@
+# PostAtsCandidatesCandidateIDAttachmentsRemoteFields
+
+Additional fields that we will pass through to specific ATS systems.
+
+
+## Fields
+
+| Field                                                                                                                                                  | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `greenhouse`                                                                                                                                           | [Optional[operations.PostAtsCandidatesCandidateIDAttachmentsGreenhouse]](../../models/operations/postatscandidatescandidateidattachmentsgreenhouse.md) | :heavy_minus_sign:                                                                                                                                     | Fields specific to Greenhouse.                                                                                                                         |

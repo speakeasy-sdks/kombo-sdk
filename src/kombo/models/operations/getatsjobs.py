@@ -3,14 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getatsjobserrorresponse as shared_getatsjobserrorresponse
-from ..shared import getatsjobsparameterincludedeleted as shared_getatsjobsparameterincludedeleted
-from ..shared import getatsjobsparameterstatus as shared_getatsjobsparameterstatus
-from ..shared import getatsjobssuccessfulresponse as shared_getatsjobssuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import getatsjobsparameterincludedeleted as shared_getatsjobsparameterincludedeleted
+from ...models.shared import getatsjobsparameterstatus as shared_getatsjobsparameterstatus
+from ...models.shared import getatsjobssuccessfulresponse as shared_getatsjobssuccessfulresponse
 from datetime import datetime
-from enum import Enum
-from kombo import utils
 from typing import Optional
 
 
@@ -44,106 +40,12 @@ class GetAtsJobsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetAtsJobs503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetAtsJobs503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetAtsJobs503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetAtsJobs404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetAtsJobs404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetAtsJobs404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetAtsJobs403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetAtsJobs403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetAtsJobs403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetAtsJobs401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetAtsJobs401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetAtsJobs401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetAtsJobs401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class GetAtsJobsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_ats_jobs_401_application_json_object: Optional[GetAtsJobs401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_ats_jobs_403_application_json_object: Optional[GetAtsJobs403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_ats_jobs_404_application_json_object: Optional[GetAtsJobs404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_ats_jobs_503_application_json_object: Optional[GetAtsJobs503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_ats_jobs_error_response: Optional[shared_getatsjobserrorresponse.GetAtsJobsErrorResponse] = dataclasses.field(default=None)
-    r"""GET /ats/jobs Error response"""
     get_ats_jobs_successful_response: Optional[shared_getatsjobssuccessfulresponse.GetAtsJobsSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /ats/jobs Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

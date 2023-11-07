@@ -1,9 +1,0 @@
-# GetHrisLegalEntitiesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                   | [GetHrisLegalEntitiesErrorResponseError](../../models/shared/gethrislegalentitieserrorresponseerror.md)   | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
-| `status`                                                                                                  | [GetHrisLegalEntitiesErrorResponseStatus](../../models/shared/gethrislegalentitieserrorresponsestatus.md) | :heavy_check_mark:                                                                                        | N/A                                                                                                       |

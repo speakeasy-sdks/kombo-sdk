@@ -1,5 +1,5 @@
 # KomboConnect
-(*kombo_connect*)
+(*.kombo_connect*)
 
 ## Overview
 

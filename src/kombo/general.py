@@ -47,16 +47,20 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteIntegrationsIntegrationIDErrorResponse])
-                res.delete_integrations_integration_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteIntegrationsIntegrationIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteIntegrationsIntegrationID401ApplicationJSON])
-                res.delete_integrations_integration_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteIntegrationsIntegrationIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -87,10 +91,13 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetCheckAPIKeyErrorResponse])
-                res.get_check_api_key_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCheckAPIKeyErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -125,16 +132,20 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetIntegrationsIntegrationIDErrorResponse])
-                res.get_integrations_integration_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetIntegrationsIntegrationIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetIntegrationsIntegrationID401ApplicationJSON])
-                res.get_integrations_integration_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetIntegrationsIntegrationIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -170,10 +181,13 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetToolsCategoryErrorResponse])
-                res.get_tools_category_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetToolsCategoryErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -214,16 +228,20 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostForceSyncErrorResponse])
-                res.post_force_sync_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostForceSyncErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostForceSync401ApplicationJSON])
-                res.post_force_sync_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostForceSyncResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -272,16 +290,20 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostIntegrationsIntegrationIDRelinkErrorResponse])
-                res.post_integrations_integration_id_relink_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostIntegrationsIntegrationIDRelinkErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostIntegrationsIntegrationIDRelink401ApplicationJSON])
-                res.post_integrations_integration_id_relink_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostIntegrationsIntegrationIDRelinkResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -343,32 +365,39 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostPassthroughToolAPIErrorResponse])
-                res.post_passthrough_tool_api_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI401ApplicationJSON])
-                res.post_passthrough_tool_api_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI403ApplicationJSON])
-                res.post_passthrough_tool_api_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI404ApplicationJSON])
-                res.post_passthrough_tool_api_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI503ApplicationJSON])
-                res.post_passthrough_tool_api_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

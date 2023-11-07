@@ -1,5 +1,5 @@
 # CustomEndpoints
-(*custom_endpoints*)
+(*.custom_endpoints*)
 
 ### Available Operations
 
@@ -53,8 +53,8 @@ This action allows to send an arbitrary ASCII file directly to DATEV LODAS or Lo
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -68,8 +68,8 @@ res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='string'
     accounting_month=dateutil.parser.isoparse('2022-07-06T23:12:46.749Z'),
     file_content='string',
     file_name='road_bedfordshire.jpg',
-    file_type=operations.PostCustomDatevPassthroughRequestBodyFileType.STAMMDATEN,
-    target_system=operations.PostCustomDatevPassthroughRequestBodyTargetSystem.LODAS,
+    file_type=operations.FileType.STAMMDATEN,
+    target_system=operations.TargetSystem.LODAS,
 ))
 
 if res.post_custom_datev_passthrough_successful_response is not None:
@@ -134,8 +134,8 @@ Uploads the currently relevant payroll data (supplements) to DATEV. This will cr
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -216,8 +216,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -229,10 +229,10 @@ s = kombo.Kombo(
 
 res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
     compensations=[
-        operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations(
+        operations.Compensations(
             amount=675.48,
-            currency=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency.EUR,
-            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.MONTH,
+            currency=operations.Currency.EUR,
+            period=operations.Period.MONTH,
         ),
     ],
     effective_date=dateutil.parser.isoparse('2022-08-08T10:06:50.116Z'),
@@ -313,8 +313,8 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
@@ -326,18 +326,18 @@ s = kombo.Kombo(
 
 res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
     fixed_payments=[
-        operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments(
+        operations.FixedPayments(
             amount=7452.45,
             lohnart=1065.12,
         ),
     ],
     hourly_payments=[
-        operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments(
+        operations.HourlyPayments(
             hours=3274.06,
             lohnart=6493.07,
         ),
     ],
-    payroll_run=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun(
+    payroll_run=operations.PayrollRun(
         date_=dateutil.parser.isoparse('2022-11-17T18:13:49.919Z'),
     ),
 ))

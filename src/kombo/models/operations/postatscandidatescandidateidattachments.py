@@ -3,14 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import postatscandidatescandidateidattachmentserrorresponse as shared_postatscandidatescandidateidattachmentserrorresponse
-from ..shared import postatscandidatescandidateidattachmentssuccessfulresponse as shared_postatscandidatescandidateidattachmentssuccessfulresponse
+from ...models.shared import postatscandidatescandidateidattachmentssuccessfulresponse as shared_postatscandidatescandidateidattachmentssuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
 from typing import Optional
 
-class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType(str, Enum):
+class PostAtsCandidatesCandidateIDAttachmentsType(str, Enum):
     CV = 'CV'
     COVER_LETTER = 'COVER_LETTER'
     OTHER = 'OTHER'
@@ -18,10 +17,10 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType(str, Enum
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment:
+class Attachment:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Name of the file you want to upload."""
-    type: PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PostAtsCandidatesCandidateIDAttachmentsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     content_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content_type'), 'exclude': lambda f: f is None }})
     r"""Content/MIME type of the file (e.g., `application/pdf`). This is required if you provide `data` and optional if you provide `data_url`."""
     data: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
@@ -34,7 +33,7 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders:
+class PostAtsCandidatesCandidateIDAttachmentsPostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of') }})
     r"""ID of the the user that will show up as having performed the action in Greenhouse. We already pass a value by default, but you can use this to override it."""
@@ -44,9 +43,9 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePo
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse:
+class PostAtsCandidatesCandidateIDAttachmentsGreenhouse:
     r"""Fields specific to Greenhouse."""
-    post_headers: Optional[PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
+    post_headers: Optional[PostAtsCandidatesCandidateIDAttachmentsPostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     
 
@@ -54,9 +53,9 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields:
+class PostAtsCandidatesCandidateIDAttachmentsRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
-    greenhouse: Optional[PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
+    greenhouse: Optional[PostAtsCandidatesCandidateIDAttachmentsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Greenhouse."""
     
 
@@ -66,8 +65,8 @@ class PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields:
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsRequestBody:
     r"""POST /ats/candidates/:candidate_id/attachments request body"""
-    attachment: PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachment') }})
-    remote_fields: Optional[PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
+    attachment: Attachment = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachment') }})
+    remote_fields: Optional[PostAtsCandidatesCandidateIDAttachmentsRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
 
@@ -85,106 +84,12 @@ class PostAtsCandidatesCandidateIDAttachmentsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDAttachments503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PostAtsCandidatesCandidateIDAttachments503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDAttachments503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDAttachments404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PostAtsCandidatesCandidateIDAttachments404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDAttachments404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDAttachments403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PostAtsCandidatesCandidateIDAttachments403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDAttachments403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDAttachments401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDAttachments401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostAtsCandidatesCandidateIDAttachments401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDAttachments401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDAttachmentsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_ats_candidates_candidate_id_attachments_401_application_json_object: Optional[PostAtsCandidatesCandidateIDAttachments401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_ats_candidates_candidate_id_attachments_403_application_json_object: Optional[PostAtsCandidatesCandidateIDAttachments403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    post_ats_candidates_candidate_id_attachments_404_application_json_object: Optional[PostAtsCandidatesCandidateIDAttachments404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    post_ats_candidates_candidate_id_attachments_503_application_json_object: Optional[PostAtsCandidatesCandidateIDAttachments503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    post_ats_candidates_candidate_id_attachments_error_response: Optional[shared_postatscandidatescandidateidattachmentserrorresponse.PostAtsCandidatesCandidateIDAttachmentsErrorResponse] = dataclasses.field(default=None)
-    r"""POST /ats/candidates/:candidate_id/attachments Error response"""
     post_ats_candidates_candidate_id_attachments_successful_response: Optional[shared_postatscandidatescandidateidattachmentssuccessfulresponse.PostAtsCandidatesCandidateIDAttachmentsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/candidates/:candidate_id/attachments Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

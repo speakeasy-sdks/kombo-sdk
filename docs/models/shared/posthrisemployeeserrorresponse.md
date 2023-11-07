@@ -1,9 +1,0 @@
-# PostHrisEmployeesErrorResponse
-
-
-## Fields
-
-| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `error`                                                                                             | [PostHrisEmployeesErrorResponseError](../../models/shared/posthrisemployeeserrorresponseerror.md)   | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
-| `status`                                                                                            | [PostHrisEmployeesErrorResponseStatus](../../models/shared/posthrisemployeeserrorresponsestatus.md) | :heavy_check_mark:                                                                                  | N/A                                                                                                 |

@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional, Union
 
 
 @dataclasses.dataclass
-class PostPassthroughToolAPISuccessfulResponseDataHeaders:
+class Headers:
     pass
 
 

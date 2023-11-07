@@ -9,14 +9,14 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, List, Optional
 
-class GetHrisAbsenceTypesSuccessfulResponseDataResultsUnit(str, Enum):
+class GetHrisAbsenceTypesSuccessfulResponseUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisAbsenceTypesSuccessfulResponseDataResults:
+class GetHrisAbsenceTypesSuccessfulResponseResults:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -33,7 +33,7 @@ class GetHrisAbsenceTypesSuccessfulResponseDataResults:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     remote_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    unit: Optional[GetHrisAbsenceTypesSuccessfulResponseDataResultsUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+    unit: Optional[GetHrisAbsenceTypesSuccessfulResponseUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     
 
 
@@ -43,7 +43,7 @@ class GetHrisAbsenceTypesSuccessfulResponseDataResults:
 class GetHrisAbsenceTypesSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: List[GetHrisAbsenceTypesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisAbsenceTypesSuccessfulResponseResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 

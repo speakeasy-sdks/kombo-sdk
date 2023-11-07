@@ -1,9 +1,0 @@
-# GetHrisLocationsErrorResponse
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `error`                                                                                           | [GetHrisLocationsErrorResponseError](../../models/shared/gethrislocationserrorresponseerror.md)   | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `status`                                                                                          | [GetHrisLocationsErrorResponseStatus](../../models/shared/gethrislocationserrorresponsestatus.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

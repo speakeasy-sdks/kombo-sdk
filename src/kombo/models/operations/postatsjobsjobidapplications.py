@@ -4,15 +4,14 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import postatsjobsjobidapplicationserrorresponse as shared_postatsjobsjobidapplicationserrorresponse
-from ..shared import postatsjobsjobidapplicationssuccessfulresponse as shared_postatsjobsjobidapplicationssuccessfulresponse
+from ...models.shared import postatsjobsjobidapplicationssuccessfulresponse as shared_postatsjobsjobidapplicationssuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
 from typing import Any, Dict, List, Optional, Union
 
-class PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType(str, Enum):
+class PostAtsJobsJobIDApplicationsType(str, Enum):
     CV = 'CV'
     COVER_LETTER = 'COVER_LETTER'
     OTHER = 'OTHER'
@@ -20,10 +19,10 @@ class PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyAttachments:
+class PostAtsJobsJobIDApplicationsAttachments:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Name of the file you want to upload."""
-    type: PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PostAtsJobsJobIDApplicationsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     content_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content_type'), 'exclude': lambda f: f is None }})
     r"""Content/MIME type of the file (e.g., `application/pdf`). This is required if you provide `data` and optional if you provide `data_url`."""
     data: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
@@ -33,7 +32,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyAttachments:
     
 
 
-class PostAtsJobsJobIDApplicationsRequestBodyCandidateGender(str, Enum):
+class PostAtsJobsJobIDApplicationsGender(str, Enum):
     r"""The gender of the applicant. Must be one of `MALE`, `FEMALE`, or `OTHER`."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
@@ -42,14 +41,14 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidateGender(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation:
+class PostAtsJobsJobIDApplicationsLocation:
     country: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
     r"""The uppercase two-letter ISO country (e.g., `DE`) of the applicant."""
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is None }})
     
 
 
-class PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod(str, Enum):
+class PostAtsJobsJobIDApplicationsPeriod(str, Enum):
     r"""The period of the salary expectations. Must be one of `MONTH` or `YEAR`."""
     MONTH = 'MONTH'
     YEAR = 'YEAR'
@@ -57,11 +56,11 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod(s
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations:
+class PostAtsJobsJobIDApplicationsSalaryExpectations:
     r"""The salary expectations of the applicant. We will automatically convert the amount to a format that is suitable for the ATS you are using. For example, if you are using monthly salary expectations, we will convert the amount to a yearly salary if the ATS expects yearly salary expectations."""
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount of the salary expectations."""
-    period: PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period') }})
+    period: PostAtsJobsJobIDApplicationsPeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period') }})
     r"""The period of the salary expectations. Must be one of `MONTH` or `YEAR`."""
     
 
@@ -69,7 +68,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks:
+class PostAtsJobsJobIDApplicationsSocialLinks:
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     
 
@@ -77,7 +76,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyCandidate:
+class PostAtsJobsJobIDApplicationsCandidate:
     email_address: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
     r"""The primary email address this application will be created with."""
     first_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
@@ -88,13 +87,13 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidate:
     """
     company: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('company'), 'exclude': lambda f: f is None }})
     r"""The company where the applicant is currently working."""
-    gender: Optional[PostAtsJobsJobIDApplicationsRequestBodyCandidateGender] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
+    gender: Optional[PostAtsJobsJobIDApplicationsGender] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
     r"""The gender of the applicant. Must be one of `MALE`, `FEMALE`, or `OTHER`."""
-    location: Optional[PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
+    location: Optional[PostAtsJobsJobIDApplicationsLocation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
     phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is None }})
-    salary_expectations: Optional[PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_expectations'), 'exclude': lambda f: f is None }})
+    salary_expectations: Optional[PostAtsJobsJobIDApplicationsSalaryExpectations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_expectations'), 'exclude': lambda f: f is None }})
     r"""The salary expectations of the applicant. We will automatically convert the amount to a format that is suitable for the ATS you are using. For example, if you are using monthly salary expectations, we will convert the amount to a yearly salary if the ATS expects yearly salary expectations."""
-    social_links: Optional[List[PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_links'), 'exclude': lambda f: f is None }})
+    social_links: Optional[List[PostAtsJobsJobIDApplicationsSocialLinks]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('social_links'), 'exclude': lambda f: f is None }})
     r"""A list of social media links of the applicant. The links must be valid URLs."""
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     r"""The current job title of the applicant."""
@@ -104,7 +103,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyCandidate:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyGdprConsent:
+class PostAtsJobsJobIDApplicationsGdprConsent:
     r"""Optional GDPR consent information required in some jurisdictions (like the Czech Republic or Slovakia)."""
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""Until when the candidate has granted the company they're applying to permission to process their personal data.
@@ -118,7 +117,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyGdprConsent:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders:
+class PostAtsJobsJobIDApplicationsPostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of') }})
     r"""ID of the the user that will show up as having performed the action in Greenhouse. We already pass a value by default, but you can use this to override it."""
@@ -128,9 +127,9 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse:
+class PostAtsJobsJobIDApplicationsGreenhouse:
     r"""Fields specific to Greenhouse."""
-    post_headers: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
+    post_headers: Optional[PostAtsJobsJobIDApplicationsPostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     
 
@@ -138,7 +137,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever:
+class PostAtsJobsJobIDApplicationsLever:
     r"""Fields specific to Lever."""
     candidate: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Lever's `Candidate` object. Note: make sure to submit the keys and values in the correct form data format."""
@@ -148,7 +147,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors:
+class PostAtsJobsJobIDApplicationsSuccessfactors:
     r"""Fields specific to SAP SuccessFactors."""
     candidate: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('Candidate'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to SuccessFactor's `Candidate` object."""
@@ -160,7 +159,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor:
+class PostAtsJobsJobIDApplicationsTeamtailor:
     candidate: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Teamtailor's `Candidate` object."""
     
@@ -169,7 +168,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable:
+class PostAtsJobsJobIDApplicationsWorkable:
     r"""Fields specific to Workable."""
     candidate: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Workable's `Candidate` object."""
@@ -179,30 +178,30 @@ class PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyRemoteFields:
+class PostAtsJobsJobIDApplicationsRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
-    greenhouse: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
+    greenhouse: Optional[PostAtsJobsJobIDApplicationsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Greenhouse."""
-    lever: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lever'), 'exclude': lambda f: f is None }})
+    lever: Optional[PostAtsJobsJobIDApplicationsLever] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lever'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Lever."""
-    successfactors: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('successfactors'), 'exclude': lambda f: f is None }})
+    successfactors: Optional[PostAtsJobsJobIDApplicationsSuccessfactors] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('successfactors'), 'exclude': lambda f: f is None }})
     r"""Fields specific to SAP SuccessFactors."""
-    teamtailor: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teamtailor'), 'exclude': lambda f: f is None }})
-    workable: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workable'), 'exclude': lambda f: f is None }})
+    teamtailor: Optional[PostAtsJobsJobIDApplicationsTeamtailor] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('teamtailor'), 'exclude': lambda f: f is None }})
+    workable: Optional[PostAtsJobsJobIDApplicationsWorkable] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workable'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Workable."""
     
 
 
 
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswersAnswer:
+class PostAtsJobsJobIDApplicationsAnswer:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers:
-    answer: Union[str, bool, float, List[str], datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('answer'), 'encoder': utils.union_encoder({datetime: utils.datetimeisoformat(True)}), 'decoder': utils.union_decoder([dateutil.parser.isoparse]) }})
+class PostAtsJobsJobIDApplicationsScreeningQuestionAnswers:
+    answer: Union[str, bool, float, List[str], datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('answer'), 'encoder': utils.union_encoder({datetime: utils.datetimeisoformat(False)}), 'decoder': utils.union_decoder([dateutil.parser.isoparse]) }})
     r"""Answer to a question. This will be validated based on the question format and throw an error if the answer is invalid."""
     question_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('question_id') }})
     r"""ID of the question returned by the Kombo API. We'll report a warning in the logs if the question can't be found on the job."""
@@ -212,7 +211,7 @@ class PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsRequestBodySource:
+class PostAtsJobsJobIDApplicationsSource:
     r"""Optional source information that will be attached to the candidate. If you're a job board or recruiting service, you can use this to make sure your customers can see which candidates came from you."""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""Name of the source (e.g., `\\"Example Job Board\\"`).
@@ -227,19 +226,19 @@ class PostAtsJobsJobIDApplicationsRequestBodySource:
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsRequestBody:
     r"""POST /ats/jobs/:job_id/applications request body"""
-    candidate: PostAtsJobsJobIDApplicationsRequestBodyCandidate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
-    attachments: Optional[List[PostAtsJobsJobIDApplicationsRequestBodyAttachments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachments'), 'exclude': lambda f: f is None }})
+    candidate: PostAtsJobsJobIDApplicationsCandidate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
+    attachments: Optional[List[PostAtsJobsJobIDApplicationsAttachments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachments'), 'exclude': lambda f: f is None }})
     r"""Array of the attachments you would like upload."""
-    gdpr_consent: Optional[PostAtsJobsJobIDApplicationsRequestBodyGdprConsent] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gdpr_consent'), 'exclude': lambda f: f is None }})
+    gdpr_consent: Optional[PostAtsJobsJobIDApplicationsGdprConsent] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gdpr_consent'), 'exclude': lambda f: f is None }})
     r"""Optional GDPR consent information required in some jurisdictions (like the Czech Republic or Slovakia)."""
-    remote_fields: Optional[PostAtsJobsJobIDApplicationsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
+    remote_fields: Optional[PostAtsJobsJobIDApplicationsRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
-    screening_question_answers: Optional[List[PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_question_answers'), 'exclude': lambda f: f is None }})
+    screening_question_answers: Optional[List[PostAtsJobsJobIDApplicationsScreeningQuestionAnswers]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_question_answers'), 'exclude': lambda f: f is None }})
     r"""Array of answers to screening questions. Currently, not all question types are supported and unsupported ones will not be submitted.
 
     The available questions a job can be retrieved from the get jobs endpoint. The answers will be validated based on the format of the the questions. Make sure to follow this schema to avoid errors.
     """
-    source: Optional[PostAtsJobsJobIDApplicationsRequestBodySource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    source: Optional[PostAtsJobsJobIDApplicationsSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
     r"""Optional source information that will be attached to the candidate. If you're a job board or recruiting service, you can use this to make sure your customers can see which candidates came from you."""
     stage_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stage_id'), 'exclude': lambda f: f is None }})
     r"""Stage this candidate should be in. If left out, the default stage for this job will be used."""
@@ -259,106 +258,12 @@ class PostAtsJobsJobIDApplicationsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsJobsJobIDApplications503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PostAtsJobsJobIDApplications503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsJobsJobIDApplications503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsJobsJobIDApplications404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PostAtsJobsJobIDApplications404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsJobsJobIDApplications404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsJobsJobIDApplications403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PostAtsJobsJobIDApplications403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsJobsJobIDApplications403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsJobsJobIDApplications401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplications401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostAtsJobsJobIDApplications401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsJobsJobIDApplications401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_ats_jobs_job_id_applications_401_application_json_object: Optional[PostAtsJobsJobIDApplications401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_ats_jobs_job_id_applications_403_application_json_object: Optional[PostAtsJobsJobIDApplications403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    post_ats_jobs_job_id_applications_404_application_json_object: Optional[PostAtsJobsJobIDApplications404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    post_ats_jobs_job_id_applications_503_application_json_object: Optional[PostAtsJobsJobIDApplications503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    post_ats_jobs_job_id_applications_error_response: Optional[shared_postatsjobsjobidapplicationserrorresponse.PostAtsJobsJobIDApplicationsErrorResponse] = dataclasses.field(default=None)
-    r"""POST /ats/jobs/:job_id/applications Error response"""
     post_ats_jobs_job_id_applications_successful_response: Optional[shared_postatsjobsjobidapplicationssuccessfulresponse.PostAtsJobsJobIDApplicationsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/jobs/:job_id/applications Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

@@ -9,18 +9,18 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, List, Optional
 
-class GetHrisTimeOffBalancesSuccessfulResponseDataResultsBalanceUnit(str, Enum):
+class BalanceUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
-class GetHrisTimeOffBalancesSuccessfulResponseDataResultsTypeUnit(str, Enum):
+class GetHrisTimeOffBalancesSuccessfulResponseUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisTimeOffBalancesSuccessfulResponseDataResultsType:
+class GetHrisTimeOffBalancesSuccessfulResponseType:
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -37,21 +37,21 @@ class GetHrisTimeOffBalancesSuccessfulResponseDataResultsType:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     remote_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    unit: Optional[GetHrisTimeOffBalancesSuccessfulResponseDataResultsTypeUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+    unit: Optional[GetHrisTimeOffBalancesSuccessfulResponseUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     
 
 
-class GetHrisTimeOffBalancesSuccessfulResponseDataResultsUsedUnit(str, Enum):
+class UsedUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetHrisTimeOffBalancesSuccessfulResponseDataResults:
+class GetHrisTimeOffBalancesSuccessfulResponseResults:
     balance: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance') }})
     r"""The amount time available to the employee."""
-    balance_unit: Optional[GetHrisTimeOffBalancesSuccessfulResponseDataResultsBalanceUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance_unit') }})
+    balance_unit: Optional[BalanceUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance_unit') }})
     changed_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changed_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -64,10 +64,10 @@ class GetHrisTimeOffBalancesSuccessfulResponseDataResults:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    type: GetHrisTimeOffBalancesSuccessfulResponseDataResultsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: GetHrisTimeOffBalancesSuccessfulResponseType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     type_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type_id') }})
     used: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('used') }})
-    used_unit: Optional[GetHrisTimeOffBalancesSuccessfulResponseDataResultsUsedUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('used_unit') }})
+    used_unit: Optional[UsedUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('used_unit') }})
     
 
 
@@ -77,7 +77,7 @@ class GetHrisTimeOffBalancesSuccessfulResponseDataResults:
 class GetHrisTimeOffBalancesSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: List[GetHrisTimeOffBalancesSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetHrisTimeOffBalancesSuccessfulResponseResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 

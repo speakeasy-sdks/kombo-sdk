@@ -1,9 +1,0 @@
-# GetAtsCandidatesErrorResponse
-
-
-## Fields
-
-| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `error`                                                                                           | [GetAtsCandidatesErrorResponseError](../../models/shared/getatscandidateserrorresponseerror.md)   | :heavy_check_mark:                                                                                | N/A                                                                                               |
-| `status`                                                                                          | [GetAtsCandidatesErrorResponseStatus](../../models/shared/getatscandidateserrorresponsestatus.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |

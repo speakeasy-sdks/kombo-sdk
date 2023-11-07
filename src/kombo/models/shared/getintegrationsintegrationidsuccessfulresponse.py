@@ -9,7 +9,7 @@ from enum import Enum
 from kombo import utils
 from typing import Optional
 
-class GetIntegrationsIntegrationIDSuccessfulResponseDataCategory(str, Enum):
+class Category(str, Enum):
     HRIS = 'HRIS'
     ATS = 'ATS'
     ASSESSMENT = 'ASSESSMENT'
@@ -17,7 +17,7 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataCategory(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetIntegrationsIntegrationIDSuccessfulResponseDataEndUser:
+class EndUser:
     creator_email: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creator_email') }})
     organization_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_name') }})
     origin_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin_id') }})
@@ -28,13 +28,13 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataEndUser:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetIntegrationsIntegrationIDSuccessfulResponseDataScopeConfig:
+class ScopeConfig:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     
 
 
-class GetIntegrationsIntegrationIDSuccessfulResponseDataStatus(str, Enum):
+class GetIntegrationsIntegrationIDSuccessfulResponseSchemasStatus(str, Enum):
     ACTIVE = 'ACTIVE'
     INVALID = 'INVALID'
     INACTIVE = 'INACTIVE'
@@ -42,7 +42,7 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataStatus(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetIntegrationsIntegrationIDSuccessfulResponseDataTool:
+class Tool:
     icon_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon_url') }})
     r"""URL to a square SVG icon of the connected tool."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -57,16 +57,16 @@ class GetIntegrationsIntegrationIDSuccessfulResponseDataTool:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDSuccessfulResponseData:
-    category: GetIntegrationsIntegrationIDSuccessfulResponseDataCategory = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
+    category: Category = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    end_user: GetIntegrationsIntegrationIDSuccessfulResponseDataEndUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user') }})
+    end_user: EndUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    scope_config: GetIntegrationsIntegrationIDSuccessfulResponseDataScopeConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scope_config') }})
-    status: GetIntegrationsIntegrationIDSuccessfulResponseDataStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    tool: GetIntegrationsIntegrationIDSuccessfulResponseDataTool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tool') }})
+    scope_config: ScopeConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scope_config') }})
+    status: GetIntegrationsIntegrationIDSuccessfulResponseSchemasStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    tool: Tool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tool') }})
     
 
 

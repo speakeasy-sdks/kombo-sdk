@@ -76,9 +76,9 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
 
-if res.get_custom_datev_data_pushes_successful_response is not None:
+if res.get_assessment_orders_open_successful_response is not None:
     # handle response
     pass
 ```
@@ -88,38 +88,14 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 ## Available Resources and Operations
 
 
-### [custom_endpoints](docs/sdks/customendpoints/README.md)
-
-* [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
-* [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
-* [post_custom_datev_push_data_general](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_general) - Push general data to DATEV
-* [post_custom_datev_push_data_payroll](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_payroll) - Push payroll data to DATEV
-* [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
-* [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
-
-### [general](docs/sdks/general/README.md)
-
-* [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
-* [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
-* [get_integrations_integration_id](docs/sdks/general/README.md#get_integrations_integration_id) - Get integration details
-* [get_tools_category](docs/sdks/general/README.md#get_tools_category) - Get tools
-* [post_force_sync](docs/sdks/general/README.md#post_force_sync) - Trigger sync
-* [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
-* [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
-
-### [kombo_connect](docs/sdks/komboconnect/README.md)
-
-* [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
-* [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
-
-### [unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
+### [.unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
 
 * [get_assessment_orders_open](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_orders_open) - Get open orders
 * [get_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_packages) - Get packages
 * [put_assessment_orders_assessment_order_id_result](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_orders_assessment_order_id_result) - Update order result
 * [put_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_packages) - Set packages
 
-### [unified_ats_api](docs/sdks/unifiedatsapi/README.md)
+### [.unified_ats_api](docs/sdks/unifiedatsapi/README.md)
 
 * [delete_ats_candidates_candidate_id_tags](docs/sdks/unifiedatsapi/README.md#delete_ats_candidates_candidate_id_tags) - Remove tag from candidate
 * [get_ats_application_stages](docs/sdks/unifiedatsapi/README.md#get_ats_application_stages) - Get application stages
@@ -138,7 +114,31 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 * [post_ats_jobs_job_id_applications](docs/sdks/unifiedatsapi/README.md#post_ats_jobs_job_id_applications) - Create application
 * [put_ats_applications_application_id_stage](docs/sdks/unifiedatsapi/README.md#put_ats_applications_application_id_stage) - Move application to stage
 
-### [unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
+### [.general](docs/sdks/general/README.md)
+
+* [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
+* [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
+* [get_integrations_integration_id](docs/sdks/general/README.md#get_integrations_integration_id) - Get integration details
+* [get_tools_category](docs/sdks/general/README.md#get_tools_category) - Get tools
+* [post_force_sync](docs/sdks/general/README.md#post_force_sync) - Trigger sync
+* [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
+* [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
+
+### [.kombo_connect](docs/sdks/komboconnect/README.md)
+
+* [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
+* [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
+
+### [.custom_endpoints](docs/sdks/customendpoints/README.md)
+
+* [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
+* [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
+* [post_custom_datev_push_data_general](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_general) - Push general data to DATEV
+* [post_custom_datev_push_data_payroll](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_payroll) - Push payroll data to DATEV
+* [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
+* [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
+
+### [.unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
 
 * [delete_hris_absences_absence_id](docs/sdks/unifiedhrisapi/README.md#delete_hris_absences_absence_id) - Delete absence
 * [get_hris_absence_types](docs/sdks/unifiedhrisapi/README.md#get_hris_absence_types) - Get absence types
@@ -182,6 +182,31 @@ Here's an example of one such pagination call:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import kombo
+from kombo.models import operations, shared
+
+s = kombo.Kombo(
+    security=shared.Security(
+        api_key="",
+    ),
+)
+
+
+res = None
+try:
+    res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
+
+except (GetAssessmentOrdersOpenErrorResponse) as e:
+    print(e) # handle exception
+
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -199,22 +224,21 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
+    server_idx=0,
     security=shared.Security(
         api_key="",
     ),
-    server_idx=0
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
 
-if res.get_custom_datev_data_pushes_successful_response is not None:
+if res.get_assessment_orders_open_successful_response is not None:
     # handle response
     pass
 ```
@@ -224,22 +248,21 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
+    server_url="https://api.kombo.dev/v1",
     security=shared.Security(
         api_key="",
     ),
-    server_url="https://api.kombo.dev/v1"
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
 
-if res.get_custom_datev_data_pushes_successful_response is not None:
+if res.get_assessment_orders_open_successful_response is not None:
     # handle response
     pass
 ```
@@ -263,9 +286,42 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = kombo.Kombo(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name        | Type        | Scheme      |
+| ----------- | ----------- | ----------- |
+| `api_key`   | http        | HTTP Bearer |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+
+```python
+import kombo
+from kombo.models import operations, shared
+
+s = kombo.Kombo(
+    security=shared.Security(
+        api_key="",
+    ),
+)
+
+
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

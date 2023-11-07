@@ -1,0 +1,9 @@
+# GetAtsTagsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                    | [errors.SchemasGetAtsTagsErrorResponseError](../../models/errors/schemasgetatstagserrorresponseerror.md)   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `status`                                                                                                   | [errors.SchemasGetAtsTagsErrorResponseStatus](../../models/errors/schemasgetatstagserrorresponsestatus.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

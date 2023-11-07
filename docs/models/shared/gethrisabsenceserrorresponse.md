@@ -1,9 +1,0 @@
-# GetHrisAbsencesErrorResponse
-
-
-## Fields
-
-| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `error`                                                                                         | [GetHrisAbsencesErrorResponseError](../../models/shared/gethrisabsenceserrorresponseerror.md)   | :heavy_check_mark:                                                                              | N/A                                                                                             |
-| `status`                                                                                        | [GetHrisAbsencesErrorResponseStatus](../../models/shared/gethrisabsenceserrorresponsestatus.md) | :heavy_check_mark:                                                                              | N/A                                                                                             |

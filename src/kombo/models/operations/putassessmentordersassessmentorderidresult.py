@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import putassessmentordersassessmentorderidresulterrorresponse as shared_putassessmentordersassessmentorderidresulterrorresponse
-from ..shared import putassessmentordersassessmentorderidresultsuccessfulresponse as shared_putassessmentordersassessmentorderidresultsuccessfulresponse
+from ...models.shared import putassessmentordersassessmentorderidresultsuccessfulresponse as shared_putassessmentordersassessmentorderidresultsuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -15,13 +14,13 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes:
+class Attributes:
     field: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field') }})
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     
 
 
-class PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus(str, Enum):
+class Status(str, Enum):
     r"""Status of the assessment. Must be one of `COMPLETE` or `CANCELLED`."""
     COMPLETED = 'COMPLETED'
     CANCELLED = 'CANCELLED'
@@ -37,9 +36,9 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequestBody:
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
     result_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('result_url') }})
-    status: PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Status = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""Status of the assessment. Must be one of `COMPLETE` or `CANCELLED`."""
-    attributes: Optional[List[PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
+    attributes: Optional[List[Attributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     max_score: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_score'), 'exclude': lambda f: f is None }})
     score: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score'), 'exclude': lambda f: f is None }})
     
@@ -58,106 +57,12 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResultResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    put_assessment_orders_assessment_order_id_result_401_application_json_object: Optional[PutAssessmentOrdersAssessmentOrderIDResult401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    put_assessment_orders_assessment_order_id_result_403_application_json_object: Optional[PutAssessmentOrdersAssessmentOrderIDResult403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    put_assessment_orders_assessment_order_id_result_404_application_json_object: Optional[PutAssessmentOrdersAssessmentOrderIDResult404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    put_assessment_orders_assessment_order_id_result_503_application_json_object: Optional[PutAssessmentOrdersAssessmentOrderIDResult503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    put_assessment_orders_assessment_order_id_result_error_response: Optional[shared_putassessmentordersassessmentorderidresulterrorresponse.PutAssessmentOrdersAssessmentOrderIDResultErrorResponse] = dataclasses.field(default=None)
-    r"""PUT /assessment/orders/:assessment_order_id/result Error response"""
     put_assessment_orders_assessment_order_id_result_successful_response: Optional[shared_putassessmentordersassessmentorderidresultsuccessfulresponse.PutAssessmentOrdersAssessmentOrderIDResultSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /assessment/orders/:assessment_order_id/result Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

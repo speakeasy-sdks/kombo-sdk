@@ -1,9 +1,0 @@
-# GetAtsApplicationsErrorResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `error`                                                                                               | [GetAtsApplicationsErrorResponseError](../../models/shared/getatsapplicationserrorresponseerror.md)   | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `status`                                                                                              | [GetAtsApplicationsErrorResponseStatus](../../models/shared/getatsapplicationserrorresponsestatus.md) | :heavy_check_mark:                                                                                    | N/A                                                                                                   |

@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gettoolscategoryerrorresponse as shared_gettoolscategoryerrorresponse
-from ..shared import gettoolscategoryparametercategory as shared_gettoolscategoryparametercategory
-from ..shared import gettoolscategorysuccessfulresponse as shared_gettoolscategorysuccessfulresponse
+from ...models.shared import gettoolscategoryparametercategory as shared_gettoolscategoryparametercategory
+from ...models.shared import gettoolscategorysuccessfulresponse as shared_gettoolscategorysuccessfulresponse
 from typing import Optional
 
 
@@ -23,8 +22,6 @@ class GetToolsCategoryResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_tools_category_error_response: Optional[shared_gettoolscategoryerrorresponse.GetToolsCategoryErrorResponse] = dataclasses.field(default=None)
-    r"""GET /tools/:category Error response"""
     get_tools_category_successful_response: Optional[shared_gettoolscategorysuccessfulresponse.GetToolsCategorySuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /tools/:category Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

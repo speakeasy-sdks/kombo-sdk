@@ -3,13 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gethrislocationserrorresponse as shared_gethrislocationserrorresponse
-from ..shared import gethrislocationsparameterincludedeleted as shared_gethrislocationsparameterincludedeleted
-from ..shared import gethrislocationssuccessfulresponse as shared_gethrislocationssuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import gethrislocationsparameterincludedeleted as shared_gethrislocationsparameterincludedeleted
+from ...models.shared import gethrislocationssuccessfulresponse as shared_gethrislocationssuccessfulresponse
 from datetime import datetime
-from enum import Enum
-from kombo import utils
 from typing import Optional
 
 
@@ -33,106 +29,12 @@ class GetHrisLocationsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLocations503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetHrisLocations503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLocations503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLocations404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetHrisLocations404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLocations404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLocations403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetHrisLocations403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLocations403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisLocations401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class GetHrisLocations401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetHrisLocations401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisLocations401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class GetHrisLocationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_hris_locations_401_application_json_object: Optional[GetHrisLocations401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_hris_locations_403_application_json_object: Optional[GetHrisLocations403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_hris_locations_404_application_json_object: Optional[GetHrisLocations404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_hris_locations_503_application_json_object: Optional[GetHrisLocations503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_hris_locations_error_response: Optional[shared_gethrislocationserrorresponse.GetHrisLocationsErrorResponse] = dataclasses.field(default=None)
-    r"""GET /hris/locations Error response"""
     get_hris_locations_successful_response: Optional[shared_gethrislocationssuccessfulresponse.GetHrisLocationsSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/locations Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

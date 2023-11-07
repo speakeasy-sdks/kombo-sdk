@@ -122,32 +122,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteAtsCandidatesCandidateIDTagsErrorResponse])
-                res.delete_ats_candidates_candidate_id_tags_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteAtsCandidatesCandidateIDTagsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteAtsCandidatesCandidateIDTags401ApplicationJSON])
-                res.delete_ats_candidates_candidate_id_tags_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteAtsCandidatesCandidateIDTagsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteAtsCandidatesCandidateIDTags403ApplicationJSON])
-                res.delete_ats_candidates_candidate_id_tags_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteAtsCandidatesCandidateIDTags404ApplicationJSON])
-                res.delete_ats_candidates_candidate_id_tags_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteAtsCandidatesCandidateIDTags503ApplicationJSON])
-                res.delete_ats_candidates_candidate_id_tags_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -335,32 +342,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsApplicationStagesErrorResponse])
-                res.get_ats_application_stages_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsApplicationStagesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplicationStages401ApplicationJSON])
-                res.get_ats_application_stages_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsApplicationStagesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplicationStages403ApplicationJSON])
-                res.get_ats_application_stages_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationStagesUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplicationStages404ApplicationJSON])
-                res.get_ats_application_stages_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationStagesUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplicationStages503ApplicationJSON])
-                res.get_ats_application_stages_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationStagesUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -550,32 +564,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsApplicationsErrorResponse])
-                res.get_ats_applications_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsApplicationsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplications401ApplicationJSON])
-                res.get_ats_applications_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsApplicationsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplications403ApplicationJSON])
-                res.get_ats_applications_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplications404ApplicationJSON])
-                res.get_ats_applications_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsApplications503ApplicationJSON])
-                res.get_ats_applications_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSApplicationsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -757,32 +778,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsCandidatesErrorResponse])
-                res.get_ats_candidates_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsCandidatesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsCandidates401ApplicationJSON])
-                res.get_ats_candidates_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsCandidatesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsCandidates403ApplicationJSON])
-                res.get_ats_candidates_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSCandidatesUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsCandidates404ApplicationJSON])
-                res.get_ats_candidates_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSCandidatesUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsCandidates503ApplicationJSON])
-                res.get_ats_candidates_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSCandidatesUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -988,32 +1016,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsJobsErrorResponse])
-                res.get_ats_jobs_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsJobsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsJobs401ApplicationJSON])
-                res.get_ats_jobs_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsJobsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsJobs403ApplicationJSON])
-                res.get_ats_jobs_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSJobsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsJobs404ApplicationJSON])
-                res.get_ats_jobs_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSJobsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsJobs503ApplicationJSON])
-                res.get_ats_jobs_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSJobsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1135,32 +1170,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsTagsErrorResponse])
-                res.get_ats_tags_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsTagsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsTags401ApplicationJSON])
-                res.get_ats_tags_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsTagsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsTags403ApplicationJSON])
-                res.get_ats_tags_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSTagsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsTags404ApplicationJSON])
-                res.get_ats_tags_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSTagsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsTags503ApplicationJSON])
-                res.get_ats_tags_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSTagsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1290,32 +1332,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAtsUsersErrorResponse])
-                res.get_ats_users_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsUsersErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsUsers401ApplicationJSON])
-                res.get_ats_users_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetAtsUsersResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsUsers403ApplicationJSON])
-                res.get_ats_users_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSUsersUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsUsers404ApplicationJSON])
-                res.get_ats_users_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSUsersUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetAtsUsers503ApplicationJSON])
-                res.get_ats_users_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetATSUsersUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1358,10 +1407,13 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PatchAtsCandidatesCandidateIDErrorResponse])
-                res.patch_ats_candidates_candidate_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PatchAtsCandidatesCandidateIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1450,32 +1502,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsApplicationsApplicationIDNotesErrorResponse])
-                res.post_ats_applications_application_id_notes_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsApplicationsApplicationIDNotesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDNotes401ApplicationJSON])
-                res.post_ats_applications_application_id_notes_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsApplicationsApplicationIDNotesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDNotes403ApplicationJSON])
-                res.post_ats_applications_application_id_notes_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDNotes404ApplicationJSON])
-                res.post_ats_applications_application_id_notes_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDNotes503ApplicationJSON])
-                res.post_ats_applications_application_id_notes_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1545,32 +1604,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsApplicationsApplicationIDResultLinksErrorResponse])
-                res.post_ats_applications_application_id_result_links_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsApplicationsApplicationIDResultLinksErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDResultLinks401ApplicationJSON])
-                res.post_ats_applications_application_id_result_links_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsApplicationsApplicationIDResultLinksResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDResultLinks403ApplicationJSON])
-                res.post_ats_applications_application_id_result_links_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDResultLinks404ApplicationJSON])
-                res.post_ats_applications_application_id_result_links_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsApplicationsApplicationIDResultLinks503ApplicationJSON])
-                res.post_ats_applications_application_id_result_links_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1844,32 +1910,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsCandidatesErrorResponse])
-                res.post_ats_candidates_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidates401ApplicationJSON])
-                res.post_ats_candidates_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidates403ApplicationJSON])
-                res.post_ats_candidates_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidates404ApplicationJSON])
-                res.post_ats_candidates_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidates503ApplicationJSON])
-                res.post_ats_candidates_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2011,32 +2084,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsCandidatesCandidateIDAttachmentsErrorResponse])
-                res.post_ats_candidates_candidate_id_attachments_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDAttachmentsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDAttachments401ApplicationJSON])
-                res.post_ats_candidates_candidate_id_attachments_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDAttachmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDAttachments403ApplicationJSON])
-                res.post_ats_candidates_candidate_id_attachments_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDAttachments404ApplicationJSON])
-                res.post_ats_candidates_candidate_id_attachments_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDAttachments503ApplicationJSON])
-                res.post_ats_candidates_candidate_id_attachments_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2199,32 +2279,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsCandidatesCandidateIDResultLinksErrorResponse])
-                res.post_ats_candidates_candidate_id_result_links_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDResultLinksErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDResultLinks401ApplicationJSON])
-                res.post_ats_candidates_candidate_id_result_links_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDResultLinksResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDResultLinks403ApplicationJSON])
-                res.post_ats_candidates_candidate_id_result_links_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDResultLinks404ApplicationJSON])
-                res.post_ats_candidates_candidate_id_result_links_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDResultLinks503ApplicationJSON])
-                res.post_ats_candidates_candidate_id_result_links_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2348,32 +2435,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsCandidatesCandidateIDTagsErrorResponse])
-                res.post_ats_candidates_candidate_id_tags_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDTagsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDTags401ApplicationJSON])
-                res.post_ats_candidates_candidate_id_tags_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsCandidatesCandidateIDTagsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDTags403ApplicationJSON])
-                res.post_ats_candidates_candidate_id_tags_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDTags404ApplicationJSON])
-                res.post_ats_candidates_candidate_id_tags_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsCandidatesCandidateIDTags503ApplicationJSON])
-                res.post_ats_candidates_candidate_id_tags_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2629,32 +2723,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostAtsJobsJobIDApplicationsErrorResponse])
-                res.post_ats_jobs_job_id_applications_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsJobsJobIDApplicationsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsJobsJobIDApplications401ApplicationJSON])
-                res.post_ats_jobs_job_id_applications_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostAtsJobsJobIDApplicationsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsJobsJobIDApplications403ApplicationJSON])
-                res.post_ats_jobs_job_id_applications_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsJobsJobIDApplications404ApplicationJSON])
-                res.post_ats_jobs_job_id_applications_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostAtsJobsJobIDApplications503ApplicationJSON])
-                res.post_ats_jobs_job_id_applications_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -2766,32 +2867,39 @@ class UnifiedATSAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PutAtsApplicationsApplicationIDStageErrorResponse])
-                res.put_ats_applications_application_id_stage_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAtsApplicationsApplicationIDStageErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAtsApplicationsApplicationIDStage401ApplicationJSON])
-                res.put_ats_applications_application_id_stage_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutAtsApplicationsApplicationIDStageResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAtsApplicationsApplicationIDStage403ApplicationJSON])
-                res.put_ats_applications_application_id_stage_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAtsApplicationsApplicationIDStage404ApplicationJSON])
-                res.put_ats_applications_application_id_stage_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutAtsApplicationsApplicationIDStage503ApplicationJSON])
-                res.put_ats_applications_application_id_stage_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

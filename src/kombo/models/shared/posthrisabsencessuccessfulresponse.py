@@ -9,7 +9,7 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, Optional, Union
 
-class PostHrisAbsencesSuccessfulResponseDataStatus1(str, Enum):
+class PostHrisAbsencesSuccessfulResponse1(str, Enum):
     r"""One of 5 standardized values (`REQUESTED`, `APPROVED`, `DECLINED`, `CANCELLED`, or `DELETED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     REQUESTED = 'REQUESTED'
     APPROVED = 'APPROVED'
@@ -19,10 +19,10 @@ class PostHrisAbsencesSuccessfulResponseDataStatus1(str, Enum):
 
 
 @dataclasses.dataclass
-class PostHrisAbsencesSuccessfulResponseDataStatus:
+class PostHrisAbsencesSuccessfulResponseSchemasStatus:
     pass
 
-class PostHrisAbsencesSuccessfulResponseDataUnit(str, Enum):
+class PostHrisAbsencesSuccessfulResponseUnit(str, Enum):
     r"""The unit of time for this absence. Can be `HOURS` or `DAYS`."""
     HOURS = 'HOURS'
     DAYS = 'DAYS'
@@ -63,11 +63,11 @@ class PostHrisAbsencesSuccessfulResponseData:
     r"""`true` if the absence starts in the middle of the day, `false` if not, and `null` if the system doesn't support half-day absences."""
     start_time: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_time') }})
     r"""The time at which this absence starts. Follows the format `HH:mm:ss` (e.g., `14:45:15`)."""
-    status: Optional[Union[PostHrisAbsencesSuccessfulResponseDataStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Optional[Union[PostHrisAbsencesSuccessfulResponse1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""One of 5 standardized values (`REQUESTED`, `APPROVED`, `DECLINED`, `CANCELLED`, or `DELETED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     type_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type_id') }})
     r"""The Kombo absence type ID of this absence."""
-    unit: Optional[PostHrisAbsencesSuccessfulResponseDataUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+    unit: Optional[PostHrisAbsencesSuccessfulResponseUnit] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     r"""The unit of time for this absence. Can be `HOURS` or `DAYS`."""
     
 

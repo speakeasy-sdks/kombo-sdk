@@ -1,9 +1,0 @@
-# PutAssessmentPackagesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                     | [PutAssessmentPackagesErrorResponseError](../../models/shared/putassessmentpackageserrorresponseerror.md)   | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `status`                                                                                                    | [PutAssessmentPackagesErrorResponseStatus](../../models/shared/putassessmentpackageserrorresponsestatus.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

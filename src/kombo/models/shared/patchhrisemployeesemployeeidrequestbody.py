@@ -9,7 +9,7 @@ from enum import Enum
 from kombo import utils
 from typing import Any, Dict, Optional
 
-class PatchHrisEmployeesEmployeeIDRequestBodyGender(str, Enum):
+class Gender(str, Enum):
     r"""The gender of the employee."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
@@ -19,7 +19,7 @@ class PatchHrisEmployeesEmployeeIDRequestBodyGender(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress:
+class HomeAddress:
     r"""The employee's home address."""
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is None }})
     country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is None }})
@@ -31,7 +31,7 @@ class PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress:
     
 
 
-class PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus(str, Enum):
+class MaritalStatus(str, Enum):
     r"""Marital status of an employee."""
     SINGLE = 'SINGLE'
     MARRIED = 'MARRIED'
@@ -44,7 +44,7 @@ class PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans:
+class Humaans:
     r"""Fields specific to Humaans."""
     employee: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employee'), 'exclude': lambda f: f is None }})
     r"""Fields that we will pass through to Humaans `Employee` object."""
@@ -54,9 +54,9 @@ class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields:
+class RemoteFields:
     r"""Additional fields that we will pass through to specific HRIS systems."""
-    humaans: Optional[PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('humaans'), 'exclude': lambda f: f is None }})
+    humaans: Optional[Humaans] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('humaans'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Humaans."""
     
 
@@ -72,18 +72,18 @@ class PatchHrisEmployeesEmployeeIDRequestBody:
     r"""The employee's date of birth. This is a plain date (i.e., `yyyy-MM-dd`), all time information is discarded.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    gender: Optional[PatchHrisEmployeesEmployeeIDRequestBodyGender] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
+    gender: Optional[Gender] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('gender'), 'exclude': lambda f: f is None }})
     r"""The gender of the employee."""
-    home_address: Optional[PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address'), 'exclude': lambda f: f is None }})
+    home_address: Optional[HomeAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('home_address'), 'exclude': lambda f: f is None }})
     r"""The employee's home address."""
     job_title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_title'), 'exclude': lambda f: f is None }})
     r"""Title of the position this person is working in."""
-    marital_status: Optional[PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status'), 'exclude': lambda f: f is None }})
+    marital_status: Optional[MaritalStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('marital_status'), 'exclude': lambda f: f is None }})
     r"""Marital status of an employee."""
     mobile_phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mobile_phone_number'), 'exclude': lambda f: f is None }})
     nationality: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nationality'), 'exclude': lambda f: f is None }})
     r"""The uppercase two-letter ISO country (e.g., `DE`) of the employee's nationality. For systems that have other formats than `ISO 3166-1 alpha-2` codes, Kombo transforms the ISO Codes to the appropriate value."""
-    remote_fields: Optional[PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
+    remote_fields: Optional[RemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific HRIS systems."""
     ssn: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ssn'), 'exclude': lambda f: f is None }})
     r"""Social security number of the employee."""

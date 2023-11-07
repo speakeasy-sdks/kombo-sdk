@@ -1,9 +1,0 @@
-# GetHrisTimeOffBalancesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                       | [GetHrisTimeOffBalancesErrorResponseError](../../models/shared/gethristimeoffbalanceserrorresponseerror.md)   | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
-| `status`                                                                                                      | [GetHrisTimeOffBalancesErrorResponseStatus](../../models/shared/gethristimeoffbalanceserrorresponsestatus.md) | :heavy_check_mark:                                                                                            | N/A                                                                                                           |

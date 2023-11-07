@@ -4,19 +4,18 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import putcustomdatevemployeesemployeeidcompensationserrorresponse as shared_putcustomdatevemployeesemployeeidcompensationserrorresponse
-from ..shared import putcustomdatevemployeesemployeeidcompensationssuccessfulresponse as shared_putcustomdatevemployeesemployeeidcompensationssuccessfulresponse
+from ...models.shared import putcustomdatevemployeesemployeeidcompensationssuccessfulresponse as shared_putcustomdatevemployeesemployeeidcompensationssuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
 from typing import List, Optional
 
-class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency(str, Enum):
+class Currency(str, Enum):
     r"""The currency in which the employee gets paid. Currently, only euro is supported as integrated systems only work with Euro."""
     EUR = 'EUR'
 
-class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod(str, Enum):
+class Period(str, Enum):
     r"""The period for which the specified amount is paid. Currently, integrated systems only support \\"HOUR\\" and \\"MONTH\\"."""
     HOUR = 'HOUR'
     MONTH = 'MONTH'
@@ -24,12 +23,12 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeri
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations:
+class Compensations:
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     r"""The amount that this employee will be paid."""
-    currency: PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
+    currency: Currency = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
     r"""The currency in which the employee gets paid. Currently, only euro is supported as integrated systems only work with Euro."""
-    period: PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period') }})
+    period: Period = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period') }})
     r"""The period for which the specified amount is paid. Currently, integrated systems only support \\"HOUR\\" and \\"MONTH\\"."""
     lohnart: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lohnart'), 'exclude': lambda f: f is None }})
     r"""The Lohnart that should be used for this compensation. If not specified, the default Lohnart that was requested in the connection flow will be used. Generally Lohnart is only available for monthly compensations."""
@@ -41,7 +40,7 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations:
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody:
     r"""PUT /custom/datev/employees/:employee_id/compensations request body"""
-    compensations: List[PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compensations') }})
+    compensations: List[Compensations] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compensations') }})
     effective_date: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effective_date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Date from which the submitted compensations should be valid. Please note that it might not be possible to set compensations for the past if the payroll was already run.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -62,106 +61,12 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDCompensationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    put_custom_datev_employees_employee_id_compensations_401_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    put_custom_datev_employees_employee_id_compensations_403_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    put_custom_datev_employees_employee_id_compensations_404_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    put_custom_datev_employees_employee_id_compensations_503_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    put_custom_datev_employees_employee_id_compensations_error_response: Optional[shared_putcustomdatevemployeesemployeeidcompensationserrorresponse.PutCustomDatevEmployeesEmployeeIDCompensationsErrorResponse] = dataclasses.field(default=None)
-    r"""PUT /custom/datev/employees/:employee_id/compensations Error response"""
     put_custom_datev_employees_employee_id_compensations_successful_response: Optional[shared_putcustomdatevemployeesemployeeidcompensationssuccessfulresponse.PutCustomDatevEmployeesEmployeeIDCompensationsSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /custom/datev/employees/:employee_id/compensations Successful response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

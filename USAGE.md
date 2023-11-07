@@ -12,9 +12,9 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
 
-if res.get_custom_datev_data_pushes_successful_response is not None:
+if res.get_assessment_orders_open_successful_response is not None:
     # handle response
     pass
 ```

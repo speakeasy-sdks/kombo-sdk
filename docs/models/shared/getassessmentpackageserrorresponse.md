@@ -1,9 +1,0 @@
-# GetAssessmentPackagesErrorResponse
-
-
-## Fields
-
-| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                     | [GetAssessmentPackagesErrorResponseError](../../models/shared/getassessmentpackageserrorresponseerror.md)   | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
-| `status`                                                                                                    | [GetAssessmentPackagesErrorResponseStatus](../../models/shared/getassessmentpackageserrorresponsestatus.md) | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

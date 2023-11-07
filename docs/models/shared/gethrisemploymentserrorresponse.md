@@ -1,9 +1,0 @@
-# GetHrisEmploymentsErrorResponse
-
-
-## Fields
-
-| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `error`                                                                                               | [GetHrisEmploymentsErrorResponseError](../../models/shared/gethrisemploymentserrorresponseerror.md)   | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
-| `status`                                                                                              | [GetHrisEmploymentsErrorResponseStatus](../../models/shared/gethrisemploymentserrorresponsestatus.md) | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
