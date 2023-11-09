@@ -1,5 +1,5 @@
 # UnifiedATSAssessmentAPI
-(*.unified_ats_assessment_api*)
+(*unified_ats_assessment_api*)
 
 ### Available Operations
 
@@ -44,7 +44,12 @@ if res.get_assessment_orders_open_successful_response is not None:
 ### Response
 
 **[operations.GetAssessmentOrdersOpenResponse](../../models/operations/getassessmentordersopenresponse.md)**
+### Errors
 
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.GetAssessmentOrdersOpenErrorResponse | 400                                         | application/json                            |
+| errors.SDKError                             | 400-600                                     | */*                                         |
 
 ## get_assessment_packages
 
@@ -82,7 +87,12 @@ if res.get_assessment_packages_successful_response is not None:
 ### Response
 
 **[operations.GetAssessmentPackagesResponse](../../models/operations/getassessmentpackagesresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.GetAssessmentPackagesErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |
 
 ## put_assessment_orders_assessment_order_id_result
 
@@ -182,7 +192,16 @@ if res.put_assessment_orders_assessment_order_id_result_successful_response is n
 ### Response
 
 **[operations.PutAssessmentOrdersAssessmentOrderIDResultResponse](../../models/operations/putassessmentordersassessmentorderidresultresponse.md)**
+### Errors
 
+| Error Object                                                                                    | Status Code                                                                                     | Content Type                                                                                    |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultErrorResponse                                  | 400                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultResponseBody                                   | 401                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseBody            | 403                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseResponseBody    | 404                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponse503ResponseBody | 503                                                                                             | application/json                                                                                |
+| errors.SDKError                                                                                 | 400-600                                                                                         | */*                                                                                             |
 
 ## put_assessment_packages
 
@@ -230,4 +249,9 @@ if res.put_assessment_packages_successful_response is not None:
 ### Response
 
 **[operations.PutAssessmentPackagesResponse](../../models/operations/putassessmentpackagesresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.PutAssessmentPackagesErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |

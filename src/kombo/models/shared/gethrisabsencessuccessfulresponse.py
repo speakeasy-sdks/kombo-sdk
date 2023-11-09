@@ -17,11 +17,6 @@ class GetHrisAbsencesSuccessfulResponse1(str, Enum):
     CANCELLED = 'CANCELLED'
     DELETED = 'DELETED'
 
-
-@dataclasses.dataclass
-class GetHrisAbsencesSuccessfulResponseSchemasStatus:
-    pass
-
 class GetHrisAbsencesSuccessfulResponseSchemasUnit(str, Enum):
     HOURS = 'HOURS'
     DAYS = 'DAYS'

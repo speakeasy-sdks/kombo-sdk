@@ -41,11 +41,6 @@ class GetHrisEmployeesSuccessfulResponse1(str, Enum):
     INACTIVE = 'INACTIVE'
     LEAVE = 'LEAVE'
 
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseEmploymentStatus:
-    pass
-
 class GetHrisEmployeesSuccessfulResponseSchemas1(str, Enum):
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
@@ -57,11 +52,6 @@ class GetHrisEmployeesSuccessfulResponseSchemas1(str, Enum):
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
 
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseEmploymentType:
-    pass
-
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmployments1(str, Enum):
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
@@ -72,11 +62,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmployments1(str, Enum
     WORKING_STUDENT = 'WORKING_STUDENT'
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
-
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseSchemasEmploymentType:
-    pass
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayFrequency1(str, Enum):
     r"""One of 9 standardized values (`DAILY`, `WEEKLY`, `BIWEEKLY`, `MONTHLY`, `SEMIMONTHLY`, `QUARTERLY`, `SEMIANNUALLY`, `ANNUALLY`, or `PRO_RATA`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
@@ -90,11 +75,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayFrequenc
     ANNUALLY = 'ANNUALLY'
     PRO_RATA = 'PRO_RATA'
 
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponsePayFrequency:
-    pass
-
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayPeriod1(str, Enum):
     r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     HOUR = 'HOUR'
@@ -107,11 +87,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayPeriod1(
     QUARTER = 'QUARTER'
     HALF_YEAR = 'HALF_YEAR'
     YEAR = 'YEAR'
-
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponsePayPeriod:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -158,22 +133,12 @@ class GetHrisEmployeesSuccessfulResponseSchemasData1(str, Enum):
     MULTIPLE_ETHNICITIES = 'MULTIPLE_ETHNICITIES'
     DECLINE_TO_SPECIFY = 'DECLINE_TO_SPECIFY'
 
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseEthnicity:
-    pass
-
 class GetHrisEmployeesSuccessfulResponseSchemasDataResults1(str, Enum):
     r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
     NON_BINARY = 'NON_BINARY'
     NOT_SPECIFIED = 'NOT_SPECIFIED'
-
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseGender:
-    pass
 
 class GetHrisEmployeesSuccessfulResponseType(str, Enum):
     r"""Type of the group. Can be any of `DEPARTMENT`, `TEAM`, and `COST_CENTER`"""
@@ -262,11 +227,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsMaritalStatus1(str, En
     DIVORCED = 'DIVORCED'
     SEPARATED = 'SEPARATED'
     NOT_MARRIED = 'NOT_MARRIED'
-
-
-@dataclasses.dataclass
-class GetHrisEmployeesSuccessfulResponseMaritalStatus:
-    pass
 
 class GetHrisEmployeesSuccessfulResponseSchemasType(str, Enum):
     r"""Type of the group. Can be any of `DEPARTMENT`, `TEAM`, and `COST_CENTER`"""

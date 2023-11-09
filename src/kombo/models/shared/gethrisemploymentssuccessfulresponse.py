@@ -20,11 +20,6 @@ class GetHrisEmploymentsSuccessfulResponse1(str, Enum):
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
 
-
-@dataclasses.dataclass
-class GetHrisEmploymentsSuccessfulResponseEmploymentType:
-    pass
-
 class GetHrisEmploymentsSuccessfulResponseSchemas1(str, Enum):
     r"""One of 9 standardized values (`DAILY`, `WEEKLY`, `BIWEEKLY`, `MONTHLY`, `SEMIMONTHLY`, `QUARTERLY`, `SEMIANNUALLY`, `ANNUALLY`, or `PRO_RATA`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     DAILY = 'DAILY'
@@ -36,11 +31,6 @@ class GetHrisEmploymentsSuccessfulResponseSchemas1(str, Enum):
     SEMIANNUALLY = 'SEMIANNUALLY'
     ANNUALLY = 'ANNUALLY'
     PRO_RATA = 'PRO_RATA'
-
-
-@dataclasses.dataclass
-class PayFrequency:
-    pass
 
 class GetHrisEmploymentsSuccessfulResponseSchemasData1(str, Enum):
     r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
@@ -54,11 +44,6 @@ class GetHrisEmploymentsSuccessfulResponseSchemasData1(str, Enum):
     QUARTER = 'QUARTER'
     HALF_YEAR = 'HALF_YEAR'
     YEAR = 'YEAR'
-
-
-@dataclasses.dataclass
-class PayPeriod:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

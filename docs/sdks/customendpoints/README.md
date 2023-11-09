@@ -1,5 +1,5 @@
 # CustomEndpoints
-(*.custom_endpoints*)
+(*custom_endpoints*)
 
 ### Available Operations
 
@@ -44,7 +44,16 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 ### Response
 
 **[operations.GetCustomDatevDataPushesResponse](../../models/operations/getcustomdatevdatapushesresponse.md)**
+### Errors
 
+| Error Object                                                          | Status Code                                                           | Content Type                                                          |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| errors.GetCustomDatevDataPushesErrorResponse                          | 400                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesResponseBody                           | 401                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponseBody            | 403                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponseResponseBody    | 404                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponse503ResponseBody | 503                                                                   | application/json                                                      |
+| errors.SDKError                                                       | 400-600                                                               | */*                                                                   |
 
 ## post_custom_datev_passthrough
 
@@ -88,7 +97,16 @@ if res.post_custom_datev_passthrough_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPassthroughResponse](../../models/operations/postcustomdatevpassthroughresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.PostCustomDatevPassthroughErrorResponse                          | 400                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughResponseBody                           | 401                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponseBody            | 403                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
 
 ## post_custom_datev_push_data_general
 
@@ -125,7 +143,16 @@ if res.post_custom_datev_push_data_general_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPushDataGeneralResponse](../../models/operations/postcustomdatevpushdatageneralresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostCustomDatevPushDataGeneralErrorResponse                          | 400                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralResponseBody                           | 401                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
 
 ## post_custom_datev_push_data_payroll
 
@@ -165,7 +192,16 @@ if res.post_custom_datev_push_data_payroll_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPushDataPayrollResponse](../../models/operations/postcustomdatevpushdatapayrollresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostCustomDatevPushDataPayrollErrorResponse                          | 400                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollResponseBody                           | 401                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
 
 ## put_custom_datev_employees_employee_id_compensations
 
@@ -255,7 +291,16 @@ if res.put_custom_datev_employees_employee_id_compensations_successful_response 
 ### Response
 
 **[operations.PutCustomDatevEmployeesEmployeeIDCompensationsResponse](../../models/operations/putcustomdatevemployeesemployeeidcompensationsresponse.md)**
+### Errors
 
+| Error Object                                                                                | Status Code                                                                                 | Content Type                                                                                |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsErrorResponse                          | 400                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsResponseBody                           | 401                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseBody            | 403                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseResponseBody    | 404                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponse503ResponseBody | 503                                                                                         | application/json                                                                            |
+| errors.SDKError                                                                             | 400-600                                                                                     | */*                                                                                         |
 
 ## put_custom_datev_employees_employee_id_prepare_payroll
 
@@ -359,4 +404,13 @@ if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_respons
 ### Response
 
 **[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse](../../models/operations/putcustomdatevemployeesemployeeidpreparepayrollresponse.md)**
+### Errors
 
+| Error Object                                                                                 | Status Code                                                                                  | Content Type                                                                                 |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse                          | 400                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponseBody                           | 401                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseBody            | 403                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseResponseBody    | 404                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponse503ResponseBody | 503                                                                                          | application/json                                                                             |
+| errors.SDKError                                                                              | 400-600                                                                                      | */*                                                                                          |

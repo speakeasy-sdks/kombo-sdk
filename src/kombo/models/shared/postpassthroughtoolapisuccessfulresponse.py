@@ -8,11 +8,6 @@ from kombo import utils
 from typing import Any, Dict, List, Optional, Union
 
 
-@dataclasses.dataclass
-class Headers:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostPassthroughToolAPISuccessfulResponseData:

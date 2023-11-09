@@ -13,6 +13,7 @@ class UnifiedHRISAPI:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_hris_absences_absence_id(self, x_integration_id: str, absence_id: str, delete_hris_absences_absence_id_request_body: Optional[shared.DeleteHrisAbsencesAbsenceIDRequestBody] = None) -> operations.DeleteHrisAbsencesAbsenceIDResponse:
         r"""Delete absence
         Delete this absence.
@@ -87,7 +88,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -140,6 +144,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_absence_types(self, request: operations.GetHrisAbsenceTypesRequest) -> operations.GetHrisAbsenceTypesResponse:
         r"""Get absence types
@@ -249,7 +254,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -302,6 +310,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_absences(self, request: operations.GetHrisAbsencesRequest) -> operations.GetHrisAbsencesResponse:
         r"""Get absences
@@ -407,7 +416,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -460,6 +472,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_employees(self, request: operations.GetHrisEmployeesRequest) -> operations.GetHrisEmployeesResponse:
         r"""Get employees
@@ -623,7 +636,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -676,6 +692,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_employments(self, request: operations.GetHrisEmploymentsRequest) -> operations.GetHrisEmploymentsResponse:
         r"""Get employments
@@ -805,7 +822,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -858,6 +878,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_groups(self, request: operations.GetHrisGroupsRequest) -> operations.GetHrisGroupsResponse:
         r"""Get groups
@@ -1011,7 +1032,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1064,6 +1088,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_legal_entities(self, request: operations.GetHrisLegalEntitiesRequest) -> operations.GetHrisLegalEntitiesResponse:
         r"""Get legal entities
@@ -1129,7 +1154,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1182,6 +1210,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_locations(self, request: operations.GetHrisLocationsRequest) -> operations.GetHrisLocationsResponse:
         r"""Get locations
@@ -1299,7 +1328,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1352,6 +1384,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_teams(self, request: operations.GetHrisTeamsRequest) -> operations.GetHrisTeamsResponse:
         r"""Get teams (deprecated)
@@ -1507,7 +1540,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1560,6 +1596,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def get_hris_time_off_balances(self, request: operations.GetHrisTimeOffBalancesRequest) -> operations.GetHrisTimeOffBalancesResponse:
         r"""Get time off balances
@@ -1633,7 +1670,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1686,6 +1726,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def patch_hris_employees_employee_id(self, x_integration_id: str, employee_id: str, patch_hris_employees_employee_id_request_body: Optional[shared.PatchHrisEmployeesEmployeeIDRequestBody] = None) -> operations.PatchHrisEmployeesEmployeeIDResponse:
         r"""Update employee
@@ -1756,7 +1797,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1809,6 +1853,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def post_hris_absences(self, x_integration_id: str, request_body: Optional[operations.PostHrisAbsencesRequestBody] = None) -> operations.PostHrisAbsencesResponse:
         r"""Create absence
@@ -1901,7 +1946,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1954,6 +2002,7 @@ class UnifiedHRISAPI:
 
         return res
 
+    
     
     def post_hris_employees(self, x_integration_id: str, request_body: Optional[operations.PostHrisEmployeesRequestBody] = None) -> operations.PostHrisEmployeesResponse:
         r"""Create employee
@@ -2053,7 +2102,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2107,6 +2159,7 @@ class UnifiedHRISAPI:
         return res
 
     
+    
     def post_hris_employees_employee_id_attachments(self, x_integration_id: str, employee_id: str, post_hris_employees_employee_id_attachments_request_body: Optional[shared.PostHrisEmployeesEmployeeIDAttachmentsRequestBody] = None) -> operations.PostHrisEmployeesEmployeeIDAttachmentsResponse:
         r"""Add attachment to employees 🦄
         Currently in closed beta.
@@ -2128,7 +2181,10 @@ class UnifiedHRISAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

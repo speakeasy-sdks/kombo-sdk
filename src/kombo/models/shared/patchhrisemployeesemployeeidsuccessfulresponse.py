@@ -41,11 +41,6 @@ class PatchHrisEmployeesEmployeeIDSuccessfulResponse1(str, Enum):
     INACTIVE = 'INACTIVE'
     LEAVE = 'LEAVE'
 
-
-@dataclasses.dataclass
-class EmploymentStatus:
-    pass
-
 class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemas1(str, Enum):
     r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
@@ -56,11 +51,6 @@ class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemas1(str, Enum):
     WORKING_STUDENT = 'WORKING_STUDENT'
     APPRENTICESHIP = 'APPRENTICESHIP'
     TRAINING = 'TRAINING'
-
-
-@dataclasses.dataclass
-class EmploymentType:
-    pass
 
 class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemasData1(str, Enum):
     r"""One of 8 standardized values (`WHITE`, `ASIAN`, `HISPANIC_LATINO`, `HAWAIIAN`, `NATIVE_AMERICAN`, `BLACK_AFRICAN_AMERICAN`, `MULTIPLE_ETHNICITIES`, or `DECLINE_TO_SPECIFY`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
@@ -73,22 +63,12 @@ class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemasData1(str, Enum):
     MULTIPLE_ETHNICITIES = 'MULTIPLE_ETHNICITIES'
     DECLINE_TO_SPECIFY = 'DECLINE_TO_SPECIFY'
 
-
-@dataclasses.dataclass
-class Ethnicity:
-    pass
-
 class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemasDataGender1(str, Enum):
     r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
     NON_BINARY = 'NON_BINARY'
     NOT_SPECIFIED = 'NOT_SPECIFIED'
-
-
-@dataclasses.dataclass
-class PatchHrisEmployeesEmployeeIDSuccessfulResponseGender:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -114,11 +94,6 @@ class PatchHrisEmployeesEmployeeIDSuccessfulResponseSchemasDataMaritalStatus1(st
     DIVORCED = 'DIVORCED'
     SEPARATED = 'SEPARATED'
     NOT_MARRIED = 'NOT_MARRIED'
-
-
-@dataclasses.dataclass
-class PatchHrisEmployeesEmployeeIDSuccessfulResponseMaritalStatus:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -12,6 +12,7 @@ class CustomEndpoints:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_custom_datev_data_pushes(self, x_integration_id: str) -> operations.GetCustomDatevDataPushesResponse:
         r"""Get DATEV data pushes
         Returns all \"DATEV Data Pushes\" of the last 2 months. You can use this endpoint to give your users transparency about submitted \"ASCII-Files\" and their status. Each data push can contain multiple files that were submitted.
@@ -27,7 +28,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -81,6 +85,7 @@ class CustomEndpoints:
         return res
 
     
+    
     def post_custom_datev_passthrough(self, x_integration_id: str, request_body: Optional[operations.PostCustomDatevPassthroughRequestBody] = None) -> operations.PostCustomDatevPassthroughResponse:
         r"""Write raw DATEV ASCII file
         This action allows to send an arbitrary ASCII file directly to DATEV LODAS or Lohn und Gehalt. Kombo adds validation for the file format but not on the content. This action allows you to implement any use case that you might have with DATEV payroll ASCII imports.
@@ -100,7 +105,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -154,6 +162,7 @@ class CustomEndpoints:
         return res
 
     
+    
     def post_custom_datev_push_data_general(self, x_integration_id: str, post_custom_datev_push_data_general_request_body: Optional[shared.PostCustomDatevPushDataGeneralRequestBody] = None) -> operations.PostCustomDatevPushDataGeneralResponse:
         r"""Push general data to DATEV
         Uploads the currently relevant general data (employees, compensations, and time offs) to DATEV. This will create so called ASCII files that the accountant has to import in DATEV. You can call this endpoint to implement an on-demand sync to DATEV, for example if you want to offer your users a button to do that in your application.
@@ -173,7 +182,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -227,6 +239,7 @@ class CustomEndpoints:
         return res
 
     
+    
     def post_custom_datev_push_data_payroll(self, x_integration_id: str, request_body: Optional[operations.PostCustomDatevPushDataPayrollRequestBody] = None) -> operations.PostCustomDatevPushDataPayrollResponse:
         r"""Push payroll data to DATEV
         Uploads the currently relevant payroll data (supplements) to DATEV. This will create so called ASCII files that the accountant has to import in DATEV. After finishing the payroll preparation or after correcting payroll, you can call this.
@@ -246,7 +259,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -299,6 +315,7 @@ class CustomEndpoints:
 
         return res
 
+    
     
     def put_custom_datev_employees_employee_id_compensations(self, x_integration_id: str, employee_id: str, request_body: Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody] = None) -> operations.PutCustomDatevEmployeesEmployeeIDCompensationsResponse:
         r"""Set DATEV compensations
@@ -362,7 +379,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -415,6 +435,7 @@ class CustomEndpoints:
 
         return res
 
+    
     
     def put_custom_datev_employees_employee_id_prepare_payroll(self, x_integration_id: str, employee_id: str, request_body: Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody] = None) -> operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse:
         r"""Prepare DATEV Payroll
@@ -485,7 +506,10 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

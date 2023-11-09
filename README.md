@@ -88,14 +88,14 @@ if res.get_assessment_orders_open_successful_response is not None:
 ## Available Resources and Operations
 
 
-### [.unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
+### [unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
 
 * [get_assessment_orders_open](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_orders_open) - Get open orders
 * [get_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#get_assessment_packages) - Get packages
 * [put_assessment_orders_assessment_order_id_result](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_orders_assessment_order_id_result) - Update order result
 * [put_assessment_packages](docs/sdks/unifiedatsassessmentapi/README.md#put_assessment_packages) - Set packages
 
-### [.unified_ats_api](docs/sdks/unifiedatsapi/README.md)
+### [unified_ats_api](docs/sdks/unifiedatsapi/README.md)
 
 * [delete_ats_candidates_candidate_id_tags](docs/sdks/unifiedatsapi/README.md#delete_ats_candidates_candidate_id_tags) - Remove tag from candidate
 * [get_ats_application_stages](docs/sdks/unifiedatsapi/README.md#get_ats_application_stages) - Get application stages
@@ -114,7 +114,7 @@ if res.get_assessment_orders_open_successful_response is not None:
 * [post_ats_jobs_job_id_applications](docs/sdks/unifiedatsapi/README.md#post_ats_jobs_job_id_applications) - Create application
 * [put_ats_applications_application_id_stage](docs/sdks/unifiedatsapi/README.md#put_ats_applications_application_id_stage) - Move application to stage
 
-### [.general](docs/sdks/general/README.md)
+### [general](docs/sdks/general/README.md)
 
 * [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
 * [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
@@ -124,12 +124,12 @@ if res.get_assessment_orders_open_successful_response is not None:
 * [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
 * [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
 
-### [.kombo_connect](docs/sdks/komboconnect/README.md)
+### [kombo_connect](docs/sdks/komboconnect/README.md)
 
 * [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
 * [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
 
-### [.custom_endpoints](docs/sdks/customendpoints/README.md)
+### [custom_endpoints](docs/sdks/customendpoints/README.md)
 
 * [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
 * [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
@@ -138,7 +138,7 @@ if res.get_assessment_orders_open_successful_response is not None:
 * [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
 * [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
 
-### [.unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
+### [unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
 
 * [delete_hris_absences_absence_id](docs/sdks/unifiedhrisapi/README.md#delete_hris_absences_absence_id) - Delete absence
 * [get_hris_absence_types](docs/sdks/unifiedhrisapi/README.md#get_hris_absence_types) - Get absence types
@@ -179,7 +179,12 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.GetAssessmentOrdersOpenErrorResponse | 400                                         | application/json                            |
+| errors.SDKError                             | 400-600                                     | */*                                         |
 
 
 ## Example
@@ -198,8 +203,10 @@ s = kombo.Kombo(
 res = None
 try:
     res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
+except (errors.GetAssessmentOrdersOpenErrorResponse) as e:
+    print(e) # handle exception
 
-except (GetAssessmentOrdersOpenErrorResponse) as e:
+except (errors.SDKError) as e:
     print(e) # handle exception
 
 
@@ -276,7 +283,7 @@ if res.get_assessment_orders_open_successful_response is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import kombo
@@ -291,12 +298,11 @@ s = kombo.Kombo(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name        | Type        | Scheme      |
 | ----------- | ----------- | ----------- |

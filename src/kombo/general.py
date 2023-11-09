@@ -12,6 +12,7 @@ class General:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_integrations_integration_id(self, integration_id: str, delete_integrations_integration_id_request_body: Optional[shared.DeleteIntegrationsIntegrationIDRequestBody] = None) -> operations.DeleteIntegrationsIntegrationIDResponse:
         r"""Delete integration
         Delete the specified integration.
@@ -32,7 +33,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -65,6 +69,7 @@ class General:
         return res
 
     
+    
     def get_check_api_key(self) -> operations.GetCheckAPIKeyResponse:
         r"""Check API key
         Check whether your API key is working properly.
@@ -76,7 +81,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -102,6 +110,7 @@ class General:
         return res
 
     
+    
     def get_integrations_integration_id(self, integration_id: str) -> operations.GetIntegrationsIntegrationIDResponse:
         r"""Get integration details
         Get the specified integration with everything you need to display it to your customer.
@@ -117,7 +126,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -150,6 +162,7 @@ class General:
         return res
 
     
+    
     def get_tools_category(self, category: shared.GetToolsCategoryParameterCategory) -> operations.GetToolsCategoryResponse:
         r"""Get tools
         Get a list of the tools (i.e., integrations) enabled in your environment.
@@ -166,7 +179,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -192,6 +208,7 @@ class General:
         return res
 
     
+    
     def post_force_sync(self, x_integration_id: str, post_force_sync_request_body: Optional[shared.PostForceSyncRequestBody] = None) -> operations.PostForceSyncResponse:
         r"""Trigger sync
         Trigger a sync for a specific integration.
@@ -213,7 +230,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -246,6 +266,7 @@ class General:
         return res
 
     
+    
     def post_integrations_integration_id_relink(self, integration_id: str, request_body: Optional[operations.PostIntegrationsIntegrationIDRelinkRequestBody] = None) -> operations.PostIntegrationsIntegrationIDRelinkResponse:
         r"""Create reconnection link
         Create a link that will allow the user to reconnect an integration. This is useful if you want to allow your users to update the credentials if the old ones for example expired.
@@ -275,7 +296,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -307,6 +331,7 @@ class General:
 
         return res
 
+    
     
     def post_passthrough_tool_api(self, api: str, tool: str, request_body: Optional[operations.PostPassthroughToolAPIRequestBody] = None) -> operations.PostPassthroughToolAPIResponse:
         r"""Send passthrough request
@@ -350,7 +375,10 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

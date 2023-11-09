@@ -205,11 +205,6 @@ class PostAtsCandidatesRemoteFields:
 
 
 
-@dataclasses.dataclass
-class Answer:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ScreeningQuestionAnswers:

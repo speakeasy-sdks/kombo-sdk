@@ -17,11 +17,6 @@ class One(str, Enum):
     CANCELLED = 'CANCELLED'
     DELETED = 'DELETED'
 
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceIDSuccessfulResponseSchemasStatus:
-    pass
-
 class Unit(str, Enum):
     r"""The unit of time for this absence. Can be `HOURS` or `DAYS`."""
     HOURS = 'HOURS'

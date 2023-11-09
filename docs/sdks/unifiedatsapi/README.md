@@ -1,5 +1,5 @@
 # UnifiedATSAPI
-(*.unified_ats_api*)
+(*unified_ats_api*)
 
 ## Overview
 
@@ -143,7 +143,16 @@ if res.delete_ats_candidates_candidate_id_tags_successful_response is not None:
 ### Response
 
 **[operations.DeleteAtsCandidatesCandidateIDTagsResponse](../../models/operations/deleteatscandidatescandidateidtagsresponse.md)**
+### Errors
 
+| Error Object                                                                  | Status Code                                                                   | Content Type                                                                  |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| errors.DeleteAtsCandidatesCandidateIDTagsErrorResponse                        | 400                                                                           | application/json                                                              |
+| errors.DeleteAtsCandidatesCandidateIDTagsResponseBody                         | 401                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                           | application/json                                                              |
+| errors.SDKError                                                               | 400-600                                                                       | */*                                                                           |
 
 ## get_ats_application_stages
 
@@ -337,7 +346,16 @@ if res.get_ats_application_stages_successful_response is not None:
 ### Response
 
 **[operations.GetAtsApplicationStagesResponse](../../models/operations/getatsapplicationstagesresponse.md)**
+### Errors
 
+| Error Object                                                       | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.GetAtsApplicationStagesErrorResponse                        | 400                                                                | application/json                                                   |
+| errors.GetAtsApplicationStagesResponseBody                         | 401                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponseBody            | 403                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponseResponseBody    | 404                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
+| errors.SDKError                                                    | 400-600                                                            | */*                                                                |
 
 ## get_ats_applications
 
@@ -533,7 +551,16 @@ if res.get_ats_applications_successful_response is not None:
 ### Response
 
 **[operations.GetAtsApplicationsResponse](../../models/operations/getatsapplicationsresponse.md)**
+### Errors
 
+| Error Object                                                  | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.GetAtsApplicationsErrorResponse                        | 400                                                           | application/json                                              |
+| errors.GetAtsApplicationsResponseBody                         | 401                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponseBody            | 403                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                           | application/json                                              |
+| errors.SDKError                                               | 400-600                                                       | */*                                                           |
 
 ## get_ats_candidates
 
@@ -721,7 +748,16 @@ if res.get_ats_candidates_successful_response is not None:
 ### Response
 
 **[operations.GetAtsCandidatesResponse](../../models/operations/getatscandidatesresponse.md)**
+### Errors
 
+| Error Object                                                | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.GetAtsCandidatesErrorResponse                        | 400                                                         | application/json                                            |
+| errors.GetAtsCandidatesResponseBody                         | 401                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponseBody            | 403                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                         | application/json                                            |
+| errors.SDKError                                             | 400-600                                                     | */*                                                         |
 
 ## get_ats_jobs
 
@@ -933,7 +969,16 @@ if res.get_ats_jobs_successful_response is not None:
 ### Response
 
 **[operations.GetAtsJobsResponse](../../models/operations/getatsjobsresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.GetAtsJobsErrorResponse                        | 400                                                   | application/json                                      |
+| errors.GetAtsJobsResponseBody                         | 401                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |
 
 ## get_ats_tags
 
@@ -1061,7 +1106,16 @@ if res.get_ats_tags_successful_response is not None:
 ### Response
 
 **[operations.GetAtsTagsResponse](../../models/operations/getatstagsresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.GetAtsTagsErrorResponse                        | 400                                                   | application/json                                      |
+| errors.GetAtsTagsResponseBody                         | 401                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |
 
 ## get_ats_users
 
@@ -1197,7 +1251,16 @@ if res.get_ats_users_successful_response is not None:
 ### Response
 
 **[operations.GetAtsUsersResponse](../../models/operations/getatsusersresponse.md)**
+### Errors
 
+| Error Object                                           | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.GetAtsUsersErrorResponse                        | 400                                                    | application/json                                       |
+| errors.GetAtsUsersResponseBody                         | 401                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponseBody            | 403                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponseResponseBody    | 404                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponse503ResponseBody | 503                                                    | application/json                                       |
+| errors.SDKError                                        | 400-600                                                | */*                                                    |
 
 ## patch_ats_candidates_candidate_id
 
@@ -1236,7 +1299,12 @@ if res.patch_ats_candidates_candidate_id_successful_response is not None:
 ### Response
 
 **[operations.PatchAtsCandidatesCandidateIDResponse](../../models/operations/patchatscandidatescandidateidresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.PatchAtsCandidatesCandidateIDErrorResponse | 400                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |
 
 ## post_ats_applications_application_id_notes
 
@@ -1329,7 +1397,16 @@ if res.post_ats_applications_application_id_notes_successful_response is not Non
 ### Response
 
 **[operations.PostAtsApplicationsApplicationIDNotesResponse](../../models/operations/postatsapplicationsapplicationidnotesresponse.md)**
+### Errors
 
+| Error Object                                                                     | Status Code                                                                      | Content Type                                                                     |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| errors.PostAtsApplicationsApplicationIDNotesErrorResponse                        | 400                                                                              | application/json                                                                 |
+| errors.PostAtsApplicationsApplicationIDNotesResponseBody                         | 401                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseBody            | 403                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseResponseBody    | 404                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponse503ResponseBody | 503                                                                              | application/json                                                                 |
+| errors.SDKError                                                                  | 400-600                                                                          | */*                                                                              |
 
 ## post_ats_applications_application_id_result_links
 
@@ -1407,7 +1484,16 @@ if res.post_ats_applications_application_id_result_links_successful_response is 
 ### Response
 
 **[operations.PostAtsApplicationsApplicationIDResultLinksResponse](../../models/operations/postatsapplicationsapplicationidresultlinksresponse.md)**
+### Errors
 
+| Error Object                                                                           | Status Code                                                                            | Content Type                                                                           |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| errors.PostAtsApplicationsApplicationIDResultLinksErrorResponse                        | 400                                                                                    | application/json                                                                       |
+| errors.PostAtsApplicationsApplicationIDResultLinksResponseBody                         | 401                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                    | application/json                                                                       |
+| errors.SDKError                                                                        | 400-600                                                                                | */*                                                                                    |
 
 ## post_ats_candidates
 
@@ -1741,7 +1827,16 @@ if res.post_ats_candidates_successful_response is not None:
 ### Response
 
 **[operations.PostAtsCandidatesResponse](../../models/operations/postatscandidatesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.PostAtsCandidatesErrorResponse                        | 400                                                          | application/json                                             |
+| errors.PostAtsCandidatesResponseBody                         | 401                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 400-600                                                      | */*                                                          |
 
 ## post_ats_candidates_candidate_id_attachments
 
@@ -1889,7 +1984,16 @@ if res.post_ats_candidates_candidate_id_attachments_successful_response is not N
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDAttachmentsResponse](../../models/operations/postatscandidatescandidateidattachmentsresponse.md)**
+### Errors
 
+| Error Object                                                                       | Status Code                                                                        | Content Type                                                                       |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDAttachmentsErrorResponse                        | 400                                                                                | application/json                                                                   |
+| errors.PostAtsCandidatesCandidateIDAttachmentsResponseBody                         | 401                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
+| errors.SDKError                                                                    | 400-600                                                                            | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_result_links
 
@@ -2065,7 +2169,16 @@ if res.post_ats_candidates_candidate_id_result_links_successful_response is not 
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDResultLinksResponse](../../models/operations/postatscandidatescandidateidresultlinksresponse.md)**
+### Errors
 
+| Error Object                                                                       | Status Code                                                                        | Content Type                                                                       |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDResultLinksErrorResponse                        | 400                                                                                | application/json                                                                   |
+| errors.PostAtsCandidatesCandidateIDResultLinksResponseBody                         | 401                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
+| errors.SDKError                                                                    | 400-600                                                                            | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_tags
 
@@ -2194,7 +2307,16 @@ if res.post_ats_candidates_candidate_id_tags_successful_response is not None:
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDTagsResponse](../../models/operations/postatscandidatescandidateidtagsresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDTagsErrorResponse                        | 400                                                                         | application/json                                                            |
+| errors.PostAtsCandidatesCandidateIDTagsResponseBody                         | 401                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
 
 ## post_ats_jobs_job_id_applications
 
@@ -2507,7 +2629,16 @@ if res.post_ats_jobs_job_id_applications_successful_response is not None:
 ### Response
 
 **[operations.PostAtsJobsJobIDApplicationsResponse](../../models/operations/postatsjobsjobidapplicationsresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.PostAtsJobsJobIDApplicationsErrorResponse                        | 400                                                                     | application/json                                                        |
+| errors.PostAtsJobsJobIDApplicationsResponseBody                         | 401                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseBody            | 403                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
 
 ## put_ats_applications_application_id_stage
 
@@ -2622,4 +2753,13 @@ if res.put_ats_applications_application_id_stage_successful_response is not None
 ### Response
 
 **[operations.PutAtsApplicationsApplicationIDStageResponse](../../models/operations/putatsapplicationsapplicationidstageresponse.md)**
+### Errors
 
+| Error Object                                                                    | Status Code                                                                     | Content Type                                                                    |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| errors.PutAtsApplicationsApplicationIDStageErrorResponse                        | 400                                                                             | application/json                                                                |
+| errors.PutAtsApplicationsApplicationIDStageResponseBody                         | 401                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseBody            | 403                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseResponseBody    | 404                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponse503ResponseBody | 503                                                                             | application/json                                                                |
+| errors.SDKError                                                                 | 400-600                                                                         | */*                                                                             |

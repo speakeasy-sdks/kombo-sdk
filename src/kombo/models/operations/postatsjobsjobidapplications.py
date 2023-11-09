@@ -193,11 +193,6 @@ class PostAtsJobsJobIDApplicationsRemoteFields:
 
 
 
-@dataclasses.dataclass
-class PostAtsJobsJobIDApplicationsAnswer:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsScreeningQuestionAnswers:

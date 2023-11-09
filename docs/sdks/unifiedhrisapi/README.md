@@ -1,5 +1,5 @@
 # UnifiedHRISAPI
-(*.unified_hris_api*)
+(*unified_hris_api*)
 
 ## Overview
 
@@ -112,7 +112,16 @@ if res.delete_hris_absences_absence_id_successful_response is not None:
 ### Response
 
 **[operations.DeleteHrisAbsencesAbsenceIDResponse](../../models/operations/deletehrisabsencesabsenceidresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.DeleteHrisAbsencesAbsenceIDErrorResponse                         | 400                                                                     | application/json                                                        |
+| errors.DeleteHrisAbsencesAbsenceIDResponseBody                          | 401                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseBody            | 403                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
 
 ## get_hris_absence_types
 
@@ -248,7 +257,16 @@ if res.get_hris_absence_types_successful_response is not None:
 ### Response
 
 **[operations.GetHrisAbsenceTypesResponse](../../models/operations/gethrisabsencetypesresponse.md)**
+### Errors
 
+| Error Object                                                    | Status Code                                                     | Content Type                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| errors.GetHrisAbsenceTypesErrorResponse                         | 400                                                             | application/json                                                |
+| errors.GetHrisAbsenceTypesResponseBody                          | 401                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseBody            | 403                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseResponseBody    | 404                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponse503ResponseBody | 503                                                             | application/json                                                |
+| errors.SDKError                                                 | 400-600                                                         | */*                                                             |
 
 ## get_hris_absences
 
@@ -380,7 +398,16 @@ if res.get_hris_absences_successful_response is not None:
 ### Response
 
 **[operations.GetHrisAbsencesResponse](../../models/operations/gethrisabsencesresponse.md)**
+### Errors
 
+| Error Object                                                | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.GetHrisAbsencesErrorResponse                         | 400                                                         | application/json                                            |
+| errors.GetHrisAbsencesResponseBody                          | 401                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                         | application/json                                            |
+| errors.SDKError                                             | 400-600                                                     | */*                                                         |
 
 ## get_hris_employees
 
@@ -570,7 +597,16 @@ if res.get_hris_employees_successful_response is not None:
 ### Response
 
 **[operations.GetHrisEmployeesResponse](../../models/operations/gethrisemployeesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.GetHrisEmployeesErrorResponse                         | 400                                                          | application/json                                             |
+| errors.GetHrisEmployeesResponseBody                          | 401                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 400-600                                                      | */*                                                          |
 
 ## get_hris_employments
 
@@ -726,7 +762,16 @@ if res.get_hris_employments_successful_response is not None:
 ### Response
 
 **[operations.GetHrisEmploymentsResponse](../../models/operations/gethrisemploymentsresponse.md)**
+### Errors
 
+| Error Object                                                   | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.GetHrisEmploymentsErrorResponse                         | 400                                                            | application/json                                               |
+| errors.GetHrisEmploymentsResponseBody                          | 401                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponseBody            | 403                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponseResponseBody    | 404                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponse503ResponseBody | 503                                                            | application/json                                               |
+| errors.SDKError                                                | 400-600                                                        | */*                                                            |
 
 ## get_hris_groups
 
@@ -906,7 +951,16 @@ if res.get_hris_groups_successful_response is not None:
 ### Response
 
 **[operations.GetHrisGroupsResponse](../../models/operations/gethrisgroupsresponse.md)**
+### Errors
 
+| Error Object                                              | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.GetHrisGroupsErrorResponse                         | 400                                                       | application/json                                          |
+| errors.GetHrisGroupsResponseBody                          | 401                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponseBody            | 403                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponseResponseBody    | 404                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponse503ResponseBody | 503                                                       | application/json                                          |
+| errors.SDKError                                           | 400-600                                                   | */*                                                       |
 
 ## get_hris_legal_entities
 
@@ -998,7 +1052,16 @@ if res.get_hris_legal_entities_successful_response is not None:
 ### Response
 
 **[operations.GetHrisLegalEntitiesResponse](../../models/operations/gethrislegalentitiesresponse.md)**
+### Errors
 
+| Error Object                                                     | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.GetHrisLegalEntitiesErrorResponse                         | 400                                                              | application/json                                                 |
+| errors.GetHrisLegalEntitiesResponseBody                          | 401                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseBody            | 403                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseResponseBody    | 404                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponse503ResponseBody | 503                                                              | application/json                                                 |
+| errors.SDKError                                                  | 400-600                                                          | */*                                                              |
 
 ## get_hris_locations
 
@@ -1142,7 +1205,16 @@ if res.get_hris_locations_successful_response is not None:
 ### Response
 
 **[operations.GetHrisLocationsResponse](../../models/operations/gethrislocationsresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.GetHrisLocationsErrorResponse                         | 400                                                          | application/json                                             |
+| errors.GetHrisLocationsResponseBody                          | 401                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 400-600                                                      | */*                                                          |
 
 ## get_hris_teams
 
@@ -1324,7 +1396,16 @@ if res.get_hris_teams_successful_response is not None:
 ### Response
 
 **[operations.GetHrisTeamsResponse](../../models/operations/gethristeamsresponse.md)**
+### Errors
 
+| Error Object                                             | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.GetHrisTeamsErrorResponse                         | 400                                                      | application/json                                         |
+| errors.GetHrisTeamsResponseBody                          | 401                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponseBody            | 403                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponseResponseBody    | 404                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponse503ResponseBody | 503                                                      | application/json                                         |
+| errors.SDKError                                          | 400-600                                                  | */*                                                      |
 
 ## get_hris_time_off_balances
 
@@ -1424,7 +1505,16 @@ if res.get_hris_time_off_balances_successful_response is not None:
 ### Response
 
 **[operations.GetHrisTimeOffBalancesResponse](../../models/operations/gethristimeoffbalancesresponse.md)**
+### Errors
 
+| Error Object                                                       | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.GetHrisTimeOffBalancesErrorResponse                         | 400                                                                | application/json                                                   |
+| errors.GetHrisTimeOffBalancesResponseBody                          | 401                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseBody            | 403                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseResponseBody    | 404                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
+| errors.SDKError                                                    | 400-600                                                            | */*                                                                |
 
 ## patch_hris_employees_employee_id
 
@@ -1524,7 +1614,16 @@ if res.patch_hris_employees_employee_id_successful_response is not None:
 ### Response
 
 **[operations.PatchHrisEmployeesEmployeeIDResponse](../../models/operations/patchhrisemployeesemployeeidresponse.md)**
+### Errors
 
+| Error Object                                                             | Status Code                                                              | Content Type                                                             |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| errors.PatchHrisEmployeesEmployeeIDErrorResponse                         | 400                                                                      | application/json                                                         |
+| errors.PatchHrisEmployeesEmployeeIDResponseBody                          | 401                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseBody            | 403                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseResponseBody    | 404                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                      | application/json                                                         |
+| errors.SDKError                                                          | 400-600                                                                  | */*                                                                      |
 
 ## post_hris_absences
 
@@ -1638,7 +1737,16 @@ if res.post_hris_absences_successful_response is not None:
 ### Response
 
 **[operations.PostHrisAbsencesResponse](../../models/operations/posthrisabsencesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.PostHrisAbsencesErrorResponse                         | 400                                                          | application/json                                             |
+| errors.PostHrisAbsencesResponseBody                          | 401                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 400-600                                                      | */*                                                          |
 
 ## post_hris_employees
 
@@ -1767,7 +1875,16 @@ if res.post_hris_employees_successful_response is not None:
 ### Response
 
 **[operations.PostHrisEmployeesResponse](../../models/operations/posthrisemployeesresponse.md)**
+### Errors
 
+| Error Object                                                  | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.PostHrisEmployeesErrorResponse                         | 400                                                           | application/json                                              |
+| errors.PostHrisEmployeesResponseBody                          | 401                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                           | application/json                                              |
+| errors.SDKError                                               | 400-600                                                       | */*                                                           |
 
 ## post_hris_employees_employee_id_attachments
 
@@ -1806,4 +1923,9 @@ if res.post_hris_employees_employee_id_attachments_successful_response is not No
 ### Response
 
 **[operations.PostHrisEmployeesEmployeeIDAttachmentsResponse](../../models/operations/posthrisemployeesemployeeidattachmentsresponse.md)**
+### Errors
 
+| Error Object                                               | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse | 400                                                        | application/json                                           |
+| errors.SDKError                                            | 400-600                                                    | */*                                                        |

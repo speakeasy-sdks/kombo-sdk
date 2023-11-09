@@ -12,6 +12,7 @@ class UnifiedATSAssessmentAPI:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_assessment_orders_open(self, x_integration_id: str, cursor: Optional[str] = None, page_size: Optional[int] = None) -> operations.GetAssessmentOrdersOpenResponse:
         r"""Get open orders
         Get all open assessment orders of an integration.
@@ -30,7 +31,10 @@ class UnifiedATSAssessmentAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -56,6 +60,7 @@ class UnifiedATSAssessmentAPI:
         return res
 
     
+    
     def get_assessment_packages(self, x_integration_id: str) -> operations.GetAssessmentPackagesResponse:
         r"""Get packages
         Get all available assessment packages for an integration.
@@ -73,7 +78,10 @@ class UnifiedATSAssessmentAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -98,6 +106,7 @@ class UnifiedATSAssessmentAPI:
 
         return res
 
+    
     
     def put_assessment_orders_assessment_order_id_result(self, x_integration_id: str, assessment_order_id: str, request_body: Optional[operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody] = None) -> operations.PutAssessmentOrdersAssessmentOrderIDResultResponse:
         r"""Update order result
@@ -170,7 +179,10 @@ class UnifiedATSAssessmentAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -224,6 +236,7 @@ class UnifiedATSAssessmentAPI:
         return res
 
     
+    
     def put_assessment_packages(self, x_integration_id: str, request_body: Optional[operations.PutAssessmentPackagesRequestBody] = None) -> operations.PutAssessmentPackagesResponse:
         r"""Set packages
         Replaces the list of available assessment packages.
@@ -245,7 +258,10 @@ class UnifiedATSAssessmentAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

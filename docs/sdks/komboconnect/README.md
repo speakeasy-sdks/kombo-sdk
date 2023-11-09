@@ -1,5 +1,5 @@
 # KomboConnect
-(*.kombo_connect*)
+(*kombo_connect*)
 
 ## Overview
 
@@ -57,7 +57,12 @@ if res.post_connect_activate_integration_successful_response is not None:
 ### Response
 
 **[operations.PostConnectActivateIntegrationResponse](../../models/operations/postconnectactivateintegrationresponse.md)**
+### Errors
 
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.PostConnectActivateIntegrationErrorResponse | 400                                                | application/json                                   |
+| errors.SDKError                                    | 400-600                                            | */*                                                |
 
 ## post_connect_create_link
 
@@ -114,4 +119,9 @@ if res.post_connect_create_link_successful_response is not None:
 ### Response
 
 **[operations.PostConnectCreateLinkResponse](../../models/operations/postconnectcreatelinkresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.PostConnectCreateLinkErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |

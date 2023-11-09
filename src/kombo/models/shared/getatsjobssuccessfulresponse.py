@@ -17,11 +17,6 @@ class GetAtsJobsSuccessfulResponse1(str, Enum):
     SEASONAL = 'SEASONAL'
     INTERNSHIP = 'INTERNSHIP'
 
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseEmploymentType:
-    pass
-
 class HiringTeamRoles(str, Enum):
     RECRUITER = 'RECRUITER'
     HIRING_MANAGER = 'HIRING_MANAGER'
@@ -88,11 +83,6 @@ class GetAtsJobsSuccessfulResponseSchemas1(str, Enum):
     TEMPORARY = 'TEMPORARY'
     ON_SITE = 'ON_SITE'
 
-
-@dataclasses.dataclass
-class RemoteWorkStatus:
-    pass
-
 class GetAtsJobsSuccessfulResponseSchemasData1(str, Enum):
     r"""The period of the salary amount (not equal to the pay frequency)."""
     YEAR = 'YEAR'
@@ -101,11 +91,6 @@ class GetAtsJobsSuccessfulResponseSchemasData1(str, Enum):
     WEEK = 'WEEK'
     DAY = 'DAY'
     HOUR = 'HOUR'
-
-
-@dataclasses.dataclass
-class SalaryPeriod:
-    pass
 
 class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat9Type(str, Enum):
     r"""When we're not able to map a specific question type yet, we will return this type. Every `UNKNOWN` question will also be parsed and unified by us at some point. This is just a temporary workaround so you still get all questions."""
@@ -261,11 +246,6 @@ class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1:
 
 
 
-@dataclasses.dataclass
-class Format:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ScreeningQuestions:
@@ -297,11 +277,6 @@ class GetAtsJobsSuccessfulResponseSchemasDataResults1(str, Enum):
     DRAFT = 'DRAFT'
     ARCHIVED = 'ARCHIVED'
 
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseSchemasStatus:
-    pass
-
 class GetAtsJobsSuccessfulResponseSchemasDataResultsVisibility1(str, Enum):
     r"""Describes the visibility of the job:
 
@@ -316,11 +291,6 @@ class GetAtsJobsSuccessfulResponseSchemasDataResultsVisibility1(str, Enum):
     INTERNAL = 'INTERNAL'
     UNLISTED = 'UNLISTED'
     CONFIDENTIAL = 'CONFIDENTIAL'
-
-
-@dataclasses.dataclass
-class Visibility:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

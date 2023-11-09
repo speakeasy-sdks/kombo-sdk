@@ -13,6 +13,7 @@ class UnifiedATSAPI:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_ats_candidates_candidate_id_tags(self, x_integration_id: str, candidate_id: str, request_body: Optional[operations.DeleteAtsCandidatesCandidateIDTagsRequestBody] = None) -> operations.DeleteAtsCandidatesCandidateIDTagsResponse:
         r"""Remove tag from candidate
         Remove a tag from a candidate based on its name.
@@ -107,7 +108,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -160,6 +164,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_application_stages(self, request: operations.GetAtsApplicationStagesRequest) -> operations.GetAtsApplicationStagesResponse:
         r"""Get application stages
@@ -327,7 +332,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -380,6 +388,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_applications(self, request: operations.GetAtsApplicationsRequest) -> operations.GetAtsApplicationsResponse:
         r"""Get applications
@@ -549,7 +558,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -602,6 +614,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_candidates(self, request: operations.GetAtsCandidatesRequest) -> operations.GetAtsCandidatesResponse:
         r"""Get candidates
@@ -763,7 +776,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -816,6 +832,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_jobs(self, request: operations.GetAtsJobsRequest) -> operations.GetAtsJobsResponse:
         r"""Get jobs
@@ -1001,7 +1018,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1054,6 +1074,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_tags(self, request: operations.GetAtsTagsRequest) -> operations.GetAtsTagsResponse:
         r"""Get tags
@@ -1155,7 +1176,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1208,6 +1232,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def get_ats_users(self, request: operations.GetAtsUsersRequest) -> operations.GetAtsUsersResponse:
         r"""Get users
@@ -1317,7 +1342,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1371,6 +1399,7 @@ class UnifiedATSAPI:
         return res
 
     
+    
     def patch_ats_candidates_candidate_id(self, x_integration_id: str, candidate_id: str, patch_ats_candidates_candidate_id_request_body: Optional[shared.PatchAtsCandidatesCandidateIDRequestBody] = None) -> operations.PatchAtsCandidatesCandidateIDResponse:
         r"""Update candidate 🦄
         Currently in closed beta.
@@ -1392,7 +1421,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1417,6 +1449,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_applications_application_id_notes(self, x_integration_id: str, application_id: str, request_body: Optional[operations.PostAtsApplicationsApplicationIDNotesRequestBody] = None) -> operations.PostAtsApplicationsApplicationIDNotesResponse:
         r"""Add note to application
@@ -1487,7 +1520,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1541,6 +1577,7 @@ class UnifiedATSAPI:
         return res
 
     
+    
     def post_ats_applications_application_id_result_links(self, x_integration_id: str, application_id: str, request_body: Optional[operations.PostAtsApplicationsApplicationIDResultLinksRequestBody] = None) -> operations.PostAtsApplicationsApplicationIDResultLinksResponse:
         r"""Add result link to application
         Add a result link to an application.
@@ -1589,7 +1626,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1642,6 +1682,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_candidates(self, x_integration_id: str, request_body: Optional[operations.PostAtsCandidatesRequestBody] = None) -> operations.PostAtsCandidatesResponse:
         r"""Create candidate
@@ -1895,7 +1936,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1948,6 +1992,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_candidates_candidate_id_attachments(self, x_integration_id: str, candidate_id: str, request_body: Optional[operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody] = None) -> operations.PostAtsCandidatesCandidateIDAttachmentsResponse:
         r"""Add attachment to candidate
@@ -2069,7 +2114,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2122,6 +2170,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_candidates_candidate_id_result_links(self, x_integration_id: str, candidate_id: str, request_body: Optional[operations.PostAtsCandidatesCandidateIDResultLinksRequestBody] = None) -> operations.PostAtsCandidatesCandidateIDResultLinksResponse:
         r"""Add result link to candidate
@@ -2264,7 +2313,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2317,6 +2369,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_candidates_candidate_id_tags(self, x_integration_id: str, candidate_id: str, request_body: Optional[operations.PostAtsCandidatesCandidateIDTagsRequestBody] = None) -> operations.PostAtsCandidatesCandidateIDTagsResponse:
         r"""Add tag to candidate
@@ -2420,7 +2473,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2473,6 +2529,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def post_ats_jobs_job_id_applications(self, x_integration_id: str, job_id: str, request_body: Optional[operations.PostAtsJobsJobIDApplicationsRequestBody] = None) -> operations.PostAtsJobsJobIDApplicationsResponse:
         r"""Create application
@@ -2708,7 +2765,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -2761,6 +2821,7 @@ class UnifiedATSAPI:
 
         return res
 
+    
     
     def put_ats_applications_application_id_stage(self, x_integration_id: str, application_id: str, request_body: Optional[operations.PutAtsApplicationsApplicationIDStageRequestBody] = None) -> operations.PutAtsApplicationsApplicationIDStageResponse:
         r"""Move application to stage
@@ -2852,7 +2913,10 @@ class UnifiedATSAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
