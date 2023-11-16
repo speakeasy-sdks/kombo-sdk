@@ -33,11 +33,11 @@ class GetHrisEmploymentsRequest:
 class GetHrisEmploymentsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     get_hris_employments_successful_response: Optional[shared_gethrisemploymentssuccessfulresponse.GetHrisEmploymentsSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/employments Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -24,11 +24,11 @@ class PatchHrisEmployeesEmployeeIDRequest:
 class PatchHrisEmployeesEmployeeIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     patch_hris_employees_employee_id_successful_response: Optional[shared_patchhrisemployeesemployeeidsuccessfulresponse.PatchHrisEmployeesEmployeeIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""PATCH /hris/employees/:employee_id Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

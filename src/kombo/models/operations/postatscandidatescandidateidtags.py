@@ -75,11 +75,11 @@ class PostAtsCandidatesCandidateIDTagsRequest:
 class PostAtsCandidatesCandidateIDTagsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     post_ats_candidates_candidate_id_tags_successful_response: Optional[shared_postatscandidatescandidateidtagssuccessfulresponse.PostAtsCandidatesCandidateIDTagsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/candidates/:candidate_id/tags Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

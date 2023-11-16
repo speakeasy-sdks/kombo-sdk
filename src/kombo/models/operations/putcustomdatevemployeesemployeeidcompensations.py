@@ -65,11 +65,11 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsRequest:
 class PutCustomDatevEmployeesEmployeeIDCompensationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     put_custom_datev_employees_employee_id_compensations_successful_response: Optional[shared_putcustomdatevemployeesemployeeidcompensationssuccessfulresponse.PutCustomDatevEmployeesEmployeeIDCompensationsSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /custom/datev/employees/:employee_id/compensations Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

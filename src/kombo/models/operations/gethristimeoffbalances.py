@@ -35,11 +35,11 @@ class GetHrisTimeOffBalancesRequest:
 class GetHrisTimeOffBalancesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     get_hris_time_off_balances_successful_response: Optional[shared_gethristimeoffbalancessuccessfulresponse.GetHrisTimeOffBalancesSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/time-off-balances Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
