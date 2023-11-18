@@ -11,7 +11,8 @@ from kombo import utils
 class Data:
     pass
 
-class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus(str, Enum):
+class Status(str, Enum):
+    r"""Status of the assessment. Must be one of `COMPLETE` or `CANCELLED`."""
     SUCCESS = 'success'
 
 
@@ -19,6 +20,6 @@ class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus(str, Enum):
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponse:
     data: Data = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-    status: DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: Status = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
 

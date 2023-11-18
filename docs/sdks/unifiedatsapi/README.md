@@ -1804,7 +1804,7 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_b
     ),
     screening_question_answers=[
         operations.ScreeningQuestionAnswers(
-        False,
+            answer=False,
             question_id='string',
         ),
     ],
@@ -2605,7 +2605,7 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
     ),
     screening_question_answers=[
         operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
-        dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
+            answer=dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
             question_id='string',
         ),
     ],

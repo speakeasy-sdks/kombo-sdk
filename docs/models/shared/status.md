@@ -1,4 +1,4 @@
-# DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus
+# Status
 
 
 ## Values

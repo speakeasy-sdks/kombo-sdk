@@ -13,6 +13,7 @@ src/kombo/utils/__init__.py
 src/kombo/utils/retries.py
 src/kombo/utils/utils.py
 src/kombo/models/errors/sdkerror.py
+tests/helpers.py
 src/kombo/models/operations/getassessmentordersopen.py
 src/kombo/models/operations/getassessmentpackages.py
 src/kombo/models/operations/putassessmentordersassessmentorderidresult.py
@@ -453,7 +454,7 @@ docs/models/shared/putassessmentpackagessuccessfulresponsedata.md
 docs/models/shared/putassessmentpackagessuccessfulresponsestatus.md
 docs/models/shared/putassessmentpackagessuccessfulresponse.md
 docs/models/shared/data.md
-docs/models/shared/deleteatscandidatescandidateidtagssuccessfulresponsestatus.md
+docs/models/shared/status.md
 docs/models/shared/deleteatscandidatescandidateidtagssuccessfulresponse.md
 docs/models/shared/getatsapplicationstagessuccessfulresponseresults.md
 docs/models/shared/getatsapplicationstagessuccessfulresponsedata.md
