@@ -1780,25 +1780,25 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_b
         ),
         lever=operations.Lever(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         successfactors=operations.Successfactors(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
             job_application={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         teamtailor=operations.PostAtsCandidatesTeamtailor(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         workable=operations.Workable(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -2581,25 +2581,25 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
         ),
         lever=operations.PostAtsJobsJobIDApplicationsLever(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         successfactors=operations.PostAtsJobsJobIDApplicationsSuccessfactors(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
             job_application={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         teamtailor=operations.PostAtsJobsJobIDApplicationsTeamtailor(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
         workable=operations.PostAtsJobsJobIDApplicationsWorkable(
             candidate={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),

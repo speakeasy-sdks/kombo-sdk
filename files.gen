@@ -232,7 +232,6 @@ src/kombo/models/__init__.py
 src/kombo/models/errors/__init__.py
 src/kombo/models/operations/__init__.py
 src/kombo/models/shared/__init__.py
-USAGE.md
 docs/models/operations/getassessmentordersopenrequest.md
 docs/models/operations/getassessmentordersopenresponse.md
 docs/models/operations/getassessmentpackagesrequest.md
@@ -1409,4 +1408,5 @@ docs/sdks/general/README.md
 docs/sdks/komboconnect/README.md
 docs/sdks/customendpoints/README.md
 docs/sdks/unifiedhrisapi/README.md
+USAGE.md
 .gitattributes

@@ -1590,7 +1590,7 @@ res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='stri
     remote_fields=shared.RemoteFields(
         humaans=shared.Humaans(
             employee={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),
@@ -1852,7 +1852,7 @@ res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_
     remote_fields=operations.PostHrisEmployeesRemoteFields(
         humaans=operations.Humaans(
             employee={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ),

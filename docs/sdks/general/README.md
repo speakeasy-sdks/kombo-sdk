@@ -313,14 +313,14 @@ s = kombo.Kombo(
 
 res = s.general.post_passthrough_tool_api(api='string', tool='string', request_body=operations.PostPassthroughToolAPIRequestBody(
     api_options={
-        "key": 'string',
+        'key': 'string',
     },
     headers={
-        "key": 'string',
+        'key': 'string',
     },
     method=operations.Method.GET,
     params={
-        "key": 'string',
+        'key': 'string',
     },
     path='/usr/libexec',
 ))
