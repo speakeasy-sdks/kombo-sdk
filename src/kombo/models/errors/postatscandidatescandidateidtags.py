@@ -32,7 +32,7 @@ class PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody(Excep
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody(Exceptio
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -110,4 +110,4 @@ class PostAtsCandidatesCandidateIDTagsResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

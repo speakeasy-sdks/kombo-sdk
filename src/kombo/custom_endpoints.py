@@ -99,7 +99,7 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/passthrough'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPassthroughRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -176,7 +176,7 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/push-data/general'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "post_custom_datev_push_data_general_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPushDataGeneralRequest, "post_custom_datev_push_data_general_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -253,7 +253,7 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/push-data/payroll'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPushDataPayrollRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -373,7 +373,7 @@ class CustomEndpoints:
         
         url = utils.generate_url(operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequest, base_url, '/custom/datev/employees/{employee_id}/compensations', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -500,7 +500,7 @@ class CustomEndpoints:
         
         url = utils.generate_url(operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest, base_url, '/custom/datev/employees/{employee_id}/prepare-payroll', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

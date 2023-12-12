@@ -32,7 +32,7 @@ class PostHRISAbsencesUnifiedHRISAPIResponse503ResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class PostHRISAbsencesUnifiedHRISAPIResponseResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class PostHRISAbsencesUnifiedHRISAPIResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -111,4 +111,4 @@ class PostHrisAbsencesResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

@@ -102,7 +102,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.DeleteAtsCandidatesCandidateIDTagsRequest, base_url, '/ats/candidates/{candidate_id}/tags', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteAtsCandidatesCandidateIDTagsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1415,7 +1415,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PatchAtsCandidatesCandidateIDRequest, base_url, '/ats/candidates/{candidate_id}', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "patch_ats_candidates_candidate_id_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PatchAtsCandidatesCandidateIDRequest, "patch_ats_candidates_candidate_id_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1514,7 +1514,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsApplicationsApplicationIDNotesRequest, base_url, '/ats/applications/{application_id}/notes', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsApplicationsApplicationIDNotesRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1620,7 +1620,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsApplicationsApplicationIDResultLinksRequest, base_url, '/ats/applications/{application_id}/result-links', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsApplicationsApplicationIDResultLinksRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1930,7 +1930,7 @@ class UnifiedATSAPI:
         
         url = base_url + '/ats/candidates'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsCandidatesRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2108,7 +2108,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsCandidatesCandidateIDAttachmentsRequest, base_url, '/ats/candidates/{candidate_id}/attachments', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsCandidatesCandidateIDAttachmentsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2307,7 +2307,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsCandidatesCandidateIDResultLinksRequest, base_url, '/ats/candidates/{candidate_id}/result-links', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsCandidatesCandidateIDResultLinksRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2467,7 +2467,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsCandidatesCandidateIDTagsRequest, base_url, '/ats/candidates/{candidate_id}/tags', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsCandidatesCandidateIDTagsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2759,7 +2759,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PostAtsJobsJobIDApplicationsRequest, base_url, '/ats/jobs/{job_id}/applications', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostAtsJobsJobIDApplicationsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2907,7 +2907,7 @@ class UnifiedATSAPI:
         
         url = utils.generate_url(operations.PutAtsApplicationsApplicationIDStageRequest, base_url, '/ats/applications/{application_id}/stage', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAtsApplicationsApplicationIDStageRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

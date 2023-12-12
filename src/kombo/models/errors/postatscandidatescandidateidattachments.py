@@ -32,7 +32,7 @@ class PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponse503ResponseBod
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseResponseBody(E
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseBody(Exception
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -110,4 +110,4 @@ class PostAtsCandidatesCandidateIDAttachmentsResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

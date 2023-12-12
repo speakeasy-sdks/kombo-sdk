@@ -32,7 +32,7 @@ class GetATSCandidatesUnifiedATSAPIResponse503ResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class GetATSCandidatesUnifiedATSAPIResponseResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class GetATSCandidatesUnifiedATSAPIResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -110,4 +110,4 @@ class GetAtsCandidatesResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

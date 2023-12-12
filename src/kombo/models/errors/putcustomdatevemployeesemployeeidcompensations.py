@@ -32,7 +32,7 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponse503Re
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseRespo
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseBody(
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -110,4 +110,4 @@ class PutCustomDatevEmployeesEmployeeIDCompensationsResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

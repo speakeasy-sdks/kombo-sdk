@@ -32,7 +32,7 @@ class PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponse5
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,7 +58,7 @@ class PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseR
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -84,7 +84,7 @@ class PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseB
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -110,4 +110,4 @@ class PutAssessmentOrdersAssessmentOrderIDResultResponseBody(Exception):
     
 
     def __str__(self) -> str:
-        return utils.marshal_json(self)
+        return utils.marshal_json(self, type(self))

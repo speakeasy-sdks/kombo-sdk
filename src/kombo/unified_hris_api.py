@@ -82,7 +82,7 @@ class UnifiedHRISAPI:
         
         url = utils.generate_url(operations.DeleteHrisAbsencesAbsenceIDRequest, base_url, '/hris/absences/{absence_id}', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_hris_absences_absence_id_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteHrisAbsencesAbsenceIDRequest, "delete_hris_absences_absence_id_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1791,7 +1791,7 @@ class UnifiedHRISAPI:
         
         url = utils.generate_url(operations.PatchHrisEmployeesEmployeeIDRequest, base_url, '/hris/employees/{employee_id}', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "patch_hris_employees_employee_id_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PatchHrisEmployeesEmployeeIDRequest, "patch_hris_employees_employee_id_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1940,7 +1940,7 @@ class UnifiedHRISAPI:
         
         url = base_url + '/hris/absences'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostHrisAbsencesRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2096,7 +2096,7 @@ class UnifiedHRISAPI:
         
         url = base_url + '/hris/employees'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostHrisEmployeesRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -2175,7 +2175,7 @@ class UnifiedHRISAPI:
         
         url = utils.generate_url(operations.PostHrisEmployeesEmployeeIDAttachmentsRequest, base_url, '/hris/employees/{employee_id}/attachments', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "post_hris_employees_employee_id_attachments_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostHrisEmployeesEmployeeIDAttachmentsRequest, "post_hris_employees_employee_id_attachments_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

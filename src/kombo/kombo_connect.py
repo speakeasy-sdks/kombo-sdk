@@ -14,7 +14,7 @@ class KomboConnect:
         
     
     
-    def post_connect_activate_integration(self, request: operations.PostConnectActivateIntegrationRequestBody) -> operations.PostConnectActivateIntegrationResponse:
+    def post_connect_activate_integration(self, request: Optional[operations.PostConnectActivateIntegrationRequestBody]) -> operations.PostConnectActivateIntegrationResponse:
         r"""Activate integration
         Activate an integration that was just created via Kombo Connect.
 
@@ -32,7 +32,7 @@ class KomboConnect:
         
         url = base_url + '/connect/activate-integration'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostConnectActivateIntegrationRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -68,7 +68,7 @@ class KomboConnect:
 
     
     
-    def post_connect_create_link(self, request: operations.PostConnectCreateLinkRequestBody) -> operations.PostConnectCreateLinkResponse:
+    def post_connect_create_link(self, request: Optional[operations.PostConnectCreateLinkRequestBody]) -> operations.PostConnectCreateLinkResponse:
         r"""Create connection link
         Generate a unique link that allows your user to enter the embedded Kombo Connect flow.
 
@@ -93,7 +93,7 @@ class KomboConnect:
         
         url = base_url + '/connect/create-link'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostConnectCreateLinkRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

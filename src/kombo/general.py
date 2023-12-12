@@ -27,7 +27,7 @@ class General:
         
         url = utils.generate_url(operations.DeleteIntegrationsIntegrationIDRequest, base_url, '/integrations/{integration_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_integrations_integration_id_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteIntegrationsIntegrationIDRequest, "delete_integrations_integration_id_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -224,7 +224,7 @@ class General:
         
         url = base_url + '/force-sync'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "post_force_sync_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostForceSyncRequest, "post_force_sync_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -290,7 +290,7 @@ class General:
         
         url = utils.generate_url(operations.PostIntegrationsIntegrationIDRelinkRequest, base_url, '/integrations/{integration_id}/relink', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostIntegrationsIntegrationIDRelinkRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -369,7 +369,7 @@ class General:
         
         url = utils.generate_url(operations.PostPassthroughToolAPIRequest, base_url, '/passthrough/{tool}/{api}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostPassthroughToolAPIRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

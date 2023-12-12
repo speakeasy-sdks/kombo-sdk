@@ -74,7 +74,7 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -182,7 +182,7 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -225,7 +225,7 @@ from kombo.models import operations, shared
 s = kombo.Kombo(
     server_idx=0,
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -248,7 +248,7 @@ from kombo.models import operations, shared
 s = kombo.Kombo(
     server_url="https://api.kombo.dev/v1",
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -299,7 +299,7 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
