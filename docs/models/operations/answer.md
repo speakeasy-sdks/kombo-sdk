@@ -1,5 +1,7 @@
 # Answer
 
+Answer to a question. This will be validated based on the question format and throw an error if the answer is invalid.
+
 
 ## Supported Types
 

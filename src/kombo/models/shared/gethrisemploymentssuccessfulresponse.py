@@ -10,7 +10,6 @@ from kombo import utils
 from typing import Any, Dict, List, Optional, Union
 
 class GetHrisEmploymentsSuccessfulResponse1(str, Enum):
-    r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
     CONTRACT = 'CONTRACT'
@@ -21,7 +20,6 @@ class GetHrisEmploymentsSuccessfulResponse1(str, Enum):
     TRAINING = 'TRAINING'
 
 class GetHrisEmploymentsSuccessfulResponseSchemas1(str, Enum):
-    r"""One of 9 standardized values (`DAILY`, `WEEKLY`, `BIWEEKLY`, `MONTHLY`, `SEMIMONTHLY`, `QUARTERLY`, `SEMIANNUALLY`, `ANNUALLY`, or `PRO_RATA`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     DAILY = 'DAILY'
     WEEKLY = 'WEEKLY'
     BIWEEKLY = 'BIWEEKLY'
@@ -33,7 +31,6 @@ class GetHrisEmploymentsSuccessfulResponseSchemas1(str, Enum):
     PRO_RATA = 'PRO_RATA'
 
 class GetHrisEmploymentsSuccessfulResponseSchemasData1(str, Enum):
-    r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     HOUR = 'HOUR'
     DAY = 'DAY'
     WEEK = 'WEEK'

@@ -1,5 +1,7 @@
 # SalaryPeriod
 
+The period of the salary amount (not equal to the pay frequency).
+
 
 ## Supported Types
 

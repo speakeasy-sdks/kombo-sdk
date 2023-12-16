@@ -1,7 +1,5 @@
 # GetAtsJobsSuccessfulResponse1
 
-The type of employment contract.
-
 
 ## Values
 

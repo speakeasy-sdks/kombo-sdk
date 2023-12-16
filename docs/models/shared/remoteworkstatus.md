@@ -1,5 +1,7 @@
 # RemoteWorkStatus
 
+Defines if the job supports remote work and if so, to what extent.
+
 
 ## Supported Types
 

@@ -27,22 +27,12 @@ class GetHrisEmployeesSuccessfulResponseBankAccounts:
 
 
 class GetHrisEmployeesSuccessfulResponse1(str, Enum):
-    r"""The current employment status of the employee:
-
-    - `ACTIVE`: the employee is **actively employed**
-    - `PENDING`: the employee is **not actively employed yet** (but they signed their contract or are part of an onboarding process)
-    - `INACTIVE`: the employee is **not actively employed** anymore
-    - `LEAVE`: the employee is still employed but **currently on leave** (note that not all HR systems support this status — use our absences API for detailed information)
-
-    Please note that in rare cases, where we can't find a clear mapping, the original string is passed through.
-    """
     ACTIVE = 'ACTIVE'
     PENDING = 'PENDING'
     INACTIVE = 'INACTIVE'
     LEAVE = 'LEAVE'
 
 class GetHrisEmployeesSuccessfulResponseSchemas1(str, Enum):
-    r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
     CONTRACT = 'CONTRACT'
@@ -53,7 +43,6 @@ class GetHrisEmployeesSuccessfulResponseSchemas1(str, Enum):
     TRAINING = 'TRAINING'
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmployments1(str, Enum):
-    r"""One of 8 standardized values (`FULL_TIME`, `PART_TIME`, `CONTRACT`, `INTERNSHIP`, `FREELANCE`, `WORKING_STUDENT`, `APPRENTICESHIP`, or `TRAINING`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
     CONTRACT = 'CONTRACT'
@@ -64,7 +53,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmployments1(str, Enum
     TRAINING = 'TRAINING'
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayFrequency1(str, Enum):
-    r"""One of 9 standardized values (`DAILY`, `WEEKLY`, `BIWEEKLY`, `MONTHLY`, `SEMIMONTHLY`, `QUARTERLY`, `SEMIANNUALLY`, `ANNUALLY`, or `PRO_RATA`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     DAILY = 'DAILY'
     WEEKLY = 'WEEKLY'
     BIWEEKLY = 'BIWEEKLY'
@@ -76,7 +64,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayFrequenc
     PRO_RATA = 'PRO_RATA'
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsEmploymentsPayPeriod1(str, Enum):
-    r"""One of 10 standardized values (`HOUR`, `DAY`, `WEEK`, `TWO_WEEKS`, `HALF_MONTH`, `MONTH`, `TWO_MONTHS`, `QUARTER`, `HALF_YEAR`, or `YEAR`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     HOUR = 'HOUR'
     DAY = 'DAY'
     WEEK = 'WEEK'
@@ -123,7 +110,6 @@ class Employments:
 
 
 class GetHrisEmployeesSuccessfulResponseSchemasData1(str, Enum):
-    r"""One of 8 standardized values (`WHITE`, `ASIAN`, `HISPANIC_LATINO`, `HAWAIIAN`, `NATIVE_AMERICAN`, `BLACK_AFRICAN_AMERICAN`, `MULTIPLE_ETHNICITIES`, or `DECLINE_TO_SPECIFY`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     WHITE = 'WHITE'
     ASIAN = 'ASIAN'
     HISPANIC_LATINO = 'HISPANIC_LATINO'
@@ -134,7 +120,6 @@ class GetHrisEmployeesSuccessfulResponseSchemasData1(str, Enum):
     DECLINE_TO_SPECIFY = 'DECLINE_TO_SPECIFY'
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResults1(str, Enum):
-    r"""One of 4 standardized values (`MALE`, `FEMALE`, `NON_BINARY`, or `NOT_SPECIFIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     MALE = 'MALE'
     FEMALE = 'FEMALE'
     NON_BINARY = 'NON_BINARY'
@@ -219,7 +204,6 @@ class Manager:
 
 
 class GetHrisEmployeesSuccessfulResponseSchemasDataResultsMaritalStatus1(str, Enum):
-    r"""One of 7 standardized values (`SINGLE`, `MARRIED`, `DOMESTIC_PARTNERSHIP`, `WIDOWED`, `DIVORCED`, `SEPARATED`, or `NOT_MARRIED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     SINGLE = 'SINGLE'
     MARRIED = 'MARRIED'
     DOMESTIC_PARTNERSHIP = 'DOMESTIC_PARTNERSHIP'

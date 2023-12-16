@@ -10,7 +10,6 @@ from kombo import utils
 from typing import Any, Dict, List, Optional, Union
 
 class GetAtsJobsSuccessfulResponse1(str, Enum):
-    r"""The type of employment contract."""
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
     CONTRACT = 'CONTRACT'
@@ -77,14 +76,12 @@ class GetAtsJobsSuccessfulResponseLocation:
 
 
 class GetAtsJobsSuccessfulResponseSchemas1(str, Enum):
-    r"""Defines if the job supports remote work and if so, to what extent."""
     REMOTE = 'REMOTE'
     HYBRID = 'HYBRID'
     TEMPORARY = 'TEMPORARY'
     ON_SITE = 'ON_SITE'
 
 class GetAtsJobsSuccessfulResponseSchemasData1(str, Enum):
-    r"""The period of the salary amount (not equal to the pay frequency)."""
     YEAR = 'YEAR'
     MONTH = 'MONTH'
     TWO_WEEKS = 'TWO_WEEKS'
@@ -271,22 +268,12 @@ class Stages:
 
 
 class GetAtsJobsSuccessfulResponseSchemasDataResults1(str, Enum):
-    r"""One of 4 standardized values (`OPEN`, `CLOSED`, `DRAFT`, or `ARCHIVED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     DRAFT = 'DRAFT'
     ARCHIVED = 'ARCHIVED'
 
 class GetAtsJobsSuccessfulResponseSchemasDataResultsVisibility1(str, Enum):
-    r"""Describes the visibility of the job:
-
-    - `PUBLIC`: visible to everyone, published on a job board
-    - `INTERNAL`: only visible to employees of the company itself
-    - `UNLISTED`: anyone can apply but only if they have the link to it
-    - `CONFIDENTIAL`: nobody can apply and it's only visible in the ATS to people who were invited to it
-
-    Useful if you are providing a job board and want to post public open jobs of your customers/partners.
-    """
     PUBLIC = 'PUBLIC'
     INTERNAL = 'INTERNAL'
     UNLISTED = 'UNLISTED'

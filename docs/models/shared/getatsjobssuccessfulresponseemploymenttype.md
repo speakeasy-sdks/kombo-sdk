@@ -1,5 +1,7 @@
 # GetAtsJobsSuccessfulResponseEmploymentType
 
+The type of employment contract.
+
 
 ## Supported Types
 

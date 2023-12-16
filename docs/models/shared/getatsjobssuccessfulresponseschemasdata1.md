@@ -1,7 +1,5 @@
 # GetAtsJobsSuccessfulResponseSchemasData1
 
-The period of the salary amount (not equal to the pay frequency).
-
 
 ## Values
 
