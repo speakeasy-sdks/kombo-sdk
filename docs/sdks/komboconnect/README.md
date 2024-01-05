@@ -62,7 +62,7 @@ if res.post_connect_activate_integration_successful_response is not None:
 | Error Object                                       | Status Code                                        | Content Type                                       |
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
 | errors.PostConnectActivateIntegrationErrorResponse | 400                                                | application/json                                   |
-| errors.SDKError                                    | 400-600                                            | */*                                                |
+| errors.SDKError                                    | 4x-5xx                                             | */*                                                |
 
 ## post_connect_create_link
 
@@ -124,4 +124,4 @@ if res.post_connect_create_link_successful_response is not None:
 | Error Object                              | Status Code                               | Content Type                              |
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.PostConnectCreateLinkErrorResponse | 400                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |

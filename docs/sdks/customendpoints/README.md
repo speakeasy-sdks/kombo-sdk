@@ -53,7 +53,7 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 | errors.GetCustomDatevDataPushesCustomEndpointsResponseBody            | 403                                                                   | application/json                                                      |
 | errors.GetCustomDatevDataPushesCustomEndpointsResponseResponseBody    | 404                                                                   | application/json                                                      |
 | errors.GetCustomDatevDataPushesCustomEndpointsResponse503ResponseBody | 503                                                                   | application/json                                                      |
-| errors.SDKError                                                       | 400-600                                                               | */*                                                                   |
+| errors.SDKError                                                       | 4x-5xx                                                                | */*                                                                   |
 
 ## post_custom_datev_passthrough
 
@@ -74,7 +74,7 @@ s = kombo.Kombo(
 
 
 res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='string', request_body=operations.PostCustomDatevPassthroughRequestBody(
-    accounting_month=dateutil.parser.isoparse('2022-07-06T23:12:46.749Z'),
+    accounting_month=dateutil.parser.isoparse('2023-07-07T11:18:39.230Z'),
     file_content='string',
     file_name='road_bedfordshire.jpg',
     file_type=operations.FileType.STAMMDATEN,
@@ -106,7 +106,7 @@ if res.post_custom_datev_passthrough_successful_response is not None:
 | errors.PostCustomDatevPassthroughCustomEndpointsResponseBody            | 403                                                                     | application/json                                                        |
 | errors.PostCustomDatevPassthroughCustomEndpointsResponseResponseBody    | 404                                                                     | application/json                                                        |
 | errors.PostCustomDatevPassthroughCustomEndpointsResponse503ResponseBody | 503                                                                     | application/json                                                        |
-| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## post_custom_datev_push_data_general
 
@@ -152,7 +152,7 @@ if res.post_custom_datev_push_data_general_successful_response is not None:
 | errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
 | errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
 | errors.PostCustomDatevPushDataGeneralCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
-| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## post_custom_datev_push_data_payroll
 
@@ -173,7 +173,7 @@ s = kombo.Kombo(
 
 
 res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='string', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
-    payroll_month=dateutil.parser.isoparse('2023-03-20T01:32:39.016Z'),
+    payroll_month=dateutil.parser.isoparse('2024-03-19T19:15:18.613Z'),
 ))
 
 if res.post_custom_datev_push_data_payroll_successful_response is not None:
@@ -201,7 +201,7 @@ if res.post_custom_datev_push_data_payroll_successful_response is not None:
 | errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
 | errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
 | errors.PostCustomDatevPushDataPayrollCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
-| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## put_custom_datev_employees_employee_id_compensations
 
@@ -271,7 +271,7 @@ res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_
             period=operations.Period.MONTH,
         ),
     ],
-    effective_date=dateutil.parser.isoparse('2022-08-08T10:06:50.116Z'),
+    effective_date=dateutil.parser.isoparse('2023-08-08T22:55:23.367Z'),
 ))
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:
@@ -300,7 +300,7 @@ if res.put_custom_datev_employees_employee_id_compensations_successful_response 
 | errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseBody            | 403                                                                                         | application/json                                                                            |
 | errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseResponseBody    | 404                                                                                         | application/json                                                                            |
 | errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponse503ResponseBody | 503                                                                                         | application/json                                                                            |
-| errors.SDKError                                                                             | 400-600                                                                                     | */*                                                                                         |
+| errors.SDKError                                                                             | 4x-5xx                                                                                      | */*                                                                                         |
 
 ## put_custom_datev_employees_employee_id_prepare_payroll
 
@@ -383,7 +383,7 @@ res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(
         ),
     ],
     payroll_run=operations.PayrollRun(
-        date_=dateutil.parser.isoparse('2022-11-17T18:13:49.919Z'),
+        date_=dateutil.parser.isoparse('2023-11-18T09:15:39.170Z'),
     ),
 ))
 
@@ -413,4 +413,4 @@ if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_respons
 | errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseBody            | 403                                                                                          | application/json                                                                             |
 | errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseResponseBody    | 404                                                                                          | application/json                                                                             |
 | errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponse503ResponseBody | 503                                                                                          | application/json                                                                             |
-| errors.SDKError                                                                              | 400-600                                                                                      | */*                                                                                          |
+| errors.SDKError                                                                              | 4x-5xx                                                                                       | */*                                                                                          |

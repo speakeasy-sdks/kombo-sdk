@@ -152,7 +152,7 @@ if res.delete_ats_candidates_candidate_id_tags_successful_response is not None:
 | errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                           | application/json                                                              |
 | errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                           | application/json                                                              |
 | errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                           | application/json                                                              |
-| errors.SDKError                                                               | 400-600                                                                       | */*                                                                           |
+| errors.SDKError                                                               | 4x-5xx                                                                        | */*                                                                           |
 
 ## get_ats_application_stages
 
@@ -355,7 +355,7 @@ if res.get_ats_application_stages_successful_response is not None:
 | errors.GetATSApplicationStagesUnifiedATSAPIResponseBody            | 403                                                                | application/json                                                   |
 | errors.GetATSApplicationStagesUnifiedATSAPIResponseResponseBody    | 404                                                                | application/json                                                   |
 | errors.GetATSApplicationStagesUnifiedATSAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
-| errors.SDKError                                                    | 400-600                                                            | */*                                                                |
+| errors.SDKError                                                    | 4x-5xx                                                             | */*                                                                |
 
 ## get_ats_applications
 
@@ -560,7 +560,7 @@ if res.get_ats_applications_successful_response is not None:
 | errors.GetATSApplicationsUnifiedATSAPIResponseBody            | 403                                                           | application/json                                              |
 | errors.GetATSApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                           | application/json                                              |
 | errors.GetATSApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                           | application/json                                              |
-| errors.SDKError                                               | 400-600                                                       | */*                                                           |
+| errors.SDKError                                               | 4x-5xx                                                        | */*                                                           |
 
 ## get_ats_candidates
 
@@ -757,7 +757,7 @@ if res.get_ats_candidates_successful_response is not None:
 | errors.GetATSCandidatesUnifiedATSAPIResponseBody            | 403                                                         | application/json                                            |
 | errors.GetATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                         | application/json                                            |
 | errors.GetATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                         | application/json                                            |
-| errors.SDKError                                             | 400-600                                                     | */*                                                         |
+| errors.SDKError                                             | 4x-5xx                                                      | */*                                                         |
 
 ## get_ats_jobs
 
@@ -978,7 +978,7 @@ if res.get_ats_jobs_successful_response is not None:
 | errors.GetATSJobsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
 | errors.GetATSJobsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
 | errors.GetATSJobsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_ats_tags
 
@@ -1115,7 +1115,7 @@ if res.get_ats_tags_successful_response is not None:
 | errors.GetATSTagsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
 | errors.GetATSTagsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
 | errors.GetATSTagsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_ats_users
 
@@ -1260,7 +1260,7 @@ if res.get_ats_users_successful_response is not None:
 | errors.GetATSUsersUnifiedATSAPIResponseBody            | 403                                                    | application/json                                       |
 | errors.GetATSUsersUnifiedATSAPIResponseResponseBody    | 404                                                    | application/json                                       |
 | errors.GetATSUsersUnifiedATSAPIResponse503ResponseBody | 503                                                    | application/json                                       |
-| errors.SDKError                                        | 400-600                                                | */*                                                    |
+| errors.SDKError                                        | 4x-5xx                                                 | */*                                                    |
 
 ## patch_ats_candidates_candidate_id
 
@@ -1304,7 +1304,7 @@ if res.patch_ats_candidates_candidate_id_successful_response is not None:
 | Error Object                                      | Status Code                                       | Content Type                                      |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | errors.PatchAtsCandidatesCandidateIDErrorResponse | 400                                               | application/json                                  |
-| errors.SDKError                                   | 400-600                                           | */*                                               |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |
 
 ## post_ats_applications_application_id_notes
 
@@ -1406,7 +1406,7 @@ if res.post_ats_applications_application_id_notes_successful_response is not Non
 | errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseBody            | 403                                                                              | application/json                                                                 |
 | errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseResponseBody    | 404                                                                              | application/json                                                                 |
 | errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponse503ResponseBody | 503                                                                              | application/json                                                                 |
-| errors.SDKError                                                                  | 400-600                                                                          | */*                                                                              |
+| errors.SDKError                                                                  | 4x-5xx                                                                           | */*                                                                              |
 
 ## post_ats_applications_application_id_result_links
 
@@ -1493,7 +1493,7 @@ if res.post_ats_applications_application_id_result_links_successful_response is 
 | errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                    | application/json                                                                       |
 | errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                    | application/json                                                                       |
 | errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                    | application/json                                                                       |
-| errors.SDKError                                                                        | 400-600                                                                                | */*                                                                                    |
+| errors.SDKError                                                                        | 4x-5xx                                                                                 | */*                                                                                    |
 
 ## post_ats_candidates
 
@@ -1836,7 +1836,7 @@ if res.post_ats_candidates_successful_response is not None:
 | errors.PostATSCandidatesUnifiedATSAPIResponseBody            | 403                                                          | application/json                                             |
 | errors.PostATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                          | application/json                                             |
 | errors.PostATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                          | application/json                                             |
-| errors.SDKError                                              | 400-600                                                      | */*                                                          |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## post_ats_candidates_candidate_id_attachments
 
@@ -1993,7 +1993,7 @@ if res.post_ats_candidates_candidate_id_attachments_successful_response is not N
 | errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
 | errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
 | errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
-| errors.SDKError                                                                    | 400-600                                                                            | */*                                                                                |
+| errors.SDKError                                                                    | 4x-5xx                                                                             | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_result_links
 
@@ -2178,7 +2178,7 @@ if res.post_ats_candidates_candidate_id_result_links_successful_response is not 
 | errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
 | errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
 | errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
-| errors.SDKError                                                                    | 400-600                                                                            | */*                                                                                |
+| errors.SDKError                                                                    | 4x-5xx                                                                             | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_tags
 
@@ -2316,7 +2316,7 @@ if res.post_ats_candidates_candidate_id_tags_successful_response is not None:
 | errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                         | application/json                                                            |
 | errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                         | application/json                                                            |
 | errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                         | application/json                                                            |
-| errors.SDKError                                                             | 400-600                                                                     | */*                                                                         |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## post_ats_jobs_job_id_applications
 
@@ -2605,7 +2605,7 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
     ),
     screening_question_answers=[
         operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
-            answer=dateutil.parser.isoparse('2022-03-26T15:44:13.869Z'),
+            answer=dateutil.parser.isoparse('2023-03-27T01:35:33.553Z'),
             question_id='string',
         ),
     ],
@@ -2638,7 +2638,7 @@ if res.post_ats_jobs_job_id_applications_successful_response is not None:
 | errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseBody            | 403                                                                     | application/json                                                        |
 | errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
 | errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
-| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## put_ats_applications_application_id_stage
 
@@ -2762,4 +2762,4 @@ if res.put_ats_applications_application_id_stage_successful_response is not None
 | errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseBody            | 403                                                                             | application/json                                                                |
 | errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseResponseBody    | 404                                                                             | application/json                                                                |
 | errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponse503ResponseBody | 503                                                                             | application/json                                                                |
-| errors.SDKError                                                                 | 400-600                                                                         | */*                                                                             |
+| errors.SDKError                                                                 | 4x-5xx                                                                          | */*                                                                             |

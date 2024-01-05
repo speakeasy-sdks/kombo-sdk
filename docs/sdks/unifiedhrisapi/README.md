@@ -121,7 +121,7 @@ if res.delete_hris_absences_absence_id_successful_response is not None:
 | errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseBody            | 403                                                                     | application/json                                                        |
 | errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
 | errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
-| errors.SDKError                                                         | 400-600                                                                 | */*                                                                     |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## get_hris_absence_types
 
@@ -266,7 +266,7 @@ if res.get_hris_absence_types_successful_response is not None:
 | errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseBody            | 403                                                             | application/json                                                |
 | errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseResponseBody    | 404                                                             | application/json                                                |
 | errors.GetHRISAbsenceTypesUnifiedHRISAPIResponse503ResponseBody | 503                                                             | application/json                                                |
-| errors.SDKError                                                 | 400-600                                                         | */*                                                             |
+| errors.SDKError                                                 | 4x-5xx                                                          | */*                                                             |
 
 ## get_hris_absences
 
@@ -407,7 +407,7 @@ if res.get_hris_absences_successful_response is not None:
 | errors.GetHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                         | application/json                                            |
 | errors.GetHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                         | application/json                                            |
 | errors.GetHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                         | application/json                                            |
-| errors.SDKError                                             | 400-600                                                     | */*                                                         |
+| errors.SDKError                                             | 4x-5xx                                                      | */*                                                         |
 
 ## get_hris_employees
 
@@ -606,7 +606,7 @@ if res.get_hris_employees_successful_response is not None:
 | errors.GetHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
 | errors.GetHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
 | errors.GetHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
-| errors.SDKError                                              | 400-600                                                      | */*                                                          |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## get_hris_employments
 
@@ -771,7 +771,7 @@ if res.get_hris_employments_successful_response is not None:
 | errors.GetHRISEmploymentsUnifiedHRISAPIResponseBody            | 403                                                            | application/json                                               |
 | errors.GetHRISEmploymentsUnifiedHRISAPIResponseResponseBody    | 404                                                            | application/json                                               |
 | errors.GetHRISEmploymentsUnifiedHRISAPIResponse503ResponseBody | 503                                                            | application/json                                               |
-| errors.SDKError                                                | 400-600                                                        | */*                                                            |
+| errors.SDKError                                                | 4x-5xx                                                         | */*                                                            |
 
 ## get_hris_groups
 
@@ -960,7 +960,7 @@ if res.get_hris_groups_successful_response is not None:
 | errors.GetHRISGroupsUnifiedHRISAPIResponseBody            | 403                                                       | application/json                                          |
 | errors.GetHRISGroupsUnifiedHRISAPIResponseResponseBody    | 404                                                       | application/json                                          |
 | errors.GetHRISGroupsUnifiedHRISAPIResponse503ResponseBody | 503                                                       | application/json                                          |
-| errors.SDKError                                           | 400-600                                                   | */*                                                       |
+| errors.SDKError                                           | 4x-5xx                                                    | */*                                                       |
 
 ## get_hris_legal_entities
 
@@ -1061,7 +1061,7 @@ if res.get_hris_legal_entities_successful_response is not None:
 | errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseBody            | 403                                                              | application/json                                                 |
 | errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseResponseBody    | 404                                                              | application/json                                                 |
 | errors.GetHRISLegalEntitiesUnifiedHRISAPIResponse503ResponseBody | 503                                                              | application/json                                                 |
-| errors.SDKError                                                  | 400-600                                                          | */*                                                              |
+| errors.SDKError                                                  | 4x-5xx                                                           | */*                                                              |
 
 ## get_hris_locations
 
@@ -1214,7 +1214,7 @@ if res.get_hris_locations_successful_response is not None:
 | errors.GetHRISLocationsUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
 | errors.GetHRISLocationsUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
 | errors.GetHRISLocationsUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
-| errors.SDKError                                              | 400-600                                                      | */*                                                          |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## get_hris_teams
 
@@ -1405,7 +1405,7 @@ if res.get_hris_teams_successful_response is not None:
 | errors.GetHRISTeamsUnifiedHRISAPIResponseBody            | 403                                                      | application/json                                         |
 | errors.GetHRISTeamsUnifiedHRISAPIResponseResponseBody    | 404                                                      | application/json                                         |
 | errors.GetHRISTeamsUnifiedHRISAPIResponse503ResponseBody | 503                                                      | application/json                                         |
-| errors.SDKError                                          | 400-600                                                  | */*                                                      |
+| errors.SDKError                                          | 4x-5xx                                                   | */*                                                      |
 
 ## get_hris_time_off_balances
 
@@ -1514,7 +1514,7 @@ if res.get_hris_time_off_balances_successful_response is not None:
 | errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseBody            | 403                                                                | application/json                                                   |
 | errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseResponseBody    | 404                                                                | application/json                                                   |
 | errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
-| errors.SDKError                                                    | 400-600                                                            | */*                                                                |
+| errors.SDKError                                                    | 4x-5xx                                                             | */*                                                                |
 
 ## patch_hris_employees_employee_id
 
@@ -1623,7 +1623,7 @@ if res.patch_hris_employees_employee_id_successful_response is not None:
 | errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseBody            | 403                                                                      | application/json                                                         |
 | errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseResponseBody    | 404                                                                      | application/json                                                         |
 | errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                      | application/json                                                         |
-| errors.SDKError                                                          | 400-600                                                                  | */*                                                                      |
+| errors.SDKError                                                          | 4x-5xx                                                                   | */*                                                                      |
 
 ## post_hris_absences
 
@@ -1746,7 +1746,7 @@ if res.post_hris_absences_successful_response is not None:
 | errors.PostHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
 | errors.PostHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
 | errors.PostHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
-| errors.SDKError                                              | 400-600                                                      | */*                                                          |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## post_hris_employees
 
@@ -1884,7 +1884,7 @@ if res.post_hris_employees_successful_response is not None:
 | errors.PostHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                           | application/json                                              |
 | errors.PostHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                           | application/json                                              |
 | errors.PostHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                           | application/json                                              |
-| errors.SDKError                                               | 400-600                                                       | */*                                                           |
+| errors.SDKError                                               | 4x-5xx                                                        | */*                                                           |
 
 ## post_hris_employees_employee_id_attachments
 
@@ -1928,4 +1928,4 @@ if res.post_hris_employees_employee_id_attachments_successful_response is not No
 | Error Object                                               | Status Code                                                | Content Type                                               |
 | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
 | errors.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse | 400                                                        | application/json                                           |
-| errors.SDKError                                            | 400-600                                                    | */*                                                        |
+| errors.SDKError                                            | 4x-5xx                                                     | */*                                                        |

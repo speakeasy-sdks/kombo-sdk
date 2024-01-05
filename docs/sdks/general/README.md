@@ -53,7 +53,7 @@ if res.delete_integrations_integration_id_successful_response is not None:
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | errors.DeleteIntegrationsIntegrationIDErrorResponse | 400                                                 | application/json                                    |
 | errors.DeleteIntegrationsIntegrationIDResponseBody  | 401                                                 | application/json                                    |
-| errors.SDKError                                     | 400-600                                             | */*                                                 |
+| errors.SDKError                                     | 4x-5xx                                              | */*                                                 |
 
 ## get_check_api_key
 
@@ -88,7 +88,7 @@ if res.get_check_api_key_successful_response is not None:
 | Error Object                       | Status Code                        | Content Type                       |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- |
 | errors.GetCheckAPIKeyErrorResponse | 400                                | application/json                   |
-| errors.SDKError                    | 400-600                            | */*                                |
+| errors.SDKError                    | 4x-5xx                             | */*                                |
 
 ## get_integrations_integration_id
 
@@ -130,7 +130,7 @@ if res.get_integrations_integration_id_successful_response is not None:
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
 | errors.GetIntegrationsIntegrationIDErrorResponse | 400                                              | application/json                                 |
 | errors.GetIntegrationsIntegrationIDResponseBody  | 401                                              | application/json                                 |
-| errors.SDKError                                  | 400-600                                          | */*                                              |
+| errors.SDKError                                  | 4x-5xx                                           | */*                                              |
 
 ## get_tools_category
 
@@ -172,7 +172,7 @@ if res.get_tools_category_successful_response is not None:
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | errors.GetToolsCategoryErrorResponse | 400                                  | application/json                     |
-| errors.SDKError                      | 400-600                              | */*                                  |
+| errors.SDKError                      | 4x-5xx                               | */*                                  |
 
 ## post_force_sync
 
@@ -217,7 +217,7 @@ if res.post_force_sync_successful_response is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.PostForceSyncErrorResponse | 400                               | application/json                  |
 | errors.PostForceSyncResponseBody  | 401                               | application/json                  |
-| errors.SDKError                   | 400-600                           | */*                               |
+| errors.SDKError                   | 4x-5xx                            | */*                               |
 
 ## post_integrations_integration_id_relink
 
@@ -270,7 +270,7 @@ if res.post_integrations_integration_id_relink_successful_response is not None:
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | errors.PostIntegrationsIntegrationIDRelinkErrorResponse | 400                                                     | application/json                                        |
 | errors.PostIntegrationsIntegrationIDRelinkResponseBody  | 401                                                     | application/json                                        |
-| errors.SDKError                                         | 400-600                                                 | */*                                                     |
+| errors.SDKError                                         | 4x-5xx                                                  | */*                                                     |
 
 ## post_passthrough_tool_api
 
@@ -351,4 +351,4 @@ if res.post_passthrough_tool_api_successful_response is not None:
 | errors.PostPassthroughToolAPIGeneralResponseBody            | 403                                                         | application/json                                            |
 | errors.PostPassthroughToolAPIGeneralResponseResponseBody    | 404                                                         | application/json                                            |
 | errors.PostPassthroughToolAPIGeneralResponse503ResponseBody | 503                                                         | application/json                                            |
-| errors.SDKError                                             | 400-600                                                     | */*                                                         |
+| errors.SDKError                                             | 4x-5xx                                                      | */*                                                         |

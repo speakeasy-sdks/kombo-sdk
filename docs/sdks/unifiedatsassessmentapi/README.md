@@ -49,7 +49,7 @@ if res.get_assessment_orders_open_successful_response is not None:
 | Error Object                                | Status Code                                 | Content Type                                |
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | errors.GetAssessmentOrdersOpenErrorResponse | 400                                         | application/json                            |
-| errors.SDKError                             | 400-600                                     | */*                                         |
+| errors.SDKError                             | 4x-5xx                                      | */*                                         |
 
 ## get_assessment_packages
 
@@ -92,7 +92,7 @@ if res.get_assessment_packages_successful_response is not None:
 | Error Object                              | Status Code                               | Content Type                              |
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.GetAssessmentPackagesErrorResponse | 400                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
 
 ## put_assessment_orders_assessment_order_id_result
 
@@ -170,7 +170,7 @@ res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_res
             value='string',
         ),
     ],
-    completed_at=dateutil.parser.isoparse('2023-02-12T07:45:50.009Z'),
+    completed_at=dateutil.parser.isoparse('2024-02-13T00:41:29.507Z'),
     result_url='https://white-theism.biz',
     status=operations.Status.OPEN,
 ))
@@ -201,7 +201,7 @@ if res.put_assessment_orders_assessment_order_id_result_successful_response is n
 | errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseBody            | 403                                                                                             | application/json                                                                                |
 | errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseResponseBody    | 404                                                                                             | application/json                                                                                |
 | errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponse503ResponseBody | 503                                                                                             | application/json                                                                                |
-| errors.SDKError                                                                                 | 400-600                                                                                         | */*                                                                                             |
+| errors.SDKError                                                                                 | 4x-5xx                                                                                          | */*                                                                                             |
 
 ## put_assessment_packages
 
@@ -254,4 +254,4 @@ if res.put_assessment_packages_successful_response is not None:
 | Error Object                              | Status Code                               | Content Type                              |
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.PutAssessmentPackagesErrorResponse | 400                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
