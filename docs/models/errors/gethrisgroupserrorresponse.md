@@ -1,0 +1,9 @@
+# GetHrisGroupsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                          | [errors.SchemasGetHrisGroupsErrorResponseError](../../models/errors/schemasgethrisgroupserrorresponseerror.md)   | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `status`                                                                                                         | [errors.SchemasGetHrisGroupsErrorResponseStatus](../../models/errors/schemasgethrisgroupserrorresponsestatus.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

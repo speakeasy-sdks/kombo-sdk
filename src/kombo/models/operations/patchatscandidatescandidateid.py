@@ -3,11 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import patchatscandidatescandidateiderrorresponse as shared_patchatscandidatescandidateiderrorresponse
-from ..shared import patchatscandidatescandidateidrequestbody as shared_patchatscandidatescandidateidrequestbody
-from ..shared import patchatscandidatescandidateidsuccessfulresponse as shared_patchatscandidatescandidateidsuccessfulresponse
+from ...models.shared import patchatscandidatescandidateidrequestbody as shared_patchatscandidatescandidateidrequestbody
+from ...models.shared import patchatscandidatescandidateidsuccessfulresponse as shared_patchatscandidatescandidateidsuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -22,18 +20,15 @@ class PatchAtsCandidatesCandidateIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class PatchAtsCandidatesCandidateIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    patch_ats_candidates_candidate_id_error_response: Optional[shared_patchatscandidatescandidateiderrorresponse.PatchAtsCandidatesCandidateIDErrorResponse] = dataclasses.field(default=None)
-    r"""PATCH /ats/candidates/:candidate_id Error response"""
     patch_ats_candidates_candidate_id_successful_response: Optional[shared_patchatscandidatescandidateidsuccessfulresponse.PatchAtsCandidatesCandidateIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""PATCH /ats/candidates/:candidate_id Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

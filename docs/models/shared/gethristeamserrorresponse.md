@@ -1,9 +1,0 @@
-# GetHrisTeamsErrorResponse
-
-
-## Fields
-
-| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                        | [Optional[shared.GetHrisTeamsErrorResponseError]](undefined/models/shared/gethristeamserrorresponseerror.md)   | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
-| `status`                                                                                                       | [Optional[shared.GetHrisTeamsErrorResponseStatus]](undefined/models/shared/gethristeamserrorresponsestatus.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |

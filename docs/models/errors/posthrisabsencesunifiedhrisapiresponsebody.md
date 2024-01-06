@@ -1,0 +1,12 @@
+# PostHRISAbsencesUnifiedHRISAPIResponseBody
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `raw_response`                                                                                             | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)                      | :heavy_minus_sign:                                                                                         | Raw HTTP response; suitable for custom response parsing                                                    |
+| `error`                                                                                                    | [errors.PostHRISAbsencesUnifiedHRISAPIError](../../models/errors/posthrisabsencesunifiedhrisapierror.md)   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `status`                                                                                                   | [errors.PostHRISAbsencesUnifiedHRISAPIStatus](../../models/errors/posthrisabsencesunifiedhrisapistatus.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

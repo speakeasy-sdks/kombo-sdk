@@ -2,8 +2,10 @@
 
 import requests
 from dataclasses import dataclass
-
+from typing import Dict, Tuple, Callable, Union
 from .utils.retries import RetryConfig
+from .utils import utils
+from kombo.models import shared
 
 
 SERVERS = [
@@ -14,19 +16,19 @@ SERVERS = [
 @dataclass
 class SDKConfiguration:
     client: requests.Session
-    security_client: requests.Session
+    security: Union[shared.Security,Callable[[], shared.Security]] = None
     server_url: str = ''
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '1.28.0'
-    gen_version: str = '2.147.0'
-    user_agent: str = 'speakeasy-sdk/python 1.28.0 2.147.0 1.0.0 kombo'
+    sdk_version: str = '3.2.2'
+    gen_version: str = '2.228.1'
+    user_agent: str = 'speakeasy-sdk/python 3.2.2 2.228.1 1.0.0 kombo'
     retry_config: RetryConfig = None
 
-    def get_server_details(self) -> tuple[str, dict[str, str]]:
+    def get_server_details(self) -> Tuple[str, Dict[str, str]]:
         if self.server_url:
-            return self.server_url.removesuffix('/'), {}
+            return utils.remove_suffix(self.server_url, '/'), {}
         if self.server_idx is None:
             self.server_idx = 0
 

@@ -1,0 +1,9 @@
+# GetAtsJobsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                    | [errors.SchemasGetAtsJobsErrorResponseError](../../models/errors/schemasgetatsjobserrorresponseerror.md)   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `status`                                                                                                   | [errors.SchemasGetAtsJobsErrorResponseStatus](../../models/errors/schemasgetatsjobserrorresponsestatus.md) | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

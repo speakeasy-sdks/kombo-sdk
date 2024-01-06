@@ -5,13 +5,12 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate:
+class GetAssessmentOrdersOpenSuccessfulResponseCandidate:
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name') }})
@@ -22,10 +21,9 @@ class GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAssessmentOrdersOpenSuccessfulResponseDataResults:
-    candidate: GetAssessmentOrdersOpenSuccessfulResponseDataResultsCandidate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
+class Results:
+    candidate: GetAssessmentOrdersOpenSuccessfulResponseCandidate = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('candidate') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     package_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('package_id') }})
     
@@ -33,11 +31,10 @@ class GetAssessmentOrdersOpenSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
-    results: list[GetAssessmentOrdersOpenSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[Results] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -46,7 +43,6 @@ class GetAssessmentOrdersOpenSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAssessmentOrdersOpenSuccessfulResponse:
     data: GetAssessmentOrdersOpenSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

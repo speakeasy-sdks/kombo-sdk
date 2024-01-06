@@ -1,0 +1,9 @@
+# GetCheckAPIKeyErrorResponse
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                            | [errors.SchemasGetCheckAPIKeyErrorResponseError](../../models/errors/schemasgetcheckapikeyerrorresponseerror.md)   | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `status`                                                                                                           | [errors.SchemasGetCheckAPIKeyErrorResponseStatus](../../models/errors/schemasgetcheckapikeyerrorresponsestatus.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

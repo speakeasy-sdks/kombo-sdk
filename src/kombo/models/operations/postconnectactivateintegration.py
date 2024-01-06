@@ -3,15 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import postconnectactivateintegrationerrorresponse as shared_postconnectactivateintegrationerrorresponse
-from ..shared import postconnectactivateintegrationsuccessfulresponse as shared_postconnectactivateintegrationsuccessfulresponse
+from ...models.shared import postconnectactivateintegrationsuccessfulresponse as shared_postconnectactivateintegrationsuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from kombo import utils
 from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostConnectActivateIntegrationRequestBody:
     r"""POST /connect/activate-integration request body"""
@@ -20,18 +18,15 @@ class PostConnectActivateIntegrationRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostConnectActivateIntegrationResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_connect_activate_integration_error_response: Optional[shared_postconnectactivateintegrationerrorresponse.PostConnectActivateIntegrationErrorResponse] = dataclasses.field(default=None)
-    r"""POST /connect/activate-integration Error response"""
     post_connect_activate_integration_successful_response: Optional[shared_postconnectactivateintegrationsuccessfulresponse.PostConnectActivateIntegrationSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /connect/activate-integration Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

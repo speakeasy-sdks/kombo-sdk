@@ -1,0 +1,9 @@
+# GetAtsUsersErrorResponse
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `error`                                                                                                      | [errors.SchemasGetAtsUsersErrorResponseError](../../models/errors/schemasgetatsuserserrorresponseerror.md)   | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `status`                                                                                                     | [errors.SchemasGetAtsUsersErrorResponseStatus](../../models/errors/schemasgetatsuserserrorresponsestatus.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

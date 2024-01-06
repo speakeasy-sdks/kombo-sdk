@@ -10,38 +10,39 @@ from .unified_ats_assessment_api import UnifiedATSAssessmentAPI
 from .unified_hris_api import UnifiedHRISAPI
 from kombo import utils
 from kombo.models import shared
+from typing import Callable, Dict, Union
 
 class Kombo:
-    custom_endpoints: CustomEndpoints
-    general: General
-    kombo_connect: KomboConnect
-    r"""Endpoints for Kombo Connect, our end-user-facing flow for setting up new integrations."""
     unified_ats_assessment_api: UnifiedATSAssessmentAPI
     unified_ats_api: UnifiedATSAPI
     r"""Unified endpoints to access all the ATS concepts you might need."""
+    general: General
+    kombo_connect: KomboConnect
+    r"""Endpoints for Kombo Connect, our end-user-facing flow for setting up new integrations."""
+    custom_endpoints: CustomEndpoints
     unified_hris_api: UnifiedHRISAPI
     r"""Unified endpoints to access all the HR concepts you might need."""
 
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 security: shared.Security = None,
+                 security: Union[shared.Security,Callable[[], shared.Security]] = None,
                  server_idx: int = None,
                  server_url: str = None,
-                 url_params: dict[str, str] = None,
+                 url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
                  retry_config: utils.RetryConfig = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param security: The security details required for authentication
-        :type security: shared.Security
+        :type security: Union[shared.Security,Callable[[], shared.Security]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
-        :type url_params: dict[str, str]
+        :type url_params: Dict[str, str]
         :param client: The requests.Session HTTP client to use for all operations
         :type client: requests_http.Session
         :param retry_config: The utils.RetryConfig to use globally
@@ -50,21 +51,19 @@ class Kombo:
         if client is None:
             client = requests_http.Session()
         
-        security_client = utils.configure_security_client(client, security)
-        
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     
     def _init_sdks(self):
-        self.custom_endpoints = CustomEndpoints(self.sdk_configuration)
-        self.general = General(self.sdk_configuration)
-        self.kombo_connect = KomboConnect(self.sdk_configuration)
         self.unified_ats_assessment_api = UnifiedATSAssessmentAPI(self.sdk_configuration)
         self.unified_ats_api = UnifiedATSAPI(self.sdk_configuration)
+        self.general = General(self.sdk_configuration)
+        self.kombo_connect = KomboConnect(self.sdk_configuration)
+        self.custom_endpoints = CustomEndpoints(self.sdk_configuration)
         self.unified_hris_api = UnifiedHRISAPI(self.sdk_configuration)
     

@@ -1,0 +1,9 @@
+# GetHrisAbsencesErrorResponse
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                              | [errors.SchemasGetHrisAbsencesErrorResponseError](../../models/errors/schemasgethrisabsenceserrorresponseerror.md)   | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |
+| `status`                                                                                                             | [errors.SchemasGetHrisAbsencesErrorResponseStatus](../../models/errors/schemasgethrisabsenceserrorresponsestatus.md) | :heavy_check_mark:                                                                                                   | N/A                                                                                                                  |

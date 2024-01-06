@@ -1,0 +1,12 @@
+# GetHRISAbsenceTypesUnifiedHRISAPIResponseBody
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `raw_response`                                                                                                   | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)                            | :heavy_minus_sign:                                                                                               | Raw HTTP response; suitable for custom response parsing                                                          |
+| `error`                                                                                                          | [errors.GetHRISAbsenceTypesUnifiedHRISAPIError](../../models/errors/gethrisabsencetypesunifiedhrisapierror.md)   | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `status`                                                                                                         | [errors.GetHRISAbsenceTypesUnifiedHRISAPIStatus](../../models/errors/gethrisabsencetypesunifiedhrisapistatus.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

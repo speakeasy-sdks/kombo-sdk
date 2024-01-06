@@ -3,11 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import posthrisemployeesemployeeidattachmentserrorresponse as shared_posthrisemployeesemployeeidattachmentserrorresponse
-from ..shared import posthrisemployeesemployeeidattachmentsrequestbody as shared_posthrisemployeesemployeeidattachmentsrequestbody
-from ..shared import posthrisemployeesemployeeidattachmentssuccessfulresponse as shared_posthrisemployeesemployeeidattachmentssuccessfulresponse
+from ...models.shared import posthrisemployeesemployeeidattachmentsrequestbody as shared_posthrisemployeesemployeeidattachmentsrequestbody
+from ...models.shared import posthrisemployeesemployeeidattachmentssuccessfulresponse as shared_posthrisemployeesemployeeidattachmentssuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -22,18 +20,15 @@ class PostHrisEmployeesEmployeeIDAttachmentsRequest:
 
 
 
-
 @dataclasses.dataclass
 class PostHrisEmployeesEmployeeIDAttachmentsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_hris_employees_employee_id_attachments_error_response: Optional[shared_posthrisemployeesemployeeidattachmentserrorresponse.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse] = dataclasses.field(default=None)
-    r"""POST /hris/employees/:employee_id/attachments Error response"""
     post_hris_employees_employee_id_attachments_successful_response: Optional[shared_posthrisemployeesemployeeidattachmentssuccessfulresponse.PostHrisEmployeesEmployeeIDAttachmentsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /hris/employees/:employee_id/attachments Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

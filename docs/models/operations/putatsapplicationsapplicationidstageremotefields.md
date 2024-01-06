@@ -1,0 +1,10 @@
+# PutAtsApplicationsApplicationIDStageRemoteFields
+
+Additional fields that we will pass through to specific ATS systems.
+
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `greenhouse`                                                                                                                                     | [Optional[operations.PutAtsApplicationsApplicationIDStageGreenhouse]](../../models/operations/putatsapplicationsapplicationidstagegreenhouse.md) | :heavy_minus_sign:                                                                                                                               | Fields specific to Greenhouse.                                                                                                                   |

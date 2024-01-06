@@ -13,7 +13,8 @@ class KomboConnect:
         self.sdk_configuration = sdk_config
         
     
-    def post_connect_activate_integration(self, request: operations.PostConnectActivateIntegrationRequestBody) -> operations.PostConnectActivateIntegrationResponse:
+    
+    def post_connect_activate_integration(self, request: Optional[operations.PostConnectActivateIntegrationRequestBody]) -> operations.PostConnectActivateIntegrationResponse:
         r"""Activate integration
         Activate an integration that was just created via Kombo Connect.
 
@@ -31,17 +32,20 @@ class KomboConnect:
         
         url = base_url + '/connect/activate-integration'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostConnectActivateIntegrationRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostConnectActivateIntegrationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -52,15 +56,19 @@ class KomboConnect:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostConnectActivateIntegrationErrorResponse])
-                res.post_connect_activate_integration_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostConnectActivateIntegrationErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def post_connect_create_link(self, request: operations.PostConnectCreateLinkRequestBody) -> operations.PostConnectCreateLinkResponse:
+    
+    def post_connect_create_link(self, request: Optional[operations.PostConnectCreateLinkRequestBody]) -> operations.PostConnectCreateLinkResponse:
         r"""Create connection link
         Generate a unique link that allows your user to enter the embedded Kombo Connect flow.
 
@@ -85,17 +93,20 @@ class KomboConnect:
         
         url = base_url + '/connect/create-link'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.PostConnectCreateLinkRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostConnectCreateLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -106,10 +117,13 @@ class KomboConnect:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostConnectCreateLinkErrorResponse])
-                res.post_connect_create_link_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostConnectCreateLinkErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

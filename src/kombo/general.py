@@ -12,6 +12,7 @@ class General:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_integrations_integration_id(self, integration_id: str, delete_integrations_integration_id_request_body: Optional[shared.DeleteIntegrationsIntegrationIDRequestBody] = None) -> operations.DeleteIntegrationsIntegrationIDResponse:
         r"""Delete integration
         Delete the specified integration.
@@ -26,17 +27,20 @@ class General:
         
         url = utils.generate_url(operations.DeleteIntegrationsIntegrationIDRequest, base_url, '/integrations/{integration_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "delete_integrations_integration_id_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.DeleteIntegrationsIntegrationIDRequest, "delete_integrations_integration_id_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteIntegrationsIntegrationIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -47,19 +51,24 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteIntegrationsIntegrationIDErrorResponse])
-                res.delete_integrations_integration_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteIntegrationsIntegrationIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteIntegrationsIntegrationID401ApplicationJSON])
-                res.delete_integrations_integration_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteIntegrationsIntegrationIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def get_check_api_key(self) -> operations.GetCheckAPIKeyResponse:
         r"""Check API key
@@ -72,11 +81,14 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetCheckAPIKeyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -87,13 +99,17 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetCheckAPIKeyErrorResponse])
-                res.get_check_api_key_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCheckAPIKeyErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def get_integrations_integration_id(self, integration_id: str) -> operations.GetIntegrationsIntegrationIDResponse:
         r"""Get integration details
@@ -110,11 +126,14 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetIntegrationsIntegrationIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -125,19 +144,24 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetIntegrationsIntegrationIDErrorResponse])
-                res.get_integrations_integration_id_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetIntegrationsIntegrationIDErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetIntegrationsIntegrationID401ApplicationJSON])
-                res.get_integrations_integration_id_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetIntegrationsIntegrationIDResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def get_tools_category(self, category: shared.GetToolsCategoryParameterCategory) -> operations.GetToolsCategoryResponse:
         r"""Get tools
@@ -155,11 +179,14 @@ class General:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetToolsCategoryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -170,13 +197,17 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetToolsCategoryErrorResponse])
-                res.get_tools_category_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetToolsCategoryErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_force_sync(self, x_integration_id: str, post_force_sync_request_body: Optional[shared.PostForceSyncRequestBody] = None) -> operations.PostForceSyncResponse:
         r"""Trigger sync
@@ -193,17 +224,20 @@ class General:
         
         url = base_url + '/force-sync'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "post_force_sync_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostForceSyncRequest, "post_force_sync_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostForceSyncResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -214,19 +248,24 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostForceSyncErrorResponse])
-                res.post_force_sync_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostForceSyncErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostForceSync401ApplicationJSON])
-                res.post_force_sync_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostForceSyncResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_integrations_integration_id_relink(self, integration_id: str, request_body: Optional[operations.PostIntegrationsIntegrationIDRelinkRequestBody] = None) -> operations.PostIntegrationsIntegrationIDRelinkResponse:
         r"""Create reconnection link
@@ -251,17 +290,20 @@ class General:
         
         url = utils.generate_url(operations.PostIntegrationsIntegrationIDRelinkRequest, base_url, '/integrations/{integration_id}/relink', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostIntegrationsIntegrationIDRelinkRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostIntegrationsIntegrationIDRelinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -272,19 +314,24 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostIntegrationsIntegrationIDRelinkErrorResponse])
-                res.post_integrations_integration_id_relink_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostIntegrationsIntegrationIDRelinkErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostIntegrationsIntegrationIDRelink401ApplicationJSON])
-                res.post_integrations_integration_id_relink_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostIntegrationsIntegrationIDRelinkResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_passthrough_tool_api(self, api: str, tool: str, request_body: Optional[operations.PostPassthroughToolAPIRequestBody] = None) -> operations.PostPassthroughToolAPIResponse:
         r"""Send passthrough request
@@ -322,17 +369,20 @@ class General:
         
         url = utils.generate_url(operations.PostPassthroughToolAPIRequest, base_url, '/passthrough/{tool}/{api}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostPassthroughToolAPIRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostPassthroughToolAPIResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -343,32 +393,39 @@ class General:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostPassthroughToolAPIErrorResponse])
-                res.post_passthrough_tool_api_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI401ApplicationJSON])
-                res.post_passthrough_tool_api_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI403ApplicationJSON])
-                res.post_passthrough_tool_api_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI404ApplicationJSON])
-                res.post_passthrough_tool_api_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostPassthroughToolAPI503ApplicationJSON])
-                res.post_passthrough_tool_api_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostPassthroughToolAPIGeneralResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

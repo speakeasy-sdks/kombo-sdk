@@ -7,7 +7,6 @@ from enum import Enum
 from kombo import utils
 
 
-
 @dataclasses.dataclass
 class PutAssessmentPackagesSuccessfulResponseData:
     pass
@@ -17,7 +16,6 @@ class PutAssessmentPackagesSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutAssessmentPackagesSuccessfulResponse:
     data: PutAssessmentPackagesSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

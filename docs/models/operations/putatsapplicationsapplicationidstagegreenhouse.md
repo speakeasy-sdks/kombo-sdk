@@ -1,0 +1,10 @@
+# PutAtsApplicationsApplicationIDStageGreenhouse
+
+Fields specific to Greenhouse.
+
+
+## Fields
+
+| Field                                                                                                                                              | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `post_headers`                                                                                                                                     | [Optional[operations.PutAtsApplicationsApplicationIDStagePostHeaders]](../../models/operations/putatsapplicationsapplicationidstagepostheaders.md) | :heavy_minus_sign:                                                                                                                                 | Headers we will pass with `POST` requests to Greenhouse.                                                                                           |

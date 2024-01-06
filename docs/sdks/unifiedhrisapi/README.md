@@ -88,15 +88,16 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_hris_api.delete_hris_absences_absence_id(x_integration_id='Movies', absence_id='Electric', delete_hris_absences_absence_id_request_body=shared.DeleteHrisAbsencesAbsenceIDRequestBody())
+res = s.unified_hris_api.delete_hris_absences_absence_id(x_integration_id='string', absence_id='string', delete_hris_absences_absence_id_request_body=shared.DeleteHrisAbsencesAbsenceIDRequestBody())
 
 if res.delete_hris_absences_absence_id_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -111,7 +112,16 @@ if res.delete_hris_absences_absence_id_successful_response is not None:
 ### Response
 
 **[operations.DeleteHrisAbsencesAbsenceIDResponse](../../models/operations/deletehrisabsencesabsenceidresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.DeleteHrisAbsencesAbsenceIDErrorResponse                         | 400                                                                     | application/json                                                        |
+| errors.DeleteHrisAbsencesAbsenceIDResponseBody                          | 401                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseBody            | 403                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.DeleteHRISAbsencesAbsenceIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## get_hris_absence_types
 
@@ -216,30 +226,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisAbsenceTypesRequest(
-    x_integration_id='generate',
-    cursor='lest hm',
-    ids='Van',
-    include_deleted=shared.GetHrisAbsenceTypesParameterIncludeDeleted.TRUE,
-    page_size=30773,
-    remote_ids='lumen Engineer',
-    updated_after=dateutil.parser.isoparse('2023-04-01T01:41:47.003Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_absence_types(req)
 
 if res.get_hris_absence_types_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -252,7 +257,16 @@ if res.get_hris_absence_types_successful_response is not None:
 ### Response
 
 **[operations.GetHrisAbsenceTypesResponse](../../models/operations/gethrisabsencetypesresponse.md)**
+### Errors
 
+| Error Object                                                    | Status Code                                                     | Content Type                                                    |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| errors.GetHrisAbsenceTypesErrorResponse                         | 400                                                             | application/json                                                |
+| errors.GetHrisAbsenceTypesResponseBody                          | 401                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseBody            | 403                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponseResponseBody    | 404                                                             | application/json                                                |
+| errors.GetHRISAbsenceTypesUnifiedHRISAPIResponse503ResponseBody | 503                                                             | application/json                                                |
+| errors.SDKError                                                 | 4x-5xx                                                          | */*                                                             |
 
 ## get_hris_absences
 
@@ -353,35 +367,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisAbsencesRequest(
-    x_integration_id='invoice Universal moratorium',
-    cursor='Managed',
-    date_from=dateutil.parser.isoparse('2021-12-17T14:47:51.540Z'),
-    date_until=dateutil.parser.isoparse('2022-01-10T20:00:25.489Z'),
-    employee_id='Division',
-    ids='Card Hills sint',
-    include_deleted=shared.GetHrisAbsencesParameterIncludeDeleted.FALSE,
-    page_size=915477,
-    remote_ids='Loan South tesla',
-    time_from=dateutil.parser.isoparse('2022-11-11T20:52:41.794Z'),
-    time_until=dateutil.parser.isoparse('2023-09-26T15:38:09.602Z'),
-    updated_after=dateutil.parser.isoparse('2021-05-31T16:34:26.638Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_absences(req)
 
 if res.get_hris_absences_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -394,7 +398,16 @@ if res.get_hris_absences_successful_response is not None:
 ### Response
 
 **[operations.GetHrisAbsencesResponse](../../models/operations/gethrisabsencesresponse.md)**
+### Errors
 
+| Error Object                                                | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.GetHrisAbsencesErrorResponse                         | 400                                                         | application/json                                            |
+| errors.GetHrisAbsencesResponseBody                          | 401                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                         | application/json                                            |
+| errors.GetHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                         | application/json                                            |
+| errors.SDKError                                             | 4x-5xx                                                      | */*                                                         |
 
 ## get_hris_employees
 
@@ -553,37 +566,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisEmployeesRequest(
-    x_integration_id='backing Paradigm Manager',
-    cursor='Maserati Account',
-    employment_status=shared.GetHrisEmployeesParameterEmploymentStatus.INACTIVE,
-    employment_statuses='quantify HTTP',
-    group_ids='amidst primary Sedan',
-    ids='Van Road',
-    include_deleted=shared.GetHrisEmployeesParameterIncludeDeleted.FALSE,
-    legal_entity_ids='female',
-    page_size=593444,
-    personal_emails='person gleefully',
-    remote_ids='Architect HDD Producer',
-    updated_after=dateutil.parser.isoparse('2023-08-31T15:42:30.093Z'),
-    work_emails='Portugal Comoro Cheese',
-    work_location_ids='Progressive utilize violet',
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_employees(req)
 
 if res.get_hris_employees_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -596,7 +597,16 @@ if res.get_hris_employees_successful_response is not None:
 ### Response
 
 **[operations.GetHrisEmployeesResponse](../../models/operations/gethrisemployeesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.GetHrisEmployeesErrorResponse                         | 400                                                          | application/json                                             |
+| errors.GetHrisEmployeesResponseBody                          | 401                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.GetHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## get_hris_employments
 
@@ -721,30 +731,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisEmploymentsRequest(
-    x_integration_id='technologies',
-    cursor='Volvo veniam Sedan',
-    ids='North',
-    include_deleted=shared.GetHrisEmploymentsParameterIncludeDeleted.TRUE,
-    page_size=358107,
-    remote_ids='Forward bypassing Practical',
-    updated_after=dateutil.parser.isoparse('2021-06-28T15:13:08.997Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_employments(req)
 
 if res.get_hris_employments_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -757,7 +762,16 @@ if res.get_hris_employments_successful_response is not None:
 ### Response
 
 **[operations.GetHrisEmploymentsResponse](../../models/operations/gethrisemploymentsresponse.md)**
+### Errors
 
+| Error Object                                                   | Status Code                                                    | Content Type                                                   |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| errors.GetHrisEmploymentsErrorResponse                         | 400                                                            | application/json                                               |
+| errors.GetHrisEmploymentsResponseBody                          | 401                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponseBody            | 403                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponseResponseBody    | 404                                                            | application/json                                               |
+| errors.GetHRISEmploymentsUnifiedHRISAPIResponse503ResponseBody | 503                                                            | application/json                                               |
+| errors.SDKError                                                | 4x-5xx                                                         | */*                                                            |
 
 ## get_hris_groups
 
@@ -906,30 +920,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisGroupsRequest(
-    x_integration_id='Senior Automated',
-    cursor='Southeast',
-    ids='compelling',
-    include_deleted=shared.GetHrisGroupsParameterIncludeDeleted.TRUE,
-    page_size=346950,
-    remote_ids='plum Borders',
-    updated_after=dateutil.parser.isoparse('2022-02-27T15:40:24.654Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_groups(req)
 
 if res.get_hris_groups_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -942,7 +951,16 @@ if res.get_hris_groups_successful_response is not None:
 ### Response
 
 **[operations.GetHrisGroupsResponse](../../models/operations/gethrisgroupsresponse.md)**
+### Errors
 
+| Error Object                                              | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.GetHrisGroupsErrorResponse                         | 400                                                       | application/json                                          |
+| errors.GetHrisGroupsResponseBody                          | 401                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponseBody            | 403                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponseResponseBody    | 404                                                       | application/json                                          |
+| errors.GetHRISGroupsUnifiedHRISAPIResponse503ResponseBody | 503                                                       | application/json                                          |
+| errors.SDKError                                           | 4x-5xx                                                    | */*                                                       |
 
 ## get_hris_legal_entities
 
@@ -1003,30 +1021,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisLegalEntitiesRequest(
-    x_integration_id='drive Northwest Plastic',
-    cursor='Senior Assimilated',
-    ids='Classical',
-    include_deleted=shared.GetHrisLegalEntitiesParameterIncludeDeleted.FALSE,
-    page_size=111417,
-    remote_ids='Electric South hertz',
-    updated_after=dateutil.parser.isoparse('2021-02-27T19:13:09.988Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_legal_entities(req)
 
 if res.get_hris_legal_entities_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1039,7 +1052,16 @@ if res.get_hris_legal_entities_successful_response is not None:
 ### Response
 
 **[operations.GetHrisLegalEntitiesResponse](../../models/operations/gethrislegalentitiesresponse.md)**
+### Errors
 
+| Error Object                                                     | Status Code                                                      | Content Type                                                     |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| errors.GetHrisLegalEntitiesErrorResponse                         | 400                                                              | application/json                                                 |
+| errors.GetHrisLegalEntitiesResponseBody                          | 401                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseBody            | 403                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponseResponseBody    | 404                                                              | application/json                                                 |
+| errors.GetHRISLegalEntitiesUnifiedHRISAPIResponse503ResponseBody | 503                                                              | application/json                                                 |
+| errors.SDKError                                                  | 4x-5xx                                                           | */*                                                              |
 
 ## get_hris_locations
 
@@ -1152,30 +1174,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisLocationsRequest(
-    x_integration_id='Trial Handcrafted',
-    cursor='and Silver',
-    ids='non bypassing',
-    include_deleted=shared.GetHrisLocationsParameterIncludeDeleted.FALSE,
-    page_size=733594,
-    remote_ids='driver synthesize Clothing',
-    updated_after=dateutil.parser.isoparse('2023-12-18T01:12:23.056Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_locations(req)
 
 if res.get_hris_locations_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1188,7 +1205,16 @@ if res.get_hris_locations_successful_response is not None:
 ### Response
 
 **[operations.GetHrisLocationsResponse](../../models/operations/gethrislocationsresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.GetHrisLocationsErrorResponse                         | 400                                                          | application/json                                             |
+| errors.GetHrisLocationsResponseBody                          | 401                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.GetHRISLocationsUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## get_hris_teams
 
@@ -1339,30 +1365,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisTeamsRequest(
-    x_integration_id='Riyal Principal',
-    cursor='Assistant Southwest',
-    ids='Pants Diesel Funk',
-    include_deleted=shared.GetHrisTeamsParameterIncludeDeleted.TRUE,
-    page_size=810921,
-    remote_ids='Bicycle Northeast',
-    updated_after=dateutil.parser.isoparse('2022-12-10T09:06:01.220Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_teams(req)
 
 if res.get_hris_teams_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1375,7 +1396,16 @@ if res.get_hris_teams_successful_response is not None:
 ### Response
 
 **[operations.GetHrisTeamsResponse](../../models/operations/gethristeamsresponse.md)**
+### Errors
 
+| Error Object                                             | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| errors.GetHrisTeamsErrorResponse                         | 400                                                      | application/json                                         |
+| errors.GetHrisTeamsResponseBody                          | 401                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponseBody            | 403                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponseResponseBody    | 404                                                      | application/json                                         |
+| errors.GetHRISTeamsUnifiedHRISAPIResponse503ResponseBody | 503                                                      | application/json                                         |
+| errors.SDKError                                          | 4x-5xx                                                   | */*                                                      |
 
 ## get_hris_time_off_balances
 
@@ -1444,31 +1474,25 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetHrisTimeOffBalancesRequest(
-    x_integration_id='hm',
-    cursor='Avon Strategist proximal',
-    employee_id='visualize',
-    ids='Southeast Northeast Soft',
-    include_deleted=shared.GetHrisTimeOffBalancesParameterIncludeDeleted.TRUE,
-    page_size=82889,
-    remote_ids='strategic softball Gorgeous',
-    updated_after=dateutil.parser.isoparse('2022-06-28T20:18:42.618Z'),
+    x_integration_id='string',
 )
 
 res = s.unified_hris_api.get_hris_time_off_balances(req)
 
 if res.get_hris_time_off_balances_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1481,7 +1505,16 @@ if res.get_hris_time_off_balances_successful_response is not None:
 ### Response
 
 **[operations.GetHrisTimeOffBalancesResponse](../../models/operations/gethristimeoffbalancesresponse.md)**
+### Errors
 
+| Error Object                                                       | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.GetHrisTimeOffBalancesErrorResponse                         | 400                                                                | application/json                                                   |
+| errors.GetHrisTimeOffBalancesResponseBody                          | 401                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseBody            | 403                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponseResponseBody    | 404                                                                | application/json                                                   |
+| errors.GetHRISTimeOffBalancesUnifiedHRISAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
+| errors.SDKError                                                    | 4x-5xx                                                             | */*                                                                |
 
 ## patch_hris_employees_employee_id
 
@@ -1539,50 +1572,34 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='provided', employee_id='Chips', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
-    date_of_birth=dateutil.parser.isoparse('2021-11-27T09:36:38.406Z'),
-    first_name='Cecil',
-    gender=shared.PatchHrisEmployeesEmployeeIDRequestBodyGender.NOT_SPECIFIED,
-    home_address=shared.PatchHrisEmployeesEmployeeIDRequestBodyHomeAddress(
-        city='Hoffman Estates',
-        country='Tunisia',
-        state='Hampshire Bayonne',
-        street_1='Avon indexing',
-        street_2='Account Turnpike',
-        zip_code='68315-1341',
-    ),
-    job_title='Internal Communications Technician',
-    last_name='Emmerich',
-    marital_status=shared.PatchHrisEmployeesEmployeeIDRequestBodyMaritalStatus.SINGLE,
-    mobile_phone_number='lest',
-    nationality='Recumbent Corporate',
-    remote_fields=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFields(
-        humaans=shared.PatchHrisEmployeesEmployeeIDRequestBodyRemoteFieldsHumaans(
+res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='string', employee_id='string', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
+    first_name='Tamara',
+    home_address=shared.HomeAddress(),
+    last_name='Lesch',
+    remote_fields=shared.RemoteFields(
+        humaans=shared.Humaans(
             employee={
-                "nulla": 'Rock',
+                'key': 'string',
             },
         ),
     ),
-    ssn='kilogram impactful',
-    start_date=dateutil.parser.isoparse('2022-11-13T12:27:41.052Z'),
-    tax_id='underneath Account',
-    termination_date=dateutil.parser.isoparse('2022-01-03T14:46:28.307Z'),
-    work_email='Stan96@gmail.com',
+    work_email='Wilma91@gmail.com',
 ))
 
 if res.patch_hris_employees_employee_id_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1597,7 +1614,16 @@ if res.patch_hris_employees_employee_id_successful_response is not None:
 ### Response
 
 **[operations.PatchHrisEmployeesEmployeeIDResponse](../../models/operations/patchhrisemployeesemployeeidresponse.md)**
+### Errors
 
+| Error Object                                                             | Status Code                                                              | Content Type                                                             |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| errors.PatchHrisEmployeesEmployeeIDErrorResponse                         | 400                                                                      | application/json                                                         |
+| errors.PatchHrisEmployeesEmployeeIDResponseBody                          | 401                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseBody            | 403                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponseResponseBody    | 404                                                                      | application/json                                                         |
+| errors.PatchHRISEmployeesEmployeeIDUnifiedHRISAPIResponse503ResponseBody | 503                                                                      | application/json                                                         |
+| errors.SDKError                                                          | 4x-5xx                                                                   | */*                                                                      |
 
 ## post_hris_absences
 
@@ -1678,34 +1704,26 @@ Check [this page](/hris/features/creating-absences) for a detailed guide.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_hris_api.post_hris_absences(x_integration_id='Plastic', request_body=operations.PostHrisAbsencesRequestBody(
-    absence_type_id='Denar',
-    amount=7894.91,
-    employee_id='shocking',
-    employee_note='Beauty Lead quantify',
-    end_date=dateutil.parser.isoparse('2022-01-30T21:59:00.874Z'),
-    end_half_day=False,
-    end_time='Central conglomeration',
-    start_date=dateutil.parser.isoparse('2023-12-30T22:39:00.825Z'),
-    start_half_day=False,
-    start_time='Cis East society',
-    status=operations.PostHrisAbsencesRequestBodyStatus.APPROVED,
-    unit=operations.PostHrisAbsencesRequestBodyUnit.DAYS,
+res = s.unified_hris_api.post_hris_absences(x_integration_id='string', request_body=operations.PostHrisAbsencesRequestBody(
+    absence_type_id='string',
+    employee_id='string',
+    employee_note='string',
 ))
 
 if res.post_hris_absences_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1719,7 +1737,16 @@ if res.post_hris_absences_successful_response is not None:
 ### Response
 
 **[operations.PostHrisAbsencesResponse](../../models/operations/posthrisabsencesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.PostHrisAbsencesErrorResponse                         | 400                                                          | application/json                                             |
+| errors.PostHrisAbsencesResponseBody                          | 401                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.PostHRISAbsencesUnifiedHRISAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## post_hris_employees
 
@@ -1807,46 +1834,34 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_hris_api.post_hris_employees(x_integration_id='parse', request_body=operations.PostHrisEmployeesRequestBody(
-    date_of_birth=dateutil.parser.isoparse('2021-05-20T05:49:34.914Z'),
-    first_name='Jennings',
-    gender=operations.PostHrisEmployeesRequestBodyGender.MALE,
-    home_address=operations.PostHrisEmployeesRequestBodyHomeAddress(
-        city='Lake Madelynn',
-        country='Somalia',
-        state='Hyundai',
-        street_1='Home meh navigating',
-        street_2='Manat neutral Ohio',
-        zip_code='60126-4299',
-    ),
-    job_title='Customer Usability Liaison',
-    last_name='Stanton',
-    mobile_phone_number='Loan Folding Rap',
-    nationality='Pound badge',
-    remote_fields=operations.PostHrisEmployeesRequestBodyRemoteFields(
-        humaans=operations.PostHrisEmployeesRequestBodyRemoteFieldsHumaans(
+res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_body=operations.PostHrisEmployeesRequestBody(
+    first_name='Kara',
+    home_address=operations.HomeAddress(),
+    last_name='Williamson',
+    remote_fields=operations.PostHrisEmployeesRemoteFields(
+        humaans=operations.Humaans(
             employee={
-                "fugit": 'Creative',
+                'key': 'string',
             },
         ),
     ),
-    start_date=dateutil.parser.isoparse('2021-06-12T01:54:41.608Z'),
-    work_email='Aubree_Ledner@gmail.com',
+    work_email='Jennings_DuBuque@gmail.com',
 ))
 
 if res.post_hris_employees_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1860,7 +1875,16 @@ if res.post_hris_employees_successful_response is not None:
 ### Response
 
 **[operations.PostHrisEmployeesResponse](../../models/operations/posthrisemployeesresponse.md)**
+### Errors
 
+| Error Object                                                  | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.PostHrisEmployeesErrorResponse                         | 400                                                           | application/json                                              |
+| errors.PostHrisEmployeesResponseBody                          | 401                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponseBody            | 403                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponseResponseBody    | 404                                                           | application/json                                              |
+| errors.PostHRISEmployeesUnifiedHRISAPIResponse503ResponseBody | 503                                                           | application/json                                              |
+| errors.SDKError                                               | 4x-5xx                                                        | */*                                                           |
 
 ## post_hris_employees_employee_id_attachments
 
@@ -1875,15 +1899,16 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_hris_api.post_hris_employees_employee_id_attachments(x_integration_id='Mouse', employee_id='wireless', post_hris_employees_employee_id_attachments_request_body=shared.PostHrisEmployeesEmployeeIDAttachmentsRequestBody())
+res = s.unified_hris_api.post_hris_employees_employee_id_attachments(x_integration_id='string', employee_id='string', post_hris_employees_employee_id_attachments_request_body=shared.PostHrisEmployeesEmployeeIDAttachmentsRequestBody())
 
 if res.post_hris_employees_employee_id_attachments_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1898,4 +1923,9 @@ if res.post_hris_employees_employee_id_attachments_successful_response is not No
 ### Response
 
 **[operations.PostHrisEmployeesEmployeeIDAttachmentsResponse](../../models/operations/posthrisemployeesemployeeidattachmentsresponse.md)**
+### Errors
 
+| Error Object                                               | Status Code                                                | Content Type                                               |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| errors.PostHrisEmployeesEmployeeIDAttachmentsErrorResponse | 400                                                        | application/json                                           |
+| errors.SDKError                                            | 4x-5xx                                                     | */*                                                        |

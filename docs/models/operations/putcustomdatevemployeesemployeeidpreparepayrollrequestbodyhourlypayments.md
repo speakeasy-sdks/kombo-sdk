@@ -1,9 +1,0 @@
-# PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments
-
-
-## Fields
-
-| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `hours`                                                                                              | *Optional[float]*                                                                                    | :heavy_check_mark:                                                                                   | Number of hours this employee has worked.                                                            |
-| `lohnart`                                                                                            | *Optional[float]*                                                                                    | :heavy_check_mark:                                                                                   | The "Lohnart" (payment-type) in DATEV. Make sure a Lohnart is selected that actually supports hours. |

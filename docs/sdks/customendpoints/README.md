@@ -22,15 +22,16 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
 
 if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -43,7 +44,16 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 ### Response
 
 **[operations.GetCustomDatevDataPushesResponse](../../models/operations/getcustomdatevdatapushesresponse.md)**
+### Errors
 
+| Error Object                                                          | Status Code                                                           | Content Type                                                          |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| errors.GetCustomDatevDataPushesErrorResponse                          | 400                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesResponseBody                           | 401                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponseBody            | 403                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponseResponseBody    | 404                                                                   | application/json                                                      |
+| errors.GetCustomDatevDataPushesCustomEndpointsResponse503ResponseBody | 503                                                                   | application/json                                                      |
+| errors.SDKError                                                       | 4x-5xx                                                                | */*                                                                   |
 
 ## post_custom_datev_passthrough
 
@@ -52,27 +62,28 @@ This action allows to send an arbitrary ASCII file directly to DATEV LODAS or Lo
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='generating', request_body=operations.PostCustomDatevPassthroughRequestBody(
-    accounting_month=dateutil.parser.isoparse('2023-04-24T14:34:59.751Z'),
-    file_content='AI',
-    file_name='interface.wav',
-    file_type=operations.PostCustomDatevPassthroughRequestBodyFileType.BEWEGUNGSDATEN,
-    target_system=operations.PostCustomDatevPassthroughRequestBodyTargetSystem.LODAS,
+res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='string', request_body=operations.PostCustomDatevPassthroughRequestBody(
+    accounting_month=dateutil.parser.isoparse('2023-07-07T11:18:39.230Z'),
+    file_content='string',
+    file_name='road_bedfordshire.jpg',
+    file_type=operations.FileType.STAMMDATEN,
+    target_system=operations.TargetSystem.LODAS,
 ))
 
 if res.post_custom_datev_passthrough_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -86,7 +97,16 @@ if res.post_custom_datev_passthrough_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPassthroughResponse](../../models/operations/postcustomdatevpassthroughresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.PostCustomDatevPassthroughErrorResponse                          | 400                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughResponseBody                           | 401                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponseBody            | 403                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.PostCustomDatevPassthroughCustomEndpointsResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## post_custom_datev_push_data_general
 
@@ -100,15 +120,16 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='fulfil', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
+res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='string', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
 
 if res.post_custom_datev_push_data_general_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -122,7 +143,16 @@ if res.post_custom_datev_push_data_general_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPushDataGeneralResponse](../../models/operations/postcustomdatevpushdatageneralresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostCustomDatevPushDataGeneralErrorResponse                          | 400                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralResponseBody                           | 401                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataGeneralCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## post_custom_datev_push_data_payroll
 
@@ -131,23 +161,24 @@ Uploads the currently relevant payroll data (supplements) to DATEV. This will cr
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='Scandium', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
-    payroll_month=dateutil.parser.isoparse('2021-02-25T13:39:42.284Z'),
+res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='string', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
+    payroll_month=dateutil.parser.isoparse('2024-03-19T19:15:18.613Z'),
 ))
 
 if res.post_custom_datev_push_data_payroll_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -161,7 +192,16 @@ if res.post_custom_datev_push_data_payroll_successful_response is not None:
 ### Response
 
 **[operations.PostCustomDatevPushDataPayrollResponse](../../models/operations/postcustomdatevpushdatapayrollresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostCustomDatevPushDataPayrollErrorResponse                          | 400                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollResponseBody                           | 401                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostCustomDatevPushDataPayrollCustomEndpointsResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## put_custom_datev_employees_employee_id_compensations
 
@@ -212,31 +252,31 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='Cambridgeshire', employee_id='sensor', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
     compensations=[
-        operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensations(
-            amount=9554.11,
-            currency=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsCurrency.EUR,
-            lohnart=496976,
-            period=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBodyCompensationsPeriod.MONTH,
+        operations.Compensations(
+            amount=675.48,
+            currency=operations.Currency.EUR,
+            period=operations.Period.MONTH,
         ),
     ],
-    effective_date=dateutil.parser.isoparse('2021-11-01T07:55:47.162Z'),
+    effective_date=dateutil.parser.isoparse('2023-08-08T22:55:23.367Z'),
 ))
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -251,7 +291,16 @@ if res.put_custom_datev_employees_employee_id_compensations_successful_response 
 ### Response
 
 **[operations.PutCustomDatevEmployeesEmployeeIDCompensationsResponse](../../models/operations/putcustomdatevemployeesemployeeidcompensationsresponse.md)**
+### Errors
 
+| Error Object                                                                                | Status Code                                                                                 | Content Type                                                                                |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsErrorResponse                          | 400                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsResponseBody                           | 401                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseBody            | 403                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseResponseBody    | 404                                                                                         | application/json                                                                            |
+| errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponse503ResponseBody | 503                                                                                         | application/json                                                                            |
+| errors.SDKError                                                                             | 4x-5xx                                                                                      | */*                                                                                         |
 
 ## put_custom_datev_employees_employee_id_prepare_payroll
 
@@ -309,37 +358,38 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='ampere', employee_id='bandwidth', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
     fixed_payments=[
-        operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments(
-            amount=6262.65,
-            lohnart=3093.97,
+        operations.FixedPayments(
+            amount=7452.45,
+            lohnart=1065.12,
         ),
     ],
     hourly_payments=[
-        operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments(
-            hours=2503.18,
-            lohnart=2435.37,
+        operations.HourlyPayments(
+            hours=3274.06,
+            lohnart=6493.07,
         ),
     ],
-    payroll_run=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun(
-        date_=dateutil.parser.isoparse('2022-12-07T19:19:50.329Z'),
+    payroll_run=operations.PayrollRun(
+        date_=dateutil.parser.isoparse('2023-11-18T09:15:39.170Z'),
     ),
 ))
 
 if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -354,4 +404,13 @@ if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_respons
 ### Response
 
 **[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse](../../models/operations/putcustomdatevemployeesemployeeidpreparepayrollresponse.md)**
+### Errors
 
+| Error Object                                                                                 | Status Code                                                                                  | Content Type                                                                                 |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse                          | 400                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponseBody                           | 401                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseBody            | 403                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseResponseBody    | 404                                                                                          | application/json                                                                             |
+| errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponse503ResponseBody | 503                                                                                          | application/json                                                                             |
+| errors.SDKError                                                                              | 4x-5xx                                                                                       | */*                                                                                          |

@@ -5,12 +5,12 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from kombo import utils
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PostCustomDatevPushDataPayrollSuccessfulResponseDataFiles:
+class PostCustomDatevPushDataPayrollSuccessfulResponseFiles:
     content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     
@@ -18,10 +18,9 @@ class PostCustomDatevPushDataPayrollSuccessfulResponseDataFiles:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayrollSuccessfulResponseData:
-    files: list[PostCustomDatevPushDataPayrollSuccessfulResponseDataFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
+    files: List[PostCustomDatevPushDataPayrollSuccessfulResponseFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
     
 
 
@@ -30,7 +29,6 @@ class PostCustomDatevPushDataPayrollSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPushDataPayrollSuccessfulResponse:
     data: PostCustomDatevPushDataPayrollSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

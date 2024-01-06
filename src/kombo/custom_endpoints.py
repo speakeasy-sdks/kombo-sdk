@@ -12,6 +12,7 @@ class CustomEndpoints:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_custom_datev_data_pushes(self, x_integration_id: str) -> operations.GetCustomDatevDataPushesResponse:
         r"""Get DATEV data pushes
         Returns all \"DATEV Data Pushes\" of the last 2 months. You can use this endpoint to give your users transparency about submitted \"ASCII-Files\" and their status. Each data push can contain multiple files that were submitted.
@@ -27,11 +28,14 @@ class CustomEndpoints:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetCustomDatevDataPushesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -42,37 +46,45 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetCustomDatevDataPushesErrorResponse])
-                res.get_custom_datev_data_pushes_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCustomDatevDataPushesErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetCustomDatevDataPushes401ApplicationJSON])
-                res.get_custom_datev_data_pushes_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCustomDatevDataPushesResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetCustomDatevDataPushes403ApplicationJSON])
-                res.get_custom_datev_data_pushes_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCustomDatevDataPushesCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetCustomDatevDataPushes404ApplicationJSON])
-                res.get_custom_datev_data_pushes_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCustomDatevDataPushesCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetCustomDatevDataPushes503ApplicationJSON])
-                res.get_custom_datev_data_pushes_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetCustomDatevDataPushesCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_custom_datev_passthrough(self, x_integration_id: str, request_body: Optional[operations.PostCustomDatevPassthroughRequestBody] = None) -> operations.PostCustomDatevPassthroughResponse:
         r"""Write raw DATEV ASCII file
@@ -87,17 +99,20 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/passthrough'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPassthroughRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostCustomDatevPassthroughResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -108,37 +123,45 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostCustomDatevPassthroughErrorResponse])
-                res.post_custom_datev_passthrough_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPassthroughErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPassthrough401ApplicationJSON])
-                res.post_custom_datev_passthrough_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPassthroughResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPassthrough403ApplicationJSON])
-                res.post_custom_datev_passthrough_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPassthroughCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPassthrough404ApplicationJSON])
-                res.post_custom_datev_passthrough_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPassthroughCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPassthrough503ApplicationJSON])
-                res.post_custom_datev_passthrough_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPassthroughCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_custom_datev_push_data_general(self, x_integration_id: str, post_custom_datev_push_data_general_request_body: Optional[shared.PostCustomDatevPushDataGeneralRequestBody] = None) -> operations.PostCustomDatevPushDataGeneralResponse:
         r"""Push general data to DATEV
@@ -153,17 +176,20 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/push-data/general'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "post_custom_datev_push_data_general_request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPushDataGeneralRequest, "post_custom_datev_push_data_general_request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostCustomDatevPushDataGeneralResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -174,37 +200,45 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostCustomDatevPushDataGeneralErrorResponse])
-                res.post_custom_datev_push_data_general_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataGeneralErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataGeneral401ApplicationJSON])
-                res.post_custom_datev_push_data_general_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataGeneralResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataGeneral403ApplicationJSON])
-                res.post_custom_datev_push_data_general_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataGeneral404ApplicationJSON])
-                res.post_custom_datev_push_data_general_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataGeneralCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataGeneral503ApplicationJSON])
-                res.post_custom_datev_push_data_general_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataGeneralCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def post_custom_datev_push_data_payroll(self, x_integration_id: str, request_body: Optional[operations.PostCustomDatevPushDataPayrollRequestBody] = None) -> operations.PostCustomDatevPushDataPayrollResponse:
         r"""Push payroll data to DATEV
@@ -219,17 +253,20 @@ class CustomEndpoints:
         
         url = base_url + '/custom/datev/push-data/payroll'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PostCustomDatevPushDataPayrollRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostCustomDatevPushDataPayrollResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -240,37 +277,45 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PostCustomDatevPushDataPayrollErrorResponse])
-                res.post_custom_datev_push_data_payroll_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataPayrollErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataPayroll401ApplicationJSON])
-                res.post_custom_datev_push_data_payroll_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataPayrollResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataPayroll403ApplicationJSON])
-                res.post_custom_datev_push_data_payroll_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataPayroll404ApplicationJSON])
-                res.post_custom_datev_push_data_payroll_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataPayrollCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PostCustomDatevPushDataPayroll503ApplicationJSON])
-                res.post_custom_datev_push_data_payroll_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PostCustomDatevPushDataPayrollCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def put_custom_datev_employees_employee_id_compensations(self, x_integration_id: str, employee_id: str, request_body: Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody] = None) -> operations.PutCustomDatevEmployeesEmployeeIDCompensationsResponse:
         r"""Set DATEV compensations
@@ -328,17 +373,20 @@ class CustomEndpoints:
         
         url = utils.generate_url(operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequest, base_url, '/custom/datev/employees/{employee_id}/compensations', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutCustomDatevEmployeesEmployeeIDCompensationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -349,37 +397,45 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PutCustomDatevEmployeesEmployeeIDCompensationsErrorResponse])
-                res.put_custom_datev_employees_employee_id_compensations_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDCompensationsErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensations401ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_compensations_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDCompensationsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensations403ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_compensations_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensations404ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_compensations_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensations503ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_compensations_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDCompensationsCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
+    
     
     def put_custom_datev_employees_employee_id_prepare_payroll(self, x_integration_id: str, employee_id: str, request_body: Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody] = None) -> operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse:
         r"""Prepare DATEV Payroll
@@ -444,17 +500,20 @@ class CustomEndpoints:
         
         url = utils.generate_url(operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest, base_url, '/custom/datev/employees/{employee_id}/prepare-payroll', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -465,32 +524,39 @@ class CustomEndpoints:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse])
-                res.put_custom_datev_employees_employee_id_prepare_payroll_error_response = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_prepare_payroll_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_prepare_payroll_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_prepare_payroll_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 503:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSON])
-                res.put_custom_datev_employees_employee_id_prepare_payroll_503_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.PutCustomDatevEmployeesEmployeeIDPreparePayrollCustomEndpointsResponse503ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
