@@ -4,16 +4,16 @@ management:
   docChecksum: 3be0016d68ae3defbe1b17f11f9b7904
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 3.2.1
-  configChecksum: 042ca5acbc1ccc69a5a283eac24b3e15
+  generationVersion: 2.228.1
+  releaseVersion: 3.2.2
+  configChecksum: 80bb33a5b9498520619e52cd91c8b0ce
   repoURL: https://github.com/speakeasy-sdks/kombo-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/kombo-sdk.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.0
+    core: 4.4.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
