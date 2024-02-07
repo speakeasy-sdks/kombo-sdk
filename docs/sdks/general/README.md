@@ -312,17 +312,17 @@ s = kombo.Kombo(
 
 
 res = s.general.post_passthrough_tool_api(api='string', tool='string', request_body=operations.PostPassthroughToolAPIRequestBody(
+    method=operations.Method.GET,
+    path='/usr/libexec',
     api_options={
         'key': 'string',
     },
     headers={
         'key': 'string',
     },
-    method=operations.Method.GET,
     params={
         'key': 'string',
     },
-    path='/usr/libexec',
 ))
 
 if res.post_passthrough_tool_api_successful_response is not None:

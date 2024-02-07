@@ -58,10 +58,10 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody:
 
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest:
-    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
-    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
+    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     request_body: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll request body"""
     
@@ -72,10 +72,10 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest:
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     put_custom_datev_employees_employee_id_prepare_payroll_successful_response: Optional[shared_putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse.PutCustomDatevEmployeesEmployeeIDPreparePayrollSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll Successful response"""
     

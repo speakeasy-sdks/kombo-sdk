@@ -53,10 +53,10 @@ class PutAtsApplicationsApplicationIDStageRequestBody:
 
 @dataclasses.dataclass
 class PutAtsApplicationsApplicationIDStageRequest:
-    application_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'application_id', 'style': 'simple', 'explode': False }})
-    r"""PUT /ats/applications/:application_id/stage parameter"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    application_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'application_id', 'style': 'simple', 'explode': False }})
+    r"""PUT /ats/applications/:application_id/stage parameter"""
     request_body: Optional[PutAtsApplicationsApplicationIDStageRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PUT /ats/applications/:application_id/stage request body"""
     
@@ -67,10 +67,10 @@ class PutAtsApplicationsApplicationIDStageRequest:
 class PutAtsApplicationsApplicationIDStageResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     put_ats_applications_application_id_stage_successful_response: Optional[shared_putatsapplicationsapplicationidstagesuccessfulresponse.PutAtsApplicationsApplicationIDStageSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /ats/applications/:application_id/stage Successful response"""
     

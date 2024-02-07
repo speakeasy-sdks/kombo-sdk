@@ -85,10 +85,10 @@ class PostAtsCandidatesCandidateIDResultLinksRequestBody:
 
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDResultLinksRequest:
-    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
-    r"""Kombo ID of the candidate you want to create the link for."""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
+    r"""Kombo ID of the candidate you want to create the link for."""
     request_body: Optional[PostAtsCandidatesCandidateIDResultLinksRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""POST /ats/candidates/:candidate_id/result-links request body"""
     
@@ -99,10 +99,10 @@ class PostAtsCandidatesCandidateIDResultLinksRequest:
 class PostAtsCandidatesCandidateIDResultLinksResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_ats_candidates_candidate_id_result_links_successful_response: Optional[shared_postatscandidatescandidateidresultlinkssuccessfulresponse.PostAtsCandidatesCandidateIDResultLinksSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/candidates/:candidate_id/result-links Successful response"""
     

@@ -243,10 +243,10 @@ class PostAtsJobsJobIDApplicationsRequestBody:
 
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsRequest:
-    job_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'job_id', 'style': 'simple', 'explode': False }})
-    r"""Kombo ID or Remote ID of the Job this candidate should apply for. If you want to use the ID of the integrated system (remote_id) you need to prefix the id with \\"remote:\\". You can use the remote ID if you do not want to sync jobs."""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    job_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'job_id', 'style': 'simple', 'explode': False }})
+    r"""Kombo ID or Remote ID of the Job this candidate should apply for. If you want to use the ID of the integrated system (remote_id) you need to prefix the id with \\"remote:\\". You can use the remote ID if you do not want to sync jobs."""
     request_body: Optional[PostAtsJobsJobIDApplicationsRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""POST /ats/jobs/:job_id/applications request body"""
     
@@ -257,10 +257,10 @@ class PostAtsJobsJobIDApplicationsRequest:
 class PostAtsJobsJobIDApplicationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_ats_jobs_job_id_applications_successful_response: Optional[shared_postatsjobsjobidapplicationssuccessfulresponse.PostAtsJobsJobIDApplicationsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/jobs/:job_id/applications Successful response"""
     

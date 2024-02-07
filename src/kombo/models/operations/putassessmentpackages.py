@@ -54,10 +54,10 @@ class PutAssessmentPackagesRequest:
 class PutAssessmentPackagesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     put_assessment_packages_successful_response: Optional[shared_putassessmentpackagessuccessfulresponse.PutAssessmentPackagesSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /assessment/packages Successful response"""
     

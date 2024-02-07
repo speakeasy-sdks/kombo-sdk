@@ -116,13 +116,13 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
+    tag=operations.Tag(
+        name='string',
+    ),
     remote_fields=operations.RemoteFields(
         greenhouse=operations.Greenhouse(
             post_headers=operations.PostHeaders(),
         ),
-    ),
-    tag=operations.Tag(
-        name='string',
     ),
 ))
 
@@ -1454,6 +1454,8 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
+    label='string',
+    url='https://flippant-consulting.com',
     details=operations.Details(
         attributes=[
             operations.PostAtsApplicationsApplicationIDResultLinksAttributes(
@@ -1463,8 +1465,6 @@ res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_inte
         ],
         custom_field_name_prefix='string',
     ),
-    label='string',
-    url='https://flippant-consulting.com',
 ))
 
 if res.post_ats_applications_application_id_result_links_successful_response is not None:
@@ -1750,14 +1750,8 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_b
     application=operations.Application(
         job_id='string',
     ),
-    attachments=[
-        operations.Attachments(
-            name='string',
-            type=operations.PostAtsCandidatesType.OTHER,
-        ),
-    ],
     candidate=operations.Candidate(
-        email_address='Claudine15@hotmail.com',
+        email_address='Willard.Dicki15@hotmail.com',
         first_name='Nona',
         last_name='Reilly',
         location=operations.Location(
@@ -1773,6 +1767,12 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_b
             ),
         ],
     ),
+    attachments=[
+        operations.Attachments(
+            name='string',
+            type=operations.PostAtsCandidatesType.CV,
+        ),
+    ],
     gdpr_consent=operations.GdprConsent(),
     remote_fields=operations.PostAtsCandidatesRemoteFields(
         greenhouse=operations.PostAtsCandidatesGreenhouse(
@@ -2134,6 +2134,8 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
+    label='string',
+    url='http://round-anorak.com',
     details=operations.PostAtsCandidatesCandidateIDResultLinksDetails(
         attributes=[
             operations.PostAtsCandidatesCandidateIDResultLinksAttributes(
@@ -2143,13 +2145,11 @@ res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integrat
         ],
         custom_field_name_prefix='string',
     ),
-    label='string',
     remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksGreenhouse(
             post_headers=operations.PostAtsCandidatesCandidateIDResultLinksPostHeaders(),
         ),
     ),
-    url='http://round-anorak.com',
 ))
 
 if res.post_ats_candidates_candidate_id_result_links_successful_response is not None:
@@ -2280,13 +2280,13 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
+    tag=operations.PostAtsCandidatesCandidateIDTagsTag(
+        name='string',
+    ),
     remote_fields=operations.PostAtsCandidatesCandidateIDTagsRemoteFields(
         greenhouse=operations.PostAtsCandidatesCandidateIDTagsGreenhouse(
             post_headers=operations.PostAtsCandidatesCandidateIDTagsPostHeaders(),
         ),
-    ),
-    tag=operations.PostAtsCandidatesCandidateIDTagsTag(
-        name='string',
     ),
 ))
 
@@ -2551,14 +2551,8 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='string', job_id='string', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
-    attachments=[
-        operations.PostAtsJobsJobIDApplicationsAttachments(
-            name='string',
-            type=operations.PostAtsJobsJobIDApplicationsType.COVER_LETTER,
-        ),
-    ],
     candidate=operations.PostAtsJobsJobIDApplicationsCandidate(
-        email_address='Pierre_Pfeffer@yahoo.com',
+        email_address='Luna.Schmeler50@yahoo.com',
         first_name='Clarissa',
         last_name='Davis',
         location=operations.PostAtsJobsJobIDApplicationsLocation(
@@ -2574,6 +2568,12 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
             ),
         ],
     ),
+    attachments=[
+        operations.PostAtsJobsJobIDApplicationsAttachments(
+            name='string',
+            type=operations.PostAtsJobsJobIDApplicationsType.OTHER,
+        ),
+    ],
     gdpr_consent=operations.PostAtsJobsJobIDApplicationsGdprConsent(),
     remote_fields=operations.PostAtsJobsJobIDApplicationsRemoteFields(
         greenhouse=operations.PostAtsJobsJobIDApplicationsGreenhouse(
@@ -2605,7 +2605,7 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='stri
     ),
     screening_question_answers=[
         operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
-            answer=dateutil.parser.isoparse('2023-03-27T01:35:33.553Z'),
+            answer=8144.67,
             question_id='string',
         ),
     ],
@@ -2728,12 +2728,12 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='string', application_id='string', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
+    stage_id='string',
     remote_fields=operations.PutAtsApplicationsApplicationIDStageRemoteFields(
         greenhouse=operations.PutAtsApplicationsApplicationIDStageGreenhouse(
             post_headers=operations.PutAtsApplicationsApplicationIDStagePostHeaders(),
         ),
     ),
-    stage_id='string',
 ))
 
 if res.put_ats_applications_application_id_stage_successful_response is not None:

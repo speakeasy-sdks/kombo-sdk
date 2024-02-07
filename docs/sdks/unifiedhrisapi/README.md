@@ -1585,8 +1585,9 @@ s = kombo.Kombo(
 
 res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='string', employee_id='string', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
     first_name='Tamara',
-    home_address=shared.HomeAddress(),
     last_name='Lesch',
+    work_email='Wilma91@gmail.com',
+    home_address=shared.HomeAddress(),
     remote_fields=shared.RemoteFields(
         humaans=shared.Humaans(
             employee={
@@ -1594,7 +1595,6 @@ res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='stri
             },
         ),
     ),
-    work_email='Wilma91@gmail.com',
 ))
 
 if res.patch_hris_employees_employee_id_successful_response is not None:
@@ -1847,8 +1847,9 @@ s = kombo.Kombo(
 
 res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_body=operations.PostHrisEmployeesRequestBody(
     first_name='Kara',
-    home_address=operations.HomeAddress(),
     last_name='Williamson',
+    work_email='Jennings_DuBuque@gmail.com',
+    home_address=operations.HomeAddress(),
     remote_fields=operations.PostHrisEmployeesRemoteFields(
         humaans=operations.Humaans(
             employee={
@@ -1856,7 +1857,6 @@ res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_
             },
         ),
     ),
-    work_email='Jennings_DuBuque@gmail.com',
 ))
 
 if res.post_hris_employees_successful_response is not None:

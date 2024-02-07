@@ -22,10 +22,10 @@ class PostCustomDatevPushDataGeneralRequest:
 class PostCustomDatevPushDataGeneralResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_custom_datev_push_data_general_successful_response: Optional[shared_postcustomdatevpushdatageneralsuccessfulresponse.PostCustomDatevPushDataGeneralSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /custom/datev/push-data/general Successful response"""
     

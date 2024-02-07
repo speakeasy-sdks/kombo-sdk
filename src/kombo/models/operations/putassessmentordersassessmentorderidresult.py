@@ -47,10 +47,10 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequestBody:
 
 @dataclasses.dataclass
 class PutAssessmentOrdersAssessmentOrderIDResultRequest:
-    assessment_order_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'assessment_order_id', 'style': 'simple', 'explode': False }})
-    r"""PUT /assessment/orders/:assessment_order_id/result parameter"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    assessment_order_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'assessment_order_id', 'style': 'simple', 'explode': False }})
+    r"""PUT /assessment/orders/:assessment_order_id/result parameter"""
     request_body: Optional[PutAssessmentOrdersAssessmentOrderIDResultRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PUT /assessment/orders/:assessment_order_id/result request body"""
     
@@ -61,10 +61,10 @@ class PutAssessmentOrdersAssessmentOrderIDResultRequest:
 class PutAssessmentOrdersAssessmentOrderIDResultResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     put_assessment_orders_assessment_order_id_result_successful_response: Optional[shared_putassessmentordersassessmentorderidresultsuccessfulresponse.PutAssessmentOrdersAssessmentOrderIDResultSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /assessment/orders/:assessment_order_id/result Successful response"""
     

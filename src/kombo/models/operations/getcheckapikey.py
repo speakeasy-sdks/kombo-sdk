@@ -11,10 +11,10 @@ from typing import Optional
 class GetCheckAPIKeyResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_check_api_key_successful_response: Optional[shared_getcheckapikeysuccessfulresponse.GetCheckAPIKeySuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /check-api-key Successful response"""
     

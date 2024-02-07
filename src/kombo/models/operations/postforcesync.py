@@ -22,10 +22,10 @@ class PostForceSyncRequest:
 class PostForceSyncResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_force_sync_successful_response: Optional[shared_postforcesyncsuccessfulresponse.PostForceSyncSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /force-sync Successful response"""
     

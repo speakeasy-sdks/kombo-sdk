@@ -164,15 +164,15 @@ s = kombo.Kombo(
 
 
 res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='string', assessment_order_id='string', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
+    completed_at=dateutil.parser.isoparse('2024-02-13T00:41:29.507Z'),
+    result_url='https://white-theism.biz',
+    status=operations.Status.OPEN,
     attributes=[
         operations.Attributes(
             field='string',
             value='string',
         ),
     ],
-    completed_at=dateutil.parser.isoparse('2024-02-13T00:41:29.507Z'),
-    result_url='https://white-theism.biz',
-    status=operations.Status.OPEN,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:

@@ -61,10 +61,10 @@ class DeleteAtsCandidatesCandidateIDTagsRequestBody:
 
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsRequest:
-    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
-    r"""Kombo ID of the candidate you want to remove the tag from."""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
+    r"""Kombo ID of the candidate you want to remove the tag from."""
     request_body: Optional[DeleteAtsCandidatesCandidateIDTagsRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""DELETE /ats/candidates/:candidate_id/tags request body"""
     
@@ -75,10 +75,10 @@ class DeleteAtsCandidatesCandidateIDTagsRequest:
 class DeleteAtsCandidatesCandidateIDTagsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     delete_ats_candidates_candidate_id_tags_successful_response: Optional[shared_deleteatscandidatescandidateidtagssuccessfulresponse.DeleteAtsCandidatesCandidateIDTagsSuccessfulResponse] = dataclasses.field(default=None)
     r"""DELETE /ats/candidates/:candidate_id/tags Successful response"""
     

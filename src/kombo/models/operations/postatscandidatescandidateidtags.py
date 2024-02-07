@@ -61,10 +61,10 @@ class PostAtsCandidatesCandidateIDTagsRequestBody:
 
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDTagsRequest:
-    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
-    r"""Kombo ID of the candidate you want to add the tag to."""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
+    r"""Kombo ID of the candidate you want to add the tag to."""
     request_body: Optional[PostAtsCandidatesCandidateIDTagsRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""POST /ats/candidates/:candidate_id/tags request body"""
     
@@ -75,10 +75,10 @@ class PostAtsCandidatesCandidateIDTagsRequest:
 class PostAtsCandidatesCandidateIDTagsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_ats_candidates_candidate_id_tags_successful_response: Optional[shared_postatscandidatescandidateidtagssuccessfulresponse.PostAtsCandidatesCandidateIDTagsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/candidates/:candidate_id/tags Successful response"""
     

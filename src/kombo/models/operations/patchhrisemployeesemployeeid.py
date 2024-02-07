@@ -10,10 +10,10 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PatchHrisEmployeesEmployeeIDRequest:
-    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
-    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
+    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     patch_hris_employees_employee_id_request_body: Optional[shared_patchhrisemployeesemployeeidrequestbody.PatchHrisEmployeesEmployeeIDRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PATCH /hris/employees/:employee_id request body"""
     
@@ -24,10 +24,10 @@ class PatchHrisEmployeesEmployeeIDRequest:
 class PatchHrisEmployeesEmployeeIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     patch_hris_employees_employee_id_successful_response: Optional[shared_patchhrisemployeesemployeeidsuccessfulresponse.PatchHrisEmployeesEmployeeIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""PATCH /hris/employees/:employee_id Successful response"""
     
