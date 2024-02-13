@@ -20,7 +20,7 @@ Delete the specified integration.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -98,7 +98,7 @@ Get the specified integration with everything you need to display it to your cus
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -141,7 +141,7 @@ Get a list of the tools (i.e., integrations) enabled in your environment.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -184,7 +184,7 @@ Trigger a sync for a specific integration.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -246,7 +246,9 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_integrations_integration_id_relink(integration_id='string', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody())
+res = s.general.post_integrations_integration_id_relink(integration_id='string', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody(
+    language=operations.Language.EN,
+))
 
 if res.post_integrations_integration_id_relink_successful_response is not None:
     # handle response
@@ -255,10 +257,10 @@ if res.post_integrations_integration_id_relink_successful_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `integration_id`                                                                                                                                 | *str*                                                                                                                                            | :heavy_check_mark:                                                                                                                               | POST /integrations/:integration_id/relink parameter                                                                                              |
-| `request_body`                                                                                                                                   | [Optional[operations.PostIntegrationsIntegrationIDRelinkRequestBody]](../../models/operations/postintegrationsintegrationidrelinkrequestbody.md) | :heavy_minus_sign:                                                                                                                               | POST /integrations/:integration_id/relink request body                                                                                           |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      | Example                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `integration_id`                                                                                                                                 | *str*                                                                                                                                            | :heavy_check_mark:                                                                                                                               | POST /integrations/:integration_id/relink parameter                                                                                              |                                                                                                                                                  |
+| `request_body`                                                                                                                                   | [Optional[operations.PostIntegrationsIntegrationIDRelinkRequestBody]](../../models/operations/postintegrationsintegrationidrelinkrequestbody.md) | :heavy_minus_sign:                                                                                                                               | POST /integrations/:integration_id/relink request body                                                                                           | {"language":"en"}                                                                                                                                |
 
 
 ### Response
@@ -313,16 +315,7 @@ s = kombo.Kombo(
 
 res = s.general.post_passthrough_tool_api(api='string', tool='string', request_body=operations.PostPassthroughToolAPIRequestBody(
     method=operations.Method.GET,
-    path='/usr/libexec',
-    api_options={
-        'key': 'string',
-    },
-    headers={
-        'key': 'string',
-    },
-    params={
-        'key': 'string',
-    },
+    path='/company/employees',
 ))
 
 if res.post_passthrough_tool_api_successful_response is not None:
@@ -332,11 +325,11 @@ if res.post_passthrough_tool_api_successful_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api`                                                                                                                                          | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | The ID of the passthrough API you want to call (some tools provide multiple). Check the endpoint description for a list of all available APIs. |
-| `tool`                                                                                                                                         | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | The ID of the tool whose passthrough API you want to call (e.g., `personio`).                                                                  |
-| `request_body`                                                                                                                                 | [Optional[operations.PostPassthroughToolAPIRequestBody]](../../models/operations/postpassthroughtoolapirequestbody.md)                         | :heavy_minus_sign:                                                                                                                             | POST /passthrough/:tool/:api request body                                                                                                      |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    | Example                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api`                                                                                                                                          | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | The ID of the passthrough API you want to call (some tools provide multiple). Check the endpoint description for a list of all available APIs. |                                                                                                                                                |
+| `tool`                                                                                                                                         | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | The ID of the tool whose passthrough API you want to call (e.g., `personio`).                                                                  |                                                                                                                                                |
+| `request_body`                                                                                                                                 | [Optional[operations.PostPassthroughToolAPIRequestBody]](../../models/operations/postpassthroughtoolapirequestbody.md)                         | :heavy_minus_sign:                                                                                                                             | POST /passthrough/:tool/:api request body                                                                                                      | {"method":"GET","path":"/company/employees"}                                                                                                   |
 
 
 ### Response

@@ -18,7 +18,7 @@ Returns all "DATEV Data Pushes" of the last 2 months. You can use this endpoint 
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -116,7 +116,7 @@ Uploads the currently relevant general data (employees, compensations, and time 
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -266,12 +266,18 @@ s = kombo.Kombo(
 res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
     compensations=[
         operations.Compensations(
-            amount=675.48,
+            amount=4500,
             currency=operations.Currency.EUR,
             period=operations.Period.MONTH,
+            lohnart=200,
+        ),
+        operations.Compensations(
+            amount=30,
+            currency=operations.Currency.EUR,
+            period=operations.Period.HOUR,
         ),
     ],
-    effective_date=dateutil.parser.isoparse('2023-08-08T22:55:23.367Z'),
+    effective_date=dateutil.parser.isoparse('2022-12-01'),
 ))
 
 if res.put_custom_datev_employees_employee_id_compensations_successful_response is not None:
@@ -281,11 +287,11 @@ if res.put_custom_datev_employees_employee_id_compensations_successful_response 
 
 ### Parameters
 
-| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                                     | *str*                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                     | ID of the integration you want to interact with.                                                                                                                       |
-| `employee_id`                                                                                                                                                          | *str*                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                     | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)         |
-| `request_body`                                                                                                                                                         | [Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody]](../../models/operations/putcustomdatevemployeesemployeeidcompensationsrequestbody.md) | :heavy_minus_sign:                                                                                                                                                     | PUT /custom/datev/employees/:employee_id/compensations request body                                                                                                    |
+| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            | Example                                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                     | *str*                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                     | ID of the integration you want to interact with.                                                                                                                       |                                                                                                                                                                        |
+| `employee_id`                                                                                                                                                          | *str*                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                     | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)         |                                                                                                                                                                        |
+| `request_body`                                                                                                                                                         | [Optional[operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody]](../../models/operations/putcustomdatevemployeesemployeeidcompensationsrequestbody.md) | :heavy_minus_sign:                                                                                                                                                     | PUT /custom/datev/employees/:employee_id/compensations request body                                                                                                    | {"effective_date":"2022-12-01","compensations":[{"amount":4500,"currency":"EUR","period":"MONTH","lohnart":200},{"amount":30,"currency":"EUR","period":"HOUR"}]}       |
 
 
 ### Response
@@ -372,18 +378,22 @@ s = kombo.Kombo(
 res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
     fixed_payments=[
         operations.FixedPayments(
-            amount=7452.45,
-            lohnart=1065.12,
+            amount=560,
+            lohnart=100,
         ),
     ],
     hourly_payments=[
         operations.HourlyPayments(
-            hours=3274.06,
-            lohnart=6493.07,
+            hours=14,
+            lohnart=200,
+        ),
+        operations.HourlyPayments(
+            hours=16,
+            lohnart=232,
         ),
     ],
     payroll_run=operations.PayrollRun(
-        date_=dateutil.parser.isoparse('2023-11-18T09:15:39.170Z'),
+        date_=dateutil.parser.isoparse('2022-05-01'),
     ),
 ))
 
@@ -394,11 +404,11 @@ if res.put_custom_datev_employees_employee_id_prepare_payroll_successful_respons
 
 ### Parameters
 
-| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `x_integration_id`                                                                                                                                                       | *str*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                       | ID of the integration you want to interact with.                                                                                                                         |
-| `employee_id`                                                                                                                                                            | *str*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                       | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)           |
-| `request_body`                                                                                                                                                           | [Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody]](../../models/operations/putcustomdatevemployeesemployeeidpreparepayrollrequestbody.md) | :heavy_minus_sign:                                                                                                                                                       | PUT /custom/datev/employees/:employee_id/prepare-payroll request body                                                                                                    |
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              | Example                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `x_integration_id`                                                                                                                                                       | *str*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                       | ID of the integration you want to interact with.                                                                                                                         |                                                                                                                                                                          |
+| `employee_id`                                                                                                                                                            | *str*                                                                                                                                                                    | :heavy_check_mark:                                                                                                                                                       | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)           |                                                                                                                                                                          |
+| `request_body`                                                                                                                                                           | [Optional[operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody]](../../models/operations/putcustomdatevemployeesemployeeidpreparepayrollrequestbody.md) | :heavy_minus_sign:                                                                                                                                                       | PUT /custom/datev/employees/:employee_id/prepare-payroll request body                                                                                                    | {"payroll_run":{"date":"2022-05-01"},"fixed_payments":[{"amount":560,"lohnart":100}],"hourly_payments":[{"hours":14,"lohnart":200},{"hours":16,"lohnart":232}]}          |
 
 
 ### Response

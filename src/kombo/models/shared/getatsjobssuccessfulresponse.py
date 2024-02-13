@@ -64,14 +64,15 @@ class JobPostings:
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseLocation:
     r"""The location of the listed job."""
-    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
     r"""Contains the ISO2 country code if possible. If not, it contains the original value."""
-    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw') }})
-    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
-    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1') }})
-    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2') }})
-    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code') }})
+    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
     
 
 
@@ -121,11 +122,12 @@ class Eight:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseOptions:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Kombo ID of this question option. Use this ID to specify the answer to this question."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Content of the question option."""
-    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
+    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseOptions.UNSET }})
     r"""ID in the connected ATS. This might be null as some systems only use the name to identify the option."""
     
 
@@ -172,11 +174,12 @@ class GetAtsJobsSuccessfulResponseSchemasDisplayType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Options:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Kombo ID of this question option. Use this ID to specify the answer to this question."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Content of the question option."""
-    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
+    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id'), 'exclude': lambda f: f is Options.UNSET }})
     r"""ID in the connected ATS. This might be null as some systems only use the name to identify the option."""
     
 
@@ -188,9 +191,10 @@ class GetAtsJobsSuccessfulResponseSchemasDataResultsType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Four:
+    UNSET='__SPEAKEASY_UNSET__'
     options: List[Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
     type: GetAtsJobsSuccessfulResponseSchemasDataResultsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[GetAtsJobsSuccessfulResponseSchemasDisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
+    display_type: Optional[GetAtsJobsSuccessfulResponseSchemasDisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is Four.UNSET }})
     
 
 
@@ -216,10 +220,11 @@ class GetAtsJobsSuccessfulResponseSchemasType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Two:
+    UNSET='__SPEAKEASY_UNSET__'
     type: GetAtsJobsSuccessfulResponseSchemasType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[GetAtsJobsSuccessfulResponseDisplayType] = dataclasses.field(default=GetAtsJobsSuccessfulResponseDisplayType.FIELD, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
-    max: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max') }})
-    min: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('min') }})
+    display_type: Optional[GetAtsJobsSuccessfulResponseDisplayType] = dataclasses.field(default=GetAtsJobsSuccessfulResponseDisplayType.FIELD, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is Two.UNSET }})
+    max: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max'), 'exclude': lambda f: f is Two.UNSET }})
+    min: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('min'), 'exclude': lambda f: f is Two.UNSET }})
     
 
 
@@ -235,10 +240,11 @@ class GetAtsJobsSuccessfulResponseType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1:
+    UNSET='__SPEAKEASY_UNSET__'
     type: GetAtsJobsSuccessfulResponseType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
+    display_type: Optional[DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1.UNSET }})
     r"""If unavailable, we recommend displaying a single-line input."""
-    max_length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_length') }})
+    max_length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_length'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1.UNSET }})
     
 
 
@@ -246,13 +252,14 @@ class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ScreeningQuestions:
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     format: Optional[Union[GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1, Two, Three, Four, Five, Six, Seven, Eight, Nine]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
     required: Optional[bool] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required') }})
     title: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
-    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
+    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index'), 'exclude': lambda f: f is ScreeningQuestions.UNSET }})
     
 
 
@@ -260,10 +267,11 @@ class ScreeningQuestions:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Stages:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
+    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index'), 'exclude': lambda f: f is Stages.UNSET }})
     
 
 

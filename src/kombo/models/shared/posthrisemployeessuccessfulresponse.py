@@ -13,15 +13,16 @@ from typing import Any, Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostHrisEmployeesSuccessfulResponseBankAccounts:
-    account_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    account_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('account_number'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseBankAccounts.UNSET }})
     r"""The bank-specific account number. Some companies use the account number field to put the IBAN here."""
-    bank_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_name') }})
+    bank_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bank_name'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseBankAccounts.UNSET }})
     r"""The name of the bank behind this account."""
-    bic: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bic') }})
+    bic: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bic'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseBankAccounts.UNSET }})
     r"""The internationally unique BIC/SWIFT code identifying the bank behind this account."""
-    holder_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('holder_name') }})
+    holder_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('holder_name'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseBankAccounts.UNSET }})
     r"""The name of the holder of this account."""
-    iban: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban') }})
+    iban: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('iban'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseBankAccounts.UNSET }})
     r"""The internationally unique IBAN identifying this account."""
     
 
@@ -62,14 +63,15 @@ class PostHrisEmployeesSuccessfulResponseSchemasDataGender1(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PostHrisEmployeesSuccessfulResponseHomeAddress:
-    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
+    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
     r"""Contains the ISO2 country code if possible. If not, it contains the original value."""
-    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw') }})
-    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
-    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1') }})
-    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2') }})
-    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code') }})
+    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
+    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
+    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
+    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
+    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code'), 'exclude': lambda f: f is PostHrisEmployeesSuccessfulResponseHomeAddress.UNSET }})
     
 
 

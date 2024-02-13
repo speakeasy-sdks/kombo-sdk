@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(

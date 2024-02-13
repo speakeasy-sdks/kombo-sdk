@@ -97,21 +97,22 @@ class PostConnectCreateLinkLanguage(str, Enum):
 @dataclasses.dataclass
 class PostConnectCreateLinkRequestBody:
     r"""POST /connect/create-link request body"""
+    UNSET='__SPEAKEASY_UNSET__'
     end_user_email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user_email') }})
     r"""The email of the user this link is meant for."""
     end_user_organization_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user_organization_name') }})
     r"""The name of the user's organization."""
-    end_user_origin_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user_origin_id') }})
+    end_user_origin_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_user_origin_id'), 'exclude': lambda f: f is PostConnectCreateLinkRequestBody.UNSET }})
     r"""The id the user/organization has in your own database."""
     integration_category: Optional[IntegrationCategory] = dataclasses.field(default=IntegrationCategory.HRIS, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('integration_category'), 'exclude': lambda f: f is None }})
     r"""Category of the integration you want your customer to create."""
-    integration_tool: Optional[IntegrationTool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('integration_tool') }})
+    integration_tool: Optional[IntegrationTool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('integration_tool'), 'exclude': lambda f: f is PostConnectCreateLinkRequestBody.UNSET }})
     r"""Pre-define a tool this integration link can be used for."""
     language: Optional[PostConnectCreateLinkLanguage] = dataclasses.field(default=PostConnectCreateLinkLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language of the connection flow UI."""
-    remote_environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_environment') }})
+    remote_environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_environment'), 'exclude': lambda f: f is PostConnectCreateLinkRequestBody.UNSET }})
     r"""If the tool you want to connect offers different environments, you can specify which one you want to connect to here. If you don't specify this, we'll assume you want to use the production environment. Note that this can only be used if you've also specified a tool through `integration_tool`."""
-    scope_config_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scope_config_id') }})
+    scope_config_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scope_config_id'), 'exclude': lambda f: f is PostConnectCreateLinkRequestBody.UNSET }})
     r"""Specify a scope config that should be used for this integration. This is an advanced feature, only use it if you know what you're doing!"""
     
 

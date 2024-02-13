@@ -84,7 +84,7 @@ We're always happy to discuss extending our coverage.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -226,7 +226,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -367,7 +366,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -566,7 +564,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -731,7 +728,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -920,7 +916,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -1021,7 +1016,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -1174,7 +1168,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -1365,7 +1358,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -1474,7 +1466,6 @@ Top level filters use AND, while individual filters use OR if they accept multip
 ### Example Usage
 
 ```python
-import dateutil.parser
 import kombo
 from kombo.models import operations, shared
 
@@ -1574,7 +1565,7 @@ We're always happy to discuss extending our coverage.
 ```python
 import dateutil.parser
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
@@ -1584,17 +1575,20 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='string', employee_id='string', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
-    first_name='Tamara',
-    last_name='Lesch',
-    work_email='Wilma91@gmail.com',
-    home_address=shared.HomeAddress(),
-    remote_fields=shared.RemoteFields(
-        humaans=shared.Humaans(
-            employee={
-                'key': 'string',
-            },
-        ),
+    first_name='John',
+    last_name='Doe',
+    work_email='john.doe@acme.com',
+    date_of_birth=dateutil.parser.isoparse('1986-01-01'),
+    gender=shared.Gender.MALE,
+    home_address=shared.HomeAddress(
+        city='Berlin',
+        country='DE',
+        state='Berlin',
+        street_1='Sonnenallee 63',
+        zip_code='12045',
     ),
+    job_title='Integrations Team Lead',
+    start_date=dateutil.parser.isoparse('2020-04-07'),
 ))
 
 if res.patch_hris_employees_employee_id_successful_response is not None:
@@ -1604,11 +1598,11 @@ if res.patch_hris_employees_employee_id_successful_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                             | *str*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                             | ID of the integration you want to interact with.                                                                                                               |
-| `employee_id`                                                                                                                                                  | *str*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                             | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`) |
-| `patch_hris_employees_employee_id_request_body`                                                                                                                | [Optional[shared.PatchHrisEmployeesEmployeeIDRequestBody]](../../models/shared/patchhrisemployeesemployeeidrequestbody.md)                                     | :heavy_minus_sign:                                                                                                                                             | PATCH /hris/employees/:employee_id request body                                                                                                                |
+| Parameter                                                                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                                                                          | Example                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                                                   | *str*                                                                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                                                                   | ID of the integration you want to interact with.                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                      |
+| `employee_id`                                                                                                                                                                                                                                                                                        | *str*                                                                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                                                                   | ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)                                                                                                                                       |                                                                                                                                                                                                                                                                                                      |
+| `patch_hris_employees_employee_id_request_body`                                                                                                                                                                                                                                                      | [Optional[shared.PatchHrisEmployeesEmployeeIDRequestBody]](../../models/shared/patchhrisemployeesemployeeidrequestbody.md)                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                                                                                                                   | PATCH /hris/employees/:employee_id request body                                                                                                                                                                                                                                                      | {"first_name":"John","last_name":"Doe","work_email":"john.doe@acme.com","gender":"MALE","date_of_birth":"1986-01-01","start_date":"2020-04-07","job_title":"Integrations Team Lead","home_address":{"city":"Berlin","country":"DE","state":"Berlin","street_1":"Sonnenallee 63","zip_code":"12045"}} |
 
 
 ### Response
@@ -1716,9 +1710,15 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.post_hris_absences(x_integration_id='string', request_body=operations.PostHrisAbsencesRequestBody(
-    absence_type_id='string',
-    employee_id='string',
-    employee_note='string',
+    absence_type_id='3YKtQ7qedsrcCady1jSyAkY1',
+    employee_id='wXJMxwDvPAjrJ4CyqdV9',
+    employee_note='Visiting the aliens',
+    end_date=dateutil.parser.isoparse('2019-09-21'),
+    end_half_day=False,
+    end_time='16:00:00',
+    start_date=dateutil.parser.isoparse('2019-09-17'),
+    start_half_day=False,
+    start_time='08:30:00',
 ))
 
 if res.post_hris_absences_successful_response is not None:
@@ -1728,10 +1728,10 @@ if res.post_hris_absences_successful_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                         | *str*                                                                                                      | :heavy_check_mark:                                                                                         | ID of the integration you want to interact with.                                                           |
-| `request_body`                                                                                             | [Optional[operations.PostHrisAbsencesRequestBody]](../../models/operations/posthrisabsencesrequestbody.md) | :heavy_minus_sign:                                                                                         | POST /hris/absences request body                                                                           |
+| Parameter                                                                                                                                                                                                                                                             | Type                                                                                                                                                                                                                                                                  | Required                                                                                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                           | Example                                                                                                                                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                    | *str*                                                                                                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                                                                                                    | ID of the integration you want to interact with.                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                                       |
+| `request_body`                                                                                                                                                                                                                                                        | [Optional[operations.PostHrisAbsencesRequestBody]](../../models/operations/posthrisabsencesrequestbody.md)                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                                    | POST /hris/absences request body                                                                                                                                                                                                                                      | {"employee_id":"wXJMxwDvPAjrJ4CyqdV9","absence_type_id":"3YKtQ7qedsrcCady1jSyAkY1","start_date":"2019-09-17","end_date":"2019-09-21","start_time":"08:30:00","end_time":"16:00:00","start_half_day":false,"end_half_day":false,"employee_note":"Visiting the aliens"} |
 
 
 ### Response
@@ -1846,17 +1846,20 @@ s = kombo.Kombo(
 
 
 res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_body=operations.PostHrisEmployeesRequestBody(
-    first_name='Kara',
-    last_name='Williamson',
-    work_email='Jennings_DuBuque@gmail.com',
-    home_address=operations.HomeAddress(),
-    remote_fields=operations.PostHrisEmployeesRemoteFields(
-        humaans=operations.Humaans(
-            employee={
-                'key': 'string',
-            },
-        ),
+    first_name='John',
+    last_name='Doe',
+    work_email='john.doe@acme.com',
+    date_of_birth=dateutil.parser.isoparse('1986-01-01'),
+    gender=operations.PostHrisEmployeesGender.MALE,
+    home_address=operations.HomeAddress(
+        city='Berlin',
+        country='DE',
+        state='Berlin',
+        street_1='Sonnenallee 63',
+        zip_code='12045',
     ),
+    job_title='Integrations Team Lead',
+    start_date=dateutil.parser.isoparse('2020-04-07'),
 ))
 
 if res.post_hris_employees_successful_response is not None:
@@ -1866,10 +1869,10 @@ if res.post_hris_employees_successful_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `x_integration_id`                                                                                           | *str*                                                                                                        | :heavy_check_mark:                                                                                           | ID of the integration you want to interact with.                                                             |
-| `request_body`                                                                                               | [Optional[operations.PostHrisEmployeesRequestBody]](../../models/operations/posthrisemployeesrequestbody.md) | :heavy_minus_sign:                                                                                           | POST /hris/employees request body                                                                            |
+| Parameter                                                                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                                                                          | Example                                                                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                                                   | *str*                                                                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                                                                   | ID of the integration you want to interact with.                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                      |
+| `request_body`                                                                                                                                                                                                                                                                                       | [Optional[operations.PostHrisEmployeesRequestBody]](../../models/operations/posthrisemployeesrequestbody.md)                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                                                                   | POST /hris/employees request body                                                                                                                                                                                                                                                                    | {"first_name":"John","last_name":"Doe","work_email":"john.doe@acme.com","gender":"MALE","date_of_birth":"1986-01-01","start_date":"2020-04-07","job_title":"Integrations Team Lead","home_address":{"city":"Berlin","country":"DE","state":"Berlin","street_1":"Sonnenallee 63","zip_code":"12045"}} |
 
 
 ### Response
@@ -1895,7 +1898,7 @@ Currently in closed beta.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(

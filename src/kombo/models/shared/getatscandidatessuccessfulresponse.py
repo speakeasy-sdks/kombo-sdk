@@ -47,9 +47,10 @@ class GetAtsCandidatesSuccessfulResponseApplications:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAtsCandidatesSuccessfulResponseEmailAddresses:
+    UNSET='__SPEAKEASY_UNSET__'
     type: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Kombo exposes type information through this field. If we don't get any information from the tool, we will set this to `null`."""
-    email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address') }})
+    email_address: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_address'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseEmailAddresses.UNSET }})
     
 
 
@@ -58,14 +59,15 @@ class GetAtsCandidatesSuccessfulResponseEmailAddresses:
 @dataclasses.dataclass
 class GetAtsCandidatesSuccessfulResponseLocation:
     r"""Location of the candidate."""
-    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
+    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
     r"""Contains the ISO2 country code if possible. If not, it contains the original value."""
-    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw') }})
-    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
-    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1') }})
-    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2') }})
-    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code') }})
+    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
+    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
+    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
+    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
+    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseLocation.UNSET }})
     
 
 
@@ -73,8 +75,9 @@ class GetAtsCandidatesSuccessfulResponseLocation:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAtsCandidatesSuccessfulResponsePhoneNumbers:
+    UNSET='__SPEAKEASY_UNSET__'
     phone_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
-    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponsePhoneNumbers.UNSET }})
     r"""Kombo exposes type information through this field. If we don't get any information from the tool, we will set this to `null`."""
     
 
@@ -83,9 +86,10 @@ class GetAtsCandidatesSuccessfulResponsePhoneNumbers:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAtsCandidatesSuccessfulResponseSocialMedia:
-    link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link') }})
-    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseSocialMedia.UNSET }})
+    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseSocialMedia.UNSET }})
+    username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('username'), 'exclude': lambda f: f is GetAtsCandidatesSuccessfulResponseSocialMedia.UNSET }})
     
 
 

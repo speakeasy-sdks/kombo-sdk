@@ -98,8 +98,12 @@ s = kombo.Kombo(
 )
 
 req = operations.PostConnectCreateLinkRequestBody(
-    end_user_email='Barney59@yahoo.com',
-    end_user_organization_name='string',
+    end_user_email='test@example.com',
+    end_user_organization_name='Test Inc.',
+    end_user_origin_id='123',
+    integration_category=operations.IntegrationCategory.HRIS,
+    integration_tool=operations.IntegrationTool.PERSONIO,
+    language=operations.PostConnectCreateLinkLanguage.EN,
 )
 
 res = s.kombo_connect.post_connect_create_link(req)

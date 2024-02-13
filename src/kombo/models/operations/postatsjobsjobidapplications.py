@@ -119,7 +119,8 @@ class PostAtsJobsJobIDApplicationsGdprConsent:
 @dataclasses.dataclass
 class PostAtsJobsJobIDApplicationsPostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
-    on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of'), 'exclude': lambda f: f is PostAtsJobsJobIDApplicationsPostHeaders.UNSET }})
     r"""ID of the the user that will show up as having performed the action in Greenhouse. We already pass a value by default, but you can use this to override it."""
     
 
