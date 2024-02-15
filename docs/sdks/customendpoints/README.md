@@ -27,7 +27,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='string')
+res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='<value>')
 
 if res.get_custom_datev_data_pushes_successful_response is not None:
     # handle response
@@ -73,9 +73,9 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='string', request_body=operations.PostCustomDatevPassthroughRequestBody(
+res = s.custom_endpoints.post_custom_datev_passthrough(x_integration_id='<value>', request_body=operations.PostCustomDatevPassthroughRequestBody(
     accounting_month=dateutil.parser.isoparse('2023-07-07T11:18:39.230Z'),
-    file_content='string',
+    file_content='<value>',
     file_name='road_bedfordshire.jpg',
     file_type=operations.FileType.STAMMDATEN,
     target_system=operations.TargetSystem.LODAS,
@@ -125,7 +125,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='string', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
+res = s.custom_endpoints.post_custom_datev_push_data_general(x_integration_id='<value>', post_custom_datev_push_data_general_request_body=shared.PostCustomDatevPushDataGeneralRequestBody())
 
 if res.post_custom_datev_push_data_general_successful_response is not None:
     # handle response
@@ -172,7 +172,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='string', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
+res = s.custom_endpoints.post_custom_datev_push_data_payroll(x_integration_id='<value>', request_body=operations.PostCustomDatevPushDataPayrollRequestBody(
     payroll_month=dateutil.parser.isoparse('2024-03-19T19:15:18.613Z'),
 ))
 
@@ -263,7 +263,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_compensations(x_integration_id='<value>', employee_id='<value>', request_body=operations.PutCustomDatevEmployeesEmployeeIDCompensationsRequestBody(
     compensations=[
         operations.Compensations(
             amount=4500,
@@ -375,7 +375,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='string', employee_id='string', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
+res = s.custom_endpoints.put_custom_datev_employees_employee_id_prepare_payroll(x_integration_id='<value>', employee_id='<value>', request_body=operations.PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody(
     fixed_payments=[
         operations.FixedPayments(
             amount=560,

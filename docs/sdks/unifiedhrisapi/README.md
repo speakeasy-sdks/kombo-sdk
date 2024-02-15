@@ -93,7 +93,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_hris_api.delete_hris_absences_absence_id(x_integration_id='string', absence_id='string', delete_hris_absences_absence_id_request_body=shared.DeleteHrisAbsencesAbsenceIDRequestBody())
+res = s.unified_hris_api.delete_hris_absences_absence_id(x_integration_id='<value>', absence_id='<value>', delete_hris_absences_absence_id_request_body=shared.DeleteHrisAbsencesAbsenceIDRequestBody())
 
 if res.delete_hris_absences_absence_id_successful_response is not None:
     # handle response
@@ -236,7 +236,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisAbsenceTypesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_absence_types(req)
@@ -376,7 +376,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisAbsencesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_absences(req)
@@ -574,7 +574,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisEmployeesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_employees(req)
@@ -738,7 +738,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisEmploymentsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_employments(req)
@@ -926,7 +926,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisGroupsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_groups(req)
@@ -1026,7 +1026,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisLegalEntitiesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_legal_entities(req)
@@ -1178,7 +1178,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisLocationsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_locations(req)
@@ -1368,7 +1368,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisTeamsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_teams(req)
@@ -1476,7 +1476,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetHrisTimeOffBalancesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_hris_api.get_hris_time_off_balances(req)
@@ -1574,7 +1574,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='string', employee_id='string', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
+res = s.unified_hris_api.patch_hris_employees_employee_id(x_integration_id='<value>', employee_id='<value>', patch_hris_employees_employee_id_request_body=shared.PatchHrisEmployeesEmployeeIDRequestBody(
     first_name='John',
     last_name='Doe',
     work_email='john.doe@acme.com',
@@ -1709,7 +1709,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_hris_api.post_hris_absences(x_integration_id='string', request_body=operations.PostHrisAbsencesRequestBody(
+res = s.unified_hris_api.post_hris_absences(x_integration_id='<value>', request_body=operations.PostHrisAbsencesRequestBody(
     absence_type_id='3YKtQ7qedsrcCady1jSyAkY1',
     employee_id='wXJMxwDvPAjrJ4CyqdV9',
     employee_note='Visiting the aliens',
@@ -1845,7 +1845,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_hris_api.post_hris_employees(x_integration_id='string', request_body=operations.PostHrisEmployeesRequestBody(
+res = s.unified_hris_api.post_hris_employees(x_integration_id='<value>', request_body=operations.PostHrisEmployeesRequestBody(
     first_name='John',
     last_name='Doe',
     work_email='john.doe@acme.com',
@@ -1907,7 +1907,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_hris_api.post_hris_employees_employee_id_attachments(x_integration_id='string', employee_id='string', post_hris_employees_employee_id_attachments_request_body=shared.PostHrisEmployeesEmployeeIDAttachmentsRequestBody())
+res = s.unified_hris_api.post_hris_employees_employee_id_attachments(x_integration_id='<value>', employee_id='<value>', post_hris_employees_employee_id_attachments_request_body=shared.PostHrisEmployeesEmployeeIDAttachmentsRequestBody())
 
 if res.post_hris_employees_employee_id_attachments_successful_response is not None:
     # handle response

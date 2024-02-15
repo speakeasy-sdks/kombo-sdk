@@ -29,7 +29,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.delete_integrations_integration_id(integration_id='string', delete_integrations_integration_id_request_body=shared.DeleteIntegrationsIntegrationIDRequestBody())
+res = s.general.delete_integrations_integration_id(integration_id='<value>', delete_integrations_integration_id_request_body=shared.DeleteIntegrationsIntegrationIDRequestBody())
 
 if res.delete_integrations_integration_id_successful_response is not None:
     # handle response
@@ -107,7 +107,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.get_integrations_integration_id(integration_id='string')
+res = s.general.get_integrations_integration_id(integration_id='<value>')
 
 if res.get_integrations_integration_id_successful_response is not None:
     # handle response
@@ -193,7 +193,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_force_sync(x_integration_id='string', post_force_sync_request_body=shared.PostForceSyncRequestBody())
+res = s.general.post_force_sync(x_integration_id='<value>', post_force_sync_request_body=shared.PostForceSyncRequestBody())
 
 if res.post_force_sync_successful_response is not None:
     # handle response
@@ -246,7 +246,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_integrations_integration_id_relink(integration_id='string', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody(
+res = s.general.post_integrations_integration_id_relink(integration_id='<value>', request_body=operations.PostIntegrationsIntegrationIDRelinkRequestBody(
     language=operations.Language.EN,
 ))
 
@@ -313,7 +313,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.general.post_passthrough_tool_api(api='string', tool='string', request_body=operations.PostPassthroughToolAPIRequestBody(
+res = s.general.post_passthrough_tool_api(api='<value>', tool='<value>', request_body=operations.PostPassthroughToolAPIRequestBody(
     method=operations.Method.GET,
     path='/company/employees',
 ))

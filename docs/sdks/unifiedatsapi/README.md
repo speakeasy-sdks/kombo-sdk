@@ -115,7 +115,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='<value>', candidate_id='<value>', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
     tag=operations.Tag(
         name='Excellent Fit',
     ),
@@ -320,7 +320,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationStagesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_application_stages(req)
@@ -524,7 +524,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsApplicationsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_applications(req)
@@ -720,7 +720,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsCandidatesRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_candidates(req)
@@ -940,7 +940,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsJobsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_jobs(req)
@@ -1076,7 +1076,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsTagsRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_tags(req)
@@ -1220,7 +1220,7 @@ s = kombo.Kombo(
 )
 
 req = operations.GetAtsUsersRequest(
-    x_integration_id='string',
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_users(req)
@@ -1269,7 +1269,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='string', candidate_id='string', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
+res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='<value>', candidate_id='<value>', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
 
 if res.patch_ats_candidates_candidate_id_successful_response is not None:
     # handle response
@@ -1361,7 +1361,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
+res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='<value>', application_id='<value>', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
     content='A new message from the candidate is available in YourChat!',
     content_type=operations.ContentType.PLAIN_TEXT,
 ))
@@ -1439,7 +1439,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='string', application_id='string', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='<value>', application_id='<value>', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
     label='Assessment Result',
     url='https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG',
     details=operations.Details(
@@ -1736,7 +1736,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates(x_integration_id='string', request_body=operations.PostAtsCandidatesRequestBody(
+res = s.unified_ats_api.post_ats_candidates(x_integration_id='<value>', request_body=operations.PostAtsCandidatesRequestBody(
     application=operations.Application(
         job_id='BDpgnpZ148nrGh4mYHNxJBgx',
         stage_id='8x3YKRDcuRnwShdh96ShBNn1',
@@ -1935,7 +1935,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
     attachment=operations.Attachment(
         name='Frank Doe CV.txt',
         type=operations.PostAtsCandidatesCandidateIDAttachmentsType.CV,
@@ -2110,7 +2110,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
     label='Assessment Result',
     url='https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG',
     details=operations.PostAtsCandidatesCandidateIDResultLinksDetails(
@@ -2255,7 +2255,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='string', candidate_id='string', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
     tag=operations.PostAtsCandidatesCandidateIDTagsTag(
         name='Excellent Fit',
     ),
@@ -2521,7 +2521,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='string', job_id='string', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
+res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='<value>', job_id='<value>', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
     candidate=operations.PostAtsJobsJobIDApplicationsCandidate(
         email_address='frank.doe@example.com',
         first_name='Frank',
@@ -2680,7 +2680,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='string', application_id='string', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
+res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='<value>', application_id='<value>', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
     stage_id='3PJ8PZhZZa1eEdd2DtPNtVup',
 ))
 

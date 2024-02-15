@@ -37,7 +37,7 @@ s = kombo.Kombo(
 )
 
 req = operations.PostConnectActivateIntegrationRequestBody(
-    token='string',
+    token='<value>',
 )
 
 res = s.kombo_connect.post_connect_activate_integration(req)

@@ -25,7 +25,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='string', cursor='string', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
@@ -70,7 +70,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='string')
+res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='<value>')
 
 if res.get_assessment_packages_successful_response is not None:
     # handle response
@@ -163,7 +163,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='string', assessment_order_id='string', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='<value>', assessment_order_id='<value>', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
     completed_at=dateutil.parser.isoparse('2023-04-04T00:00:00.000Z'),
     result_url='https://example.com',
     status=operations.Status.COMPLETED,
@@ -224,7 +224,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='string', request_body=operations.PutAssessmentPackagesRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='<value>', request_body=operations.PutAssessmentPackagesRequestBody(
     packages=[
         operations.Packages(
             description='TypeScript coding skills assessments',
