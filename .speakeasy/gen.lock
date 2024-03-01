@@ -4,18 +4,18 @@ management:
   docChecksum: 3be0016d68ae3defbe1b17f11f9b7904
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 5.0.2
-  configChecksum: adb1559ca681f4ec1fe78903b6a3f5a4
+  generationVersion: 2.275.4
+  releaseVersion: 5.1.0
+  configChecksum: e2fdbab32d92645d12700ffc27ab59e7
   repoURL: https://github.com/speakeasy-sdks/kombo-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/kombo-sdk.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.7
+    core: 4.5.0
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:
@@ -1431,3 +1431,6 @@ generatedFiles:
   - docs/sdks/unifiedhrisapi/README.md
   - USAGE.md
   - .gitattributes
+  - src/kombo/_hooks/sdkhooks.py
+  - src/kombo/_hooks/types.py
+  - src/kombo/_hooks/__init__.py

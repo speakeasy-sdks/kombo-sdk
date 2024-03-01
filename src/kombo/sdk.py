@@ -9,6 +9,7 @@ from .unified_ats_api import UnifiedATSAPI
 from .unified_ats_assessment_api import UnifiedATSAssessmentAPI
 from .unified_hris_api import UnifiedHRISAPI
 from kombo import utils
+from kombo._hooks import SDKHooks
 from kombo.models import shared
 from typing import Callable, Dict, Union
 
@@ -56,6 +57,16 @@ class Kombo:
                 server_url = utils.template_url(server_url, url_params)
 
         self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
+
+        hooks = SDKHooks()
+
+        current_server_url, *_ = self.sdk_configuration.get_server_details()
+        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        if current_server_url != server_url:
+            self.sdk_configuration.server_url = server_url
+
+        # pylint: disable=protected-access
+        self.sdk_configuration._hooks=hooks
        
         self._init_sdks()
     
