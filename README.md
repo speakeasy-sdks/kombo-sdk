@@ -79,7 +79,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
@@ -189,7 +189,7 @@ s = kombo.Kombo(
 
 res = None
 try:
-    res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+    res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 except errors.GetAssessmentOrdersOpenErrorResponse as e:
     # handle exception
     raise(e)
@@ -230,7 +230,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
@@ -253,7 +253,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
@@ -304,7 +304,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response

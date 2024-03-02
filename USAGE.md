@@ -10,7 +10,7 @@ s = kombo.Kombo(
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=927886)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
