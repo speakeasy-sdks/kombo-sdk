@@ -15,5 +15,6 @@ res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

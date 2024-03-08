@@ -34,6 +34,7 @@ res = s.general.delete_integrations_integration_id(integration_id='<value>', del
 if res.delete_integrations_integration_id_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.general.get_check_api_key()
 if res.get_check_api_key_successful_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -112,6 +114,7 @@ res = s.general.get_integrations_integration_id(integration_id='<value>')
 if res.get_integrations_integration_id_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -155,6 +158,7 @@ res = s.general.get_tools_category(category=shared.GetToolsCategoryParameterCate
 if res.get_tools_category_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -198,6 +202,7 @@ res = s.general.post_force_sync(x_integration_id='<value>', post_force_sync_requ
 if res.post_force_sync_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -253,6 +258,7 @@ res = s.general.post_integrations_integration_id_relink(integration_id='<value>'
 if res.post_integrations_integration_id_relink_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -321,6 +327,7 @@ res = s.general.post_passthrough_tool_api(api='<value>', tool='<value>', request
 if res.post_passthrough_tool_api_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

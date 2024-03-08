@@ -124,6 +124,7 @@ res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id
 if res.delete_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -328,6 +329,7 @@ res = s.unified_ats_api.get_ats_application_stages(req)
 if res.get_ats_application_stages_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -532,6 +534,7 @@ res = s.unified_ats_api.get_ats_applications(req)
 if res.get_ats_applications_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -728,6 +731,7 @@ res = s.unified_ats_api.get_ats_candidates(req)
 if res.get_ats_candidates_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -948,6 +952,7 @@ res = s.unified_ats_api.get_ats_jobs(req)
 if res.get_ats_jobs_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1084,6 +1089,7 @@ res = s.unified_ats_api.get_ats_tags(req)
 if res.get_ats_tags_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1228,6 +1234,7 @@ res = s.unified_ats_api.get_ats_users(req)
 if res.get_ats_users_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1274,6 +1281,7 @@ res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='<val
 if res.patch_ats_candidates_candidate_id_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1369,6 +1377,7 @@ res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration
 if res.post_ats_applications_application_id_notes_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1460,6 +1469,7 @@ res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_inte
 if res.post_ats_applications_application_id_result_links_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1794,6 +1804,7 @@ res = s.unified_ats_api.post_ats_candidates(x_integration_id='<value>', request_
 if res.post_ats_candidates_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1947,6 +1958,7 @@ res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integrati
 if res.post_ats_candidates_candidate_id_attachments_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2131,6 +2143,7 @@ res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integrat
 if res.post_ats_candidates_candidate_id_result_links_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2264,6 +2277,7 @@ res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='
 if res.post_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2568,6 +2582,7 @@ res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='<val
 if res.post_ats_jobs_job_id_applications_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -2687,6 +2702,7 @@ res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_
 if res.put_ats_applications_application_id_stage_successful_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
