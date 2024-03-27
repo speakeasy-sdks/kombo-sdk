@@ -7,20 +7,19 @@ from enum import Enum
 from kombo import utils
 
 
-
 @dataclasses.dataclass
-class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseData:
+class Data:
     pass
 
-class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus(str, Enum):
+class Status(str, Enum):
+    r"""Status of the assessment. Must be one of `COMPLETE` or `CANCELLED`."""
     SUCCESS = 'success'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteAtsCandidatesCandidateIDTagsSuccessfulResponse:
-    data: DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
-    status: DeleteAtsCandidatesCandidateIDTagsSuccessfulResponseStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    data: Data = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})
+    status: Status = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
 

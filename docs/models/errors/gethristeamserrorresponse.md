@@ -1,0 +1,9 @@
+# GetHrisTeamsErrorResponse
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                        | [errors.SchemasGetHrisTeamsErrorResponseError](../../models/errors/schemasgethristeamserrorresponseerror.md)   | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `status`                                                                                                       | [errors.SchemasGetHrisTeamsErrorResponseStatus](../../models/errors/schemasgethristeamserrorresponsestatus.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |

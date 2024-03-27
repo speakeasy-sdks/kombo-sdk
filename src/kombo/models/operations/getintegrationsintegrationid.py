@@ -3,13 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getintegrationsintegrationiderrorresponse as shared_getintegrationsintegrationiderrorresponse
-from ..shared import getintegrationsintegrationidsuccessfulresponse as shared_getintegrationsintegrationidsuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from kombo import utils
+from ...models.shared import getintegrationsintegrationidsuccessfulresponse as shared_getintegrationsintegrationidsuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -20,43 +15,15 @@ class GetIntegrationsIntegrationIDRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetIntegrationsIntegrationID401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetIntegrationsIntegrationID401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetIntegrationsIntegrationID401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetIntegrationsIntegrationID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetIntegrationsIntegrationID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class GetIntegrationsIntegrationIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_integrations_integration_id_401_application_json_object: Optional[GetIntegrationsIntegrationID401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_integrations_integration_id_error_response: Optional[shared_getintegrationsintegrationiderrorresponse.GetIntegrationsIntegrationIDErrorResponse] = dataclasses.field(default=None)
-    r"""GET /integrations/:integration_id Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_integrations_integration_id_successful_response: Optional[shared_getintegrationsintegrationidsuccessfulresponse.GetIntegrationsIntegrationIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /integrations/:integration_id Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

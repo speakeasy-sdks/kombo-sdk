@@ -4,27 +4,25 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import posthrisabsenceserrorresponse as shared_posthrisabsenceserrorresponse
-from ..shared import posthrisabsencessuccessfulresponse as shared_posthrisabsencessuccessfulresponse
+from ...models.shared import posthrisabsencessuccessfulresponse as shared_posthrisabsencessuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
 from typing import Optional
 
-class PostHrisAbsencesRequestBodyStatus(str, Enum):
+class PostHrisAbsencesStatus(str, Enum):
     r"""Specify if the absence should be created in the requested or approved state. Please note that some tools might approve absences automatically if they were created for an absence type that does not require approval. There are more edge cases that might cause an absence to be approved automatically."""
     REQUESTED = 'REQUESTED'
     APPROVED = 'APPROVED'
 
-class PostHrisAbsencesRequestBodyUnit(str, Enum):
+class Unit(str, Enum):
     r"""Specifying this also requires specifying `amount`."""
     HOURS = 'HOURS'
     DAYS = 'DAYS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostHrisAbsencesRequestBody:
     r"""POST /hris/absences request body"""
@@ -52,12 +50,11 @@ class PostHrisAbsencesRequestBody:
     r"""`true` if the absence should start in the middle of the day."""
     start_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_time'), 'exclude': lambda f: f is None }})
     r"""When the absence begins. Follows the format `HH:mm` or `HH:mm:ss` (e.g., `14:45:15`). If `start_time` is specified, `end_time` has to be specified as well."""
-    status: Optional[PostHrisAbsencesRequestBodyStatus] = dataclasses.field(default=PostHrisAbsencesRequestBodyStatus.REQUESTED, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[PostHrisAbsencesStatus] = dataclasses.field(default=PostHrisAbsencesStatus.REQUESTED, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""Specify if the absence should be created in the requested or approved state. Please note that some tools might approve absences automatically if they were created for an absence type that does not require approval. There are more edge cases that might cause an absence to be approved automatically."""
-    unit: Optional[PostHrisAbsencesRequestBodyUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
+    unit: Optional[Unit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
     r"""Specifying this also requires specifying `amount`."""
     
-
 
 
 
@@ -71,118 +68,15 @@ class PostHrisAbsencesRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostHrisAbsences503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PostHrisAbsences503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostHrisAbsences503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostHrisAbsences404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PostHrisAbsences404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostHrisAbsences404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostHrisAbsences403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PostHrisAbsences403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostHrisAbsences403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostHrisAbsences401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostHrisAbsences401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostHrisAbsences401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostHrisAbsences401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class PostHrisAbsencesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_hris_absences_401_application_json_object: Optional[PostHrisAbsences401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_hris_absences_403_application_json_object: Optional[PostHrisAbsences403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    post_hris_absences_404_application_json_object: Optional[PostHrisAbsences404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    post_hris_absences_503_application_json_object: Optional[PostHrisAbsences503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    post_hris_absences_error_response: Optional[shared_posthrisabsenceserrorresponse.PostHrisAbsencesErrorResponse] = dataclasses.field(default=None)
-    r"""POST /hris/absences Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_hris_absences_successful_response: Optional[shared_posthrisabsencessuccessfulresponse.PostHrisAbsencesSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /hris/absences Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

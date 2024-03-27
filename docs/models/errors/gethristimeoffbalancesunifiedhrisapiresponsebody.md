@@ -1,0 +1,12 @@
+# GetHRISTimeOffBalancesUnifiedHRISAPIResponseBody
+
+Returned when the passed integration is inactive.
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                                | [errors.GetHRISTimeOffBalancesUnifiedHRISAPIError](../../models/errors/gethristimeoffbalancesunifiedhrisapierror.md)   | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `status`                                                                                                               | [errors.GetHRISTimeOffBalancesUnifiedHRISAPIStatus](../../models/errors/gethristimeoffbalancesunifiedhrisapistatus.md) | :heavy_check_mark:                                                                                                     | N/A                                                                                                                    |
+| `raw_response`                                                                                                         | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)                                  | :heavy_minus_sign:                                                                                                     | Raw HTTP response; suitable for custom response parsing                                                                |

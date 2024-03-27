@@ -5,4 +5,4 @@
 
 | Field                                            | Type                                             | Required                                         | Description                                      |
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| `x_integration_id`                               | *Optional[str]*                                  | :heavy_check_mark:                               | ID of the integration you want to interact with. |
+| `x_integration_id`                               | *str*                                            | :heavy_check_mark:                               | ID of the integration you want to interact with. |

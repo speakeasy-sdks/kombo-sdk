@@ -4,24 +4,22 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import postcustomdatevpassthrougherrorresponse as shared_postcustomdatevpassthrougherrorresponse
-from ..shared import postcustomdatevpassthroughsuccessfulresponse as shared_postcustomdatevpassthroughsuccessfulresponse
+from ...models.shared import postcustomdatevpassthroughsuccessfulresponse as shared_postcustomdatevpassthroughsuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
 from typing import Optional
 
-class PostCustomDatevPassthroughRequestBodyFileType(str, Enum):
+class FileType(str, Enum):
     STAMMDATEN = 'STAMMDATEN'
     BEWEGUNGSDATEN = 'BEWEGUNGSDATEN'
 
-class PostCustomDatevPassthroughRequestBodyTargetSystem(str, Enum):
+class TargetSystem(str, Enum):
     LODAS = 'LODAS'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostCustomDatevPassthroughRequestBody:
     r"""POST /custom/datev/passthrough request body"""
@@ -31,10 +29,9 @@ class PostCustomDatevPassthroughRequestBody:
     """
     file_content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_content') }})
     file_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_name') }})
-    file_type: PostCustomDatevPassthroughRequestBodyFileType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_type') }})
-    target_system: PostCustomDatevPassthroughRequestBodyTargetSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_system') }})
+    file_type: FileType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_type') }})
+    target_system: TargetSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_system') }})
     
-
 
 
 
@@ -48,118 +45,15 @@ class PostCustomDatevPassthroughRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostCustomDatevPassthrough503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PostCustomDatevPassthrough503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostCustomDatevPassthrough503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostCustomDatevPassthrough404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PostCustomDatevPassthrough404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostCustomDatevPassthrough404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostCustomDatevPassthrough403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PostCustomDatevPassthrough403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostCustomDatevPassthrough403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostCustomDatevPassthrough401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostCustomDatevPassthrough401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostCustomDatevPassthrough401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostCustomDatevPassthrough401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class PostCustomDatevPassthroughResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_custom_datev_passthrough_401_application_json_object: Optional[PostCustomDatevPassthrough401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_custom_datev_passthrough_403_application_json_object: Optional[PostCustomDatevPassthrough403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    post_custom_datev_passthrough_404_application_json_object: Optional[PostCustomDatevPassthrough404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    post_custom_datev_passthrough_503_application_json_object: Optional[PostCustomDatevPassthrough503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    post_custom_datev_passthrough_error_response: Optional[shared_postcustomdatevpassthrougherrorresponse.PostCustomDatevPassthroughErrorResponse] = dataclasses.field(default=None)
-    r"""POST /custom/datev/passthrough Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_custom_datev_passthrough_successful_response: Optional[shared_postcustomdatevpassthroughsuccessfulresponse.PostCustomDatevPassthroughSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /custom/datev/passthrough Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

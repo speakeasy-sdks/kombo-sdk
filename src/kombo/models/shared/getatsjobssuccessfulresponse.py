@@ -7,36 +7,28 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from kombo import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
-class GetAtsJobsSuccessfulResponseDataResultsEmploymentType1(str, Enum):
-    r"""The type of employment contract."""
+class GetAtsJobsSuccessfulResponse1(str, Enum):
     FULL_TIME = 'FULL_TIME'
     PART_TIME = 'PART_TIME'
     CONTRACT = 'CONTRACT'
     SEASONAL = 'SEASONAL'
     INTERNSHIP = 'INTERNSHIP'
 
-
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsEmploymentType:
-    pass
-
-class GetAtsJobsSuccessfulResponseDataResultsHiringTeamHiringTeamRoles(str, Enum):
+class HiringTeamRoles(str, Enum):
     RECRUITER = 'RECRUITER'
     HIRING_MANAGER = 'HIRING_MANAGER'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsHiringTeam:
+class HiringTeam:
     email: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""Email of the user."""
     first_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name') }})
     r"""First name of the user."""
-    hiring_team_roles: list[GetAtsJobsSuccessfulResponseDataResultsHiringTeamHiringTeamRoles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team_roles') }})
+    hiring_team_roles: List[HiringTeamRoles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team_roles') }})
     r"""Array of the roles of the user for this specific job. Currently only `RECRUITER` and `HIRING_MANAGER` are mapped into our unified schema."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     last_name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name') }})
@@ -45,61 +37,52 @@ class GetAtsJobsSuccessfulResponseDataResultsHiringTeam:
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsJobPostingsStatus(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataStatus(str, Enum):
     ACTIVE = 'ACTIVE'
     INACTIVE = 'INACTIVE'
     DRAFT = 'DRAFT'
 
-class GetAtsJobsSuccessfulResponseDataResultsJobPostingsVisibility(str, Enum):
+class GetAtsJobsSuccessfulResponseVisibility(str, Enum):
     PUBLIC = 'PUBLIC'
     INTERNAL = 'INTERNAL'
     UNLISTED = 'UNLISTED'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsJobPostings:
+class JobPostings:
     description_html: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description_html') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    status: Optional[GetAtsJobsSuccessfulResponseDataResultsJobPostingsStatus] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    visibility: Optional[GetAtsJobsSuccessfulResponseDataResultsJobPostingsVisibility] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibility') }})
+    status: Optional[GetAtsJobsSuccessfulResponseSchemasDataStatus] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    visibility: Optional[GetAtsJobsSuccessfulResponseVisibility] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibility') }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsLocation:
+class GetAtsJobsSuccessfulResponseLocation:
     r"""The location of the listed job."""
-    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city') }})
-    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
     r"""Contains the ISO2 country code if possible. If not, it contains the original value."""
-    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw') }})
-    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
-    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1') }})
-    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2') }})
-    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code') }})
+    raw: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    state: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    street_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_1'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    street_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_2'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
+    zip_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zip_code'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseLocation.UNSET }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsRemoteWorkStatus1(str, Enum):
-    r"""Defines if the job supports remote work and if so, to what extent."""
+class GetAtsJobsSuccessfulResponseSchemas1(str, Enum):
     REMOTE = 'REMOTE'
     HYBRID = 'HYBRID'
     TEMPORARY = 'TEMPORARY'
     ON_SITE = 'ON_SITE'
 
-
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsRemoteWorkStatus:
-    pass
-
-class GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod1(str, Enum):
-    r"""The period of the salary amount (not equal to the pay frequency)."""
+class GetAtsJobsSuccessfulResponseSchemasData1(str, Enum):
     YEAR = 'YEAR'
     MONTH = 'MONTH'
     TWO_WEEKS = 'TWO_WEEKS'
@@ -107,248 +90,207 @@ class GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod1(str, Enum):
     DAY = 'DAY'
     HOUR = 'HOUR'
 
-
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod:
-    pass
-
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat9Type(str, Enum):
     r"""When we're not able to map a specific question type yet, we will return this type. Every `UNKNOWN` question will also be parsed and unified by us at some point. This is just a temporary workaround so you still get all questions."""
     UNKNOWN = 'UNKNOWN'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Nine:
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat9Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""When we're not able to map a specific question type yet, we will return this type. Every `UNKNOWN` question will also be parsed and unified by us at some point. This is just a temporary workaround so you still get all questions."""
     raw_question: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('raw_question'), 'exclude': lambda f: f is None }})
     r"""We pass the original question data along so you can handle it."""
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat8Type(str, Enum):
     r"""This is just a text block."""
     INFORMATION = 'INFORMATION'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Eight:
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat8Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""This is just a text block."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Options:
+class GetAtsJobsSuccessfulResponseOptions:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Kombo ID of this question option. Use this ID to specify the answer to this question."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Content of the question option."""
-    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
+    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseOptions.UNSET }})
     r"""ID in the connected ATS. This might be null as some systems only use the name to identify the option."""
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat7Type(str, Enum):
     MULTI_SELECT = 'MULTI_SELECT'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7:
-    options: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Seven:
+    options: List[GetAtsJobsSuccessfulResponseOptions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormat7Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormatType(str, Enum):
     DATE = 'DATE'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Six:
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsFormatType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsType(str, Enum):
     BOOLEAN = 'BOOLEAN'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Five:
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestionsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4DisplayType(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDisplayType(str, Enum):
     DROPDOWN = 'DROPDOWN'
     RADIO = 'RADIO'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Options:
+class Options:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Kombo ID of this question option. Use this ID to specify the answer to this question."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Content of the question option."""
-    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
+    remote_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id'), 'exclude': lambda f: f is Options.UNSET }})
     r"""ID in the connected ATS. This might be null as some systems only use the name to identify the option."""
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataResultsType(str, Enum):
     SINGLE_SELECT = 'SINGLE_SELECT'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4:
-    options: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
+class Four:
+    UNSET='__SPEAKEASY_UNSET__'
+    options: List[Options] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options') }})
+    type: GetAtsJobsSuccessfulResponseSchemasDataResultsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    display_type: Optional[GetAtsJobsSuccessfulResponseSchemasDisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is Four.UNSET }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasDataType(str, Enum):
     FILE = 'FILE'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+class Three:
+    type: GetAtsJobsSuccessfulResponseSchemasDataType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2DisplayType(str, Enum):
+class GetAtsJobsSuccessfulResponseDisplayType(str, Enum):
     SLIDER = 'SLIDER'
     FIELD = 'FIELD'
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2Type(str, Enum):
+class GetAtsJobsSuccessfulResponseSchemasType(str, Enum):
     NUMBER = 'NUMBER'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2DisplayType] = dataclasses.field(default=GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2DisplayType.FIELD, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
-    max: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max') }})
-    min: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('min') }})
+class Two:
+    UNSET='__SPEAKEASY_UNSET__'
+    type: GetAtsJobsSuccessfulResponseSchemasType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    display_type: Optional[GetAtsJobsSuccessfulResponseDisplayType] = dataclasses.field(default=GetAtsJobsSuccessfulResponseDisplayType.FIELD, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is Two.UNSET }})
+    max: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max'), 'exclude': lambda f: f is Two.UNSET }})
+    min: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('min'), 'exclude': lambda f: f is Two.UNSET }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1DisplayType(str, Enum):
+class DisplayType(str, Enum):
     r"""If unavailable, we recommend displaying a single-line input."""
     SINGLE_LINE = 'SINGLE_LINE'
     MULTI_LINE = 'MULTI_LINE'
 
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1Type(str, Enum):
+class GetAtsJobsSuccessfulResponseType(str, Enum):
     TEXT = 'TEXT'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1:
-    type: GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    display_type: Optional[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type') }})
+class GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1:
+    UNSET='__SPEAKEASY_UNSET__'
+    type: GetAtsJobsSuccessfulResponseType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    display_type: Optional[DisplayType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_type'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1.UNSET }})
     r"""If unavailable, we recommend displaying a single-line input."""
-    max_length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_length') }})
+    max_length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_length'), 'exclude': lambda f: f is GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1.UNSET }})
     
 
 
 
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions:
+class ScreeningQuestions:
+    UNSET='__SPEAKEASY_UNSET__'
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
-    format: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat1, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat2, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat3, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat4, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat5, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat6, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat7, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat8, GetAtsJobsSuccessfulResponseDataResultsScreeningQuestionsFormat9]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
+    format: Optional[Union[GetAtsJobsSuccessfulResponseSchemasDataResultsScreeningQuestions1, Two, Three, Four, Five, Six, Seven, Eight, Nine]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
     required: Optional[bool] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required') }})
     title: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
-    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
+    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index'), 'exclude': lambda f: f is ScreeningQuestions.UNSET }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsStages:
+class Stages:
+    UNSET='__SPEAKEASY_UNSET__'
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     remote_id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_id') }})
-    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
+    index: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index'), 'exclude': lambda f: f is Stages.UNSET }})
     
 
 
-class GetAtsJobsSuccessfulResponseDataResultsStatus1(str, Enum):
-    r"""One of 4 standardized values (`OPEN`, `CLOSED`, `DRAFT`, or `ARCHIVED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
+class GetAtsJobsSuccessfulResponseSchemasDataResults1(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     DRAFT = 'DRAFT'
     ARCHIVED = 'ARCHIVED'
 
-
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsStatus:
-    pass
-
-class GetAtsJobsSuccessfulResponseDataResultsVisibility1(str, Enum):
-    r"""Describes the visibility of the job:
-
-    - `PUBLIC`: visible to everyone, published on a job board
-    - `INTERNAL`: only visible to employees of the company itself
-    - `UNLISTED`: anyone can apply but only if they have the link to it
-    - `CONFIDENTIAL`: nobody can apply and it's only visible in the ATS to people who were invited to it
-
-    Useful if you are providing a job board and want to post public open jobs of your customers/partners.
-    """
+class GetAtsJobsSuccessfulResponseSchemasDataResultsVisibility1(str, Enum):
     PUBLIC = 'PUBLIC'
     INTERNAL = 'INTERNAL'
     UNLISTED = 'UNLISTED'
     CONFIDENTIAL = 'CONFIDENTIAL'
 
 
-
-@dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResultsVisibility:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetAtsJobsSuccessfulResponseDataResults:
+class GetAtsJobsSuccessfulResponseResults:
     r"""The hiring team allows you to sync users into your system who can access the job and its applications."""
     category: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})
     r"""The category of the job (often the job industry)."""
@@ -367,16 +309,16 @@ class GetAtsJobsSuccessfulResponseDataResults:
     department: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('department') }})
     description: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     r"""Description of the job. This field is usually returned as HTML."""
-    employment_type: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsEmploymentType1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
+    employment_type: Optional[Union[GetAtsJobsSuccessfulResponse1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('employment_type') }})
     r"""The type of employment contract."""
     experience_level: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('experience_level') }})
-    hiring_team: list[GetAtsJobsSuccessfulResponseDataResultsHiringTeam] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team') }})
+    hiring_team: List[HiringTeam] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hiring_team') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The globally unique ID of this object generated by Kombo. We recommend using this as a stable primary key for syncing."""
     job_code: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_code') }})
     r"""The human readable job code. Some systems expose this as the Requisition Code/ID."""
-    job_postings: list[GetAtsJobsSuccessfulResponseDataResultsJobPostings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_postings') }})
-    location: Optional[GetAtsJobsSuccessfulResponseDataResultsLocation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location') }})
+    job_postings: List[JobPostings] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_postings') }})
+    location: Optional[GetAtsJobsSuccessfulResponseLocation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location') }})
     r"""The location of the listed job."""
     name: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Title of the job."""
@@ -390,7 +332,7 @@ class GetAtsJobsSuccessfulResponseDataResults:
     r"""The date and time the object was created in the remote system.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_data: Optional[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
+    remote_data: Optional[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_data') }})
     remote_deleted_at: Optional[datetime] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_deleted_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""The date and time the object was deleted in the remote system. Objects are automatically marked as deleted when Kombo can't retrieve them from the remote system anymore. Kombo will also anonymize entries 14 days after they disappear.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -401,7 +343,7 @@ class GetAtsJobsSuccessfulResponseDataResults:
     r"""A timestamp retrieved from the remote system, describing when the resource was last updated.
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
     """
-    remote_work_status: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsRemoteWorkStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_work_status') }})
+    remote_work_status: Optional[Union[GetAtsJobsSuccessfulResponseSchemas1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_work_status') }})
     r"""Defines if the job supports remote work and if so, to what extent."""
     salary_amount: Optional[float] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_amount') }})
     r"""The salary amount in the given currency."""
@@ -411,13 +353,13 @@ class GetAtsJobsSuccessfulResponseDataResults:
     r"""The upper bound of the salary range."""
     salary_currency: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_currency') }})
     r"""Salary currency usually returned in [ISO 4217 currency codes](https://www.iso.org/iso-4217-currency-codes.html)."""
-    salary_period: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsSalaryPeriod1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_period') }})
+    salary_period: Optional[Union[GetAtsJobsSuccessfulResponseSchemasData1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('salary_period') }})
     r"""The period of the salary amount (not equal to the pay frequency)."""
-    screening_questions: list[GetAtsJobsSuccessfulResponseDataResultsScreeningQuestions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_questions') }})
-    stages: list[GetAtsJobsSuccessfulResponseDataResultsStages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stages') }})
-    status: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsStatus1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    screening_questions: List[ScreeningQuestions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('screening_questions') }})
+    stages: List[Stages] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stages') }})
+    status: Optional[Union[GetAtsJobsSuccessfulResponseSchemasDataResults1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""One of 4 standardized values (`OPEN`, `CLOSED`, `DRAFT`, or `ARCHIVED`) **or** — in rare cases where can't find a clear mapping — the original string passed through."""
-    visibility: Optional[Union[GetAtsJobsSuccessfulResponseDataResultsVisibility1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibility') }})
+    visibility: Optional[Union[GetAtsJobsSuccessfulResponseSchemasDataResultsVisibility1, str]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('visibility') }})
     r"""Describes the visibility of the job:
 
     - `PUBLIC`: visible to everyone, published on a job board
@@ -433,12 +375,11 @@ class GetAtsJobsSuccessfulResponseDataResults:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponseData:
     next: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next') }})
     r"""Cursor string that can be passed to the `cursor` query parameter to get the next page. If this is `null`, then there are no more pages."""
-    results: list[GetAtsJobsSuccessfulResponseDataResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    results: List[GetAtsJobsSuccessfulResponseResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     
 
 
@@ -447,7 +388,6 @@ class GetAtsJobsSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAtsJobsSuccessfulResponse:
     data: GetAtsJobsSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

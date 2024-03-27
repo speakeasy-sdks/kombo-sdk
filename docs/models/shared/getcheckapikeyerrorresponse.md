@@ -1,9 +1,0 @@
-# GetCheckAPIKeyErrorResponse
-
-
-## Fields
-
-| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `error`                                                                                                            | [Optional[shared.GetCheckAPIKeyErrorResponseError]](undefined/models/shared/getcheckapikeyerrorresponseerror.md)   | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
-| `status`                                                                                                           | [Optional[shared.GetCheckAPIKeyErrorResponseStatus]](undefined/models/shared/getcheckapikeyerrorresponsestatus.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

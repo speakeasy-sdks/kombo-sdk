@@ -3,14 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deleteintegrationsintegrationiderrorresponse as shared_deleteintegrationsintegrationiderrorresponse
-from ..shared import deleteintegrationsintegrationidrequestbody as shared_deleteintegrationsintegrationidrequestbody
-from ..shared import deleteintegrationsintegrationidsuccessfulresponse as shared_deleteintegrationsintegrationidsuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from kombo import utils
+from ...models.shared import deleteintegrationsintegrationidrequestbody as shared_deleteintegrationsintegrationidrequestbody
+from ...models.shared import deleteintegrationsintegrationidsuccessfulresponse as shared_deleteintegrationsintegrationidsuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -23,43 +18,15 @@ class DeleteIntegrationsIntegrationIDRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteIntegrationsIntegrationID401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteIntegrationsIntegrationID401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteIntegrationsIntegrationID401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: DeleteIntegrationsIntegrationID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteIntegrationsIntegrationID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class DeleteIntegrationsIntegrationIDResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_integrations_integration_id_401_application_json_object: Optional[DeleteIntegrationsIntegrationID401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    delete_integrations_integration_id_error_response: Optional[shared_deleteintegrationsintegrationiderrorresponse.DeleteIntegrationsIntegrationIDErrorResponse] = dataclasses.field(default=None)
-    r"""DELETE /integrations/:integration_id Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     delete_integrations_integration_id_successful_response: Optional[shared_deleteintegrationsintegrationidsuccessfulresponse.DeleteIntegrationsIntegrationIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""DELETE /integrations/:integration_id Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

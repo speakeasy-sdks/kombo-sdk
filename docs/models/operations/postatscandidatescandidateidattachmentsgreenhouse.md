@@ -1,0 +1,10 @@
+# PostAtsCandidatesCandidateIDAttachmentsGreenhouse
+
+Fields specific to Greenhouse.
+
+
+## Fields
+
+| Field                                                                                                                                                    | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `post_headers`                                                                                                                                           | [Optional[operations.PostAtsCandidatesCandidateIDAttachmentsPostHeaders]](../../models/operations/postatscandidatescandidateidattachmentspostheaders.md) | :heavy_minus_sign:                                                                                                                                       | Headers we will pass with `POST` requests to Greenhouse.                                                                                                 |

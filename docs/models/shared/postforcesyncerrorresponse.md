@@ -1,9 +1,0 @@
-# PostForceSyncErrorResponse
-
-
-## Fields
-
-| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `error`                                                                                                          | [Optional[shared.PostForceSyncErrorResponseError]](undefined/models/shared/postforcesyncerrorresponseerror.md)   | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
-| `status`                                                                                                         | [Optional[shared.PostForceSyncErrorResponseStatus]](undefined/models/shared/postforcesyncerrorresponsestatus.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

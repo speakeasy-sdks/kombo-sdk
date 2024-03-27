@@ -110,41 +110,45 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='Practical', candidate_id='Account', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
-    remote_fields=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
-        greenhouse=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='salmon Shoes',
-            ),
-        ),
-    ),
-    tag=operations.DeleteAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='matrix overriding Handmade',
+res = s.unified_ats_api.delete_ats_candidates_candidate_id_tags(x_integration_id='<value>', candidate_id='<value>', request_body=operations.DeleteAtsCandidatesCandidateIDTagsRequestBody(
+    tag=operations.Tag(
+        name='Excellent Fit',
     ),
 ))
 
 if res.delete_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                             | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | ID of the integration you want to interact with.                                                                                               |
-| `candidate_id`                                                                                                                                 | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | Kombo ID of the candidate you want to remove the tag from.                                                                                     |
-| `request_body`                                                                                                                                 | [Optional[operations.DeleteAtsCandidatesCandidateIDTagsRequestBody]](../../models/operations/deleteatscandidatescandidateidtagsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | DELETE /ats/candidates/:candidate_id/tags request body                                                                                         |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    | Example                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                             | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | ID of the integration you want to interact with.                                                                                               |                                                                                                                                                |
+| `candidate_id`                                                                                                                                 | *str*                                                                                                                                          | :heavy_check_mark:                                                                                                                             | Kombo ID of the candidate you want to remove the tag from.                                                                                     |                                                                                                                                                |
+| `request_body`                                                                                                                                 | [Optional[operations.DeleteAtsCandidatesCandidateIDTagsRequestBody]](../../models/operations/deleteatscandidatescandidateidtagsrequestbody.md) | :heavy_minus_sign:                                                                                                                             | DELETE /ats/candidates/:candidate_id/tags request body                                                                                         | {<br/>"tag": {<br/>"name": "Excellent Fit"<br/>}<br/>}                                                                                         |
 
 
 ### Response
 
 **[operations.DeleteAtsCandidatesCandidateIDTagsResponse](../../models/operations/deleteatscandidatescandidateidtagsresponse.md)**
+### Errors
 
+| Error Object                                                                  | Status Code                                                                   | Content Type                                                                  |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| errors.DeleteAtsCandidatesCandidateIDTagsErrorResponse                        | 400                                                                           | application/json                                                              |
+| errors.DeleteAtsCandidatesCandidateIDTagsResponseBody                         | 401                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                           | application/json                                                              |
+| errors.DeleteATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                           | application/json                                                              |
+| errors.SDKError                                                               | 4x-5xx                                                                        | */*                                                                           |
 
 ## get_ats_application_stages
 
@@ -308,29 +312,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsApplicationStagesRequest(
-    x_integration_id='bamboozle',
-    cursor='core East SAS',
-    ids='bombard',
-    include_deleted=shared.GetAtsApplicationStagesParameterIncludeDeleted.TRUE,
-    page_size=777909,
-    remote_ids='Account National',
-    updated_after=dateutil.parser.isoparse('2022-04-09T01:25:02.164Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_application_stages(req)
 
 if res.get_ats_application_stages_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -343,7 +342,16 @@ if res.get_ats_application_stages_successful_response is not None:
 ### Response
 
 **[operations.GetAtsApplicationStagesResponse](../../models/operations/getatsapplicationstagesresponse.md)**
+### Errors
 
+| Error Object                                                       | Status Code                                                        | Content Type                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| errors.GetAtsApplicationStagesErrorResponse                        | 400                                                                | application/json                                                   |
+| errors.GetAtsApplicationStagesResponseBody                         | 401                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponseBody            | 403                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponseResponseBody    | 404                                                                | application/json                                                   |
+| errors.GetATSApplicationStagesUnifiedATSAPIResponse503ResponseBody | 503                                                                | application/json                                                   |
+| errors.SDKError                                                    | 4x-5xx                                                             | */*                                                                |
 
 ## get_ats_applications
 
@@ -509,32 +517,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsApplicationsRequest(
-    x_integration_id='Gasoline bypass',
-    cursor='flexibility',
-    ids='Gasoline',
-    include_deleted=shared.GetAtsApplicationsParameterIncludeDeleted.TRUE,
-    outcome=shared.GetAtsApplicationsParameterOutcome.DECLINED,
-    outcomes='badly',
-    page_size=918792,
-    remote_created_after=dateutil.parser.isoparse('2021-05-30T08:12:30.327Z'),
-    remote_ids='extensible',
-    updated_after=dateutil.parser.isoparse('2022-08-03T06:59:25.595Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_applications(req)
 
 if res.get_ats_applications_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -547,7 +547,16 @@ if res.get_ats_applications_successful_response is not None:
 ### Response
 
 **[operations.GetAtsApplicationsResponse](../../models/operations/getatsapplicationsresponse.md)**
+### Errors
 
+| Error Object                                                  | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| errors.GetAtsApplicationsErrorResponse                        | 400                                                           | application/json                                              |
+| errors.GetAtsApplicationsResponseBody                         | 401                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponseBody            | 403                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                           | application/json                                              |
+| errors.GetATSApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                           | application/json                                              |
+| errors.SDKError                                               | 4x-5xx                                                        | */*                                                           |
 
 ## get_ats_candidates
 
@@ -705,29 +714,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsCandidatesRequest(
-    x_integration_id='Handmade Movies even',
-    cursor='charset International',
-    ids='female',
-    include_deleted=shared.GetAtsCandidatesParameterIncludeDeleted.FALSE,
-    page_size=332950,
-    remote_ids='Berkshire Data',
-    updated_after=dateutil.parser.isoparse('2023-08-20T22:30:10.141Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_candidates(req)
 
 if res.get_ats_candidates_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -740,7 +744,16 @@ if res.get_ats_candidates_successful_response is not None:
 ### Response
 
 **[operations.GetAtsCandidatesResponse](../../models/operations/getatscandidatesresponse.md)**
+### Errors
 
+| Error Object                                                | Status Code                                                 | Content Type                                                |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| errors.GetAtsCandidatesErrorResponse                        | 400                                                         | application/json                                            |
+| errors.GetAtsCandidatesResponseBody                         | 401                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponseBody            | 403                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                         | application/json                                            |
+| errors.GetATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                         | application/json                                            |
+| errors.SDKError                                             | 4x-5xx                                                      | */*                                                         |
 
 ## get_ats_jobs
 
@@ -922,34 +935,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsJobsRequest(
-    x_integration_id='Maine',
-    cursor='Camden Platinum utterly',
-    ids='Towels global East',
-    include_deleted=shared.GetAtsJobsParameterIncludeDeleted.FALSE,
-    job_codes='World than',
-    name_contains='deliver Sheboygan',
-    page_size=619175,
-    post_url='Developer',
-    remote_ids='Porsche Table cyan',
-    status=shared.GetAtsJobsParameterStatus.CLOSED,
-    statuses='carpeting Sausages female',
-    updated_after=dateutil.parser.isoparse('2023-07-05T15:21:37.316Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_jobs(req)
 
 if res.get_ats_jobs_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -962,7 +965,16 @@ if res.get_ats_jobs_successful_response is not None:
 ### Response
 
 **[operations.GetAtsJobsResponse](../../models/operations/getatsjobsresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.GetAtsJobsErrorResponse                        | 400                                                   | application/json                                      |
+| errors.GetAtsJobsResponseBody                         | 401                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.GetATSJobsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_ats_tags
 
@@ -1060,29 +1072,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsTagsRequest(
-    x_integration_id='Lakes',
-    cursor='capacity synthesize',
-    ids='Porsche cyan Auto',
-    include_deleted=shared.GetAtsTagsParameterIncludeDeleted.TRUE,
-    page_size=681587,
-    remote_ids='Honolulu Boulder Cambridgeshire',
-    updated_after=dateutil.parser.isoparse('2022-12-09T17:54:24.185Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_tags(req)
 
 if res.get_ats_tags_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -1095,7 +1102,16 @@ if res.get_ats_tags_successful_response is not None:
 ### Response
 
 **[operations.GetAtsTagsResponse](../../models/operations/getatstagsresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.GetAtsTagsErrorResponse                        | 400                                                   | application/json                                      |
+| errors.GetAtsTagsResponseBody                         | 401                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponseBody            | 403                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.GetATSTagsUnifiedATSAPIResponse503ResponseBody | 503                                                   | application/json                                      |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_ats_users
 
@@ -1201,29 +1217,24 @@ Top level filters use AND, while individual filters use OR if they accept multip
 
 ```python
 import kombo
-import dateutil.parser
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.GetAtsUsersRequest(
-    x_integration_id='imaginary Praseodymium',
-    cursor='approach Fresh',
-    ids='Touring',
-    include_deleted=shared.GetAtsUsersParameterIncludeDeleted.FALSE,
-    page_size=497581,
-    remote_ids='Avon Bespoke bandwidth',
-    updated_after=dateutil.parser.isoparse('2022-09-14T16:45:22.931Z'),
+    x_integration_id='<value>',
 )
 
 res = s.unified_ats_api.get_ats_users(req)
 
 if res.get_ats_users_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -1236,7 +1247,16 @@ if res.get_ats_users_successful_response is not None:
 ### Response
 
 **[operations.GetAtsUsersResponse](../../models/operations/getatsusersresponse.md)**
+### Errors
 
+| Error Object                                           | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.GetAtsUsersErrorResponse                        | 400                                                    | application/json                                       |
+| errors.GetAtsUsersResponseBody                         | 401                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponseBody            | 403                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponseResponseBody    | 404                                                    | application/json                                       |
+| errors.GetATSUsersUnifiedATSAPIResponse503ResponseBody | 503                                                    | application/json                                       |
+| errors.SDKError                                        | 4x-5xx                                                 | */*                                                    |
 
 ## patch_ats_candidates_candidate_id
 
@@ -1247,19 +1267,21 @@ Currently in closed beta.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='Supervisor', candidate_id='East', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
+res = s.unified_ats_api.patch_ats_candidates_candidate_id(x_integration_id='<value>', candidate_id='<value>', patch_ats_candidates_candidate_id_request_body=shared.PatchAtsCandidatesCandidateIDRequestBody())
 
 if res.patch_ats_candidates_candidate_id_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -1274,7 +1296,12 @@ if res.patch_ats_candidates_candidate_id_successful_response is not None:
 ### Response
 
 **[operations.PatchAtsCandidatesCandidateIDResponse](../../models/operations/patchatscandidatescandidateidresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.PatchAtsCandidatesCandidateIDErrorResponse | 400                                               | application/json                                  |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |
 
 ## post_ats_applications_application_id_notes
 
@@ -1337,38 +1364,44 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='IB', application_id='South', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
-    content='Facilitator teal',
-    content_type=operations.PostAtsApplicationsApplicationIDNotesRequestBodyContentType.PLAIN_TEXT,
-    remote_fields=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFields(
-        teamtailor=operations.PostAtsApplicationsApplicationIDNotesRequestBodyRemoteFieldsTeamtailor(
-            user_id='Lev',
-        ),
-    ),
+res = s.unified_ats_api.post_ats_applications_application_id_notes(x_integration_id='<value>', application_id='<value>', request_body=operations.PostAtsApplicationsApplicationIDNotesRequestBody(
+    content='A new message from the candidate is available in YourChat!',
+    content_type=operations.ContentType.PLAIN_TEXT,
 ))
 
 if res.post_ats_applications_application_id_notes_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                   | *str*                                                                                                                                                | :heavy_check_mark:                                                                                                                                   | ID of the integration you want to interact with.                                                                                                     |
-| `application_id`                                                                                                                                     | *str*                                                                                                                                                | :heavy_check_mark:                                                                                                                                   | Kombo ID of the application you want to create the note for.                                                                                         |
-| `request_body`                                                                                                                                       | [Optional[operations.PostAtsApplicationsApplicationIDNotesRequestBody]](../../models/operations/postatsapplicationsapplicationidnotesrequestbody.md) | :heavy_minus_sign:                                                                                                                                   | POST /ats/applications/:application_id/notes request body                                                                                            |
+| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          | Example                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                   | *str*                                                                                                                                                | :heavy_check_mark:                                                                                                                                   | ID of the integration you want to interact with.                                                                                                     |                                                                                                                                                      |
+| `application_id`                                                                                                                                     | *str*                                                                                                                                                | :heavy_check_mark:                                                                                                                                   | Kombo ID of the application you want to create the note for.                                                                                         |                                                                                                                                                      |
+| `request_body`                                                                                                                                       | [Optional[operations.PostAtsApplicationsApplicationIDNotesRequestBody]](../../models/operations/postatsapplicationsapplicationidnotesrequestbody.md) | :heavy_minus_sign:                                                                                                                                   | POST /ats/applications/:application_id/notes request body                                                                                            | {<br/>"content": "A new message from the candidate is available in YourChat!",<br/>"content_type": "PLAIN_TEXT"<br/>}                                |
 
 
 ### Response
 
 **[operations.PostAtsApplicationsApplicationIDNotesResponse](../../models/operations/postatsapplicationsapplicationidnotesresponse.md)**
+### Errors
 
+| Error Object                                                                     | Status Code                                                                      | Content Type                                                                     |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| errors.PostAtsApplicationsApplicationIDNotesErrorResponse                        | 400                                                                              | application/json                                                                 |
+| errors.PostAtsApplicationsApplicationIDNotesResponseBody                         | 401                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseBody            | 403                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponseResponseBody    | 404                                                                              | application/json                                                                 |
+| errors.PostATSApplicationsApplicationIDNotesUnifiedATSAPIResponse503ResponseBody | 503                                                                              | application/json                                                                 |
+| errors.SDKError                                                                  | 4x-5xx                                                                           | */*                                                                              |
 
 ## post_ats_applications_application_id_result_links
 
@@ -1410,42 +1443,57 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='Electric', application_id='Computer', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
-    details=operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetails(
+res = s.unified_ats_api.post_ats_applications_application_id_result_links(x_integration_id='<value>', application_id='<value>', request_body=operations.PostAtsApplicationsApplicationIDResultLinksRequestBody(
+    label='Assessment Result',
+    url='https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG',
+    details=operations.Details(
         attributes=[
-            operations.PostAtsApplicationsApplicationIDResultLinksRequestBodyDetailsAttributes(
-                key='<key>',
-                value='Gasoline magenta',
+            operations.PostAtsApplicationsApplicationIDResultLinksAttributes(
+                key='Score',
+                value='100%',
+            ),
+            operations.PostAtsApplicationsApplicationIDResultLinksAttributes(
+                key='Time',
+                value='2:30h',
             ),
         ],
-        custom_field_name_prefix='whoa Bedfordshire',
+        custom_field_name_prefix='Acme:',
     ),
-    label='cultivate Bronze how',
-    url='http://closed-terrapin.info',
 ))
 
 if res.post_ats_applications_application_id_result_links_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                               | *str*                                                                                                                                                            | :heavy_check_mark:                                                                                                                                               | ID of the integration you want to interact with.                                                                                                                 |
-| `application_id`                                                                                                                                                 | *str*                                                                                                                                                            | :heavy_check_mark:                                                                                                                                               | Kombo ID of the application you want to create the link for.                                                                                                     |
-| `request_body`                                                                                                                                                   | [Optional[operations.PostAtsApplicationsApplicationIDResultLinksRequestBody]](../../models/operations/postatsapplicationsapplicationidresultlinksrequestbody.md) | :heavy_minus_sign:                                                                                                                                               | POST /ats/applications/:application_id/result-links request body                                                                                                 |
+| Parameter                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                          | Example                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                   | *str*                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                   | ID of the integration you want to interact with.                                                                                                                                                                                                     |                                                                                                                                                                                                                                                      |
+| `application_id`                                                                                                                                                                                                                                     | *str*                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                   | Kombo ID of the application you want to create the link for.                                                                                                                                                                                         |                                                                                                                                                                                                                                                      |
+| `request_body`                                                                                                                                                                                                                                       | [Optional[operations.PostAtsApplicationsApplicationIDResultLinksRequestBody]](../../models/operations/postatsapplicationsapplicationidresultlinksrequestbody.md)                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                                   | POST /ats/applications/:application_id/result-links request body                                                                                                                                                                                     | {<br/>"label": "Assessment Result",<br/>"url": "https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG",<br/>"details": {<br/>"custom_field_name_prefix": "Acme:",<br/>"attributes": [<br/>{<br/>"key": "Score",<br/>"value": "100%"<br/>},<br/>{<br/>"key": "Time",<br/>"value": "2:30h"<br/>}<br/>]<br/>}<br/>} |
 
 
 ### Response
 
 **[operations.PostAtsApplicationsApplicationIDResultLinksResponse](../../models/operations/postatsapplicationsapplicationidresultlinksresponse.md)**
+### Errors
 
+| Error Object                                                                           | Status Code                                                                            | Content Type                                                                           |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| errors.PostAtsApplicationsApplicationIDResultLinksErrorResponse                        | 400                                                                                    | application/json                                                                       |
+| errors.PostAtsApplicationsApplicationIDResultLinksResponseBody                         | 401                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                    | application/json                                                                       |
+| errors.PostATSApplicationsApplicationIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                    | application/json                                                                       |
+| errors.SDKError                                                                        | 4x-5xx                                                                                 | */*                                                                                    |
 
 ## post_ats_candidates
 
@@ -1687,115 +1735,99 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_candidates(x_integration_id='Principal', request_body=operations.PostAtsCandidatesRequestBody(
-    application=operations.PostAtsCandidatesRequestBodyApplication(
-        job_id='Tandem',
-        stage_id='accidentally Southeast to',
+res = s.unified_ats_api.post_ats_candidates(x_integration_id='<value>', request_body=operations.PostAtsCandidatesRequestBody(
+    application=operations.Application(
+        job_id='BDpgnpZ148nrGh4mYHNxJBgx',
+        stage_id='8x3YKRDcuRnwShdh96ShBNn1',
     ),
-    attachments=[
-        operations.PostAtsCandidatesRequestBodyAttachments(
-            content_type='Personal',
-            data='Pop',
-            data_url='https://known-company.info',
-            name='Southeast RSS Home',
-            type=operations.PostAtsCandidatesRequestBodyAttachmentsType.COVER_LETTER,
+    candidate=operations.Candidate(
+        email_address='frank.doe@example.com',
+        first_name='Frank',
+        last_name='Doe',
+        availability_date=dateutil.parser.isoparse('2021-01-01'),
+        company='Acme Inc.',
+        gender=operations.Gender.MALE,
+        location=operations.Location(
+            country='US',
+            city='New York',
         ),
-    ],
-    candidate=operations.PostAtsCandidatesRequestBodyCandidate(
-        availability_date=dateutil.parser.isoparse('2022-01-26T15:21:04.678Z'),
-        company='Deckow, Yost and Leuschke',
-        email_address='Rosella9@yahoo.com',
-        first_name='Princess',
-        gender=operations.PostAtsCandidatesRequestBodyCandidateGender.MALE,
-        last_name='Casper',
-        location=operations.PostAtsCandidatesRequestBodyCandidateLocation(
-            city='New Bedford',
-            country='Svalbard & Jan Mayen Islands',
-        ),
-        phone_number='Southwest lux primary',
-        salary_expectations=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectations(
-            amount=2701.41,
-            period=operations.PostAtsCandidatesRequestBodyCandidateSalaryExpectationsPeriod.MONTH,
+        phone_number='+1-541-754-3010',
+        salary_expectations=operations.SalaryExpectations(
+            amount=100000,
+            period=operations.PostAtsCandidatesPeriod.YEAR,
         ),
         social_links=[
-            operations.PostAtsCandidatesRequestBodyCandidateSocialLinks(
-                url='https://squeaky-tract.biz',
+            operations.SocialLinks(
+                url='https://www.linkedin.com/in/frank-doe-123456789/',
+            ),
+            operations.SocialLinks(
+                url='https://twitter.com/frankdoe',
             ),
         ],
-        title='challenge',
+        title='Head of Integrations',
     ),
-    gdpr_consent=operations.PostAtsCandidatesRequestBodyGdprConsent(
-        expires_at=dateutil.parser.isoparse('2023-07-16T16:09:03.636Z'),
-        given=False,
-    ),
-    remote_fields=operations.PostAtsCandidatesRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='frame Oriental',
-            ),
-        ),
-        lever=operations.PostAtsCandidatesRequestBodyRemoteFieldsLever(
-            candidate={
-                "dolore": 'bluetooth',
-            },
-        ),
-        successfactors=operations.PostAtsCandidatesRequestBodyRemoteFieldsSuccessfactors(
-            candidate={
-                "dolorem": 'male',
-            },
-            job_application={
-                "debitis": 'quantifying',
-            },
-        ),
-        teamtailor=operations.PostAtsCandidatesRequestBodyRemoteFieldsTeamtailor(
-            candidate={
-                "reprehenderit": 'Manager',
-            },
-        ),
-        workable=operations.PostAtsCandidatesRequestBodyRemoteFieldsWorkable(
-            candidate={
-                "odit": 'female',
-            },
-        ),
-    ),
-    screening_question_answers=[
-        operations.PostAtsCandidatesRequestBodyScreeningQuestionAnswers(
-            answer=[],
-            question_id='API Polonium Libby',
+    attachments=[
+        operations.Attachments(
+            name='Frank Doe CV.txt',
+            type=operations.PostAtsCandidatesType.CV,
+            content_type='text/plain',
+            data='SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=',
         ),
     ],
-    source=operations.PostAtsCandidatesRequestBodySource(
-        name='frenetically East',
-    ),
+    screening_question_answers=[
+        operations.ScreeningQuestionAnswers(
+            answer='Yes',
+            question_id='3phFBNXRweGnDmsU9o2vdPuQ',
+        ),
+        operations.ScreeningQuestionAnswers(
+            answer=[
+                'GUzE666zfyjeoCJX6A8n7wh6',
+                '5WPHzzKAv8cx97KtHRUV96U8',
+                '7yZfKGzWigXxxRTygqAfHvyE',
+            ],
+            question_id='EYJjhMQT3LtVKXnTbnRT8s6U',
+        ),
+    ],
 ))
 
 if res.post_ats_candidates_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `x_integration_id`                                                                                           | *str*                                                                                                        | :heavy_check_mark:                                                                                           | ID of the integration you want to interact with.                                                             |
-| `request_body`                                                                                               | [Optional[operations.PostAtsCandidatesRequestBody]](../../models/operations/postatscandidatesrequestbody.md) | :heavy_minus_sign:                                                                                           | POST /ats/candidates request body                                                                            |
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | ID of the integration you want to interact with.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `request_body`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | [Optional[operations.PostAtsCandidatesRequestBody]](../../models/operations/postatscandidatesrequestbody.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | POST /ats/candidates request body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | {<br/>"candidate": {<br/>"first_name": "Frank",<br/>"last_name": "Doe",<br/>"company": "Acme Inc.",<br/>"title": "Head of Integrations",<br/>"email_address": "frank.doe@example.com",<br/>"phone_number": "+1-541-754-3010",<br/>"gender": "MALE",<br/>"salary_expectations": {<br/>"amount": 100000,<br/>"period": "YEAR"<br/>},<br/>"availability_date": "2021-01-01",<br/>"location": {<br/>"city": "New York",<br/>"country": "US"<br/>},<br/>"social_links": [<br/>{<br/>"url": "https://www.linkedin.com/in/frank-doe-123456789/"<br/>},<br/>{<br/>"url": "https://twitter.com/frankdoe"<br/>}<br/>]<br/>},<br/>"application": {<br/>"job_id": "BDpgnpZ148nrGh4mYHNxJBgx",<br/>"stage_id": "8x3YKRDcuRnwShdh96ShBNn1"<br/>},<br/>"attachments": [<br/>{<br/>"name": "Frank Doe CV.txt",<br/>"data": "SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=",<br/>"type": "CV",<br/>"content_type": "text/plain"<br/>}<br/>],<br/>"screening_question_answers": [<br/>{<br/>"question_id": "3phFBNXRweGnDmsU9o2vdPuQ",<br/>"answer": "Yes"<br/>},<br/>{<br/>"question_id": "EYJjhMQT3LtVKXnTbnRT8s6U",<br/>"answer": [<br/>"GUzE666zfyjeoCJX6A8n7wh6",<br/>"5WPHzzKAv8cx97KtHRUV96U8",<br/>"7yZfKGzWigXxxRTygqAfHvyE"<br/>]<br/>}<br/>]<br/>} |
 
 
 ### Response
 
 **[operations.PostAtsCandidatesResponse](../../models/operations/postatscandidatesresponse.md)**
+### Errors
 
+| Error Object                                                 | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| errors.PostAtsCandidatesErrorResponse                        | 400                                                          | application/json                                             |
+| errors.PostAtsCandidatesResponseBody                         | 401                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponseBody            | 403                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponseResponseBody    | 404                                                          | application/json                                             |
+| errors.PostATSCandidatesUnifiedATSAPIResponse503ResponseBody | 503                                                          | application/json                                             |
+| errors.SDKError                                              | 4x-5xx                                                       | */*                                                          |
 
 ## post_ats_candidates_candidate_id_attachments
 
@@ -1909,45 +1941,48 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='Assistant', candidate_id='dimly', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
-    attachment=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachment(
-        content_type='Small soon South',
-        data='recontextualize',
-        data_url='http://qualified-trigger.org',
-        name='Integration Planner',
-        type=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyAttachmentType.COVER_LETTER,
-    ),
-    remote_fields=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Iowa',
-            ),
-        ),
+res = s.unified_ats_api.post_ats_candidates_candidate_id_attachments(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody(
+    attachment=operations.Attachment(
+        name='Frank Doe CV.txt',
+        type=operations.PostAtsCandidatesCandidateIDAttachmentsType.CV,
+        content_type='text/plain',
+        data='SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=',
     ),
 ))
 
 if res.post_ats_candidates_candidate_id_attachments_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                       | *str*                                                                                                                                                    | :heavy_check_mark:                                                                                                                                       | ID of the integration you want to interact with.                                                                                                         |
-| `candidate_id`                                                                                                                                           | *str*                                                                                                                                                    | :heavy_check_mark:                                                                                                                                       | POST /ats/candidates/:candidate_id/attachments parameter                                                                                                 |
-| `request_body`                                                                                                                                           | [Optional[operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody]](../../models/operations/postatscandidatescandidateidattachmentsrequestbody.md) | :heavy_minus_sign:                                                                                                                                       | POST /ats/candidates/:candidate_id/attachments request body                                                                                              |
+| Parameter                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                         | Required                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                  | Example                                                                                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                           | *str*                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                           | ID of the integration you want to interact with.                                                                                                                                                                             |                                                                                                                                                                                                                              |
+| `candidate_id`                                                                                                                                                                                                               | *str*                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                           | POST /ats/candidates/:candidate_id/attachments parameter                                                                                                                                                                     |                                                                                                                                                                                                                              |
+| `request_body`                                                                                                                                                                                                               | [Optional[operations.PostAtsCandidatesCandidateIDAttachmentsRequestBody]](../../models/operations/postatscandidatescandidateidattachmentsrequestbody.md)                                                                     | :heavy_minus_sign:                                                                                                                                                                                                           | POST /ats/candidates/:candidate_id/attachments request body                                                                                                                                                                  | {<br/>"attachment": {<br/>"name": "Frank Doe CV.txt",<br/>"data": "SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=",<br/>"type": "CV",<br/>"content_type": "text/plain"<br/>}<br/>} |
 
 
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDAttachmentsResponse](../../models/operations/postatscandidatescandidateidattachmentsresponse.md)**
+### Errors
 
+| Error Object                                                                       | Status Code                                                                        | Content Type                                                                       |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDAttachmentsErrorResponse                        | 400                                                                                | application/json                                                                   |
+| errors.PostAtsCandidatesCandidateIDAttachmentsResponseBody                         | 401                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDAttachmentsUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
+| errors.SDKError                                                                    | 4x-5xx                                                                             | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_result_links
 
@@ -2082,49 +2117,57 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='Chicken', candidate_id='Antioch', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
-    details=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetails(
+res = s.unified_ats_api.post_ats_candidates_candidate_id_result_links(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDResultLinksRequestBody(
+    label='Assessment Result',
+    url='https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG',
+    details=operations.PostAtsCandidatesCandidateIDResultLinksDetails(
         attributes=[
-            operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyDetailsAttributes(
-                key='<key>',
-                value='Garden',
+            operations.PostAtsCandidatesCandidateIDResultLinksAttributes(
+                key='Score',
+                value='100%',
+            ),
+            operations.PostAtsCandidatesCandidateIDResultLinksAttributes(
+                key='Time',
+                value='2:30h',
             ),
         ],
-        custom_field_name_prefix='Movies whether',
+        custom_field_name_prefix='Acme:',
     ),
-    label='East Plastic',
-    remote_fields=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDResultLinksRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Refined Tennessee',
-            ),
-        ),
-    ),
-    url='http://infinite-pilaf.biz',
 ))
 
 if res.post_ats_candidates_candidate_id_result_links_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                       | *str*                                                                                                                                                    | :heavy_check_mark:                                                                                                                                       | ID of the integration you want to interact with.                                                                                                         |
-| `candidate_id`                                                                                                                                           | *str*                                                                                                                                                    | :heavy_check_mark:                                                                                                                                       | Kombo ID of the candidate you want to create the link for.                                                                                               |
-| `request_body`                                                                                                                                           | [Optional[operations.PostAtsCandidatesCandidateIDResultLinksRequestBody]](../../models/operations/postatscandidatescandidateidresultlinksrequestbody.md) | :heavy_minus_sign:                                                                                                                                       | POST /ats/candidates/:candidate_id/result-links request body                                                                                             |
+| Parameter                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                          | Example                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                   | *str*                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                   | ID of the integration you want to interact with.                                                                                                                                                                                                     |                                                                                                                                                                                                                                                      |
+| `candidate_id`                                                                                                                                                                                                                                       | *str*                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                   | Kombo ID of the candidate you want to create the link for.                                                                                                                                                                                           |                                                                                                                                                                                                                                                      |
+| `request_body`                                                                                                                                                                                                                                       | [Optional[operations.PostAtsCandidatesCandidateIDResultLinksRequestBody]](../../models/operations/postatscandidatescandidateidresultlinksrequestbody.md)                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                                                   | POST /ats/candidates/:candidate_id/result-links request body                                                                                                                                                                                         | {<br/>"label": "Assessment Result",<br/>"url": "https://example.com/test-results/5BtP1WC1UboS7CF3yxjKcvjG",<br/>"details": {<br/>"custom_field_name_prefix": "Acme:",<br/>"attributes": [<br/>{<br/>"key": "Score",<br/>"value": "100%"<br/>},<br/>{<br/>"key": "Time",<br/>"value": "2:30h"<br/>}<br/>]<br/>}<br/>} |
 
 
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDResultLinksResponse](../../models/operations/postatscandidatescandidateidresultlinksresponse.md)**
+### Errors
 
+| Error Object                                                                       | Status Code                                                                        | Content Type                                                                       |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDResultLinksErrorResponse                        | 400                                                                                | application/json                                                                   |
+| errors.PostAtsCandidatesCandidateIDResultLinksResponseBody                         | 401                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseBody            | 403                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponseResponseBody    | 404                                                                                | application/json                                                                   |
+| errors.PostATSCandidatesCandidateIDResultLinksUnifiedATSAPIResponse503ResponseBody | 503                                                                                | application/json                                                                   |
+| errors.SDKError                                                                    | 4x-5xx                                                                             | */*                                                                                |
 
 ## post_ats_candidates_candidate_id_tags
 
@@ -2220,41 +2263,45 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='Specialist', candidate_id='Gorgeous', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
-    remote_fields=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Demiflux',
-            ),
-        ),
-    ),
-    tag=operations.PostAtsCandidatesCandidateIDTagsRequestBodyTag(
-        name='Interactions bypass female',
+res = s.unified_ats_api.post_ats_candidates_candidate_id_tags(x_integration_id='<value>', candidate_id='<value>', request_body=operations.PostAtsCandidatesCandidateIDTagsRequestBody(
+    tag=operations.PostAtsCandidatesCandidateIDTagsTag(
+        name='Excellent Fit',
     ),
 ))
 
 if res.post_ats_candidates_candidate_id_tags_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `x_integration_id`                                                                                                                         | *str*                                                                                                                                      | :heavy_check_mark:                                                                                                                         | ID of the integration you want to interact with.                                                                                           |
-| `candidate_id`                                                                                                                             | *str*                                                                                                                                      | :heavy_check_mark:                                                                                                                         | Kombo ID of the candidate you want to add the tag to.                                                                                      |
-| `request_body`                                                                                                                             | [Optional[operations.PostAtsCandidatesCandidateIDTagsRequestBody]](../../models/operations/postatscandidatescandidateidtagsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | POST /ats/candidates/:candidate_id/tags request body                                                                                       |
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                | Example                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `x_integration_id`                                                                                                                         | *str*                                                                                                                                      | :heavy_check_mark:                                                                                                                         | ID of the integration you want to interact with.                                                                                           |                                                                                                                                            |
+| `candidate_id`                                                                                                                             | *str*                                                                                                                                      | :heavy_check_mark:                                                                                                                         | Kombo ID of the candidate you want to add the tag to.                                                                                      |                                                                                                                                            |
+| `request_body`                                                                                                                             | [Optional[operations.PostAtsCandidatesCandidateIDTagsRequestBody]](../../models/operations/postatscandidatescandidateidtagsrequestbody.md) | :heavy_minus_sign:                                                                                                                         | POST /ats/candidates/:candidate_id/tags request body                                                                                       | {<br/>"tag": {<br/>"name": "Excellent Fit"<br/>}<br/>}                                                                                     |
 
 
 ### Response
 
 **[operations.PostAtsCandidatesCandidateIDTagsResponse](../../models/operations/postatscandidatescandidateidtagsresponse.md)**
+### Errors
 
+| Error Object                                                                | Status Code                                                                 | Content Type                                                                |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| errors.PostAtsCandidatesCandidateIDTagsErrorResponse                        | 400                                                                         | application/json                                                            |
+| errors.PostAtsCandidatesCandidateIDTagsResponseBody                         | 401                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseBody            | 403                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponseResponseBody    | 404                                                                         | application/json                                                            |
+| errors.PostATSCandidatesCandidateIDTagsUnifiedATSAPIResponse503ResponseBody | 503                                                                         | application/json                                                            |
+| errors.SDKError                                                             | 4x-5xx                                                                      | */*                                                                         |
 
 ## post_ats_jobs_job_id_applications
 
@@ -2477,113 +2524,89 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='Web', job_id='magenta', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
+res = s.unified_ats_api.post_ats_jobs_job_id_applications(x_integration_id='<value>', job_id='<value>', request_body=operations.PostAtsJobsJobIDApplicationsRequestBody(
+    candidate=operations.PostAtsJobsJobIDApplicationsCandidate(
+        email_address='frank.doe@example.com',
+        first_name='Frank',
+        last_name='Doe',
+        availability_date=dateutil.parser.isoparse('2021-01-01'),
+        company='Acme Inc.',
+        gender=operations.PostAtsJobsJobIDApplicationsGender.MALE,
+        location=operations.PostAtsJobsJobIDApplicationsLocation(
+            country='US',
+            city='New York',
+        ),
+        phone_number='+1-541-754-3010',
+        salary_expectations=operations.PostAtsJobsJobIDApplicationsSalaryExpectations(
+            amount=100000,
+            period=operations.PostAtsJobsJobIDApplicationsPeriod.YEAR,
+        ),
+        title='Head of Integrations',
+    ),
     attachments=[
-        operations.PostAtsJobsJobIDApplicationsRequestBodyAttachments(
-            content_type='overriding Clothing',
-            data='salmon',
-            data_url='https://rapid-chit-chat.org',
-            name='Electric plum',
-            type=operations.PostAtsJobsJobIDApplicationsRequestBodyAttachmentsType.COVER_LETTER,
+        operations.PostAtsJobsJobIDApplicationsAttachments(
+            name='Frank Doe CV.txt',
+            type=operations.PostAtsJobsJobIDApplicationsType.CV,
+            content_type='text/plain',
+            data='SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=',
         ),
     ],
-    candidate=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidate(
-        availability_date=dateutil.parser.isoparse('2021-10-14T06:06:14.425Z'),
-        company='Nitzsche - Wehner',
-        email_address='Irving62@hotmail.com',
-        first_name='Herbert',
-        gender=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateGender.OTHER,
-        last_name='Carroll',
-        location=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateLocation(
-            city='Fort Esperanza',
-            country='Mayotte',
-        ),
-        phone_number='bus Applications Electric',
-        salary_expectations=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectations(
-            amount=709.38,
-            period=operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSalaryExpectationsPeriod.MONTH,
-        ),
-        social_links=[
-            operations.PostAtsJobsJobIDApplicationsRequestBodyCandidateSocialLinks(
-                url='http://unrealistic-helium.net',
-            ),
-        ],
-        title='fossick Sports South',
-    ),
-    gdpr_consent=operations.PostAtsJobsJobIDApplicationsRequestBodyGdprConsent(
-        expires_at=dateutil.parser.isoparse('2023-02-16T12:49:17.127Z'),
-        given=False,
-    ),
-    remote_fields=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFields(
-        greenhouse=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Assurance state USB',
-            ),
-        ),
-        lever=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsLever(
-            candidate={
-                "aspernatur": 'nihil',
-            },
-        ),
-        successfactors=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsSuccessfactors(
-            candidate={
-                "itaque": 'Hybrid',
-            },
-            job_application={
-                "asperiores": 'SUV',
-            },
-        ),
-        teamtailor=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsTeamtailor(
-            candidate={
-                "vitae": 'Convertible',
-            },
-        ),
-        workable=operations.PostAtsJobsJobIDApplicationsRequestBodyRemoteFieldsWorkable(
-            candidate={
-                "illum": 'Washington',
-            },
-        ),
-    ),
     screening_question_answers=[
-        operations.PostAtsJobsJobIDApplicationsRequestBodyScreeningQuestionAnswers(
-            answer=[],
-            question_id='Diesel Operations',
+        operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
+            answer='Yes',
+            question_id='3phFBNXRweGnDmsU9o2vdPuQ',
+        ),
+        operations.PostAtsJobsJobIDApplicationsScreeningQuestionAnswers(
+            answer=[
+                'GUzE666zfyjeoCJX6A8n7wh6',
+                '5WPHzzKAv8cx97KtHRUV96U8',
+                '7yZfKGzWigXxxRTygqAfHvyE',
+            ],
+            question_id='EYJjhMQT3LtVKXnTbnRT8s6U',
         ),
     ],
-    source=operations.PostAtsJobsJobIDApplicationsRequestBodySource(
-        name='Salad magenta gold',
-    ),
-    stage_id='Assistant Cotton gold',
+    stage_id='8x3YKRDcuRnwShdh96ShBNn1',
 ))
 
 if res.post_ats_jobs_job_id_applications_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                                                             | Type                                                                                                                                                                                                                                  | Required                                                                                                                                                                                                                              | Description                                                                                                                                                                                                                           |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                                                                                                    | *str*                                                                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                                                                    | ID of the integration you want to interact with.                                                                                                                                                                                      |
-| `job_id`                                                                                                                                                                                                                              | *str*                                                                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                                                                    | Kombo ID or Remote ID of the Job this candidate should apply for. If you want to use the ID of the integrated system (remote_id) you need to prefix the id with "remote:". You can use the remote ID if you do not want to sync jobs. |
-| `request_body`                                                                                                                                                                                                                        | [Optional[operations.PostAtsJobsJobIDApplicationsRequestBody]](../../models/operations/postatsjobsjobidapplicationsrequestbody.md)                                                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                    | POST /ats/jobs/:job_id/applications request body                                                                                                                                                                                      |
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | *str*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | ID of the integration you want to interact with.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `job_id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | *str*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Kombo ID or Remote ID of the Job this candidate should apply for. If you want to use the ID of the integrated system (remote_id) you need to prefix the id with "remote:". You can use the remote ID if you do not want to sync jobs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `request_body`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [Optional[operations.PostAtsJobsJobIDApplicationsRequestBody]](../../models/operations/postatsjobsjobidapplicationsrequestbody.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | POST /ats/jobs/:job_id/applications request body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | {<br/>"candidate": {<br/>"first_name": "Frank",<br/>"last_name": "Doe",<br/>"company": "Acme Inc.",<br/>"title": "Head of Integrations",<br/>"email_address": "frank.doe@example.com",<br/>"phone_number": "+1-541-754-3010",<br/>"gender": "MALE",<br/>"salary_expectations": {<br/>"amount": 100000,<br/>"period": "YEAR"<br/>},<br/>"availability_date": "2021-01-01",<br/>"location": {<br/>"city": "New York",<br/>"country": "US"<br/>}<br/>},<br/>"stage_id": "8x3YKRDcuRnwShdh96ShBNn1",<br/>"attachments": [<br/>{<br/>"name": "Frank Doe CV.txt",<br/>"data": "SGkgdGhlcmUsIEtvbWJvIGlzIGN1cnJlbnRseSBoaXJpbmcgZW5naW5lZXJzIHRoYXQgbG92ZSB0byB3b3JrIG9uIGRldmVsb3BlciBwcm9kdWN0cy4=",<br/>"type": "CV",<br/>"content_type": "text/plain"<br/>}<br/>],<br/>"screening_question_answers": [<br/>{<br/>"question_id": "3phFBNXRweGnDmsU9o2vdPuQ",<br/>"answer": "Yes"<br/>},<br/>{<br/>"question_id": "EYJjhMQT3LtVKXnTbnRT8s6U",<br/>"answer": [<br/>"GUzE666zfyjeoCJX6A8n7wh6",<br/>"5WPHzzKAv8cx97KtHRUV96U8",<br/>"7yZfKGzWigXxxRTygqAfHvyE"<br/>]<br/>}<br/>]<br/>} |
 
 
 ### Response
 
 **[operations.PostAtsJobsJobIDApplicationsResponse](../../models/operations/postatsjobsjobidapplicationsresponse.md)**
+### Errors
 
+| Error Object                                                            | Status Code                                                             | Content Type                                                            |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| errors.PostAtsJobsJobIDApplicationsErrorResponse                        | 400                                                                     | application/json                                                        |
+| errors.PostAtsJobsJobIDApplicationsResponseBody                         | 401                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseBody            | 403                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponseResponseBody    | 404                                                                     | application/json                                                        |
+| errors.PostATSJobsJobIDApplicationsUnifiedATSAPIResponse503ResponseBody | 503                                                                     | application/json                                                        |
+| errors.SDKError                                                         | 4x-5xx                                                                  | */*                                                                     |
 
 ## put_ats_applications_application_id_stage
 
@@ -2667,36 +2690,40 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='Francium', application_id='Cotton', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
-    remote_fields=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFields(
-        greenhouse=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhouse(
-            post_headers=operations.PutAtsApplicationsApplicationIDStageRequestBodyRemoteFieldsGreenhousePostHeaders(
-                on_behalf_of='Arsenic',
-            ),
-        ),
-    ),
-    stage_id='Diesel',
+res = s.unified_ats_api.put_ats_applications_application_id_stage(x_integration_id='<value>', application_id='<value>', request_body=operations.PutAtsApplicationsApplicationIDStageRequestBody(
+    stage_id='3PJ8PZhZZa1eEdd2DtPNtVup',
 ))
 
 if res.put_ats_applications_application_id_stage_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                 | *str*                                                                                                                                              | :heavy_check_mark:                                                                                                                                 | ID of the integration you want to interact with.                                                                                                   |
-| `application_id`                                                                                                                                   | *str*                                                                                                                                              | :heavy_check_mark:                                                                                                                                 | PUT /ats/applications/:application_id/stage parameter                                                                                              |
-| `request_body`                                                                                                                                     | [Optional[operations.PutAtsApplicationsApplicationIDStageRequestBody]](../../models/operations/putatsapplicationsapplicationidstagerequestbody.md) | :heavy_minus_sign:                                                                                                                                 | PUT /ats/applications/:application_id/stage request body                                                                                           |
+| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        | Example                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                 | *str*                                                                                                                                              | :heavy_check_mark:                                                                                                                                 | ID of the integration you want to interact with.                                                                                                   |                                                                                                                                                    |
+| `application_id`                                                                                                                                   | *str*                                                                                                                                              | :heavy_check_mark:                                                                                                                                 | PUT /ats/applications/:application_id/stage parameter                                                                                              |                                                                                                                                                    |
+| `request_body`                                                                                                                                     | [Optional[operations.PutAtsApplicationsApplicationIDStageRequestBody]](../../models/operations/putatsapplicationsapplicationidstagerequestbody.md) | :heavy_minus_sign:                                                                                                                                 | PUT /ats/applications/:application_id/stage request body                                                                                           | {<br/>"stage_id": "3PJ8PZhZZa1eEdd2DtPNtVup"<br/>}                                                                                                 |
 
 
 ### Response
 
 **[operations.PutAtsApplicationsApplicationIDStageResponse](../../models/operations/putatsapplicationsapplicationidstageresponse.md)**
+### Errors
 
+| Error Object                                                                    | Status Code                                                                     | Content Type                                                                    |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| errors.PutAtsApplicationsApplicationIDStageErrorResponse                        | 400                                                                             | application/json                                                                |
+| errors.PutAtsApplicationsApplicationIDStageResponseBody                         | 401                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseBody            | 403                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponseResponseBody    | 404                                                                             | application/json                                                                |
+| errors.PutATSApplicationsApplicationIDStageUnifiedATSAPIResponse503ResponseBody | 503                                                                             | application/json                                                                |
+| errors.SDKError                                                                 | 4x-5xx                                                                          | */*                                                                             |

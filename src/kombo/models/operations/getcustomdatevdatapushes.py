@@ -3,13 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getcustomdatevdatapusheserrorresponse as shared_getcustomdatevdatapusheserrorresponse
-from ..shared import getcustomdatevdatapushessuccessfulresponse as shared_getcustomdatevdatapushessuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from kombo import utils
+from ...models.shared import getcustomdatevdatapushessuccessfulresponse as shared_getcustomdatevdatapushessuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -20,118 +15,15 @@ class GetCustomDatevDataPushesRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetCustomDatevDataPushes503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetCustomDatevDataPushes503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetCustomDatevDataPushes503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetCustomDatevDataPushes404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetCustomDatevDataPushes404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetCustomDatevDataPushes404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetCustomDatevDataPushes403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetCustomDatevDataPushes403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetCustomDatevDataPushes403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetCustomDatevDataPushes401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetCustomDatevDataPushes401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetCustomDatevDataPushes401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetCustomDatevDataPushes401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class GetCustomDatevDataPushesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_custom_datev_data_pushes_401_application_json_object: Optional[GetCustomDatevDataPushes401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_custom_datev_data_pushes_403_application_json_object: Optional[GetCustomDatevDataPushes403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_custom_datev_data_pushes_404_application_json_object: Optional[GetCustomDatevDataPushes404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_custom_datev_data_pushes_503_application_json_object: Optional[GetCustomDatevDataPushes503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_custom_datev_data_pushes_error_response: Optional[shared_getcustomdatevdatapusheserrorresponse.GetCustomDatevDataPushesErrorResponse] = dataclasses.field(default=None)
-    r"""GET /custom/datev/data-pushes Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_custom_datev_data_pushes_successful_response: Optional[shared_getcustomdatevdatapushessuccessfulresponse.GetCustomDatevDataPushesSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /custom/datev/data-pushes Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

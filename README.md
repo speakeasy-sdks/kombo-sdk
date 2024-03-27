@@ -55,61 +55,41 @@ servers:
 
 Once you're finished iterating and happy with the output push only the latest version of spec into the repo and regenerate the SDK using step 6 above.
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/kombo-sdk.git
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
+### Example
+
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.custom_endpoints.get_custom_datev_data_pushes(x_integration_id='magenta')
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
-if res.get_custom_datev_data_pushes_successful_response is not None:
+if res.get_assessment_orders_open_successful_response is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
-
-### [custom_endpoints](docs/sdks/customendpoints/README.md)
-
-* [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
-* [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
-* [post_custom_datev_push_data_general](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_general) - Push general data to DATEV
-* [post_custom_datev_push_data_payroll](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_payroll) - Push payroll data to DATEV
-* [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
-* [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
-
-### [general](docs/sdks/general/README.md)
-
-* [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
-* [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
-* [get_integrations_integration_id](docs/sdks/general/README.md#get_integrations_integration_id) - Get integration details
-* [get_tools_category](docs/sdks/general/README.md#get_tools_category) - Get tools
-* [post_force_sync](docs/sdks/general/README.md#post_force_sync) - Trigger sync
-* [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
-* [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
-
-### [kombo_connect](docs/sdks/komboconnect/README.md)
-
-* [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
-* [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
 
 ### [unified_ats_assessment_api](docs/sdks/unifiedatsassessmentapi/README.md)
 
@@ -137,6 +117,30 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 * [post_ats_jobs_job_id_applications](docs/sdks/unifiedatsapi/README.md#post_ats_jobs_job_id_applications) - Create application
 * [put_ats_applications_application_id_stage](docs/sdks/unifiedatsapi/README.md#put_ats_applications_application_id_stage) - Move application to stage
 
+### [general](docs/sdks/general/README.md)
+
+* [delete_integrations_integration_id](docs/sdks/general/README.md#delete_integrations_integration_id) - Delete integration
+* [get_check_api_key](docs/sdks/general/README.md#get_check_api_key) - Check API key
+* [get_integrations_integration_id](docs/sdks/general/README.md#get_integrations_integration_id) - Get integration details
+* [get_tools_category](docs/sdks/general/README.md#get_tools_category) - Get tools
+* [post_force_sync](docs/sdks/general/README.md#post_force_sync) - Trigger sync
+* [post_integrations_integration_id_relink](docs/sdks/general/README.md#post_integrations_integration_id_relink) - Create reconnection link
+* [post_passthrough_tool_api](docs/sdks/general/README.md#post_passthrough_tool_api) - Send passthrough request
+
+### [kombo_connect](docs/sdks/komboconnect/README.md)
+
+* [post_connect_activate_integration](docs/sdks/komboconnect/README.md#post_connect_activate_integration) - Activate integration
+* [post_connect_create_link](docs/sdks/komboconnect/README.md#post_connect_create_link) - Create connection link
+
+### [custom_endpoints](docs/sdks/customendpoints/README.md)
+
+* [get_custom_datev_data_pushes](docs/sdks/customendpoints/README.md#get_custom_datev_data_pushes) - Get DATEV data pushes
+* [post_custom_datev_passthrough](docs/sdks/customendpoints/README.md#post_custom_datev_passthrough) - Write raw DATEV ASCII file
+* [post_custom_datev_push_data_general](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_general) - Push general data to DATEV
+* [post_custom_datev_push_data_payroll](docs/sdks/customendpoints/README.md#post_custom_datev_push_data_payroll) - Push payroll data to DATEV
+* [put_custom_datev_employees_employee_id_compensations](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_compensations) - Set DATEV compensations
+* [put_custom_datev_employees_employee_id_prepare_payroll](docs/sdks/customendpoints/README.md#put_custom_datev_employees_employee_id_prepare_payroll) - Prepare DATEV Payroll
+
 ### [unified_hris_api](docs/sdks/unifiedhrisapi/README.md)
 
 * [delete_hris_absences_absence_id](docs/sdks/unifiedhrisapi/README.md#delete_hris_absences_absence_id) - Delete absence
@@ -153,25 +157,165 @@ if res.get_custom_datev_data_pushes_successful_response is not None:
 * [post_hris_absences](docs/sdks/unifiedhrisapi/README.md#post_hris_absences) - Create absence
 * [post_hris_employees](docs/sdks/unifiedhrisapi/README.md#post_hris_employees) - Create employee
 * [post_hris_employees_employee_id_attachments](docs/sdks/unifiedhrisapi/README.md#post_hris_employees_employee_id_attachments) - Add attachment to employees 🦄
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
 
-<!-- Start Pagination -->
-# Pagination
 
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `Next` method that can be called to pull down the next group of results. If the
-return value of `Next` is `None`, then there are no more pages to be fetched.
+<!-- Start Error Handling [errors] -->
+## Error Handling
 
-Here's an example of one such pagination call:
-<!-- End Pagination -->
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.GetAssessmentOrdersOpenErrorResponse | 400                                         | application/json                            |
+| errors.SDKError                             | 4x-5xx                                      | */*                                         |
+
+### Example
+
+```python
+import kombo
+from kombo.models import errors, shared
+
+s = kombo.Kombo(
+    security=shared.Security(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = None
+try:
+    res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
+except errors.GetAssessmentOrdersOpenErrorResponse as e:
+    # handle exception
+    raise(e)
+except errors.SDKError as e:
+    # handle exception
+    raise(e)
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+
+```
+<!-- End Error Handling [errors] -->
+
+
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.kombo.dev/v1` | None |
+
+#### Example
+
+```python
+import kombo
+from kombo.models import shared
+
+s = kombo.Kombo(
+    server_idx=0,
+    security=shared.Security(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+
+```
+
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+```python
+import kombo
+from kombo.models import shared
+
+s = kombo.Kombo(
+    server_url="https://api.kombo.dev/v1",
+    security=shared.Security(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+
+```
+<!-- End Server Selection [server] -->
+
+
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The Python SDK makes API calls using the [requests](https://pypi.org/project/requests/) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
+For example, you could specify a header for every request that this sdk makes as follows:
+```python
+import kombo
+import requests
+
+http_client = requests.Session()
+http_client.headers.update({'x-custom-header': 'someValue'})
+s = kombo.Kombo(client: http_client)
+```
+<!-- End Custom HTTP Client [http-client] -->
+
+
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name        | Type        | Scheme      |
+| ----------- | ----------- | ----------- |
+| `api_key`   | http        | HTTP Bearer |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+```python
+import kombo
+from kombo.models import shared
+
+s = kombo.Kombo(
+    security=shared.Security(
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
+
+if res.get_assessment_orders_open_successful_response is not None:
+    # handle response
+    pass
+
+```
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

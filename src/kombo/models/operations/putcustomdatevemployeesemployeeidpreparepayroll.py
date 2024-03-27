@@ -4,19 +4,16 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import putcustomdatevemployeesemployeeidpreparepayrollerrorresponse as shared_putcustomdatevemployeesemployeeidpreparepayrollerrorresponse
-from ..shared import putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse as shared_putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse
+from ...models.shared import putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse as shared_putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
-from enum import Enum
 from kombo import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments:
+class FixedPayments:
     amount: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount') }})
     lohnart: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lohnart') }})
     r"""The \\"Lohnart\\" (payment-type) in DATEV. Make sure a Lohnart is selected that actually supports fixed payments (no hourly modifier)."""
@@ -25,9 +22,8 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments:
+class HourlyPayments:
     hours: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours') }})
     r"""Number of hours this employee has worked."""
     lohnart: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lohnart') }})
@@ -37,9 +33,8 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun:
+class PayrollRun:
     date_: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('date'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""YYYY-MM-DDTHH:mm:ss.sssZ
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
@@ -49,122 +44,27 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody:
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll request body"""
-    fixed_payments: list[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyFixedPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixed_payments') }})
+    fixed_payments: List[FixedPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fixed_payments') }})
     r"""Add entries for all the fixed supplements here. For example you can write \\"Bonuses\\" (in Euros here). Unfortunately, DATEV doens't allow showing a lable for the entries."""
-    hourly_payments: list[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyHourlyPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hourly_payments') }})
+    hourly_payments: List[HourlyPayments] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hourly_payments') }})
     r"""Add entries for all the hourly calculated supplements here. For example you can write \\"Overtime\\" or \\"Work on Holidays\\" (in hours here). Unfortunately, DATEV doens't allow showing a lable for the entries."""
-    payroll_run: PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBodyPayrollRun = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_run') }})
+    payroll_run: PayrollRun = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payroll_run') }})
     
-
 
 
 
 @dataclasses.dataclass
 class PutCustomDatevEmployeesEmployeeIDPreparePayrollRequest:
-    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
-    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    employee_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'employee_id', 'style': 'simple', 'explode': False }})
+    r"""ID of the employee that should be updated. You can use their Kombo `id` or their ID in the remote system by prefixing it with `remote:` (e.g., `remote:12312`)"""
     request_body: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayrollRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll request body"""
     
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
 
 
 
@@ -174,19 +74,9 @@ class PutCustomDatevEmployeesEmployeeIDPreparePayrollResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    put_custom_datev_employees_employee_id_prepare_payroll_401_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayroll401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    put_custom_datev_employees_employee_id_prepare_payroll_403_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayroll403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    put_custom_datev_employees_employee_id_prepare_payroll_404_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayroll404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    put_custom_datev_employees_employee_id_prepare_payroll_503_application_json_object: Optional[PutCustomDatevEmployeesEmployeeIDPreparePayroll503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    put_custom_datev_employees_employee_id_prepare_payroll_error_response: Optional[shared_putcustomdatevemployeesemployeeidpreparepayrollerrorresponse.PutCustomDatevEmployeesEmployeeIDPreparePayrollErrorResponse] = dataclasses.field(default=None)
-    r"""PUT /custom/datev/employees/:employee_id/prepare-payroll Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     put_custom_datev_employees_employee_id_prepare_payroll_successful_response: Optional[shared_putcustomdatevemployeesemployeeidpreparepayrollsuccessfulresponse.PutCustomDatevEmployeesEmployeeIDPreparePayrollSuccessfulResponse] = dataclasses.field(default=None)
     r"""PUT /custom/datev/employees/:employee_id/prepare-payroll Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

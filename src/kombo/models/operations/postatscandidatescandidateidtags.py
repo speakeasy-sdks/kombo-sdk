@@ -3,51 +3,46 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import postatscandidatescandidateidtagserrorresponse as shared_postatscandidatescandidateidtagserrorresponse
-from ..shared import postatscandidatescandidateidtagssuccessfulresponse as shared_postatscandidatescandidateidtagssuccessfulresponse
+from ...models.shared import postatscandidatescandidateidtagssuccessfulresponse as shared_postatscandidatescandidateidtagssuccessfulresponse
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from kombo import utils
 from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders:
+class PostAtsCandidatesCandidateIDTagsPostHeaders:
     r"""Headers we will pass with `POST` requests to Greenhouse."""
-    on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    on_behalf_of: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('On-Behalf-Of'), 'exclude': lambda f: f is PostAtsCandidatesCandidateIDTagsPostHeaders.UNSET }})
     r"""ID of the the user that will show up as having performed the action in Greenhouse. We already pass a value by default, but you can use this to override it."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse:
+class PostAtsCandidatesCandidateIDTagsGreenhouse:
     r"""Fields specific to Greenhouse."""
-    post_headers: Optional[PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhousePostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
+    post_headers: Optional[PostAtsCandidatesCandidateIDTagsPostHeaders] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('post_headers'), 'exclude': lambda f: f is None }})
     r"""Headers we will pass with `POST` requests to Greenhouse."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields:
+class PostAtsCandidatesCandidateIDTagsRemoteFields:
     r"""Additional fields that we will pass through to specific ATS systems."""
-    greenhouse: Optional[PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFieldsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
+    greenhouse: Optional[PostAtsCandidatesCandidateIDTagsGreenhouse] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('greenhouse'), 'exclude': lambda f: f is None }})
     r"""Fields specific to Greenhouse."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTagsRequestBodyTag:
+class PostAtsCandidatesCandidateIDTagsTag:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the tag you would like to add. Kombo will find out the right ID of the tag so you don't have to."""
     
@@ -55,120 +50,25 @@ class PostAtsCandidatesCandidateIDTagsRequestBodyTag:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDTagsRequestBody:
     r"""POST /ats/candidates/:candidate_id/tags request body"""
-    tag: PostAtsCandidatesCandidateIDTagsRequestBodyTag = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
-    remote_fields: Optional[PostAtsCandidatesCandidateIDTagsRequestBodyRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
+    tag: PostAtsCandidatesCandidateIDTagsTag = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag') }})
+    remote_fields: Optional[PostAtsCandidatesCandidateIDTagsRemoteFields] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remote_fields'), 'exclude': lambda f: f is None }})
     r"""Additional fields that we will pass through to specific ATS systems."""
     
 
 
 
-
 @dataclasses.dataclass
 class PostAtsCandidatesCandidateIDTagsRequest:
-    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
-    r"""Kombo ID of the candidate you want to add the tag to."""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    candidate_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'candidate_id', 'style': 'simple', 'explode': False }})
+    r"""Kombo ID of the candidate you want to add the tag to."""
     request_body: Optional[PostAtsCandidatesCandidateIDTagsRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""POST /ats/candidates/:candidate_id/tags request body"""
     
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDTags503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: PostAtsCandidatesCandidateIDTags503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDTags503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDTags404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: PostAtsCandidatesCandidateIDTags404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDTags404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDTags403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: PostAtsCandidatesCandidateIDTags403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDTags403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class PostAtsCandidatesCandidateIDTags401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class PostAtsCandidatesCandidateIDTags401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: PostAtsCandidatesCandidateIDTags401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: PostAtsCandidatesCandidateIDTags401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
 
 
 
@@ -178,19 +78,9 @@ class PostAtsCandidatesCandidateIDTagsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    post_ats_candidates_candidate_id_tags_401_application_json_object: Optional[PostAtsCandidatesCandidateIDTags401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    post_ats_candidates_candidate_id_tags_403_application_json_object: Optional[PostAtsCandidatesCandidateIDTags403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    post_ats_candidates_candidate_id_tags_404_application_json_object: Optional[PostAtsCandidatesCandidateIDTags404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    post_ats_candidates_candidate_id_tags_503_application_json_object: Optional[PostAtsCandidatesCandidateIDTags503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    post_ats_candidates_candidate_id_tags_error_response: Optional[shared_postatscandidatescandidateidtagserrorresponse.PostAtsCandidatesCandidateIDTagsErrorResponse] = dataclasses.field(default=None)
-    r"""POST /ats/candidates/:candidate_id/tags Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     post_ats_candidates_candidate_id_tags_successful_response: Optional[shared_postatscandidatescandidateidtagssuccessfulresponse.PostAtsCandidatesCandidateIDTagsSuccessfulResponse] = dataclasses.field(default=None)
     r"""POST /ats/candidates/:candidate_id/tags Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

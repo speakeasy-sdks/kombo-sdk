@@ -3,10 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getcheckapikeyerrorresponse as shared_getcheckapikeyerrorresponse
-from ..shared import getcheckapikeysuccessfulresponse as shared_getcheckapikeysuccessfulresponse
+from ...models.shared import getcheckapikeysuccessfulresponse as shared_getcheckapikeysuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -15,11 +13,9 @@ class GetCheckAPIKeyResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_check_api_key_error_response: Optional[shared_getcheckapikeyerrorresponse.GetCheckAPIKeyErrorResponse] = dataclasses.field(default=None)
-    r"""GET /check-api-key Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_check_api_key_successful_response: Optional[shared_getcheckapikeysuccessfulresponse.GetCheckAPIKeySuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /check-api-key Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

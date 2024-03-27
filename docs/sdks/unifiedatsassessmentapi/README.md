@@ -16,19 +16,21 @@ Get all open assessment orders of an integration.
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='neural', cursor='transmitter', page_size=674164)
+res = s.unified_ats_assessment_api.get_assessment_orders_open(x_integration_id='<value>', cursor='<value>', page_size=100)
 
 if res.get_assessment_orders_open_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -43,7 +45,12 @@ if res.get_assessment_orders_open_successful_response is not None:
 ### Response
 
 **[operations.GetAssessmentOrdersOpenResponse](../../models/operations/getassessmentordersopenresponse.md)**
+### Errors
 
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.GetAssessmentOrdersOpenErrorResponse | 400                                         | application/json                            |
+| errors.SDKError                             | 4x-5xx                                      | */*                                         |
 
 ## get_assessment_packages
 
@@ -55,19 +62,21 @@ This is mainly intended for debugging. As you always need to submit the full lis
 
 ```python
 import kombo
-from kombo.models import operations, shared
+from kombo.models import shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='Concrete')
+res = s.unified_ats_assessment_api.get_assessment_packages(x_integration_id='<value>')
 
 if res.get_assessment_packages_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -80,7 +89,12 @@ if res.get_assessment_packages_successful_response is not None:
 ### Response
 
 **[operations.GetAssessmentPackagesResponse](../../models/operations/getassessmentpackagesresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.GetAssessmentPackagesErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
 
 ## put_assessment_orders_assessment_order_id_result
 
@@ -140,48 +154,59 @@ We're always happy to discuss extending our coverage.
 ### Example Usage
 
 ```python
-import kombo
 import dateutil.parser
+import kombo
 from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='male', assessment_order_id='until', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_orders_assessment_order_id_result(x_integration_id='<value>', assessment_order_id='<value>', request_body=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody(
+    completed_at=dateutil.parser.isoparse('2023-04-04T00:00:00.000Z'),
+    result_url='https://example.com',
+    status=operations.Status.COMPLETED,
     attributes=[
-        operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyAttributes(
-            field='ampere',
-            value='Lesotho Pataca Gasoline',
+        operations.Attributes(
+            field='remarks',
+            value='Test completed with passing score',
         ),
     ],
-    completed_at=dateutil.parser.isoparse('2023-11-13T01:43:34.363Z'),
-    max_score=5666.31,
-    result_url='http://murky-pegboard.biz',
-    score=8596.55,
-    status=operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBodyStatus.CANCELLED,
+    max_score=100,
+    score=90,
 ))
 
 if res.put_assessment_orders_assessment_order_id_result_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                                                             | *str*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                             | ID of the integration you want to interact with.                                                                                                               |
-| `assessment_order_id`                                                                                                                                          | *str*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                             | PUT /assessment/orders/:assessment_order_id/result parameter                                                                                                   |
-| `request_body`                                                                                                                                                 | [Optional[operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody]](../../models/operations/putassessmentordersassessmentorderidresultrequestbody.md) | :heavy_minus_sign:                                                                                                                                             | PUT /assessment/orders/:assessment_order_id/result request body                                                                                                |
+| Parameter                                                                                                                                                                                                                         | Type                                                                                                                                                                                                                              | Required                                                                                                                                                                                                                          | Description                                                                                                                                                                                                                       | Example                                                                                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                | *str*                                                                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                                                                | ID of the integration you want to interact with.                                                                                                                                                                                  |                                                                                                                                                                                                                                   |
+| `assessment_order_id`                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                                                                | PUT /assessment/orders/:assessment_order_id/result parameter                                                                                                                                                                      |                                                                                                                                                                                                                                   |
+| `request_body`                                                                                                                                                                                                                    | [Optional[operations.PutAssessmentOrdersAssessmentOrderIDResultRequestBody]](../../models/operations/putassessmentordersassessmentorderidresultrequestbody.md)                                                                    | :heavy_minus_sign:                                                                                                                                                                                                                | PUT /assessment/orders/:assessment_order_id/result request body                                                                                                                                                                   | {<br/>"status": "COMPLETED",<br/>"score": 90,<br/>"max_score": 100,<br/>"result_url": "https://example.com",<br/>"completed_at": "2023-04-04T00:00:00.000Z",<br/>"attributes": [<br/>{<br/>"field": "remarks",<br/>"value": "Test completed with passing score"<br/>}<br/>]<br/>} |
 
 
 ### Response
 
 **[operations.PutAssessmentOrdersAssessmentOrderIDResultResponse](../../models/operations/putassessmentordersassessmentorderidresultresponse.md)**
+### Errors
 
+| Error Object                                                                                    | Status Code                                                                                     | Content Type                                                                                    |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultErrorResponse                                  | 400                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultResponseBody                                   | 401                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseBody            | 403                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponseResponseBody    | 404                                                                                             | application/json                                                                                |
+| errors.PutAssessmentOrdersAssessmentOrderIDResultUnifiedATSAssessmentAPIResponse503ResponseBody | 503                                                                                             | application/json                                                                                |
+| errors.SDKError                                                                                 | 4x-5xx                                                                                          | */*                                                                                             |
 
 ## put_assessment_packages
 
@@ -197,35 +222,48 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='Automated', request_body=operations.PutAssessmentPackagesRequestBody(
+res = s.unified_ats_assessment_api.put_assessment_packages(x_integration_id='<value>', request_body=operations.PutAssessmentPackagesRequestBody(
     packages=[
-        operations.PutAssessmentPackagesRequestBodyPackages(
-            description='Implemented 3rd generation groupware',
-            id='<ID>',
-            name='Savings National',
-            type=operations.PutAssessmentPackagesRequestBodyPackagesType.BACKGROUND_CHECK,
+        operations.Packages(
+            description='TypeScript coding skills assessments',
+            id='1001',
+            name='TypeScript',
+            type=operations.Type.SKILLS_TEST,
+        ),
+        operations.Packages(
+            description='Video interview to assess communication skills',
+            id='1002',
+            name='Video Interview',
+            type=operations.Type.VIDEO_INTERVIEW,
         ),
     ],
 ))
 
 if res.put_assessment_packages_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `x_integration_id`                                                                                                   | *str*                                                                                                                | :heavy_check_mark:                                                                                                   | ID of the integration you want to interact with.                                                                     |
-| `request_body`                                                                                                       | [Optional[operations.PutAssessmentPackagesRequestBody]](../../models/operations/putassessmentpackagesrequestbody.md) | :heavy_minus_sign:                                                                                                   | PUT /assessment/packages request body                                                                                |
+| Parameter                                                                                                                                                                                                                                                                         | Type                                                                                                                                                                                                                                                                              | Required                                                                                                                                                                                                                                                                          | Description                                                                                                                                                                                                                                                                       | Example                                                                                                                                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `x_integration_id`                                                                                                                                                                                                                                                                | *str*                                                                                                                                                                                                                                                                             | :heavy_check_mark:                                                                                                                                                                                                                                                                | ID of the integration you want to interact with.                                                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                                   |
+| `request_body`                                                                                                                                                                                                                                                                    | [Optional[operations.PutAssessmentPackagesRequestBody]](../../models/operations/putassessmentpackagesrequestbody.md)                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                                                                                                | PUT /assessment/packages request body                                                                                                                                                                                                                                             | {<br/>"packages": [<br/>{<br/>"id": "1001",<br/>"type": "SKILLS_TEST",<br/>"name": "TypeScript",<br/>"description": "TypeScript coding skills assessments"<br/>},<br/>{<br/>"id": "1002",<br/>"type": "VIDEO_INTERVIEW",<br/>"name": "Video Interview",<br/>"description": "Video interview to assess communication skills"<br/>}<br/>]<br/>} |
 
 
 ### Response
 
 **[operations.PutAssessmentPackagesResponse](../../models/operations/putassessmentpackagesresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.PutAssessmentPackagesErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |

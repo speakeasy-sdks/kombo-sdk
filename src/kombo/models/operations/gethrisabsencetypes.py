@@ -3,15 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gethrisabsencetypeserrorresponse as shared_gethrisabsencetypeserrorresponse
-from ..shared import gethrisabsencetypesparameterincludedeleted as shared_gethrisabsencetypesparameterincludedeleted
-from ..shared import gethrisabsencetypessuccessfulresponse as shared_gethrisabsencetypessuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import gethrisabsencetypesparameterincludedeleted as shared_gethrisabsencetypesparameterincludedeleted
+from ...models.shared import gethrisabsencetypessuccessfulresponse as shared_gethrisabsencetypessuccessfulresponse
 from datetime import datetime
-from enum import Enum
-from kombo import utils
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -34,118 +29,15 @@ class GetHrisAbsenceTypesRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisAbsenceTypes503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: GetHrisAbsenceTypes503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisAbsenceTypes503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisAbsenceTypes404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: GetHrisAbsenceTypes404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisAbsenceTypes404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisAbsenceTypes403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: GetHrisAbsenceTypes403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisAbsenceTypes403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class GetHrisAbsenceTypes401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class GetHrisAbsenceTypes401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: GetHrisAbsenceTypes401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: GetHrisAbsenceTypes401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-
 @dataclasses.dataclass
 class GetHrisAbsenceTypesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_hris_absence_types_401_application_json_object: Optional[GetHrisAbsenceTypes401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    get_hris_absence_types_403_application_json_object: Optional[GetHrisAbsenceTypes403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    get_hris_absence_types_404_application_json_object: Optional[GetHrisAbsenceTypes404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    get_hris_absence_types_503_application_json_object: Optional[GetHrisAbsenceTypes503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    get_hris_absence_types_error_response: Optional[shared_gethrisabsencetypeserrorresponse.GetHrisAbsenceTypesErrorResponse] = dataclasses.field(default=None)
-    r"""GET /hris/absence-types Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_hris_absence_types_successful_response: Optional[shared_gethrisabsencetypessuccessfulresponse.GetHrisAbsenceTypesSuccessfulResponse] = dataclasses.field(default=None)
     r"""GET /hris/absence-types Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

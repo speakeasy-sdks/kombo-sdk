@@ -8,7 +8,6 @@ from kombo import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelinkSuccessfulResponseData:
     link: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link') }})
@@ -20,7 +19,6 @@ class PostIntegrationsIntegrationIDRelinkSuccessfulResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PostIntegrationsIntegrationIDRelinkSuccessfulResponse:
     data: PostIntegrationsIntegrationIDRelinkSuccessfulResponseData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

@@ -32,18 +32,20 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.PostConnectActivateIntegrationRequestBody(
-    token='application',
+    token='<value>',
 )
 
 res = s.kombo_connect.post_connect_activate_integration(req)
 
 if res.post_connect_activate_integration_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -56,7 +58,12 @@ if res.post_connect_activate_integration_successful_response is not None:
 ### Response
 
 **[operations.PostConnectActivateIntegrationResponse](../../models/operations/postconnectactivateintegrationresponse.md)**
+### Errors
 
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.PostConnectActivateIntegrationErrorResponse | 400                                                | application/json                                   |
+| errors.SDKError                                    | 4x-5xx                                             | */*                                                |
 
 ## post_connect_create_link
 
@@ -87,25 +94,25 @@ from kombo.models import operations, shared
 
 s = kombo.Kombo(
     security=shared.Security(
-        api_key="",
+        api_key="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.PostConnectCreateLinkRequestBody(
-    end_user_email='Barney59@yahoo.com',
-    end_user_organization_name='Peso Cotton',
-    end_user_origin_id='Roentgenium Honda reinvent',
-    integration_category=operations.PostConnectCreateLinkRequestBodyIntegrationCategory.ATS,
-    integration_tool=operations.PostConnectCreateLinkRequestBodyIntegrationTool.GREENHOUSE,
-    language=operations.PostConnectCreateLinkRequestBodyLanguage.EN,
-    remote_environment='platforms male',
-    scope_config_id='Cis Northeast Chrysler',
+    end_user_email='test@example.com',
+    end_user_organization_name='Test Inc.',
+    end_user_origin_id='123',
+    integration_category=operations.IntegrationCategory.HRIS,
+    integration_tool=operations.IntegrationTool.PERSONIO,
+    language=operations.PostConnectCreateLinkLanguage.EN,
 )
 
 res = s.kombo_connect.post_connect_create_link(req)
 
 if res.post_connect_create_link_successful_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -118,4 +125,9 @@ if res.post_connect_create_link_successful_response is not None:
 ### Response
 
 **[operations.PostConnectCreateLinkResponse](../../models/operations/postconnectcreatelinkresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.PostConnectCreateLinkErrorResponse | 400                                       | application/json                          |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |

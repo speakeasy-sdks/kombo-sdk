@@ -1,0 +1,9 @@
+# PostForceSyncErrorResponse
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `error`                                                                                                          | [errors.SchemasPostForceSyncErrorResponseError](../../models/errors/schemaspostforcesyncerrorresponseerror.md)   | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `status`                                                                                                         | [errors.SchemasPostForceSyncErrorResponseStatus](../../models/errors/schemaspostforcesyncerrorresponsestatus.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

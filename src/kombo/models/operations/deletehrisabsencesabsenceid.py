@@ -3,118 +3,20 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deletehrisabsencesabsenceiderrorresponse as shared_deletehrisabsencesabsenceiderrorresponse
-from ..shared import deletehrisabsencesabsenceidrequestbody as shared_deletehrisabsencesabsenceidrequestbody
-from ..shared import deletehrisabsencesabsenceidsuccessfulresponse as shared_deletehrisabsencesabsenceidsuccessfulresponse
-from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from kombo import utils
+from ...models.shared import deletehrisabsencesabsenceidrequestbody as shared_deletehrisabsencesabsenceidrequestbody
+from ...models.shared import deletehrisabsencesabsenceidsuccessfulresponse as shared_deletehrisabsencesabsenceidsuccessfulresponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class DeleteHrisAbsencesAbsenceIDRequest:
-    absence_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'absence_id', 'style': 'simple', 'explode': False }})
-    r"""The ID of the absence"""
     x_integration_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Integration-Id', 'style': 'simple', 'explode': False }})
     r"""ID of the integration you want to interact with."""
+    absence_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'absence_id', 'style': 'simple', 'explode': False }})
+    r"""The ID of the absence"""
     delete_hris_absences_absence_id_request_body: Optional[shared_deletehrisabsencesabsenceidrequestbody.DeleteHrisAbsencesAbsenceIDRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""DELETE /hris/absences/:absence_id request body"""
     
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID503ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteHrisAbsencesAbsenceID503ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID503ApplicationJSON:
-    r"""Returned when no sync has finished successfully yet"""
-    error: DeleteHrisAbsencesAbsenceID503ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteHrisAbsencesAbsenceID503ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID404ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteHrisAbsencesAbsenceID404ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID404ApplicationJSON:
-    r"""Returned when a requested resource is not found."""
-    error: DeleteHrisAbsencesAbsenceID404ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteHrisAbsencesAbsenceID404ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID403ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteHrisAbsencesAbsenceID403ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID403ApplicationJSON:
-    r"""Returned when the passed integration is inactive."""
-    error: DeleteHrisAbsencesAbsenceID403ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteHrisAbsencesAbsenceID403ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID401ApplicationJSONError:
-    message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    
-
-
-class DeleteHrisAbsencesAbsenceID401ApplicationJSONStatus(str, Enum):
-    ERROR = 'error'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class DeleteHrisAbsencesAbsenceID401ApplicationJSON:
-    r"""Returned when the authentication header was invalid or missing."""
-    error: DeleteHrisAbsencesAbsenceID401ApplicationJSONError = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
-    status: DeleteHrisAbsencesAbsenceID401ApplicationJSONStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    
-
 
 
 
@@ -124,19 +26,9 @@ class DeleteHrisAbsencesAbsenceIDResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_hris_absences_absence_id_401_application_json_object: Optional[DeleteHrisAbsencesAbsenceID401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the authentication header was invalid or missing."""
-    delete_hris_absences_absence_id_403_application_json_object: Optional[DeleteHrisAbsencesAbsenceID403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when the passed integration is inactive."""
-    delete_hris_absences_absence_id_404_application_json_object: Optional[DeleteHrisAbsencesAbsenceID404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when a requested resource is not found."""
-    delete_hris_absences_absence_id_503_application_json_object: Optional[DeleteHrisAbsencesAbsenceID503ApplicationJSON] = dataclasses.field(default=None)
-    r"""Returned when no sync has finished successfully yet"""
-    delete_hris_absences_absence_id_error_response: Optional[shared_deletehrisabsencesabsenceiderrorresponse.DeleteHrisAbsencesAbsenceIDErrorResponse] = dataclasses.field(default=None)
-    r"""DELETE /hris/absences/:absence_id Error response"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     delete_hris_absences_absence_id_successful_response: Optional[shared_deletehrisabsencesabsenceidsuccessfulresponse.DeleteHrisAbsencesAbsenceIDSuccessfulResponse] = dataclasses.field(default=None)
     r"""DELETE /hris/absences/:absence_id Successful response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
